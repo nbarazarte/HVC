@@ -9,8 +9,8 @@
             </div>
             <div class="item" style="background-image:url(base-hotel/preview/images/hero-accommodation-1800.jpg);">
                 <div class="details">
-                    <div class="title"><span>Modern Rooms & Spacious Suites</span></div>
-                    <div class="buttoncontainer"><a href="accommodation.html" class="button"><span data-hover="Browse Our Rooms">Browse Our Rooms</span></a></div>
+                    <div class="title"><span>Modernas y Cómodas Habitaciones</span></div>
+                    <div class="buttoncontainer"><a href="{{ route('accommodation')}}" class="button"><span data-hover="Ver Habitaciones">Ver Habitaciones</span></a></div>
                 </div>
             </div>
             <div class="item" style="background-image:url(base-hotel/preview/images/hero-restaurant-1800.jpg);">

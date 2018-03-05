@@ -5,8 +5,8 @@
 	<header>
     	<div id="header">
         	<div class="h1">
-                <h1><span>Accommodation</span>
-                <span class="tagline">Modern Rooms & Spacious Suites</span></h1>
+                <h1><span>Habitaciones</span>
+                <span class="tagline">Modernas y Cómodas Habitaciones</span></h1>
             </div>
         </div>
 
@@ -25,10 +25,10 @@
                     <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/room-standard-1200.jpg')}}" width="1200" height="400" /></div>
                     <div class="details">
                         <a href="{{ route('matrimonial')}}">
-                            <h3 class="title">Standard Room<br />
+                            <h3 class="title"> Matrimonial<br />
                             <span>Stay from $149 per night</span></h3>
                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh.</p>
-                            <div class="button"><span data-hover="View Room">View Room</span></div>
+                            <div class="button"><span data-hover="Ver más">Ver más</span></div>
                         </a>
                     </div>
                 </div>
@@ -36,10 +36,10 @@
                     <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/room-ocean-1200.jpg')}}" width="1200" height="400" /></div>
                     <div class="details">
                         <a href="{{ route('matrimonialSofa')}}">
-                            <h3 class="title">Ocean View Room<br />
+                            <h3 class="title"> Matrimonial + Sofá<br />
                             <span>Stay from $199 per night</span></h3>
                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh.</p>
-                            <div class="button"><span data-hover="View Room">View Room</span></div>
+                            <div class="button"><span data-hover="Ver más">Ver más</span></div>
                         </a>
                     </div>
                 </div>
@@ -47,10 +47,10 @@
                     <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/room-deluxe-1200.jpg')}}" width="1200" height="400" /></div>
                     <div class="details">
                         <a href="{{ route('familiar')}}">
-                            <h3 class="title">Deluxe Room<br />
+                            <h3 class="title"> Familiar<br />
                             <span>Stay from $225 per night</span></h3>
                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh.</p>
-                            <div class="button"><span data-hover="View Room">View Room</span></div>
+                            <div class="button"><span data-hover="Ver más">Ver más</span></div>
                         </a>
                     </div>
                 </div>
@@ -58,10 +58,10 @@
                     <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/room-junior-1200.jpg')}}" width="1200" height="400" /></div>
                     <div class="details">
                         <a href="{{ route('duplex')}}">
-                            <h3 class="title">Junior Suite<br />
+                            <h3 class="title"> Duplex<br />
                             <span>Stay from $240 per night</span></h3>
                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh.</p>
-                            <div class="button"><span data-hover="View Room">View Room</span></div>
+                            <div class="button"><span data-hover="Ver más">Ver más</span></div>
                         </a>
                     </div>
                 </div>
@@ -71,43 +71,46 @@
 
             <!-- List Items (Rooms) | END -->
             <div id="content">
-                <h2><strong>Find Your Base</strong> with our selection of rooms & suites</h2>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna.</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est.</p>
+                <h2><strong>HOTEL HIPPOCAMPUS VACATION CLUB</strong> 22 años en la Isla de Margarita</h2>
+                <p>
+                    Toda una experiencia hotelera a su servicio, con un concepto diferente en alojamiento.
+                    Cómodas habitaciones equipadas para toda su familia. Disfrute de nuestra terraza con la mejor vista de la bahía de Pampatar. Celebre con nosotros eventos especiales y corporativos.
+                </p>
+                
                 <table>
                     <tr>
-                        <th>Room Type</th>
-                        <th>Low Season</th>
-                        <th>Mid Season</th>
-                        <th>High Season</th>
+                        <th>Tipo de Habitación</th>
+                        <th>Temporada Baja</th>
+                        <th>Temporada Media</th>
+                        <th>Temporada Alta</th>
                     </tr>
                     <tr>
-                        <td><strong>Standard Room</strong></td>
+                        <td><strong>Matrimonial</strong></td>
                         <td>$149</td>
                         <td>$169</td>
                         <td>$199</td>
                     </tr>
                     <tr>
-                        <td><strong>Ocean View Room</strong></td>
+                        <td><strong>Matrimonial + Sofá</strong></td>
                         <td>$199</td>
                         <td>$219</td>
                         <td>$249</td>
                     </tr>
                     <tr>
-                        <td><strong>Deluxe Room</strong></td>
+                        <td><strong>Familiar</strong></td>
                         <td>$225</td>
                         <td>$245</td>
                         <td>$275</td>
                     </tr>
                     <tr>
-                        <td><strong>Junior Suite</strong></td>
+                        <td><strong>Duplex</strong></td>
                         <td>$240</td>
                         <td>$260</td>
                         <td>$290</td>
                     </tr>
 
                 </table>
-                <a href="contact.php" class="button"><span data-hover="Book a Room">Book a Room</span></a>
+                <a href="contact.php" class="button"><span data-hover="Reservar Ahora">Reservar Ahora</span></a>
             </div>
             <!-- Video | START -->
             <div id="video">

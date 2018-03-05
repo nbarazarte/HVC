@@ -6,8 +6,8 @@
 	<header>
     	<div id="header">
         	<div class="h1">
-                <h1><span>Photo Gallery</span>
-                <span class="tagline">Experience a day at Base Hotel</span></h1>
+                <h1><span>Nuestra Galería</span>
+                <span class="tagline">Vive de Cerca la Experiencia</span></h1>
             </div>
         </div>
         

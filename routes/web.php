@@ -16,7 +16,12 @@ Route::get('/', [
 	'as' =>'home'
 ]);
 
-Route::get('/Accommodation', [
+Route::get('/Nosotros', [
+	'uses' => 'PublicController@about',
+	'as' =>'about'
+]);
+
+Route::get('/Habitaciones', [
 	'uses' => 'PublicController@accommodation',
 	'as' =>'accommodation'
 ]);
@@ -46,24 +51,14 @@ Route::get('/Habitación-Duplex', [
 	'as' =>'duplex'
 ]);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Route::get('/Gallery', [
+Route::get('/Galería', [
 	'uses' => 'PublicController@gallery',
 	'as' =>'gallery'
+]);
+
+Route::get('/Contáctanos', [
+	'uses' => 'PublicController@contact',
+	'as' =>'contact'
 ]);
 
 Auth::routes();

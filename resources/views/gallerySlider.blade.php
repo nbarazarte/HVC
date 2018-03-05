@@ -9,6 +9,6 @@
                 </div>
             </div>
         </div>
-        <a href="{{ route('gallery') }}" class="button"><span data-hover="Browse Our Gallery">Browse Our Gallery</span></a>
+        <a href="{{ route('gallery') }}" class="button"><span data-hover="Ver Galería">Ver Galería</span></a>
     </div>
     <!-- Gallery Slider | END -->

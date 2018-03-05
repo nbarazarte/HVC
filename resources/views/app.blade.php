@@ -25,7 +25,7 @@
 
         <body class="home2 fullwidth">
 
-    @elseif (Route::current()->getName() == 'accommodation')
+    @elseif ((Route::current()->getName() == 'accommodation') || (Route::current()->getName() == 'about') || (Route::current()->getName() == 'contact'))
 
         <body class="fullwidth">
 
@@ -49,7 +49,7 @@
         </header>
         <!-- Header | END -->
 
-      @endif
+    @endif
 
     <div id="container">
 

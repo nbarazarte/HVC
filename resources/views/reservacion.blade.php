@@ -1,38 +1,42 @@
     <!-- Check Rates Banner | START -->
     <div id="check">
         <div class="centre">
-            <form action="contact.php" method="post">
-                <div class="field calendar"><input name="arrival" type="text" placeholder="Arrival" id="arrival" readonly /><i class="fa fa-calendar-o"></i></div>
-                <div class="field calendar"><input name="departure" type="text" placeholder="Departure" id="departure" readonly /><i class="fa fa-calendar-o"></i></div>
+            <form action="{{ route('contact')}}" method="post">
+                <div class="field calendar"><input name="arrival" type="text" placeholder="LLegada" id="arrival" readonly /><i class="fa fa-calendar-o"></i></div>
+                <div class="field calendar"><input name="departure" type="text" placeholder="Salida" id="departure" readonly /><i class="fa fa-calendar-o"></i></div>
                 <div class="field select">
                     <select name="rooms">
-                        <option value="1 Room">1 Room</option>
-                        <option value="2 Rooms">2 Rooms</option>
-                        <option value="3 Rooms">3 Rooms</option>
+                        <option value="Matrimonial">Matrimonial</option>
+                        <option value="Matrimonial + Sofá">Matrimonial + Sofá</option>
+                        <option value="Familiar">Familiar</option>
+                        <option value="Duplex">Duplex</option>
                     </select>
                     <i class="fa fa-chevron-down"></i>
                 </div>
                 <div class="field select">
                     <select name="adults">
-                        <option value="1 Adult">1 Adult</option>
-                        <option value="2 Adults">2 Adults</option>
-                        <option value="3 Adults">3 Adults</option>
-                        <option value="4 Adults">4 Adults</option>
-                        <option value="5 Adults">5 Adults</option>
+                        <option value="1 Adulto">1 Adulto</option>
+                        <option value="2 Adultos">2 Adultos</option>
+                        <option value="3 Adultos">3 Adultos</option>
+                        <option value="4 Adultos">4 Adultos</option>
+                        <option value="5 Adultos">5 Adultos</option>
                     </select>
                     <i class="fa fa-chevron-down"></i>
                 </div>
                 <div class="field select">
-                    <select name="children">
-                        <option value="0 Children">0 Children</option>
-                        <option value="1 Child">1 Child</option>
-                        <option value="2 Children">2 Children</option>
-                        <option value="3 Children">3 Children</option>
-                        <option value="4 Children">4 Children</option>
+                    <select name="Niños">
+                        <option value="0 Niños">0 Niños</option>
+                        <option value="1 Niño">1 Niño</option>
+                        <option value="2 Niños">2 Niños</option>
+                        <option value="3 Niños">3 Niños</option>
+                        <option value="4 Niños">4 Niños</option>
                     </select>
                     <i class="fa fa-chevron-down"></i>
                 </div>
-                <button><span data-hover="Book a Room">Book a Room</span></button>
+                <button><span data-hover="Reservar Ahora">Reservar Ahora</span></button>
+
+                {!! csrf_field() !!} 
+                
             </form>
         </div>
     </div>

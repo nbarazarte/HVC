@@ -2,7 +2,6 @@
     <div id="nav">
         <div class="centre">
 
-
             @if (Route::current()->getName() == 'home')
 
                 <a href="{{ route('home')}}" class="logo">
@@ -24,12 +23,19 @@
             <nav>
                 <ul>
                 	<li class="mobile"><a href="contact.php" class="navbook">Book Online</a></li>
-                    <li><a href="{{ route('home')}}">Home</a>
+                    <li><a href="{{ route('home')}}">Inicio</a></li>
+                    <li><a href="{{ route('about')}}">Nosotros</a>
+                    <li><a href="{{ route('accommodation')}}">Habitaciones</a>
+
+                        <ul>
+                            <li><a href="{{ route('matrimonial') }}">Matrimonial</a></li>
+                            <li><a href="{{ route('matrimonialSofa') }}">Matrimonial + Sofá</a></li>
+                            <li><a href="{{ route('familiar') }}">Familiar</a></li>
+                            <li><a href="{{ route('duplex') }}">Duplex</a></li>
+                        </ul>
 
                     </li>
-                    <li><a href="{{ route('accommodation')}}">Accommodation</a>
-
-                    </li>
+                    <li><a href="{{ route('gallery')}}">Galería</a></li>
                     <li><a href="about.html">More Pages</a>
                     	<ul>
                         	<li><a href="about.html">About Hotel</a></li>
@@ -48,7 +54,7 @@
                             <li><a class="promopopup">Promo Popup</a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.php">Contact</a></li>
+                    <li><a href="{{ route('contact')}}">Contáctanos</a></li>
                 </ul>
                 <a id="pull"><i class="fa fa-bars"></i></a>
             </nav>

@@ -20,11 +20,11 @@
                 <!-- Subscribe / Social | END -->
                 <!-- Contact Details | START -->
                 <div class="contact">
-                    <p><strong class="phone">+61 8 3456 7890</strong><br />
-                    <a href="mailto:stay@basehotel.com">stay@basehotel.com</a><br /><br />
-                    <i class="fa fa-map-marker"></i> 101 Luxury Street<br />
-                    Perth, WA Australia 6000<br />
-                    <a href="https://www.google.com/maps/dir/Current+Location/-31.957482,115.856868" target="_blank"><strong>Get Directions</strong></a></p>
+                    <p><strong class="phone">+58 (295) 331.13.00</strong><br />
+                    <a href="mailto:ventasymercadeo@hippocampus.com.ve">ventasymercadeo@hippocampus.com.ve</a><br /><br />
+                    <i class="fa fa-map-marker"></i> Calle El Cristo, edifc. Complejo Hippocampus, sector La Caranta.<br />
+                    Isla de Margarita. Venezuela<br />
+                    </p>
                 </div>
                 <!-- Contact Details | END -->
                 <div class="dark"></div>
@@ -33,7 +33,20 @@
         <!-- Footer Links | START -->
         <div id="footerlinks">
             <div class="centre">
-                <span>Copyright &copy; <script>var d = new Date(); document.write(d.getFullYear());</script> <strong>Base Hotel</strong></span><a href="index.html">Home</a><a href="sitemap.html">Sitemap</a><span><a href="http://themeforest.net/item/base-hotel-responsive-booking-gallery-template/10517095?ref=Klayemore" target="_blank">Template By KM</a></span>
+                <span>
+                    Copyright &copy; 
+                    <script>
+                        var d = new Date(); document.write(d.getFullYear());
+                    </script> 
+                    <strong>Hippocampus Vacation Club</strong>
+                </span>
+                <a href="{{ route('home')}}">
+                    Inicio
+                </a>
+                <a href="sitemap.html">
+                    Sitemap
+                </a>
+
             </div>
         </div>
         <!-- Footer Links | END -->

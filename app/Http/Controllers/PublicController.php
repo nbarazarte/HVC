@@ -23,10 +23,20 @@ class PublicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function about()
+    {
+        return view('about');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function accommodation()
     {
         return view('accommodation');
-    }
+    }    
 
     /**
      * Show the application dashboard.
@@ -68,7 +78,6 @@ class PublicController extends Controller
         return view('duplex');
     }
 
-
     /**
      * Show the application dashboard.
      *
@@ -77,6 +86,16 @@ class PublicController extends Controller
     public function gallery()
     {
         return view('gallery');
-    }    
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function contact()
+    {
+        return view('contact');
+    }   
     
 }
