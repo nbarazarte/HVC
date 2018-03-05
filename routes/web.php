@@ -51,7 +51,7 @@ Route::get('/Habitación-Duplex', [
 	'as' =>'duplex'
 ]);
 
-Route::get('/Galería', [
+Route::get('/Gallery', [
 	'uses' => 'PublicController@gallery',
 	'as' =>'gallery'
 ]);
