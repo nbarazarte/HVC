@@ -36,12 +36,13 @@
 
                     </li>
                     <li><a href="{{ route('gallery')}}">Galería</a></li>
-                    <li><a href="about.html">More Pages</a>
+                    <li>
+                        <a href="about.html">More Pages</a>
                     	<ul>
                         	<li><a href="about.html">About Hotel</a></li>
                             <li><a href="restaurant.php">Restaurant</a></li>
                             <li><a href="specials.html">Special Offers</a></li>
-                            <li><a href="{{ route('gallery')}}">Photo Gallery</a></li>
+                            
                             <li><a href="location.html">Location</a></li>
                             <li><a href="blog.html">Our Blog <i class="fa fa-chevron-right"></i></a>
                             	<ul>

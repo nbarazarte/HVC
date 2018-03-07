@@ -3,8 +3,8 @@
         <div class="slider">
             <div class="item" style="background-image:url(base-hotel/preview/images/HotelHippocampus-5.jpg);">
                 <div class="details">
-                    <div class="title"><span>Absolute Waterfront Luxury</span></div>
-                    <div class="buttoncontainer"><a href="about.html" class="button"><span data-hover="Explore The Hotel">Explore The Hotel</span></a></div>
+                    <div class="title"><span>La mejor Experiencia en Margarita</span></div>
+                    <div class="buttoncontainer"><a href="{{ route('about')}}" class="button"><span data-hover="Visítanos">Visítanos</span></a></div>
                 </div>
             </div>
             <div class="item" style="background-image:url(base-hotel/preview/images/HotelHippocampus-4.jpg);">
@@ -15,8 +15,8 @@
             </div>
             <div class="item" style="background-image:url(base-hotel/preview/images/HotelHippocampus-2.jpg);">
                 <div class="details">
-                    <div class="title"><span>A Gourmet Dining Experience</span></div>
-                    <div class="buttoncontainer"><a href="restaurant.php" class="button"><span data-hover="Read The Menu">Read The Menu</span></a></div>
+                    <div class="title"><span>Una Experiencia Gastronómica</span></div>
+                    <div class="buttoncontainer"><a href="#" class="button"><span data-hover="Ver Menú">Ver Menú</span></a></div>
                 </div>
             </div>
         </div>

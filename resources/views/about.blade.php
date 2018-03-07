@@ -7,7 +7,7 @@
     	<div id="header">
         	<div class="h1">
                 <h1><span>Hippocampus Vacation Club</span>
-                <span class="tagline">Luxurious Facilities & Services</span></h1>
+                <span class="tagline">Innovando para ti</span></h1>
             </div>
         </div>
 
