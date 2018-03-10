@@ -78,35 +78,7 @@
 
                     </div>
                     <!-- List Items (Specials Slider) | START -->
-                    <div id="specials" class="list">
-                        <div class="slider">
-                        	<div class="item">
-                                <img alt="" src="{{ asset('base-hotel/preview/images/special-dine-380.jpg') }}" width="380" height="250" />
-                                <div class="details">
-                                    <a href="specials.html">
-                                        <div class="title">Family Escape<br />
-                                        <span>Activity Package</span></div>
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna.<br />
-                                        <strong>Stay from $249 per night</strong></p>
-                                        <div class="button"><span data-hover="View Special">View Special</span></div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <img alt="" src="{{ asset('base-hotel/preview/images/special-spa-380.jpg') }}" width="380" height="250" />
-                                <div class="details">
-                                    <a href="specials.html">
-                                        <div class="title">Rustic Charm<br />
-                                        <span>Restaurant Package</span></div>
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna.<br />
-                                        <strong>Stay from $249 per night</strong></p>
-                                        <div class="button"><span data-hover="View Special">View Special</span></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="nav"></div>
-                    </div>
+                    @include('mini-extras')
                     <!-- List Items (Specials Slider) | END -->
                 </div>
             </aside>
