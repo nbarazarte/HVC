@@ -116,8 +116,8 @@ a img { border:none; }
 #language li a { width:22px; height:20px; padding:10px 0 0 32px; font:bold 10px/10px 'Open Sans', sans-serif; color:#000; letter-spacing:1px; display:block; background:#EEE; border-top:1px solid #D5D5D5; }
 #language li:first-child a { background:#EEE !important; border:none; box-shadow:1px 1px 0 rgba(0,0,0,.12); cursor:default; }
 #language li a:before { content:""; width:14px; height:11px; position:absolute; left:10px; }
-#language li.en a:before { background:url(../images/flag-en.png); }
-#language li.cn a:before { background:url(../images/flag-cn.png); }
+#language li.es a:before { background:url(../images/es.png); }
+#language li.en a:before { background:url(../images/us.png); }
 #language li.fr a:before { background:url(../images/flag-fr.png); }
 #language li.de a:before { background:url(../images/flag-de.png); }
 #language li.it a:before { background:url(../images/flag-it.png); }
@@ -180,7 +180,13 @@ form button { padding:0; cursor:pointer; border:none; }
 .list { margin-bottom:70px; position:relative; }
 .list .item { position:relative; }
 .list .item a { width:100%; height:100%; padding:40px; color:#FFF; display:block; position:absolute; top:0; left:0; box-sizing:border-box; }
+
+/*
 .list .item .details { width:380px; height:100%; font:14px/25px 'Open Sans', sans-serif; text-align:center; letter-spacing:.4px; position:absolute; top:0; right:0; z-index:1; }
+*/
+.list .item .details { width:605px; height:100%; font:14px/25px 'Open Sans', sans-serif; text-align:center; letter-spacing:.4px; position:absolute; top:0; right:0; z-index:1; }
+
+
 .list .item .details * { position:relative; z-index:1; }
 .list .item .details .title { margin-bottom:15px; font:bold 25px/30px 'Open Sans', sans-serif; text-transform:none; letter-spacing:0; }
 .list .item .details .title span { margin-top:2px; font:bold 14px/22px 'Open Sans', sans-serif; letter-spacing:1px; text-transform:uppercase; display:block; }

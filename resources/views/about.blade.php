@@ -21,9 +21,8 @@
         	<!-- Slideshow -->
         	<div id="slideshow">
                 <div class="slider">
-                    <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/about-1-1200.jpg') }}" width="1200" height="600" /></div>
-                    <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/about-2-1200.jpg') }}" width="1200" height="600" /></div>
-                    <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/about-3-1200.jpg') }}" width="1200" height="600" /></div>
+                    <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/AVH.HotelHippocampus-56.jpg') }}" width="1200" height="600" /></div>
+                    <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/AVH.HotelHippocampus-21.jpg') }}" width="1200" height="600" /></div>
                 </div>
                 <div class="nav">
                     <a class="prev"><i class="fa fa-chevron-left"></i></a>
@@ -92,12 +91,12 @@
         <div id="instagram">
             <p>
                 @HippocampusVC 
-                <a href="#"> <i class="fa fa-twitter"></i> Twitter</a> 
-                <a href="#"> <i class="fa fa-instagram"></i> Instagram</a> 
+                <a href="https://twitter.com/HippocampusVC"> <i class="fa fa-twitter"></i> Twitter</a> 
+                <a href="https://www.instagram.com/hippocampusvc/"> <i class="fa fa-instagram"></i> Instagram</a> 
             </p>
             <p>
                 Hippocampus Vacation Club 
-                <a href="#"> <i class="fa fa-facebook"></i> Facebook</a> 
+                <a href="https://es-la.facebook.com/Hippocampus-Vacation-Club-210418352330415/"> <i class="fa fa-facebook"></i> Facebook</a> 
             </p>            
         </div>
         <!-- Instagram | END -->

@@ -71,7 +71,7 @@
 
             <!-- List Items (Rooms) | END -->
             <div id="content">
-                <h2><strong>HOTEL HIPPOCAMPUS VACATION CLUB</strong> 22 años en la Isla de Margarita</h2>
+                <h2><strong>HOTEL HIPPOCAMPUS VACATION CLUB</strong> 26 años en la Isla de Margarita</h2>
                 <p>
                     Toda una experiencia hotelera a su servicio, con un concepto diferente en alojamiento.
                     Cómodas habitaciones equipadas para toda su familia. Disfrute de nuestra terraza con la mejor vista de la bahía de Pampatar. Celebre con nosotros eventos especiales y corporativos.

@@ -20,39 +20,39 @@
         <div id="gallery">
     
 <!-- Feature --><figure class="item-w2 item-h2">
-    <a href="{{ asset('base-hotel/preview/images/gallery-4.jpg') }}">
+    <a href="{{ asset('base-hotel/preview/images/HH_Piscina_Torres_06.jpg') }}">
         <span>Lorem ipsum dolor sit amet</span>
-        <img alt="" data-original="{{ asset('base-hotel/preview/images/gallery-4.jpg') }}" width="900" height="600" src="{{ asset('base-hotel/system/images/blank.png') }}" />
+        <img alt="" data-original="{{ asset('base-hotel/preview/images/HH_Piscina_Torres_06.jpg') }}" width="900" height="600" src="{{ asset('base-hotel/system/images/blank.png') }}" />
     </a>
 </figure>
 <figure class="">
-    <a href="{{ asset('base-hotel/preview/images/gallery-5.jpg') }}">
+    <a href="{{ asset('base-hotel/preview/images/HH_Piscina_Toldos_07.jpg') }}">
         <span>Lorem ipsum dolor sit amet</span>
-        <img alt="" data-original="{{ asset('base-hotel/preview/images/gallery-5.jpg') }}" width="900" height="600" src="{{ asset('base-hotel/system/images/blank.png') }}" />
+        <img alt="" data-original="{{ asset('base-hotel/preview/images/HH_Piscina_Toldos_07.jpg') }}" width="900" height="600" src="{{ asset('base-hotel/system/images/blank.png') }}" />
     </a>
 </figure>
 <figure class="">
-    <a href="{{ asset('base-hotel/preview/images/gallery-18.jpg') }}">
+    <a href="{{ asset('base-hotel/preview/images/HH_Piscina_Villas_02.jpg') }}">
         <span>Lorem ipsum dolor sit amet</span>
-        <img alt="" data-original="{{ asset('base-hotel/preview/images/gallery-18.jpg') }}" width="900" height="600" src="{{ asset('base-hotel/system/images/blank.png') }}" />
+        <img alt="" data-original="{{ asset('base-hotel/preview/images/HH_Piscina_Villas_02.jpg') }}" width="900" height="600" src="{{ asset('base-hotel/system/images/blank.png') }}" />
     </a>
 </figure>
 <figure class="">
-    <a href="{{ asset('base-hotel/preview/images/gallery-1.jpg') }}">
+    <a href="{{ asset('base-hotel/preview/images/HH_Piscina_Vista_06.jpg') }}">
         <span>Lorem ipsum dolor sit amet</span>
-        <img alt="" data-original="{{ asset('base-hotel/preview/images/gallery-1.jpg') }}" width="900" height="600" src="{{ asset('base-hotel/system/images/blank.png') }}" />
+        <img alt="" data-original="{{ asset('base-hotel/preview/images/HH_Piscina_Vista_06.jpg') }}" width="900" height="600" src="{{ asset('base-hotel/system/images/blank.png') }}" />
     </a>
 </figure>
 <figure class="">
-    <a href="{{ asset('base-hotel/preview/images/gallery-3.jpg') }}">
+    <a href="{{ asset('base-hotel/preview/images/HH_PIscina_Vista_01.jpg') }}">
         <span>Lorem ipsum dolor sit amet</span>
-        <img alt="" data-original="{{ asset('base-hotel/preview/images/gallery-3.jpg') }}" width="900" height="600" src="{{ asset('base-hotel/system/images/blank.png') }}" />
+        <img alt="" data-original="{{ asset('base-hotel/preview/images/HH_PIscina_Vista_01.jpg') }}" width="900" height="600" src="{{ asset('base-hotel/system/images/blank.png') }}" />
     </a>
 </figure>
 <!-- Portrait --><figure class="item-h2">
-    <a href="{{ asset('base-hotel/preview/images/gallery-6.jpg') }}">
+    <a href="{{ asset('base-hotel/preview/images/HH_Spa_01.jpg') }}">
         <span>Lorem ipsum dolor sit amet</span>
-        <img alt="" data-original="{{ asset('base-hotel/preview/images/gallery-6.jpg') }}" width="600" height="900" src="{{ asset('base-hotel/system/images/blank.png') }}" />
+        <img alt="" data-original="{{ asset('base-hotel/preview/images/HH_Spa_01.jpg') }}" width="600" height="900" src="{{ asset('base-hotel/system/images/blank.png') }}" />
     </a>
 </figure>
 <!-- Portrait --><figure class="item-h2">
@@ -62,9 +62,9 @@
     </a>
 </figure>
 <!-- Feature --><figure class="item-w2 item-h2">
-    <a href="{{ asset('base-hotel/preview/images/gallery-9.jpg') }}">
+    <a href="{{ asset('base-hotel/preview/images/HH_Vista_03.jpg') }}">
         <span>Lorem ipsum dolor sit amet</span>
-        <img alt="" data-original="{{ asset('base-hotel/preview/images/gallery-9.jpg') }}" width="900" height="600" src="{{ asset('base-hotel/system/images/blank.png') }}" />
+        <img alt="" data-original="{{ asset('base-hotel/preview/images/HH_Vista_03.jpg') }}" width="900" height="600" src="{{ asset('base-hotel/system/images/blank.png') }}" />
     </a>
 </figure>
 <!-- Feature --><figure class="item-w2 item-h2">

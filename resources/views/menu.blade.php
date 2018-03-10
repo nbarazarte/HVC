@@ -22,7 +22,7 @@
 
             <nav>
                 <ul>
-                	<li class="mobile"><a href="contact.php" class="navbook">Book Online</a></li>
+                	<li class="mobile"><a href="contact.php" class="navbook">Reservar Ahora</a></li>
                     <li><a href="{{ route('home')}}">Inicio</a></li>
                     <li><a href="{{ route('about')}}">Nosotros</a>
                     <li><a href="{{ route('accommodation')}}">Habitaciones</a>
@@ -62,15 +62,13 @@
             <!-- Languages | START -->
             <div id="language">
             	<ul>
-                	<li class="en"><a>EN</a></li>
-                    <li class="cn"><a href="index2.html#">CN</a></li>
-                    <li class="fr"><a href="index2.html#">FR</a></li>
-                    <li class="de"><a href="index2.html#">DE</a></li>
-                    <li class="it"><a href="index2.html#">IT</a></li>
+                	<li class="es"><a>ES</a></li>
+                    <li class="en"><a href="#">EN</a></li>
+                    
                 </ul>
             </div>
             <!-- Languages | END -->
-            <a href="contact.php" class="book"><span data-hover="Book Online">Book Online</span> <i class="fa fa-check-circle"></i></a>
+            <a href="{{ route('contact')}}" class="book"><span data-hover="Reservar Ahora">Reservar Ahora</span> </a>
             <div class="shadow"></div>
         </div>
     </div>
