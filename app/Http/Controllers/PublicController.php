@@ -33,6 +33,16 @@ class PublicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function restaurant()
+    {
+        return view('restaurant');
+    }    
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function accommodation()
     {
         return view('accommodation');

@@ -36,6 +36,7 @@
 
                     </li>
                     <li><a href="{{ route('gallery')}}">Galería</a></li>
+                    <li><a href="{{ route('restaurant')}}">Restaurant</a></li>
                     <li>
                         <a href="about.html">More Pages</a>
                     	<ul>

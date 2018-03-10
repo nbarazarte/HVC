@@ -16,7 +16,7 @@
             <div class="item" style="background-image:url(base-hotel/preview/images/HotelHippocampus-2.jpg);">
                 <div class="details">
                     <div class="title"><span>Una Experiencia Gastronómica</span></div>
-                    <div class="buttoncontainer"><a href="#" class="button"><span data-hover="Ver Menú">Ver Menú</span></a></div>
+                    <div class="buttoncontainer"><a href="{{ route('restaurant')}}" class="button"><span data-hover="Ver Menú">Ver Menú</span></a></div>
                 </div>
             </div>
         </div>

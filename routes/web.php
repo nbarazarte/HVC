@@ -21,12 +21,15 @@ Route::get('/Nosotros', [
 	'as' =>'about'
 ]);
 
+Route::get('/Restaurant', [
+	'uses' => 'PublicController@restaurant',
+	'as' =>'restaurant'
+]);
+
 Route::get('/Habitaciones', [
 	'uses' => 'PublicController@accommodation',
 	'as' =>'accommodation'
 ]);
-
-
 
 Route::get('/Habitación-Matrimonial', [
 	'uses' => 'PublicController@matrimonial',

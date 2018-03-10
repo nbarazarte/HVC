@@ -13,12 +13,6 @@
     {!! Html::style('base-hotel/preview/css/styler.css') !!}
     <link rel="icon" href="{{ asset('base-hotel/system/images/favicon.png') }}" type="image/x-icon"/>
     <link rel="shortcut icon" href="{{ asset('base-hotel/system/images/favicon.png') }}" />
-
-
-
-
-
-
 </head>
 
     @if (Route::current()->getName() == 'home')
