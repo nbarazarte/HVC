@@ -35,9 +35,14 @@
                 	<div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/biothai-770.jpg') }}" width="770" height="400" /></div>
                 </div>
                 <div class="details">
-                	<h2>BIO Thai<br />
-                    <span>Activity Package</span></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra.</p>
+                	<h2>BioThai<br />
+                    <span>Center C.A.</span></h2>
+                    <p>
+                        
+                        En BioThai Center somos un oasis ubicado en el corazón de Pampatar.<br>
+                        Un espacio de bienestar y cuidado personal para hombres y mujeres, diseñado para mejorar tanto la salud física como emocional del cuerpo y olvidarte del estrés de la ciudad.
+
+                    </p>
 
                 </div>
             </div>

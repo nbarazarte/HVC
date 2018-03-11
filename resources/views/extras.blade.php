@@ -32,10 +32,12 @@
                                 <img alt="" src="{{ asset('base-hotel/preview/images/joe.jpg') }}" width="*" height="400" />
                                 <div class="details">
                                     <a href="{{ route('especial')}}">
-                                        <div class="title">JOE'S<br />
-                                        <span>Restaurant</span></div>
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna.<br />
-                                        <strong>Stay from $249 per night</strong></p>
+                                        <div class="title">JOE'S Gril<br />
+                                        <span>Restaurant C.A.</span></div>
+                                        <p>
+                                            Un Lugar lleno de magia y fusiones de sabores.<br>
+                                            !Visitanos! Aquí todo es !Siempre Delicioso!
+                                        </p>
                                         <div class="button"><span data-hover="Ver más">Ver más</span></div>
                                     </a>
                                 </div>
@@ -44,11 +46,14 @@
                                 <img alt="" src="{{ asset('base-hotel/preview/images/bio.jpg') }}" width="1200" height="400" />
                                 <div class="details">
                                     <a href="{{ route('especial')}}">
-                                        <div class="title">BIO Thai<br />
+                                        <div class="title">BioThai<br />
                                         <span>Center C.A.</span></div>
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna.<br />
-                                        <strong>Stay from $249 per night</strong></p>
-                                        <div class="button"><span data-hover="Ver más">Ver más</span></div>
+                                        <p>
+                                            
+                                            En BioThai Center somos un oasis ubicado en el corazón de Pampatar.<br>
+                                            Un espacio de bienestar y cuidado personal para hombres y mujeres, diseñado para mejorar tanto la salud física como emocional del cuerpo y olvidarte del estrés de la ciudad.
+
+                                        </p>
                                     </a>
                                 </div>
                             </div>
