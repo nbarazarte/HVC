@@ -17,7 +17,7 @@
     	<div class="centre">
             <!-- Contact Form | START -->
         	<div id="contact">
-            	<img src="http://demo.klayemorrison.com/base-hotel/preview/images/room-deluxe-1200.jpg" width="1200" height="400" alt="" />
+            	<img src="{{ asset('base-hotel/preview/images/contacto.jpg') }}" width="1200" height="400" alt="" />
                                 <form name="contact" action="contact.php.html" method="post">
                 	                    <div class="col">
                         <div class="field mandatory"><input name="contact-name" type="text" placeholder="Your Name" id="contact-name" value="" /></div>

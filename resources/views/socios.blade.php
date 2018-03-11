@@ -1,0 +1,91 @@
+@extends('app')
+
+@section('content')
+
+	<!-- Header | Start -->
+	<header>
+    	<div id="header">
+        	<div class="h1">
+                <h1><span>Socios</span>
+                <span class="tagline">Disfrute de las vacaciones de su vida</span></h1>
+            </div>
+        </div>
+
+        @include('reservacion-rci')
+
+    </header>
+    <!-- Header | END -->
+    <!-- Content | START -->
+    <main>
+    	<div class="centre">
+        	<!-- Slideshow -->
+        	<div id="slideshow">
+                <div class="slider">
+                    <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/AVH.HotelHippocampus-56.jpg') }}" width="1200" height="600" /></div>
+                   
+                </div>
+                <div class="nav">
+                    <a class="prev"><i class="fa fa-chevron-left"></i></a>
+                    <a class="next"><i class="fa fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div id="content">
+                <h2><strong>RCI</strong></h2>
+                <p>
+                    RCI es una de las  empresas de Intercambios Vacacionales más grandes a nivel mundial.  RCI funciona como un Banco de espacios donde usted puede Depositar su semana vacacional, si no desea usarla en su Resort, siempre y cuando esté vigente en su año y al día con el Condominio, e Intercambiarla por otra a través de ellos con las mismas características de la suya. No se depositará semanas de años anteriores y una vez depositada su semana no se podrá reversar.
+                </p>
+
+                <p>
+                    Su afiliación a RCI a través de su Resort Hippocampus Vacation Club será hasta dos años gratuitos por la compra de su contrato. Luego de pagar todos sus gastos administrativos se le enviara por correo electrónico en un lapso no mayor de 45 días hábiles su código de afiliación para disfrutar de los beneficios de ser miembro de tan prestigiosa cadena de intercambio.
+                </p>
+
+                <p>
+                    De esta manera usted podrá hacer Intercambios Vacacionales con otros  Hoteles y Resort afiliados a RCI dentro y fuera de Venezuela, en la misma temporada según la disponibilidad y capacidad que usted tiene en Hippocampus, mediante el pago previo a RCI de una Cuota de Intercambio. La tasa de intercambio se pagara en bolívares a RCI si el intercambio es nacional y en caso de hacer intercambio internacional la tasa será pagada en dólares.
+                </p>
+
+                <p>                    
+                    El Certificado de Semana Bono entregado al momento de la compra tiene validez de un año a partir de la afiliación a RCI y tiene restricciones de temporada y destinos, los cuales están descritos al reverso del mismo. La semana bono no genera pago de cuota de condominio ya que es una semana adicional, sin embargo para realizar el intercambio debe cancelar la cuota indicada por RCI para su uso.
+                </p>
+
+                <p>
+                    La solicitud de depósito de semana la podrá solicitar desde los 01 de octubre de cada año cuando realice el pago de su condominio y estar al día con todas las obligaciones del contrato. Recuerde  que  al  realizar  su  solicitud  con  anticipación  son  mayores  las posibilidades  de contar con las opciones vacacionales más solicitadas dependiendo su destino a visitar.
+                </p>
+
+                <p>
+                    Cuando usted decida hacer el depósito de su semana deberá solicitarlo  a través del correo: <strong>atencionalsocio@hippocampus.com.ve.</strong><br> Para mayor información puede contactarnos a través de nuestro número Master <strong>+58 (295) 331.13.50.</strong>
+    
+                    <br> Para mayor información sobre la cadena de Intercambio RCI (Resort Condominios International, se pueden comunicar únicamente por teléfono fijo CANTV a través del siguiente teléfono <strong>0800-1003853.</strong>
+                </p>
+
+            
+            </div>
+        </div>
+
+        <!-- Feature List | START -->
+        <section id="featurelist">
+            <div class="centre">
+                <h2>Message from the Manager</h2>
+                <div class="featurelist">
+                    <div class="feature">
+                        <img alt="" src="{{ asset('base-hotel/system/images/logohvc.png') }}" width="120" height="120" class="thumb" />
+                        <div class="details">
+                            <h3>John Smith</h3>
+                            <p>Base Hotel General Manager<br /><br />
+                            <a href="about.html#"><i class="fa fa-external-link"></i> Contact John</a><br />
+                            <a href="about.html#"><i class="fa fa-external-link"></i> Linked In</a></p>
+                        </div>
+                        <div class="copy">
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Sed egestas, ante et vulputate volutpat.</p>
+                            <p><img alt="" src="{{ asset('base-hotel/preview/images/signature.png') }}" /></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Feature List | END -->        
+
+    </main>
+    <!-- Content | END -->
+
+@endsection

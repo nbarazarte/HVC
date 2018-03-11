@@ -16,7 +16,7 @@ Route::get('/', [
 	'as' =>'home'
 ]);
 
-Route::get('/Nosotros', [
+Route::get('/HVC', [
 	'uses' => 'PublicController@about',
 	'as' =>'about'
 ]);
@@ -24,6 +24,16 @@ Route::get('/Nosotros', [
 Route::get('/Restaurant', [
 	'uses' => 'PublicController@restaurant',
 	'as' =>'restaurant'
+]);
+
+Route::get('/Socios', [
+	'uses' => 'PublicController@socios',
+	'as' =>'socios'
+]);
+
+Route::get('/Eventos', [
+	'uses' => 'PublicController@eventos',
+	'as' =>'eventos'
 ]);
 
 Route::get('/Habitaciones', [
@@ -43,9 +53,9 @@ Route::get('/Habitación-Matrimonial-Sofá', [
 ]);
 
 
-Route::get('/Habitación-Familiar', [
-	'uses' => 'PublicController@familiar',
-	'as' =>'familiar'
+Route::get('/Habitación-Doble', [
+	'uses' => 'PublicController@doble',
+	'as' =>'doble'
 ]);
 
 
@@ -54,7 +64,7 @@ Route::get('/Habitación-Duplex', [
 	'as' =>'duplex'
 ]);
 
-Route::get('/Gallery', [
+Route::get('/Galería', [
 	'uses' => 'PublicController@gallery',
 	'as' =>'gallery'
 ]);
@@ -63,6 +73,13 @@ Route::get('/Contáctanos', [
 	'uses' => 'PublicController@contact',
 	'as' =>'contact'
 ]);
+
+
+Route::get('/Especial', [
+	'uses' => 'PublicController@especial',
+	'as' =>'especial'
+]);
+
 
 Auth::routes();
 

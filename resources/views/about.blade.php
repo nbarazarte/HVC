@@ -21,8 +21,8 @@
         	<!-- Slideshow -->
         	<div id="slideshow">
                 <div class="slider">
-                    <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/AVH.HotelHippocampus-56.jpg') }}" width="1200" height="600" /></div>
-                    <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/AVH.HotelHippocampus-21.jpg') }}" width="1200" height="600" /></div>
+                    <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/HH_Piscina_Torres_06_nosotros.jpg') }}" width="1200" height="600" /></div>
+                   
                 </div>
                 <div class="nav">
                     <a class="prev"><i class="fa fa-chevron-left"></i></a>
@@ -32,7 +32,7 @@
             <div id="content">
                 <h2><strong>Atención de Servicio</strong> y Calidad</h2>
                 <p>
-                    Hippocampus Vacation Club, C.A. desde 1992 se convirtió en una organización de servicios turísticos (Hotelero & Tiempo Compartido), con una excelente ubicación en la Isla de Margarita y capacidad de dar respuestas de calidad a sus clientes. Con más de 22 años de experiencia y grandes aprendizajes en el área, nuestro norte es mantener a nuestra organización dentro de la preferencia del turista nacional e internacional, enfocando y orientando nuestros esfuerzos a la plena satisfacción de las expectativas que cada uno de nuestros usuarios al momento de planificar sus vacaciones y elegir como destino la Isla de Margarita.
+                    Hippocampus Vacation Club, C.A. desde 1992 se convirtió en una organización de servicios turísticos (Hotelero & Tiempo Compartido), con una excelente ubicación en la Isla de Margarita y capacidad de dar respuestas de calidad a sus clientes. Con más de <?=$ano = date('Y') - 1992 ?> años de experiencia y grandes aprendizajes en el área, nuestro norte es mantener a nuestra organización dentro de la preferencia del turista nacional e internacional, enfocando y orientando nuestros esfuerzos a la plena satisfacción de las expectativas que cada uno de nuestros usuarios al momento de planificar sus vacaciones y elegir como destino la Isla de Margarita.
                 </p>
 
                 <p>
@@ -100,29 +100,22 @@
             </p>            
         </div>
         <!-- Instagram | END -->
+
         <!-- Feature List | START -->
         <section id="featurelist">
         	<div class="centre">
-            	<h2>Message from the Manager</h2>
-                <div class="featurelist">
-                    <div class="feature">
-                        <img alt="" src="{{ asset('base-hotel/system/images/logohvc.png') }}" width="120" height="120" class="thumb" />
-                        <div class="details">
-                            <h3>John Smith</h3>
-                            <p>Base Hotel General Manager<br /><br />
-                            <a href="about.html#"><i class="fa fa-external-link"></i> Contact John</a><br />
-                            <a href="about.html#"><i class="fa fa-external-link"></i> Linked In</a></p>
-                        </div>
-                        <div class="copy">
-                        	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Sed egestas, ante et vulputate volutpat.</p>
-                            <p><img alt="" src="{{ asset('base-hotel/preview/images/signature.png') }}" /></p>
-                        </div>
-                    </div>
+            	<h2>Hippocampus Vacation Club</h2>
+                
+                <!-- Video | START -->
+                <div id="video">
+                    <div class="embed-container"><iframe src="http://player.vimeo.com/video/258211037?title=0&portrait=0" width="1200" height="675" allowfullscreen></iframe></div>
                 </div>
+                <!-- Video | END -->
+
             </div>
         </section>
         <!-- Feature List | END -->
+
     </main>
     <!-- Content | END -->
 

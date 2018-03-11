@@ -19,7 +19,7 @@
 
         <body class="home2 fullwidth">
 
-    @elseif ((Route::current()->getName() == 'accommodation') || (Route::current()->getName() == 'about') || (Route::current()->getName() == 'contact'))
+    @elseif ((Route::current()->getName() == 'accommodation') || (Route::current()->getName() == 'about') || (Route::current()->getName() == 'socios') ||(Route::current()->getName() == 'contact') || (Route::current()->getName() == 'restaurant') )
 
         <body class="fullwidth">
 

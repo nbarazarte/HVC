@@ -43,6 +43,26 @@ class PublicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function socios()
+    {
+        return view('socios');
+    }  
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function eventos()
+    {
+        return view('eventos');
+    }  
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function accommodation()
     {
         return view('accommodation');
@@ -73,9 +93,9 @@ class PublicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function familiar()
+    public function doble()
     {
-        return view('familiar');
+        return view('doble');
     }
 
     /**
@@ -106,6 +126,16 @@ class PublicController extends Controller
     public function contact()
     {
         return view('contact');
-    }   
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function especial()
+    {
+        return view('especial');
+    }      
     
 }

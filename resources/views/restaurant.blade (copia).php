@@ -31,24 +31,17 @@
                 </div>
             </div>
             <!-- Slideshow | END -->
-
-
-
-        	<div id="">
+        	<div id="left">
                 <div id="content">
-
                     <h2><strong>JOE'S Gril</strong> Restaurant</h2>
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo.</p>
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est.</p>
-
-
-
                     <!-- Menu | START -->
                     <section id="menu">
-                    	<h3><i class="fa fa-cutlery"></i> Menú de Comidas</h3>
+                    	<h3><i class="fa fa-cutlery"></i> Dining Menu</h3>
                     	<div class="menu">
                             <h4>
-                            	Desayuno <span>7.30am &ndash; 12.00pm</span>
+                            	Breakfast <span>7.30am &ndash; 12.00pm</span>
                             	<img alt="" src="{{ asset('base-hotel/preview/images/dining-thumb-breakfast.jpg" width="120" height="120" />
                             </h4>
                             <ul>
@@ -85,7 +78,7 @@
                         </div>
                         <div class="menu">
                             <h4>
-                            	Almuerzo <span>12.00pm &ndash; 3.30pm</span>
+                            	Lunch <span>12.00pm &ndash; 3.30pm</span>
                                 <img alt="" src="{{ asset('base-hotel/preview/images/dining-thumb-lunch.jpg" width="120" height="120" />
                             </h4>
                             <ul>
@@ -121,7 +114,7 @@
                         </div>
                         <div class="menu">
                             <h4>
-                            	Cena <span>5.00pm &ndash; 10.00pm</span>
+                            	Dinner <span>5.00pm &ndash; 10.00pm</span>
                                 <img alt="" src="{{ asset('base-hotel/preview/images/dining-thumb-dinner.jpg" width="120" height="120" />
                             </h4>
                             <ul>
@@ -163,10 +156,10 @@
                                 </li>
                             </ul>
                         </div>
-                        <h3><i class="fa fa-glass"></i> Menú de Bebidas</h3>
+                        <h3><i class="fa fa-glass"></i> Drinks Menu</h3>
                     	<div class="menu">
                             <h4>
-                            	Alcohólicas
+                            	Non-Alcoholic
                                 <img alt="" src="{{ asset('base-hotel/preview/images/dining-thumb-drinks.jpg" width="120" height="120" />
                             </h4>
                             <ul>
@@ -194,7 +187,7 @@
                         </div>
                         <div class="menu">
                             <h4>
-                            	Cafetería <span></span>
+                            	Coffee <span>By Experienced Baristas</span>
                                 <img alt="" src="{{ asset('base-hotel/preview/images/dining-thumb-coffee.jpg" width="120" height="120" />
                             </h4>
                             <ul>
@@ -224,13 +217,79 @@
                                 </li>
                             </ul>
                         </div>
-
+                        <div class="menu">
+                            <h4>
+                            	Wine <span>From Local Vineyards</span>
+                                <img alt="" src="{{ asset('base-hotel/preview/images/dining-thumb-wine.jpg" width="120" height="120" />
+                            </h4>
+                            <ul>
+                                <li>
+                                    <h5>Lorem ipsum dolor</h5>
+                                    <p>2012 - Lorem ipsum dolor sit amet, consectetuer.</p>
+                                    <div class="price">
+                                    	<div><span>Glass</span> $10</div>
+                                        <div><span>Bottle</span> $59</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h5>Cras ornare tristique</h5>
+                                    <p>2010 - Lorem ipsum dolor sit amet.</p>
+                                    <div class="price">
+                                    	<div><span>Glass</span> $12</div>
+                                        <div><span>Bottle</span> $65</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h5>Vivamus vestibulum</h5>
+                                    <p>2008 - Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                                    <div class="price">
+                                    	<div><span>Glass</span> $18</div>
+                                        <div><span>Bottle</span> $96</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h5>Fusce pellentesque</h5>
+                                    <p>2007 - Lorem ipsum dolor sit amet, consectetuer.</p>
+                                    <div class="price">
+                                    	<div><span>Glass</span> $22</div>
+                                        <div><span>Bottle</span> $115</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </section>
                     <!-- Menu | END -->
-
                 </div>
             </div>
 
+            <!-- Sidebar | START -->
+            <aside class="layout2">
+            	<div id="scroll">
+                	<!-- Reservations Form | START -->
+                    <div id="block" class="form">
+                        <div class="blocktitle"><span>Reservations</span></div>
+                                                <form id="reservations" action="restaurant.php.html#menu" method="post">
+                        	<p><strong>+61 8 3456 7890</strong><br />
+                            <a href="mailto:dine@basehotel.com">dine@basehotel.com</a></p>
+                        	<div class="fieldgroup">
+                                <div class="field calendar"><input name="booking-date" type="text" placeholder="Booking Date" id="bookingdate" readonly /><i class="fa fa-calendar-o"></i></div>
+                                <div class="field"><input name="booking-people" type="text" placeholder="No. of People" /></div>
+                                <div class="field"><input name="booking-name" type="text" placeholder="Your Name" /></div>
+                                <div class="field"><input name="booking-email" type="text" placeholder="Email Address" /></div>
+                                <div class="field"><input name="booking-phone" type="text" placeholder="Phone Number" /></div>
+                            </div>
+                            <button name="send" value="sendform"><span data-hover="Book a Table">Book a Table</span></button>
+                        </form>
+                    </div>
+                    <!-- Reservations Form | END -->
+                    <!-- List Items (Specials Slider) | START -->
+                    @include('mini-extras')
+                    <!-- List Items (Specials Slider) | END -->
+                </div>
+            </aside>
+            <!-- Sidebar | END -->
+
+            
         </div>
     </main>
     <!-- Content | END -->

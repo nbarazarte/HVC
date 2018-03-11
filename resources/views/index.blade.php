@@ -14,8 +14,6 @@
                 Disfrutaras de Alojamiento en confortables habitaciones con Desayuno Incluido, Wi-Fi, Piscinas Panorámicas, Jacuzzi, Servicio de Toallas, Entretenimiento diurno, Agencia de Viajes, Acceso directo al Restauran Pad Thai y Estacionamiento Techado. Ademas de la cercanía a las playas más reconocidas de la zona gastronómica y la vida nocturna de la Isla de Margarita.
             </p>
 
-
-
             <!-- USP Boxes | START -->
             <section class="usp">
                 <div class="box">
@@ -36,11 +34,18 @@
             </section>
             <!-- USP Boxes | END -->
         </div>
+
+
+
+
+
+
+
+
+        
     </main>
     <!-- Content | END -->
 
     @include('gallerySlider')
-
-    
 
 @endsection

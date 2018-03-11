@@ -22,7 +22,7 @@
 
             <section id="rooms" class="list">
                 <div class="item">
-                    <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/room-standard-1200.jpg')}}" width="1200" height="400" /></div>
+                    <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/matrimonial.jpg')}}" width="1200" height="400" /></div>
                     <div class="details">
                         <a href="{{ route('matrimonial')}}">
                             <h3 class="title"> Matrimonial<br />
@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/room-ocean-1200.jpg')}}" width="1200" height="400" /></div>
+                    <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/matrimonialSofa.jpg')}}" width="1200" height="400" /></div>
                     <div class="details">
                         <a href="{{ route('matrimonialSofa')}}">
                             <h3 class="title"> Matrimonial + Sofá<br />
@@ -44,10 +44,10 @@
                     </div>
                 </div>
                 <div class="item">
-                    <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/room-deluxe-1200.jpg')}}" width="1200" height="400" /></div>
+                    <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/doble.jpg')}}" width="1200" height="400" /></div>
                     <div class="details">
-                        <a href="{{ route('familiar')}}">
-                            <h3 class="title"> Familiar<br />
+                        <a href="{{ route('doble')}}">
+                            <h3 class="title"> Doble<br />
                             <span>Stay from $225 per night</span></h3>
                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh.</p>
                             <div class="button"><span data-hover="Ver más">Ver más</span></div>
@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/room-junior-1200.jpg')}}" width="1200" height="400" /></div>
+                    <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/duplex.jpg')}}" width="1200" height="400" /></div>
                     <div class="details">
                         <a href="{{ route('duplex')}}">
                             <h3 class="title"> Duplex<br />
@@ -71,7 +71,7 @@
 
             <!-- List Items (Rooms) | END -->
             <div id="content">
-                <h2><strong>HOTEL HIPPOCAMPUS VACATION CLUB</strong> 26 años en la Isla de Margarita</h2>
+                <h2><strong>HOTEL HIPPOCAMPUS VACATION CLUB</strong> <?=date('Y') - 1992?> años en la Isla de Margarita</h2>
                 <p>
                     Toda una experiencia hotelera a su servicio, con un concepto diferente en alojamiento.
                     Cómodas habitaciones equipadas para toda su familia. Disfrute de nuestra terraza con la mejor vista de la bahía de Pampatar. Celebre con nosotros eventos especiales y corporativos.
@@ -97,7 +97,7 @@
                         <td>$249</td>
                     </tr>
                     <tr>
-                        <td><strong>Familiar</strong></td>
+                        <td><strong>Doble</strong></td>
                         <td>$225</td>
                         <td>$245</td>
                         <td>$275</td>
@@ -112,11 +112,6 @@
                 </table>
                 <a href="contact.php" class="button"><span data-hover="Reservar Ahora">Reservar Ahora</span></a>
             </div>
-            <!-- Video | START -->
-            <div id="video">
-                <div class="embed-container"><iframe src="http://player.vimeo.com/video/258211037?title=0&portrait=0" width="1200" height="675" allowfullscreen></iframe></div>
-            </div>
-            <!-- Video | END -->
 
         </div>
     </main>

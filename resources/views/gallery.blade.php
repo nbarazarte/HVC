@@ -6,7 +6,7 @@
 	<header>
     	<div id="header">
         	<div class="h1">
-                <h1><span>Nuestra Galería</span>
+                <h1><span>Galería</span>
                 <span class="tagline">Vive de Cerca la Experiencia</span></h1>
             </div>
         </div>

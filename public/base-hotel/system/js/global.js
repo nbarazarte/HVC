@@ -274,7 +274,7 @@ $(document).ready(function () {
 		galleryslider();
 	}
 	else {
-		var gallery = 'Gallery #gallery figure:lt(7) img';
+		var gallery = 'Galería #gallery figure:lt(7) img';
 		$('#galleryslider .slider').load(gallery, function() {
 			
 			galleryslider();
