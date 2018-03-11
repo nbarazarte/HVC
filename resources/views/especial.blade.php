@@ -53,7 +53,10 @@
                 <div class="details">
                 	<h2>JOE'S Gril<br />
                     <span>Restaurant C.A.</span></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra.</p>
+                    <p>
+                        Un Lugar lleno de magia y fusiones de sabores.<br>
+                        !Visitanos! Aquí todo es !Siempre Delicioso!
+                    </p>
                     
                     <a href="{{ route('restaurant') }}" class="button"><span data-hover="Ver más">Ver más</span></a>
                     
