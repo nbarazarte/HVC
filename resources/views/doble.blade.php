@@ -5,7 +5,7 @@
 	<header>
     	<div id="header">
         	<div class="h1">
-                <h1><span>Habitación Familiar</span>
+                <h1><span>Habitación Doble</span>
                 <span class="tagline">Luxurious by Reputation</span></h1>
             </div>
         </div>
