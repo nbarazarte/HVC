@@ -418,14 +418,20 @@ $(document).ready(function () {
         returnFocus: false,
 		rel: 'group',
         fixed: true,
+
         title: function() {
             var domain = document.URL;
 			var url = $(this).find('img')[0].src;
             var title = $(this).find('span').html();
 			var pinclone = $(this).find('span').clone();
 			var pintitle = pinclone.text();
-            return title+'<a href="http://www.pinterest.com/pin/create/button/?url='+domain+'&media='+url+'&description='+pintitle+'" target="_blank" data-pin-do="buttonPin" data-pin-config="beside" class="pinit"></a>';
+
+
+            //return title+'<a href="http://www.pinterest.com/pin/create/button/?url='+domain+'&media='+url+'&description='+pintitle+'" target="_blank" data-pin-do="buttonPin" data-pin-config="beside" class="pinit"></a>';
+            return title;
         }
+
+        
     });
 	
 	if ($(window).width() > 460) {
