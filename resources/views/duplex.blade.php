@@ -21,9 +21,10 @@
             	<!-- Slideshow | START -->
             	<div id="slideshow">
                 	<div class="slider">
-                    	<div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/room-1-770.jpg') }}" width="770" height="500" /></div>
-                        <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/room-2-770.jpg') }}" width="770" height="500" /></div>
-                        <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/room-3-770.jpg') }}" width="770" height="500" /></div>
+                    	<div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/habitacionDuplex1.jpg') }}" width="770" height="500" /></div>
+                        <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/habitacionDuplex2.jpg') }}" width="770" height="500" /></div>
+                        <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/habitacionDuplex3.jpg') }}" width="770" height="500" /></div>
+                        <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/habitacionDuplex4.jpg') }}" width="770" height="500" /></div>
                     </div>
                     <div class="nav">
                         <a class="prev"><i class="fa fa-chevron-left"></i></a>

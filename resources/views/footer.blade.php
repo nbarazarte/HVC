@@ -8,7 +8,7 @@
                     <div class="subscribe">
                         <form>
                             <input name="email" type="text" placeholder="Dirección de Correo" />
-                            <button><span data-hover="Enviar">Enviar</span></button>
+                            <button><span data-hover="Suscribir">Suscribir</span></button>
                         </form>
                     </div>
                     <div class="social">
@@ -19,16 +19,14 @@
                 </div>
                 <!-- Subscribe / Social | END -->
                 <!-- Contact Details | START -->
-                <div class="contact">
-                    <p><strong class="phone" style="font-size: 14px"><i class="fa fa-phone-square"></i> Recepción: +58 (295) 331.13.00</strong><br />
-                    <p><strong class="phone" style="font-size: 14px"><i class="fa fa-phone-square"></i> Reservaciones: +58 (295) 331.13.23</strong><br />
-                    <p><strong class="phone" style="font-size: 14px"><i class="fa fa-phone-square"></i> Socios: +58 (295) 331.13.50</strong><br />
-                    <a href="mailto:reservaciones1@hippocampus.com.ve">reservaciones1@hippocampus.com.ve</a><br /><br />
-                    <i class="fa fa-map-marker"></i> Calle El Cristo, edifc. Complejo Hippocampus, sector La Caranta.<br />
-                    Isla de Margarita. Venezuela<br />
-                    </p>
+            	<div class="contact">
+                	<p>
+                		<strong class="phone"> <i class="fa fa-phone-square"></i> +58 (295) 331.13.00</strong><br />              	
+                    	<i class="fa fa-map-marker"></i> Calle El Cristo, edifc. Complejo Hippocampus, sector La Caranta.<br />Isla de Margarita. Venezuela
+                	</p>
                 </div>
                 <!-- Contact Details | END -->
+
                 <div class="dark"></div>
             </div>
         </div>

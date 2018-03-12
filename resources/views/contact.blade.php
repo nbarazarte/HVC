@@ -58,9 +58,11 @@
             </div>
             <!-- Contact Form | END -->
 
-
-
-
+            <h2 style="margin:0;"><strong>+58 (295) 331.13.23</strong></h2>
+            <p style="margin:0;">
+                <a href="mailto:reservaciones1@hippocampus.com.ve">reservaciones1@hippocampus.com.ve</a><br />
+                <i class="fa fa-map-marker"></i>  Calle El Cristo, edifc. Complejo Hippocampus, sector La Caranta.<br />Isla de Margarita. Venezuela            
+            </p>        
 
             <p>
 

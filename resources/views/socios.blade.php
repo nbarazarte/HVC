@@ -56,8 +56,13 @@
     
                     <br> Para mayor información sobre la cadena de Intercambio RCI (Resort Condominios International, se pueden comunicar únicamente por teléfono fijo CANTV a través del siguiente teléfono <strong>0800-1003853.</strong>
                 </p>
-
             
+                <h2 style="margin:0;"><strong>+58 (295) 331.13.50</strong></h2>
+                <p style="margin:0;">
+                    <a href="mailto:atencionalsocio@hippocampus.com.ve">atencionalsocio@hippocampus.com.ve</a><br />
+                    <i class="fa fa-map-marker"></i>  Calle El Cristo, edifc. Complejo Hippocampus, sector La Caranta.<br />Isla de Margarita. Venezuela            
+                </p>  
+
             </div>
         </div>
 
