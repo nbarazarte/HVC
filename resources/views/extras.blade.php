@@ -22,8 +22,10 @@
                                     <a href="{{ route('especial')}}">
                                         <div class="title">Piel Knela<br />
                                         <span>Collection C.A.</span></div>
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna.<br />
-                                        <strong>Stay from $249 per night</strong></p>
+                                            <p>
+                                                ¿Llegaste a Hippocampus Vacation Club y no tienes traje de baño? <br>
+                                                Despreocúpate, Piel Knela te proporcionará lo que necesites.
+                                            </p>
                                         <div class="button"><span data-hover="Ver más">Ver más</span></div>
                                     </a>
                                 </div>
@@ -36,7 +38,7 @@
                                         <span>Restaurant C.A.</span></div>
                                         <p>
                                             Un Lugar lleno de magia y fusiones de sabores.<br>
-                                            !Visitanos! Aquí todo es !Siempre Delicioso!
+                                            ¡Visitanos! Aquí todo es ¡Siempre Delicioso!
                                         </p>
                                         <div class="button"><span data-hover="Ver más">Ver más</span></div>
                                     </a>
@@ -49,11 +51,10 @@
                                         <div class="title">BioThai<br />
                                         <span>Center C.A.</span></div>
                                         <p>
-                                            
-                                            En BioThai Center somos un oasis ubicado en el corazón de Pampatar.<br>
-                                            Un espacio de bienestar y cuidado personal para hombres y mujeres, diseñado para mejorar tanto la salud física como emocional del cuerpo y olvidarte del estrés de la ciudad.
+                                            En BioThai Center somos un oasis ubicado en el corazón de Pampatar, Un espacio de bienestar y cuidado personal para hombres y mujeres.
 
                                         </p>
+                                        <div class="button"><span data-hover="Ver más">Ver más</span></div>
                                     </a>
                                 </div>
                             </div>

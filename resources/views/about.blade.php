@@ -22,6 +22,9 @@
         	<div id="slideshow">
                 <div class="slider">
                     <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/HH_Piscina_Torres_06_nosotros.jpg') }}" width="1200" height="600" /></div>
+                    <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/AVH.HotelHippocampus-49.jpg') }}" width="1200" height="600" /></div>
+                    <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/AVH.HotelHippocampus-50.jpg') }}" width="1200" height="600" /></div>
+                    <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/AVH.HotelHippocampus-21.jpg') }}" width="1200" height="600" /></div>
                    
                 </div>
                 <div class="nav">
