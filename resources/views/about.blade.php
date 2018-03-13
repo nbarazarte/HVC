@@ -94,12 +94,12 @@
         <div id="instagram">
             <p>
                 @HippocampusVC 
-                <a href="https://twitter.com/HippocampusVC"> <i class="fa fa-twitter"></i> Twitter</a> 
-                <a href="https://www.instagram.com/hippocampusvc/"> <i class="fa fa-instagram"></i> Instagram</a> 
+                <a href="https://twitter.com/HippocampusVC" target="_blank"> <i class="fa fa-twitter"></i> Twitter</a> 
+                <a href="https://www.instagram.com/hippocampusvc/" target="_blank"> <i class="fa fa-instagram"></i> Instagram</a> 
             </p>
             <p>
                 Hippocampus Vacation Club 
-                <a href="https://es-la.facebook.com/Hippocampus-Vacation-Club-210418352330415/"> <i class="fa fa-facebook"></i> Facebook</a> 
+                <a href="https://es-la.facebook.com/Hippocampus-Vacation-Club-210418352330415/" target="_blank"> <i class="fa fa-facebook"></i> Facebook</a> 
             </p>            
         </div>
         <!-- Instagram | END -->

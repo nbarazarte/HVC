@@ -53,7 +53,7 @@
                         <p>
                             @Biothaispa 
                             
-                            <a href="https://www.instagram.com/biothaispa/"> <i class="fa fa-instagram"></i> Instagram</a> 
+                            <a href="https://www.instagram.com/biothaispa/" target="_blank"> <i class="fa fa-instagram"></i> Instagram</a> 
                         </p>
                       
                     </div>
@@ -78,7 +78,7 @@
                         <p>
                             @JoesGrilMargarita 
                             
-                            <a href="https://www.instagram.com/joesgrilmargarita/"> <i class="fa fa-instagram"></i> Instagram</a> 
+                            <a href="https://www.instagram.com/joesgrilmargarita/" target="_blank"> <i class="fa fa-instagram"></i> Instagram</a> 
                         </p>
                       
                     </div>

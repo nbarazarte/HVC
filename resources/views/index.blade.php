@@ -27,7 +27,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id.</p>
                 </div>
                 <div class="box">
-                    <i class="fa fa-user"></i>
+                    <i class="fa fa-users"></i>
                     <h3>24 Hour Concierge Service</h3>
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id.</p>
                 </div>

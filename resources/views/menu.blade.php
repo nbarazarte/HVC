@@ -39,7 +39,15 @@
                     <li><a href="{{ route('restaurant')}}">Restaurant</a></li>
                     <li><a href="{{ route('eventos')}}">Eventos</a></li>
                 
-                    <li><a href="{{ route('socios')}}">Socios</a></li>
+                    <li><a href="#">Socios</a>
+
+                        <ul>
+                            <li><a href="{{ route('rci') }}">RCI</a></li>
+                            <li><a href="{{ route('socios') }}">Atención al Socio</a></li>
+
+                        </ul>
+
+                    </li>
                     <li><a href="{{ route('contact')}}">Contáctanos</a></li>
                 </ul>
                 <a id="pull"><i class="fa fa-bars"></i></a>

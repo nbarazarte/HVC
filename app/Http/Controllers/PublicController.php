@@ -46,7 +46,19 @@ class PublicController extends Controller
     public function socios()
     {
         return view('socios');
+    }
+
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function rci()
+    {
+        return view('rci');
     }  
+
 
     /**
      * Show the application dashboard.

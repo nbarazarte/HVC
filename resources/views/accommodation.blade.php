@@ -110,7 +110,7 @@
                     </tr>
 
                 </table>
-                <a href="contact.php" class="button"><span data-hover="Reservar Ahora">Reservar Ahora</span></a>
+                <a href="#" class="button"><span data-hover="Reservar Ahora">Reservar Ahora</span></a>
             </div>
 
         </div>

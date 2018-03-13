@@ -6,7 +6,7 @@
 	<header>
     	<div id="header">
         	<div class="h1">
-                <h1><span>Socios</span>
+                <h1><span>Atención al Socio</span>
                 <span class="tagline">Disfrute de las vacaciones de su vida</span></h1>
             </div>
         </div>
@@ -18,50 +18,131 @@
     <!-- Content | START -->
     <main>
     	<div class="centre">
-        	<!-- Slideshow -->
-        	<div id="slideshow">
-                <div class="slider">
-                    <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/AVH.HotelHippocampus-56.jpg') }}" width="1200" height="600" /></div>
-                   
-                </div>
-                <div class="nav">
-                    <a class="prev"><i class="fa fa-chevron-left"></i></a>
-                    <a class="next"><i class="fa fa-chevron-right"></i></a>
-                </div>
+
+
+
+            <!-- Contact Form | START -->
+            <div id="contact" style="text-align: center;">
+                <img src="{{ asset('base-hotel/preview/images/HH_Piscina_Toldos_07_atencion.jpg') }}" width="1200" height="400" alt="" />
+                    <form name="contact" action="#" method="post">
+                    <div class="col">
+                        <div class="field mandatory"><input name="contact-contrato" type="text" placeholder="N° Contrato" id="contact-contrato" value="" /></div>   
+                        <div class="field mandatory"><input name="contact-cedula" type="text" placeholder="N° Cédula" id="contact-cedula" value="" /></div>
+                        <div class="field mandatory"><input name="contact-name" type="text" placeholder="Nombre y Apellido" id="contact-name" value="" /></div>
+                       
+                        
+                    </div>
+
+                    <div class="col">
+
+                        <div class="select">
+                            <div class="field mandatory"><input name="contact-phone" type="text" placeholder="N° Teléfono" id="contact-phone" value="" /></div>
+                             <div class="field mandatory"><input name="contact-email" type="text" placeholder="Correo Electrónico" id="contact-email" value="" /></div>
+                            <select name="contact-rooms" id="contact-rooms" class="">
+                                <option  value="">Adultos</option>
+                                <option  value="2" >2 Adultos</option>
+                                <option  value="3" >3 Adultos</option>
+                            </select>
+                            <select name="contact-rooms" id="contact-rooms" class="">
+                                <option  value="">Niños</option>
+                                <option  value="2" >2 Niños</option>
+                                <option  value="3" >3 Niños</option>
+                            </select>
+                            <select name="contact-rooms" id="contact-rooms" class="">
+                                <option  value="">Infantes</option>
+                                <option  value="2" >2 Infantes</option>
+                                <option  value="3" >3 Infantes</option>
+                            </select>                                                        
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="select">
+
+                            <select name="contact-rooms" id="contact-rooms" class="">
+                                <option  value="">Capacidad</option>
+                                <option  value="2" >2 Personas</option>
+                                <option  value="3" >3 Personas</option>
+                            </select>
+
+                            <select name="contact-rooms" id="contact-rooms" class="">
+                                <option  value="">Semana</option>
+                                <option  value="2" >2 </option>
+                                <option  value="3" >3 </option>
+                            </select>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Honeypot (for bot spam) -->
+                    <input name="contact-email2" type="text" placeholder="Email Address" autocomplete="false" class="honeypot" value="" />
+                    <button name="send" value="sendform"><span data-hover="Enviar Reservación">Enviar Reservación</span></button>
+                </form>
             </div>
+            <!-- Contact Form | END -->
+
+
             <div id="content">
-                <h2><strong>RCI</strong></h2>
+
+                <h2><strong>Atención al Socio</strong></h2>
+
                 <p>
-                    RCI es una de las  empresas de Intercambios Vacacionales más grandes a nivel mundial.  RCI funciona como un Banco de espacios donde usted puede Depositar su semana vacacional, si no desea usarla en su Resort, siempre y cuando esté vigente en su año y al día con el Condominio, e Intercambiarla por otra a través de ellos con las mismas características de la suya. No se depositará semanas de años anteriores y una vez depositada su semana no se podrá reversar.
+                    Ante todo  reciba  nuestra más cordial saludo,  en nuestro esfuerzo para darle la mayor atención, le informamos que para el uso y disfrute de su semana vacacional podrá <b>hacer su reservación y aclarar dudas</b> a través de nuestro correo electrónico <a href="mailto:atencionalsocio@hippocampus.com.ve">atencionalsocio@hippocampus.com.ve</a> 
+                    <br>
+                    También pueden contactarnos por el número telefónico <b>+58 (295) 331.13.50</b>
+                </p>
+
+
+                <p>
+                    La solicitud de reservación deberá hacerse con un mínimo de 90 días de antelación para  semanas de temporada alta  y un mínimo de 21 días para las de temporada baja, todo sujeto a disponibilidad.  Dependiendo la capacidad según contrato.
                 </p>
 
                 <p>
-                    Su afiliación a RCI a través de su Resort Hippocampus Vacation Club será hasta dos años gratuitos por la compra de su contrato. Luego de pagar todos sus gastos administrativos se le enviara por correo electrónico en un lapso no mayor de 45 días hábiles su código de afiliación para disfrutar de los beneficios de ser miembro de tan prestigiosa cadena de intercambio.
+                    Le Anexamos el Calendario de Semanas para que pueda Programar y Planificar con tiempo sus vacaciones. Recuerde que las semanas, dependen del tipo de contrato adquirido: Silver o Gold.<br>Las semanas son de Sábado a Sábado, (Entrada: 4:00 pm y Salida: 11:00 am).
+                </p>
+
+                <p style="text-align: justify;">
+                
+                    <ul style="text-align: justify;">
+
+                        <li>
+                            <b>Silver:</b> Derecho de uso desde la Sem 3 hasta la 27 y desde la 40 hasta la semana 49.
+                        </li>
+                        <li>
+                            <b>Gold:</b> Derecho de uso en cualquier semana del año.
+                        </li>                                   
+
+                    </ul>
+
                 </p>
 
                 <p>
-                    De esta manera usted podrá hacer Intercambios Vacacionales con otros  Hoteles y Resort afiliados a RCI dentro y fuera de Venezuela, en la misma temporada según la disponibilidad y capacidad que usted tiene en Hippocampus, mediante el pago previo a RCI de una Cuota de Intercambio. La tasa de intercambio se pagara en bolívares a RCI si el intercambio es nacional y en caso de hacer intercambio internacional la tasa será pagada en dólares.
-                </p>
-
-                <p>                    
-                    El Certificado de Semana Bono entregado al momento de la compra tiene validez de un año a partir de la afiliación a RCI y tiene restricciones de temporada y destinos, los cuales están descritos al reverso del mismo. La semana bono no genera pago de cuota de condominio ya que es una semana adicional, sin embargo para realizar el intercambio debe cancelar la cuota indicada por RCI para su uso.
-                </p>
-
-                <p>
-                    La solicitud de depósito de semana la podrá solicitar desde los 01 de octubre de cada año cuando realice el pago de su condominio y estar al día con todas las obligaciones del contrato. Recuerde  que  al  realizar  su  solicitud  con  anticipación  son  mayores  las posibilidades  de contar con las opciones vacacionales más solicitadas dependiendo su destino a visitar.
+                    La anulación de una reservación deberá hacerse con un mínimo de 30 días de antelación, de no hacer la notificación, se considerará la semana como utilizada.
+                    <br>
+                    La semana no disfrutada en el año correspondiente de uso, solo podrá ser usada dentro de los primeros seis (6) meses del año inmediato siguiente y únicamente en temporada baja.                                    
                 </p>
 
                 <p>
-                    Cuando usted decida hacer el depósito de su semana deberá solicitarlo  a través del correo: <strong>atencionalsocio@hippocampus.com.ve.</strong><br> Para mayor información puede contactarnos a través de nuestro número Master <strong>+58 (295) 331.13.50.</strong>
-    
-                    <br> Para mayor información sobre la cadena de Intercambio RCI (Resort Condominios International, se pueden comunicar únicamente por teléfono fijo CANTV a través del siguiente teléfono <strong>0800-1003853.</strong>
+                    <b>
+                        PARA HACER USO DE SU SEMANA ANUAL ES INDISPENSABLE TENER CUBIERTA LA CUOTA DE MANTENIMIENTO O CONDOMINIO CORRESPONDIENTE Y ESTAR AL DÍA CON TODAS SUS OBLIGACIONES
+                    </b>
                 </p>
-            
-                <h2 style="margin:0;"><strong>+58 (295) 331.13.50</strong></h2>
+
+                <p>
+                    La única empresa encargada de la cobranza de nuestros socios es <strong>FIDELITAS</strong>, sólo a través de ella se canalizarán los pagos y todo lo referente a su estado de cuenta y recibos.
+                </p>
+
+                <h2 style="margin:0;"><strong>+58 (412) 197.37.32</strong></h2>
+                <h2 style="margin:0;"><strong>+58 (412) 289.67.44</strong></h2>
                 <p style="margin:0;">
-                    <a href="mailto:atencionalsocio@hippocampus.com.ve">atencionalsocio@hippocampus.com.ve</a><br />
-                    <i class="fa fa-map-marker"></i>  Calle El Cristo, edifc. Complejo Hippocampus, sector La Caranta.<br />Isla de Margarita. Venezuela            
-                </p>  
+                    <a href="mailto:pagosfidelitasvzla@fdlcs.com">pagosfidelitasvzla@fdlcs.com</a><br />
+                    <i class="fa fa-map-marker"></i> Av. Libertador, Multicentro Empresarial del Este. Núcleo C. Piso 8 Ofic. 82C. Chacao. <br>Caracas 1060, Venezuela.            
+                </p>
+
+                <p>
+                    <b>Las Cuentas Bancarias para hacer sus depósitos, son las siguientes a nombre de: </b>
+                </p>   
 
             </div>
         </div>
@@ -69,23 +150,52 @@
         <!-- Feature List | START -->
         <section id="featurelist">
             <div class="centre">
-                <h2>Message from the Manager</h2>
-                <div class="featurelist">
-                    <div class="feature">
-                        <img alt="" src="{{ asset('base-hotel/system/images/logohvc.png') }}" width="120" height="120" class="thumb" />
-                        <div class="details">
-                            <h3>John Smith</h3>
-                            <p>Base Hotel General Manager<br /><br />
-                            <a href="about.html#"><i class="fa fa-external-link"></i> Contact John</a><br />
-                            <a href="about.html#"><i class="fa fa-external-link"></i> Linked In</a></p>
-                        </div>
-                        <div class="copy">
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Sed egestas, ante et vulputate volutpat.</p>
-                            <p><img alt="" src="{{ asset('base-hotel/preview/images/signature.png') }}" /></p>
-                        </div>
+                <h2>HIPPOCAMPUS VACATIONS CLUB C.A. <br>J-30177391-8</h2>
+
+                    <div id="content">
+                        
+                        <table>
+                            <tr>
+                                <th>Banco</th>
+                                <th>cuenta Corriente</th>
+                            </tr>
+                            <tr>
+                                <td><strong>MERCANTIL</strong></td>
+                                <td>0105-0114-80-1114023884</td>
+                            </tr>
+                            <tr>
+                                <td><strong>BANESCO</strong></td>
+                                <td>0134-0343-11-3431015888</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CORP-BANCA</strong></td>
+                                <td>0121-0170-86-0105891555</td>                    
+                            </tr>
+                            <tr>
+                                <td><strong>VENEZUELA</strong></td>
+                                <td>0102-0107-18-0006486356</td>                                
+                            </tr>
+
+                            <tr>
+                                <td><strong>PROVINCIAL</strong></td>
+                                <td>0108-0001-3801-0020-6078</td>
+                            </tr>
+                            <tr>
+                                <td><strong>BOD</strong></td>
+                                <td>0116-0118-9800-0722-2700</td>                    
+                            </tr>
+                            <tr>
+                                <td><strong>VENEZOLANO DE CRÉDITO</strong></td>
+                                <td>0104-0107-1001-0714-9597</td>                                
+                            </tr>
+
+
+
+                        </table>
+                        
                     </div>
-                </div>
+
+
             </div>
         </section>
         <!-- Feature List | END -->        

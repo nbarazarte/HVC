@@ -47,6 +47,8 @@
                     Sitemap
                 </a>
 
+                <a href="https://www.behance.net/ezebarazar16c8" target="_blank" title="Web Developer"> <i class="fa fa-code"></i> Neil Barazarte</a> 
+
             </div>
         </div>
         <!-- Footer Links | END -->

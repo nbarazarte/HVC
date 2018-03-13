@@ -26,10 +26,22 @@ Route::get('/Restaurant', [
 	'as' =>'restaurant'
 ]);
 
-Route::get('/Socios', [
+Route::get('/Atención-al-Socio', [
 	'uses' => 'PublicController@socios',
 	'as' =>'socios'
 ]);
+
+
+Route::get('/RCI', [
+	'uses' => 'PublicController@rci',
+	'as' =>'rci'
+]);
+
+
+
+
+
+
 
 Route::get('/Eventos', [
 	'uses' => 'PublicController@eventos',
