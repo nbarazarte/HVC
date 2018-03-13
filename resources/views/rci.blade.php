@@ -53,7 +53,7 @@
                 </p>
 
                 <p style="align: center"="">
-                    Cuando usted decida hacer el depósito de su semana deberá solicitarlo  a través del correo: <strong>atencionalsocio@hippocampus.com.ve.</strong><br> Para mayor información puede contactarnos a través de nuestro número Master <strong>+58 (295) 331.13.50.</strong>
+                    Cuando usted decida hacer el depósito de su semana deberá solicitarlo  a través del correo: <strong><a href="mailto:atencionalsocio@hippocampus.com.ve">atencionalsocio@hippocampus.com.ve</a>.</strong><br> Para mayor información puede contactarnos a través de nuestro número Master <strong>+58 (295) 331.13.50.</strong>
     
                     <br> De igual modo para saber más sobre la cadena de Intercambio RCI (Resort Condominios International, se pueden comunicar únicamente por teléfono fijo CANTV a través del siguiente teléfono <strong>0800-1003853.</strong>
                 </p>
