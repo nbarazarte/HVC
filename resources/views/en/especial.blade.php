@@ -33,7 +33,35 @@
                         </p>
 
                 </div>
-            </div>            
+            </div>
+            <div class="special">
+                <div class="img">
+                    <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/joe-770.jpg') }}" width="770" height="400" /></div>
+                </div>
+                <div class="details">
+                    <h2>JOE'S Gril<br />
+                    <span>Restaurant C.A.</span></h2>
+                    <p align="justify">
+                        Un Lugar lleno de magia y fusiones de sabores.<br>
+                        ¡Visitanos! Aquí todo es ¡Siempre Delicioso!
+                    </p>
+
+                    <!-- Instagram | START -->
+                    <div id="instagram">
+                        <p>
+                            @JoesGrilMargarita 
+                            
+                            <a href="https://www.instagram.com/joesgrilmargarita/" target="_blank"> <i class="fa fa-instagram"></i> Instagram</a> 
+                        </p>
+                      
+                    </div>
+                    <!-- Instagram | END -->                    
+                    
+                    <a href="{{ route('restaurant') }}" class="button"><span data-hover="Ver más">Ver más</span></a>
+                    
+
+                </div>
+            </div>                     
         	<div class="special">
             	<div class="img">
                 	<div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/biothai-770.jpg') }}" width="770" height="400" /></div>
@@ -61,34 +89,22 @@
 
                 </div>
             </div>
-        	<div class="special">
-            	<div class="img">
-                	<div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/joe-770.jpg') }}" width="770" height="400" /></div>
+
+            <div class="special">
+                <div class="img">
+                    <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/ciber-770.jpg') }}" width="770" height="400" /></div>
                 </div>
                 <div class="details">
-                	<h2>JOE'S Gril<br />
-                    <span>Restaurant C.A.</span></h2>
+                    <h2>Sala de Internet<br />
+                    <span>HVC</span></h2>
                     <p align="justify">
-                        Un Lugar lleno de magia y fusiones de sabores.<br>
-                        ¡Visitanos! Aquí todo es ¡Siempre Delicioso!
-                    </p>
-
-                    <!-- Instagram | START -->
-                    <div id="instagram">
-                        <p>
-                            @JoesGrilMargarita 
-                            
-                            <a href="https://www.instagram.com/joesgrilmargarita/" target="_blank"> <i class="fa fa-instagram"></i> Instagram</a> 
-                        </p>
-                      
-                    </div>
-                    <!-- Instagram | END -->                    
-                    
-                    <a href="{{ route('restaurant') }}" class="button"><span data-hover="Ver más">Ver más</span></a>
-                    
+                        Además de ofrecer a nuestros huéspedes el servicio de Wi-Fi, tambien contamos con un área exclusiva para acceder a internet las 24 horas del día durante su estancia en el hotel.<br>
+                        Mantengase conectado con el mundo cuando usted lo necesite.
+                    </p>                    
 
                 </div>
-            </div>
+            </div>            
+
         </div>
     </main>
     <!-- Content | END -->
