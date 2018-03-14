@@ -35,10 +35,9 @@
             <div id="content">
                 <h2><strong>Eventos Sociales </strong>y Corporativos</h2>
                 <p>
-                    ...
+                    Celebra junto a la gran familia de <strong>Hippocampus Vacation Club</strong>, eventos sociales y corporativos con un toque de elegancia, originalidad y buen gusto.<br>
+                    Queremos ser parte de momentos inolvidables, llenos de creatividad, que hagan sentir a tus invitados en un ambiente ameno y confortable.
                 </p>
-
-
             
                 <h2 style="margin:0;"><strong>+58 (295) 331.13.00</strong></h2>
                 <p style="margin:0;">

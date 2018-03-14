@@ -81,7 +81,7 @@ Route::get('/Contáctanos', [
 	'as' =>'contact'
 ]);
 
-Route::get('/Especial', [
+Route::get('/Servicios', [
 	'uses' => 'PublicController@especial',
 	'as' =>'especial'
 ]);
