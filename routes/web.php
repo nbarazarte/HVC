@@ -31,17 +31,15 @@ Route::get('/Atención-al-Socio', [
 	'as' =>'socios'
 ]);
 
-
 Route::get('/RCI', [
 	'uses' => 'PublicController@rci',
 	'as' =>'rci'
 ]);
 
-
-
-
-
-
+Route::get('/Fly&Buy', [
+	'uses' => 'PublicController@fly',
+	'as' =>'fly'
+]);
 
 Route::get('/Eventos', [
 	'uses' => 'PublicController@eventos',
@@ -58,18 +56,15 @@ Route::get('/Habitación-Matrimonial', [
 	'as' =>'matrimonial'
 ]);
 
-
 Route::get('/Habitación-Matrimonial-Sofá', [
 	'uses' => 'PublicController@matrimonialSofa',
 	'as' =>'matrimonialSofa'
 ]);
 
-
 Route::get('/Habitación-Doble', [
 	'uses' => 'PublicController@doble',
 	'as' =>'doble'
 ]);
-
 
 Route::get('/Habitación-Duplex', [
 	'uses' => 'PublicController@duplex',
@@ -86,12 +81,10 @@ Route::get('/Contáctanos', [
 	'as' =>'contact'
 ]);
 
-
 Route::get('/Especial', [
 	'uses' => 'PublicController@especial',
 	'as' =>'especial'
 ]);
-
 
 Auth::routes();
 

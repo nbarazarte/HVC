@@ -18,7 +18,7 @@
 
         <body class="home2 fullwidth">
 
-    @elseif ((Route::current()->getName() == 'accommodation') || (Route::current()->getName() == 'about') || (Route::current()->getName() == 'rci') || (Route::current()->getName() == 'contact') || (Route::current()->getName() == 'restaurant') || (Route::current()->getName() == 'socios') )
+    @elseif ((Route::current()->getName() == 'accommodation') || (Route::current()->getName() == 'about') || (Route::current()->getName() == 'rci') || (Route::current()->getName() == 'contact') || (Route::current()->getName() == 'restaurant') || (Route::current()->getName() == 'socios') || (Route::current()->getName() == 'eventos') || (Route::current()->getName() == 'fly') )
 
         <body class="fullwidth">
 
@@ -60,8 +60,6 @@
     {!! Html::script('base-hotel/system/js/global.js') !!}
     {!! Html::script('base-hotel/preview/js/styler.js') !!}
 
-
-
     <script>
 
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -72,8 +70,6 @@
         ga('send', 'pageview');
 
     </script>
-
-
 
     </body>
 

@@ -19,18 +19,22 @@
                 <div class="box">
                     
                     <i class="fa fa-bed" aria-hidden="true"></i>
-                    <h3>Una experiencia hotelera</h3>
-                    <p>Cómodas y confortables habitaciones equipadas para toda la familia. Disfrute de nuestra terraza con la mejor vista a la bahía de Pampatar.</p>
+                    <h3>Toda Una Experiencia Hotelera</h3>
+                    <p>Cómodas y confortables habitaciones equipadas para toda la familia. Ven y disfruta de nuestra terraza con la mejor vista a la bahía de Pampatar, te esperamos.</p>
                 </div>
                 <div class="box">
                     <i class="fa fa-cutlery"></i>
-                    <h3>Award-Winning Restaurant</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id.</p>
+                    <h3>Una Fusión de Sabores</h3>
+                    <p>
+                        Lo mejor de la Gastronomía de Venezuela converge en cada plato para complacer a los paladares más exigentes, te invitamos a degustar nuestras delicateses.
+                    </p>
                 </div>
                 <div class="box">
-                    <i class="fa fa-users"></i>
-                    <h3>24 Hour Concierge Service</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id.</p>
+                    <i class="fa fa-briefcase" aria-hidden="true"></i>
+                    <h3>Encuentros Corporativos</h3>
+                    <p>
+                        Con instalaciones que cuentan con todo lo necesario para llevar a cabo las más productivas reuniones de negocios en un ambiente cómodo y agradable.
+                    </p>
                 </div>
             </section>
             <!-- USP Boxes | END -->

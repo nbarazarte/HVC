@@ -45,7 +45,7 @@
                         <ul>
                             <li><a href="{{ route('rci') }}">RCI</a></li>
                             <li><a href="{{ route('socios') }}">Atención al Socio</a></li>
-
+                            <li><a href="{{ route('fly') }}">Fly & Buy</a></li>
                         </ul>
 
                     </li>

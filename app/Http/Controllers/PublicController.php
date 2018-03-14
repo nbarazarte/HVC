@@ -48,7 +48,6 @@ class PublicController extends Controller
         return view('socios');
     }
 
-
     /**
      * Show the application dashboard.
      *
@@ -59,6 +58,15 @@ class PublicController extends Controller
         return view('rci');
     }  
 
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function fly()
+    {
+        return view('fly');
+    }  
 
     /**
      * Show the application dashboard.

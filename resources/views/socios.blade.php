@@ -19,8 +19,6 @@
     <main>
     	<div class="centre">
 
-
-
             <!-- Contact Form | START -->
             <div id="contact" style="text-align: center;">
                 <img src="{{ asset('base-hotel/preview/images/HH_Piscina_Toldos_07_atencion.jpg') }}" width="1200" height="400" alt="" />
@@ -28,9 +26,7 @@
                     <div class="col">
                         <div class="field mandatory"><input name="contact-contrato" type="text" placeholder="N° Contrato" id="contact-contrato" value="" /></div>   
                         <div class="field mandatory"><input name="contact-cedula" type="text" placeholder="N° Cédula" id="contact-cedula" value="" /></div>
-                        <div class="field mandatory"><input name="contact-name" type="text" placeholder="Nombre y Apellido" id="contact-name" value="" /></div>
-                       
-                        
+                        <div class="field mandatory"><input name="contact-name" type="text" placeholder="Nombre y Apellido" id="contact-name" value="" /></div>                                               
                     </div>
 
                     <div class="col">
@@ -82,17 +78,15 @@
             </div>
             <!-- Contact Form | END -->
 
-
             <div id="content">
 
-                <h2><strong>Atención al Socio</strong></h2>
+                <h2><strong>Atención</strong> al Socio</h2>
 
                 <p>
                     Ante todo  reciba  nuestra más cordial saludo,  en nuestro esfuerzo para darle la mayor atención, le informamos que para el uso y disfrute de su semana vacacional podrá <b>hacer su reservación y aclarar dudas</b> a través de nuestro correo electrónico <a href="mailto:atencionalsocio@hippocampus.com.ve">atencionalsocio@hippocampus.com.ve</a> 
                     <br>
                     También pueden contactarnos por el número telefónico <b>+58 (295) 331.13.50</b>
                 </p>
-
 
                 <p>
                     La solicitud de reservación deberá hacerse con un mínimo de 90 días de antelación para  semanas de temporada alta  y un mínimo de 21 días para las de temporada baja, todo sujeto a disponibilidad.  Dependiendo la capacidad según contrato.
