@@ -82,7 +82,7 @@
                     </div>
 
                     <div class="col">
-
+                        <div class="field"><textarea name="contact-message" placeholder="Message" id="contact-message"></textarea></div>
                         <div class="select">
                             
                             <select name="contact-capacidad" id="contact-capacidad" class="">
@@ -98,6 +98,7 @@
                             </select>    
 
                         </div>  
+
                         
                     </div>
 
