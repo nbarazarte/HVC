@@ -79,11 +79,9 @@
 
             @endif
 
-
-
             <!-- Recent Blog Posts | START -->
             <div class="recent">
-                <a href="blog-post.html">
+                <a href="#">
                     <div class="date">
                         <span class="month">Dec</span>
                         <span class="day">12</span>
@@ -91,7 +89,7 @@
                     <p class="title">Our Latest Hotel Awards</p>
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque...</p>
                 </a>
-                <a href="blog-post.html">
+                <a href="#">
                     <div class="date">
                         <span class="month">Nov</span>
                         <span class="day">27</span>

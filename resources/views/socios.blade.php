@@ -20,61 +20,99 @@
     	<div class="centre">
 
             <!-- Contact Form | START -->
-            <div id="contact" style="text-align: center;">
+            <div id="contact">
                 <img src="{{ asset('base-hotel/preview/images/HH_Piscina_Toldos_07_atencion.jpg') }}" width="1200" height="400" alt="" />
-                    <form name="contact" action="#" method="post">
+
+                    @if(Session::has('message'))
+                    
+                        {{Session::get('message')}}
+
+                    @endif           
+
+                    {!! Form::open(['route' => 'enviar', 'method'=>'PUT', 'id' => 'demo-form', 'name' => 'contact' ,'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false']) !!} 
+
                     <div class="col">
-                        <div class="field mandatory"><input name="contact-contrato" type="text" placeholder="N° Contrato" id="contact-contrato" value="" /></div>   
-                        <div class="field mandatory"><input name="contact-cedula" type="text" placeholder="N° Cédula" id="contact-cedula" value="" /></div>
-                        <div class="field mandatory"><input name="contact-name" type="text" placeholder="Nombre y Apellido" id="contact-name" value="" /></div>                                               
+                        
+                        <div class="field mandatory">
+                            <input name="contact-contrato" type="text" placeholder="N° Contrato" id="contact-contrato" value="" />
+                        </div>   
+                        
+                        <div class="field mandatory">
+                            <input name="contact-cedula" type="text" placeholder="N° Cédula" id="contact-cedula" value="" />
+                        </div>
+                        
+                        <div class="field mandatory">
+                            <input name="contact-name" type="text" placeholder="Nombre y Apellido" id="contact-name" value="" />
+                        </div>   
+                                                                  
                     </div>
 
                     <div class="col">
 
-                        <div class="select">
-                            <div class="field mandatory"><input name="contact-phone" type="text" placeholder="N° Teléfono" id="contact-phone" value="" /></div>
-                             <div class="field mandatory"><input name="contact-email" type="text" placeholder="Correo Electrónico" id="contact-email" value="" /></div>
-                            <select name="contact-rooms" id="contact-rooms" class="">
+                        <div class="field mandatory">
+                            <input name="contact-phone" type="text" placeholder="N° Teléfono" id="contact-phone" value="" />
+                        </div>
+                        
+                         <div class="field mandatory">
+                            <input name="contact-email" type="text" placeholder="Correo Electrónico" id="contact-email" value="" />
+                        </div>
+
+                        <div class="select">                                    
+                                        
+                            <select name="contact-adultos" id="contact-adultos" class="">
                                 <option  value="">Adultos</option>
                                 <option  value="2" >2 Adultos</option>
                                 <option  value="3" >3 Adultos</option>
                             </select>
-                            <select name="contact-rooms" id="contact-rooms" class="">
+
+                            <select name="contact-ninos" id="contact-ninos" class="">
                                 <option  value="">Niños</option>
                                 <option  value="2" >2 Niños</option>
                                 <option  value="3" >3 Niños</option>
                             </select>
-                            <select name="contact-rooms" id="contact-rooms" class="">
+                      
+                            <select name="contact-infantes" id="contact-infantes" class="">
                                 <option  value="">Infantes</option>
                                 <option  value="2" >2 Infantes</option>
                                 <option  value="3" >3 Infantes</option>
-                            </select>                                                        
-
+                            </select> 
+                                                                                                                                
                         </div>
+                                                                 
                     </div>
+
                     <div class="col">
+
                         <div class="select">
-
-                            <select name="contact-rooms" id="contact-rooms" class="">
-                                <option  value="">Capacidad</option>
-                                <option  value="2" >2 Personas</option>
-                                <option  value="3" >3 Personas</option>
-                            </select>
-
-                            <select name="contact-rooms" id="contact-rooms" class="">
-                                <option  value="">Semana</option>
+                            
+                            <select name="contact-capacidad" id="contact-capacidad" class="">
+                                <option  value="">Tipo Hab.</option>
                                 <option  value="2" >2 </option>
                                 <option  value="3" >3 </option>
                             </select>
 
-                        </div>
+                            <select name="contact-semana" id="contact-semana" class="">
+                                <option  value="">Semana</option>
+                                <option  value="2" >2 Niños</option>
+                                <option  value="3" >3 Niños</option>
+                            </select>    
+
+                        </div>  
+                        
                     </div>
 
 
-                    <!-- Honeypot (for bot spam) -->
-                    <input name="contact-email2" type="text" placeholder="Email Address" autocomplete="false" class="honeypot" value="" />
-                    <button name="send" value="sendform"><span data-hover="Enviar Reservación">Enviar Reservación</span></button>
-                </form>
+
+
+
+
+                       <button name="send" value="sendform">
+                        <span data-hover="Enviar Reservación">Enviar Reservación</span>
+                    </button>
+
+
+                {!! Form::close() !!}
+
             </div>
             <!-- Contact Form | END -->
 

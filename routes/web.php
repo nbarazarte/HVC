@@ -31,6 +31,11 @@ Route::get('/Atención-al-Socio', [
 	'as' =>'socios'
 ]);
 
+Route::put('Enviando', [
+		'uses' => 'PublicController@enviar',
+		'as' =>'enviar'
+]);
+
 Route::get('/RCI', [
 	'uses' => 'PublicController@rci',
 	'as' =>'rci'
