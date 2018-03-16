@@ -81,6 +81,11 @@ Route::get('/Galería', [
 	'as' =>'gallery'
 ]);
 
+Route::post('/Contáctanos', [
+	'uses' => 'PublicController@reservacion',
+	'as' =>'reservacion'
+]);
+
 Route::get('/Contáctanos', [
 	'uses' => 'PublicController@contact',
 	'as' =>'contact'

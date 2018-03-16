@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+
+
+
+
 use DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
@@ -13,7 +18,18 @@ use PHPMailer\PHPMailer\Exception;
 
 class PublicController extends Controller
 {
-    //
+    /**
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+
+        $habitaciones = DB::table('cat_habitaciones')->get();
+
+        \View::share(compact('habitaciones'));   
+
+    }
 
     /**
      * Show the application dashboard.
@@ -52,7 +68,10 @@ class PublicController extends Controller
      */
     public function socios()
     {
-        return view('socios');
+        
+        $semanas = DB::table('cat_semanas')->get();
+
+        return view('socios', compact('semanas'));
     }
 
     /**
@@ -153,6 +172,21 @@ class PublicController extends Controller
     public function contact()
     {
         return view('contact');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function reservacion(Request $request)
+    {
+        
+        $datos = $request->all();
+        //print_r($datos);die();
+        //var_dump($datos);die();
+        //dd($datos);die();
+        return view('contact',compact('datos'));
     }
 
     /**
