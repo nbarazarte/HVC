@@ -66,8 +66,8 @@
                         <div class="field mandatory"><input name="contact-phone" type="text" placeholder="N° de Teléfono" id="contact-phone" value="" /></div>
                     </div>
                     <div class="col">
-                        <div class="field calendar"><input name="contact-arrival" type="text" placeholder="Arrival Date" id="contact-arrival" value="<?=$arrival?>" readonly /><i class="fa fa-calendar-o"></i></div>
-                        <div class="field calendar"><input name="contact-departure" type="text" placeholder="Departure Date" id="contact-departure" value="<?=$departure?>" readonly /><i class="fa fa-calendar-o"></i></div>
+                        <div class="field calendar"><input name="contact-arrival" type="text" placeholder="Llegada" id="contact-arrival" value="<?=$arrival?>" readonly /><i class="fa fa-calendar-o"></i></div>
+                        <div class="field calendar"><input name="contact-departure" type="text" placeholder="Salida" id="contact-departure" value="<?=$departure?>" readonly /><i class="fa fa-calendar-o"></i></div>
                         <div class="select">
 
                         	<select name="contact-habitacion" id="contact-habitacion" class="infants">
