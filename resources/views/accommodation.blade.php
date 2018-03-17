@@ -110,7 +110,7 @@
                     </tr>
 
                 </table>
-                <a href="#" class="button"><span data-hover="Reservar Ahora">Reservar Ahora</span></a>
+                <a href="{{ route('contact')}}" class="button"><span data-hover="Reservar Ahora">Reservar Ahora</span></a>
             </div>
 
         </div>
