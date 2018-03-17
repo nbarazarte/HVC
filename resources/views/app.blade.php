@@ -20,7 +20,7 @@
 
             <body class="home2 fullwidth">
 
-        @elseif ((Route::current()->getName() == 'accommodation') || (Route::current()->getName() == 'about') || (Route::current()->getName() == 'rci') || (Route::current()->getName() == 'contact') || (Route::current()->getName() == 'reservacion') || (Route::current()->getName() == 'restaurant') || (Route::current()->getName() == 'socios') || (Route::current()->getName() == 'eventos') || (Route::current()->getName() == 'fly') || (Route::current()->getName() == 'error') )
+        @elseif ((Route::current()->getName() == 'accommodation') || (Route::current()->getName() == 'about') || (Route::current()->getName() == 'rci') || (Route::current()->getName() == 'contact') || (Route::current()->getName() == 'reservacion') || (Route::current()->getName() == 'restaurant') || (Route::current()->getName() == 'socios') || (Route::current()->getName() == 'eventos') || (Route::current()->getName() == 'fly') || (Route::current()->getName() == 'error') || (Route::current()->getName() == 'suscripcion') || (Route::current()->getName() == 'suscripcionFallida') )
 
             <body class="fullwidth">
 

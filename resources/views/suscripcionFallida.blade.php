@@ -20,12 +20,13 @@
 
             <div id="content">
 
-                <h2><strong>Error</strong> 404</h2>
+                <h2><strong>Datos</strong> Inconsistentes</h2>
+                                   
                 <p style="">
                     
-                	La página solicitada no existe <br>
+                    La dirección de correo electrónico no puede estar vacía ni duplicada<br>
 
-					<a href="{{route('home')}}"> Regresar al Inicio</a>
+                    <a href="{{route('home')}}"> Regresar al Inicio</a>
 
                 </p>    
            

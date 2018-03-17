@@ -199,6 +199,26 @@ class PublicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function suscripcion()
+    {
+        return view('suscripcion');
+    } 
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function suscripcionFallida()
+    {
+        return view('suscripcionFallida');
+    }          
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function enviar()
     {       
         
@@ -294,7 +314,7 @@ class PublicController extends Controller
 
             Session::flash('message','La dirección de correo electrónico no puede estar vacía ni duplicada');
             
-            return redirect('/Error');
+            return redirect('/Suscripción-Fallida');
 
             /*
                 $this->throwValidationException(
@@ -308,7 +328,7 @@ class PublicController extends Controller
 
         //return redirect($this->redirectPath()); 
         Session::flash('message','¡Gracias por suscribirse!');
-        return Redirect::to('/'); 
+        return Redirect::to('/Suscripción-Realizada'); 
         
     }
 

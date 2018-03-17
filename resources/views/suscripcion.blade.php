@@ -20,12 +20,13 @@
 
             <div id="content">
 
-                <h2><strong>Error</strong> 404</h2>
+                <h2><strong>Gracias por</strong> Suscribirse</h2>
+                                   
                 <p style="">
                     
-                	La página solicitada no existe <br>
+                    ¡Pronto recibirá nuestros boletines informativos! <br>
 
-					<a href="{{route('home')}}"> Regresar al Inicio</a>
+                    <a href="{{route('home')}}"> Regresar al Inicio</a>
 
                 </p>    
            

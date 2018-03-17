@@ -106,6 +106,16 @@ Route::get('/Error', [
 	'as' =>'error'
 ]);
 
+Route::get('/Suscripción-Realizada', [
+	'uses' => 'PublicController@suscripcion',
+	'as' =>'suscripcion'
+]);
+
+Route::get('/Suscripción-Fallida', [
+	'uses' => 'PublicController@suscripcionfallida',
+	'as' =>'suscripcionFallida'
+]);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
