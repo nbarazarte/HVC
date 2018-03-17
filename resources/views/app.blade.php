@@ -14,45 +14,65 @@
     <link rel="shortcut icon" href="{{ asset('base-hotel/system/images/favicon.png') }}" />
 </head>
 
-    @if (Route::current()->getName() == 'home')
+    @if ( !empty(Route::current()) )
 
-        <body class="home2 fullwidth">
+        @if (Route::current()->getName() == 'home')
 
-    @elseif ((Route::current()->getName() == 'accommodation') || (Route::current()->getName() == 'about') || (Route::current()->getName() == 'rci') || (Route::current()->getName() == 'contact') || (Route::current()->getName() == 'reservacion') || (Route::current()->getName() == 'restaurant') || (Route::current()->getName() == 'socios') || (Route::current()->getName() == 'eventos') || (Route::current()->getName() == 'fly') )
+            <body class="home2 fullwidth">
 
-        <body class="fullwidth">
+        @elseif ((Route::current()->getName() == 'accommodation') || (Route::current()->getName() == 'about') || (Route::current()->getName() == 'rci') || (Route::current()->getName() == 'contact') || (Route::current()->getName() == 'reservacion') || (Route::current()->getName() == 'restaurant') || (Route::current()->getName() == 'socios') || (Route::current()->getName() == 'eventos') || (Route::current()->getName() == 'fly') || (Route::current()->getName() == 'error') )
+
+            <body class="fullwidth">
+
+        @else
+
+            <body>
+
+        @endif  
+
+        @include('menu')
+
+        @if (Route::current()->getName() == 'home')
+
+            <!-- Header | START -->
+            <header>
+
+                @include('slider')
+
+                @include('reservacion')
+
+            </header>
+            <!-- Header | END -->
+
+        @endif
+
+        <div id="container">
+
+            @yield('content')
+
+            @include('extras')
+
+            @include('footer')
+
+        </div>
 
     @else
 
-        <body>
+        <body class="fullwidth"> 
 
-    @endif    
+            @include('menu')
 
-    @include('menu')
+            <div id="container">
 
-    @if (Route::current()->getName() == 'home')
+                @yield('content')
 
-        <!-- Header | START -->
-        <header>
+                 @include('extras')
 
-            @include('slider')
+                @include('footer')
 
-            @include('reservacion')
-
-        </header>
-        <!-- Header | END -->
+            </div>            
 
     @endif
-
-    <div id="container">
-
-        @yield('content')
-
-        @include('extras')
-
-        @include('footer')
-
-    </div>
 
     @include('promo')
 

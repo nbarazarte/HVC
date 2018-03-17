@@ -156,7 +156,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <h5>Patacones con 1 Contornos</h5>
+                                    <h5>Patacones con 1 Contorno</h5>
                                     <p></p>
                                     <div class="price">
                                     	<div></div>

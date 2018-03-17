@@ -96,6 +96,16 @@ Route::get('/Servicios', [
 	'as' =>'especial'
 ]);
 
+Route::post('/Newsletter', [
+	'uses' => 'PublicController@postNewsletter',
+	'as' =>'newsletter'
+]);
+
+Route::get('/Error', [
+	'uses' => 'PublicController@error',
+	'as' =>'error'
+]);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');

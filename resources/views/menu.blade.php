@@ -2,22 +2,34 @@
     <div id="nav">
         <div class="centre">
 
-            @if (Route::current()->getName() == 'home')
+            @if ( !empty(Route::current()))
 
-                <a href="{{ route('home')}}" class="logo">
+                @if (Route::current()->getName() == 'home')
 
-                    <img alt="" src="{{ asset('base-hotel/system/images/logohvc.png') }}" />
+                    <a href="{{ route('home')}}" class="logo">
 
-                </a>
+                        <img alt="" src="{{ asset('base-hotel/system/images/logohvc.png') }}" />
+
+                    </a>
+
+                @else
+
+                    <a href="{{ route('home')}}" class="logo2">
+
+                        <img alt="" src="{{ asset('base-hotel/system/images/logohvc2.png') }}" />
+
+                    </a>            
+                
+                @endif
 
             @else
 
-                <a href="{{ route('home')}}" class="logo2">
+                    <a href="{{ route('home')}}" class="logo2">
 
-                    <img alt="" src="{{ asset('base-hotel/system/images/logohvc2.png') }}" />
+                        <img alt="" src="{{ asset('base-hotel/system/images/logohvc2.png') }}" />
 
-                </a>            
-            
+                    </a>               
+
             @endif  
 
             <nav>

@@ -131,7 +131,8 @@
                        <button name="send" value="sendform">
                         <span data-hover="Enviar Reservación">Enviar Reservación</span>
                     </button>
-
+                    {!! csrf_field() !!} 
+                    
                 {!! Form::close() !!}
 
             </div>

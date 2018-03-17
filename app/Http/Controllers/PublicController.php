@@ -3,18 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-
-
-
-
+use App\Newsletter;
 use DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
-//use PHPMailer;
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use Validator;
 
 class PublicController extends Controller
 {
@@ -272,6 +267,129 @@ class PublicController extends Controller
 
         //return Redirect::to('http://'.$_SERVER['SERVER_NAME'].'/');
 
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function error()
+    {
+        return view('errors.404');
     } 
+
+    /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function postNewsletter(Request $request)
+    {
+
+        $validator = $this->validator($request->all());
+
+        if ($validator->fails()) {
+
+            Session::flash('message','La dirección de correo electrónico no puede estar vacía ni duplicada');
+            
+            return redirect('/Error');
+
+            /*
+                $this->throwValidationException(
+                    $request, $validator
+                );
+
+            */
+        }
+        
+        $this->create($request->all());
+
+        //return redirect($this->redirectPath()); 
+        Session::flash('message','¡Gracias por suscribirse!');
+        return Redirect::to('/'); 
+        
+    }
+
+    /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param  array  $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+                
+            'str_email' => 'required|unique:tbl_newsletter|max:255',     
+
+        ]);
+    }
+
+    /**
+     * Create a new user instance after a valid registration.
+     *
+     * @param  array  $data
+     * @return User
+     */
+    protected function create(array $data)
+    {
+        
+        return Newsletter::create([
+
+            'str_email' => $data['str_email'],
+
+        ]);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 }

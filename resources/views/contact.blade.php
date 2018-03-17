@@ -111,6 +111,9 @@
                     </div>
                     <!-- Honeypot (for bot spam) --><input name="contact-email2" type="text" placeholder="Email Address" autocomplete="false" class="honeypot" value="" />
                     <button name="send" value="sendform"><span data-hover="Enviar Reservación">Enviar Reservación</span></button>
+                    
+                    {!! csrf_field() !!} 
+
                 </form>
             </div>
             <!-- Contact Form | END -->
