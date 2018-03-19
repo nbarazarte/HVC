@@ -36,8 +36,9 @@
                 <div id="content">
 
                     <h2><strong>JOE'S Gril</strong> Restaurant</h2>
-                    <p> Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo.</p>
-                    <p> Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est.</p>
+                    <p style="text-align: justify;">
+                        Nuestra misión dentro del hotel <strong>Hippocampus Vacation Club</strong>, es brindar un servicio extraordinario, ofreciendo una oferta gastronómica variada como: desayunos, almuerzos, snacks, pizzas, cenas, sopas entre muchas más. Proveemos un menú ejecutivo y una gran variedad en la carta para que nuestros huéspedes se sientan a gusto en el restaurant o mientras disfrutan de un día soleado en la piscina.
+                    </p>
 
                     <!-- Menu | START -->
                     <section id="menu">

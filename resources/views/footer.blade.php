@@ -7,7 +7,7 @@
                     <div class="title"><span>Newsletter</span></div>
                     <div class="subscribe">
                         {!! Form::open(['route' => 'newsletter', 'id' => '', '', 'enctype'=>'multipart/form-data', 'class' => '']) !!}                 
-                            <input name="str_email" type="email" placeholder="Dirección de Correo" />
+                            <input name="str_email" type="email" placeholder="Dirección de Correo" required/>
                             <button><span data-hover="Suscribir">Suscribir</span></button>
                             {!! csrf_field() !!} 
                             

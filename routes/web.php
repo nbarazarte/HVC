@@ -36,6 +36,11 @@ Route::put('Enviando', [
 		'as' =>'enviar'
 ]);
 
+Route::put('Enviando-Reservación', [
+		'uses' => 'PublicController@enviarReservacion',
+		'as' =>'enviarReservacion'
+]);
+
 Route::get('/RCI', [
 	'uses' => 'PublicController@rci',
 	'as' =>'rci'

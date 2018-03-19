@@ -24,25 +24,6 @@
 
     ?>
 
-<!--
-    con esta sintaxis no se pueden asignar variables :(
-
-    @if ($_POST)
-        
-        @foreach ($datos as $clave=>$valor) 
-                                    
-            {{ $clave }} - {{ $valor }} <br>
-        
-        @endforeach
-
-    @else
-
-        No hay post
-
-    @endif
-
--->
-
 	<!-- Header | Start -->
 	<header>
     	<div id="header">
@@ -59,18 +40,27 @@
             <!-- Contact Form | START -->
         	<div id="contact">
             	<img src="{{ asset('base-hotel/preview/images/contacto.jpg') }}" width="1200" height="400" alt="" />
-                    <form name="contact" action="#" method="post">
+                    @if(Session::has('message'))
+                    
+                        {{Session::get('message')}}
+
+                    @endif           
+
+                    {!! Form::open(['route' => 'enviarReservacion', 'method'=>'PUT', 'id' => 'demo-form', 'name' => 'demo-form', 'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false']) !!} 
+
                 	<div class="col">
-                        <div class="field mandatory"><input name="contact-name" type="text" placeholder="Nombre y Apellido" id="contact-name" value="" /></div>
-                        <div class="field mandatory"><input name="contact-email" type="text" placeholder="Correo Electrónico" id="contact-email" value="" /></div>
-                        <div class="field mandatory"><input name="contact-phone" type="text" placeholder="N° de Teléfono" id="contact-phone" value="" /></div>
+                        <div class="field mandatory"><input name="contact-name" type="text" placeholder="Nombre y Apellido" id="contact-name" value="" required/></div>
+                        <div class="field mandatory"><input name="contact-email" type="email" placeholder="Correo Electrónico" id="contact-email" value="" required/></div>
+                        <div class="field mandatory"><input name="contact-phone" type="text" placeholder="N° de Teléfono" id="contact-phone" value="" required/></div>
                     </div>
                     <div class="col">
-                        <div class="field calendar"><input name="contact-arrival" type="text" placeholder="Llegada" id="contact-arrival" value="<?=$arrival?>" readonly /><i class="fa fa-calendar-o"></i></div>
-                        <div class="field calendar"><input name="contact-departure" type="text" placeholder="Salida" id="contact-departure" value="<?=$departure?>" readonly /><i class="fa fa-calendar-o"></i></div>
+                        <div class="field calendar"><input name="contact-arrival" type="text" placeholder="Llegada" id="contact-arrival" required value="<?=$arrival?>"  /><i class="fa fa-calendar-o"></i></div>
+                        <div class="field calendar"><input name="contact-departure" type="text" placeholder="Salida" id="contact-departure" required value="<?=$departure?>"  /><i class="fa fa-calendar-o"></i></div>
                         <div class="select">
 
-                        	<select name="contact-habitacion" id="contact-habitacion" class="infants">
+                        	<select name="contact-habitacion" id="contact-habitacion" class="infants" required>
+
+                                <option value="">Habitación</option>
 
                                 @foreach ($habitaciones as $hab)
 
@@ -80,7 +70,9 @@
 
                             </select>
 
-                            <select name="contact-adultos" id="contact-adultos" class="adults">
+                            <select name="contact-adultos" id="contact-adultos" class="adults" required>
+
+                                <option value="">Adultos</option>
                                 
                                 <?php
 
@@ -92,7 +84,9 @@
                     
                             </select>
 
-                            <select name="contact-ninos" id="contact-ninos" class="children">
+                            <select name="contact-ninos" id="contact-ninos" class="children" required>
+
+                                <option value="">Niños</option>                              
 
                                 <?php
 
@@ -114,7 +108,8 @@
                     
                     {!! csrf_field() !!} 
 
-                </form>
+                {!! Form::close() !!}
+
             </div>
             <!-- Contact Form | END -->
 

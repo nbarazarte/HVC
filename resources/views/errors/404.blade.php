@@ -25,7 +25,7 @@
                     
                 	La página solicitada no existe <br>
 
-					<a href="{{route('home')}}"> Regresar al Inicio</a>
+					<a href="{{route('home')}}"> <i class="fa fa-home" aria-hidden="true"></i> Inicio</a>
 
                 </p>    
            

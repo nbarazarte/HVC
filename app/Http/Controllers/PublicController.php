@@ -231,7 +231,8 @@ class PublicController extends Controller
         $message .= "Niños: ".$_POST['contact-ninos']."<br>";
         $message .= "Infantes: ".$_POST['contact-infantes']."<br>";
         $message .= "Capacidad: ".$_POST['contact-capacidad']."<br>";
-        $message .= "Semana: ".$_POST['contact-semana']."<br>";
+        $message .= "Semana ".$_POST['contact-semana']."<br>";
+        $message .= "Comentarios: ".$_POST['contact-message'];       
                 
         /*
         $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
@@ -270,7 +271,7 @@ class PublicController extends Controller
         //$mail->addAddress("atencionalsocio@hippocampus.com.ve");
         $mail->addAddress("ezebarazarte@gmail.com");//buzón al cual va a llegar el email
         
-        $mail->Subject = "hippocampusvacationclub.com - Socio RCI";
+        $mail->Subject = "hippocampusvacationclub.com - Socio RCI: ".$_POST['contact-contrato'] ;
         //$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
         $mail->msgHTML($message);
         $mail->AltBody = 'Contactanos';
@@ -363,53 +364,78 @@ class PublicController extends Controller
         ]);
     }
 
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function enviarReservacion()
+    {       
+        
+        $message = "Nombre y Apellido: ".$_POST['contact-name']."<br>";
+        $message .= "Teléfono: ".$_POST['contact-phone']."<br>";
+        $message .= "Correo Electrónico: ".$_POST['contact-email']."<br>";
+        $message .= "Adultos: ".$_POST['contact-adultos']."<br>";
+        $message .= "Niños: ".$_POST['contact-ninos']."<br>";
+        $message .= "Llegada: ".$_POST['contact-arrival']."<br>";
+        $message .= "Salida: ".$_POST['contact-departure']."<br>";
+        $message .= "Tipo de Habitación: ".$_POST['contact-habitacion']."<br>";
+        $message .= "Comentarios: ".$_POST['contact-message'];       
+                
+        /*
+        $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
+        $cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $cabeceras .= "Content-Type: image/png";    
+        $cabeceras .= 'To: Best Office <ventas@solucionesbestoffice.com>' . "\r\n";
+        $cabeceras .= 'From: '.$_POST['name'].' <'.$_POST['email'].'>' . "\r\n";     
+        
+        if (!mail('ventas@solucionesbestoffice.com', $_POST['asunto'].' - solucionesbestoffice.com', $message, $cabeceras)) {
+            //echo "Error: " . $mail->ErrorInfo;
+            Session::flash('message','Error!, el mensaje no se pudo enviar');
+        } else {
+            Session::flash('message','Su mensaje fue enviado exitosamente!');
+        }
 
+        return Redirect::to('/');*/
 
+        $mail = new PHPMailer;
+        $mail->isSMTP();
+        $mail->SMTPDebug = 0;
+        $mail->Debugoutput = 'html';
+        $mail->Host = "smtp.gmail.com";
+        $mail->Port = 465;
+        $mail->SMTPAuth = true;
+        $mail->SMTPSecure = "ssl";
 
+        //$mail->Username = "socialmedia@monitorbg.com";
+        //$mail->Password = "Monitor.2017";
+        //$mail->SetFrom('socialmedia@monitorbg.com');
 
+        $mail->Username = "atrellus@gmail.com";
+        $mail->Password = "falcor90dvv";
+        $mail->SetFrom('webmaster@hippocampus.com.ve');        
 
+        $mail->AddReplyTo($_POST['contact-email'], $_POST['contact-name']);
+        //$mail->addAddress("atencionalsocio@hippocampus.com.ve");
+        $mail->addAddress("ezebarazarte@gmail.com");//buzón al cual va a llegar el email
+        
+        $mail->Subject = "hippocampusvacationclub.com - Reserva de Habitaciones: ".$_POST['contact-name'] ;
+        //$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
+        $mail->msgHTML($message);
+        $mail->AltBody = 'Contactanos';
+        //$mail->addAttachment('images/imagen_adjunta.png');
+         
+        if (!$mail->send()) {
+            //echo "Error: " . $mail->ErrorInfo;
+            Session::flash('message','Error!'.$mail->ErrorInfo);
+        } else {
+            Session::flash('message','Su reservación fue enviado exitosamente!');
+        }
 
+        return Redirect::to('/Contáctanos');
 
+        //return Redirect::to('http://'.$_SERVER['SERVER_NAME'].'/');
 
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
 }

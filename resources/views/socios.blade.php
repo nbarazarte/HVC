@@ -27,20 +27,20 @@
 
                     @endif           
 
-                    {!! Form::open(['route' => 'enviar', 'method'=>'PUT', 'id' => 'demo-form', 'name' => 'contact' ,'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false']) !!} 
+                    {!! Form::open(['route' => 'enviar', 'method'=>'PUT', 'id' => 'demo-form', 'name' => 'demo-form', 'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false']) !!} 
 
                     <div class="col">
                         
                         <div class="field mandatory">
-                            <input name="contact-contrato" type="text" placeholder="N° Contrato" id="contact-contrato" value="" />
+                            <input name="contact-contrato" type="text" placeholder="N° Contrato" id="contact-contrato" value="" required/>
                         </div>   
                         
                         <div class="field mandatory">
-                            <input name="contact-cedula" type="text" placeholder="N° Cédula" id="contact-cedula" value="" />
+                            <input name="contact-cedula" type="text" placeholder="N° Cédula" id="contact-cedula" value="" required/>
                         </div>
                         
                         <div class="field mandatory">
-                            <input name="contact-name" type="text" placeholder="Nombre y Apellido" id="contact-name" value="" />
+                            <input name="contact-name" type="text" placeholder="Nombre y Apellido" id="contact-name" value="" required/>
                         </div>   
                                                                   
                     </div>
@@ -48,16 +48,18 @@
                     <div class="col">
 
                         <div class="field mandatory">
-                            <input name="contact-phone" type="text" placeholder="N° Teléfono" id="contact-phone" value="" />
+                            <input name="contact-phone" type="text" placeholder="N° Teléfono" id="contact-phone" value="" required/>
                         </div>
                         
                          <div class="field mandatory">
-                            <input name="contact-email" type="text" placeholder="Correo Electrónico" id="contact-email" value="" />
+                            <input name="contact-email" type="email" placeholder="Correo Electrónico" id="contact-email" value="" required/>
                         </div>
 
                         <div class="select">                                    
                                         
-                            <select name="contact-adultos" id="contact-adultos" class="">
+                            <select name="contact-adultos" id="contact-adultos" class="" required>
+
+                                <option value="">Adultos</option>
 
                                 <?php
 
@@ -69,7 +71,9 @@
 
                             </select>
 
-                            <select name="contact-ninos" id="contact-ninos" class="">
+                            <select name="contact-ninos" id="contact-ninos" class="" required>
+
+                                <option value="">Niños</option>
 
                                 <?php
 
@@ -81,7 +85,9 @@
 
                             </select>
                       
-                            <select name="contact-infantes" id="contact-infantes" class="">
+                            <select name="contact-infantes" id="contact-infantes" class="" required>
+
+                                <option value="">Infantes</option>
 
                                 <?php
 
@@ -101,7 +107,7 @@
                         <div class="field"><textarea name="contact-message" placeholder="Mensaje" id="contact-message"></textarea></div>
                         <div class="select">
                             
-                            <select name="contact-capacidad" id="contact-capacidad" class="">
+                            <select name="contact-capacidad" id="contact-capacidad" class="" required>
                                 <option  value="">Capacidad</option>
                                 <option  value="2" >2 </option>
                                 <option  value="3" >3 </option>
@@ -109,12 +115,13 @@
                                 <option  value="3" >6 </option>
                             </select>
 
-                            <select name="contact-semana" id="contact-semana" class="">
+                            <select name="contact-semana" id="contact-semana" class="" required>
+                                
                                 <option  value="">Semanas</option>
 
                                 @foreach ($semanas as $semana) 
                                      
-                                    <option  value="{{ $semana->str_semana_inicio }} - {{ $semana->str_semana_fin }}">
+                                    <option  value="{{$semana->id }}: {{ $semana->str_semana_inicio }} - {{ $semana->str_semana_fin }}">
                                         
                                        Semana {{$semana->id }}: {{ $semana->str_semana_inicio }} - {{ $semana->str_semana_fin }}
 

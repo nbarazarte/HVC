@@ -20,13 +20,13 @@
 
             <div id="content">
 
-                <h2><strong>Datos</strong> Inconsistentes</h2>
+                <h2><strong>Datos</strong> Duplicados</h2>
                                    
                 <p style="">
                     
-                    La dirección de correo electrónico no puede estar vacía ni duplicada<br>
+                    La dirección de correo electrónico ya se encuentra registrada en nuestros sistemas<br>
 
-                    <a href="{{route('home')}}"> Regresar al Inicio</a>
+                    <a href="{{route('home')}}"> <i class="fa fa-home" aria-hidden="true"></i> Inicio</a>
 
                 </p>    
            

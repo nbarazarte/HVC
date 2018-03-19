@@ -35,7 +35,7 @@
             <nav>
                 <ul>
                 	<li class="mobile"><a href="contact.php" class="navbook">Reservar Ahora</a></li>
-                    <li><a href="{{ route('home')}}"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                    <li><a href="{{ route('home')}}" title="Inicio"><i class="fa fa-home" aria-hidden="true"></i></a></li>
                     <li><a href="{{ route('about')}}">HVC</a>
                     <li><a href="{{ route('accommodation')}}">Habitaciones</a>
 
