@@ -5,7 +5,7 @@
 	<header>
     	<div id="header">
         	<div class="h1">
-                <h1><span>Habitación Duplex</span>
+                <h1><span>Habitación Duplex 2 Ambientes</span>
                 <span class="tagline">Luxurious by Reputation</span></h1>
             </div>
         </div>
@@ -33,7 +33,7 @@
                 </div>
                 <!-- Slideshow | END -->
                 <div id="content">
-                    <h2><strong>Habitación</strong> Duplex</h2>
+                    <h2><strong>Habitación</strong> Duplex 2 Ambientes</h2>
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo.</p>
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est.</p>
                     <ul class="tags">

@@ -43,7 +43,7 @@
                             <li><a href="{{ route('matrimonial') }}">Matrimonial</a></li>
                             <li><a href="{{ route('matrimonialSofa') }}">Matrimonial + Sofá</a></li>
                             <li><a href="{{ route('doble') }}">Doble</a></li>
-                            <li><a href="{{ route('duplex') }}">Duplex</a></li>
+                            <li><a href="{{ route('duplex') }}">Duplex 2 Ambientes</a></li>
                         </ul>
 
                     </li>
