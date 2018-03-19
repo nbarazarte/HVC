@@ -21,17 +21,7 @@
             <div id="contact">
                 <img src="{{ asset('base-hotel/preview/images/HH_Piscina_Toldos_07_atencion.jpg') }}" width="1200" height="400" alt="" />
 
-                    @if(Session::has('message'))
-                                        
-                        <div class="alert success">
-                            <i class="fa fa-check-circle"></i> 
-                            <strong>
-                                {{Session::get('message')}}
-                            </strong> 
-                            Gracias por hacer la reservación de su semana con nosotros. En breves momentos nos estaremos comunicando con usted.
-                        </div>                        
-
-                    @endif         
+                    @include('mensajes')       
 
                     {!! Form::open(['route' => 'enviar', 'method'=>'PUT', 'id' => 'demo-form', 'name' => 'demo-form', 'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false']) !!} 
 

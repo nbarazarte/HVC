@@ -452,7 +452,7 @@ class PublicController extends Controller
             //echo "Error: " . $mail->ErrorInfo;
             Session::flash('message','Error!'.$mail->ErrorInfo);
         } else {
-            Session::flash('message','Su mensaje fue enviado exitosamente!');
+            Session::flash('message','Su reservación fue enviada exitosamente!');
         }
 
         return Redirect::to('/Atención-al-Socio');
@@ -484,9 +484,9 @@ class PublicController extends Controller
 
         if ($validator->fails()) {
 
-            Session::flash('message','La dirección de correo electrónico no puede estar vacía ni duplicada');
-            
-            return redirect('/Suscripción-Fallida');
+            Session::flash('messageError','La dirección de correo electrónico ya se encuentra registrada en nuestros sistemas');
+            return redirect()->back();
+            //return redirect('/Suscripción-Fallida');
 
             /*
                 $this->throwValidationException(
@@ -500,7 +500,8 @@ class PublicController extends Controller
 
         //return redirect($this->redirectPath()); 
         Session::flash('message','¡Gracias por suscribirse!');
-        return Redirect::to('/Suscripción-Realizada'); 
+        return redirect()->back();
+        //return Redirect::to('/Suscripción-Realizada'); 
         
     }
 
