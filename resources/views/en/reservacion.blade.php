@@ -53,6 +53,9 @@
                 
             {!! Form::close() !!}
 
+            @include('mensajes')                           
+
         </div>
     </div>
     <!-- Check Rates Banner | END -->
+

@@ -21,11 +21,7 @@
             <div id="contact">
                 <img src="{{ asset('base-hotel/preview/images/HH_Piscina_Toldos_07_atencion.jpg') }}" width="1200" height="400" alt="" />
 
-                    @if(Session::has('message'))
-                    
-                        {{Session::get('message')}}
-
-                    @endif           
+                    @include('mensajes')       
 
                     {!! Form::open(['route' => 'enviar', 'method'=>'PUT', 'id' => 'demo-form', 'name' => 'demo-form', 'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false']) !!} 
 
