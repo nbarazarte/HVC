@@ -58,7 +58,7 @@
                     <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/duplex.jpg')}}" width="1200" height="400" /></div>
                     <div class="details">
                         <a href="{{ route('duplex')}}">
-                            <h3 class="title"> Duplex<br />
+                            <h3 class="title"> Duplex 2 Ambientes<br />
                             <span>Stay from $240 per night</span></h3>
                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh.</p>
                             <div class="button"><span data-hover="Ver más">Ver más</span></div>
@@ -110,7 +110,7 @@
                     </tr>
 
                 </table>
-                <a href="#" class="button"><span data-hover="Reservar Ahora">Reservar Ahora</span></a>
+                <a href="{{ route('contact')}}" class="button"><span data-hover="Reservar Ahora">Reservar Ahora</span></a>
             </div>
 
         </div>

@@ -6,10 +6,12 @@
                 <div class="news">
                     <div class="title"><span>Newsletter</span></div>
                     <div class="subscribe">
-                        <form>
-                            <input name="email" type="text" placeholder="Dirección de Correo" />
+                        {!! Form::open(['route' => 'newsletter', 'id' => '', '', 'enctype'=>'multipart/form-data', 'class' => '']) !!}                 
+                            <input name="str_email" type="email" placeholder="Dirección de Correo" required/>
                             <button><span data-hover="Suscribir">Suscribir</span></button>
-                        </form>
+                            {!! csrf_field() !!} 
+                            
+                         {!! Form::close() !!}
                     </div>
                     <div class="social">
                         <a target="_blank" href="https://es-la.facebook.com/Hippocampus-Vacation-Club-210418352330415/" title="Facebook"><i class="fa fa-facebook"></i></a>
@@ -41,9 +43,9 @@
                     <strong>Hippocampus Vacation Club</strong>
                 </span>
                 <a href="{{ route('home')}}">
-                    Inicio
+                    <i class="fa fa-home" aria-hidden="true"></i> Inicio
                 </a>
-                <a href="sitemap.html">
+                <a href="#">
                     Sitemap
                 </a>
 

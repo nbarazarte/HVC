@@ -34,19 +34,19 @@
             </div>
             <div id="content">
                 <h2><strong>Atención de Servicio</strong> y Calidad</h2>
-                <p>
+                <p style="text-align: justify;">
                     Hippocampus Vacation Club, C.A. desde 1992 se convirtió en una organización de servicios turísticos (Hotelero & Tiempo Compartido), con una excelente ubicación en la Isla de Margarita y capacidad de dar respuestas de calidad a sus clientes. Con más de <?=$ano = date('Y') - 1992 ?> años de experiencia y grandes aprendizajes en el área, nuestro norte es mantener a nuestra organización dentro de la preferencia del turista nacional e internacional, enfocando y orientando nuestros esfuerzos a la plena satisfacción de las expectativas que cada uno de nuestros usuarios al momento de planificar sus vacaciones y elegir como destino la Isla de Margarita.
                 </p>
 
-                <p>
+                <p style="text-align: justify;">
                     Nuestra misión es ser la opción de preferencia para las familias en el momento de planificar sus vacaciones en la Isla de Margarita, caracterizada por nuestra orientación a la satisfacción de las expectativas de nuestros clientes, brindándoles buen servicio y atención de calidad.
                 </p>
 
-                <p>
+                <p style="text-align: justify;">
                     Tenemos la visión de convertirnos en la mejor organización turística de la Isla de Margarita, sinónimo y garantía de vacaciones inolvidables y gratas experiencias enmarcadas en el acogedor ambiente de sus instalaciones y servicios, dirigidos a la plena satisfacción.
                 </p>
 
-                <p>                    
+                <p style="text-align: justify;">                    
                     Con la mejor ubicación frente a la bahía de Pampatar y a pocos minutos de los centros comerciales y a la ciudad de Porlamar <strong>HIPPOCAMPUS VACATION CLUB</strong> cuenta con las siguientes facilidades a sus huéspedes:
                 </p>
 

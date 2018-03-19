@@ -1,6 +1,28 @@
 @extends('app')
 
 @section('content')
+    
+    <?php
+
+        if($_POST){
+
+            $arrival = $datos['arrival'];
+            $departure = $datos['departure'];
+            $habitacion = $datos['habitacion'];
+            $adultos = $datos['adultos'];
+            $ninos = $datos['ninos'];
+
+        }else{
+
+            $arrival = "";
+            $departure = "";
+            $habitacion = "";
+            $adultos = "";
+            $ninos = "";
+
+        }
+
+    ?>
 
 	<!-- Header | Start -->
 	<header>
@@ -18,43 +40,76 @@
             <!-- Contact Form | START -->
         	<div id="contact">
             	<img src="{{ asset('base-hotel/preview/images/contacto.jpg') }}" width="1200" height="400" alt="" />
-                    <form name="contact" action="#" method="post">
+                    @if(Session::has('message'))
+                    
+                        {{Session::get('message')}}
+
+                    @endif           
+
+                    {!! Form::open(['route' => 'enviarReservacion', 'method'=>'PUT', 'id' => 'demo-form', 'name' => 'demo-form', 'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false']) !!} 
+
                 	<div class="col">
-                        <div class="field mandatory"><input name="contact-name" type="text" placeholder="Your Name" id="contact-name" value="" /></div>
-                        <div class="field mandatory"><input name="contact-email" type="text" placeholder="Email Address" id="contact-email" value="" /></div>
-                        <div class="field mandatory"><input name="contact-phone" type="text" placeholder="Phone Number" id="contact-phone" value="" /></div>
+                        <div class="field mandatory"><input name="contact-name" type="text" placeholder="Nombre y Apellido" id="contact-name" value="" required/></div>
+                        <div class="field mandatory"><input name="contact-email" type="email" placeholder="Correo Electrónico" id="contact-email" value="" required/></div>
+                        <div class="field mandatory"><input name="contact-phone" type="text" placeholder="N° de Teléfono" id="contact-phone" value="" required/></div>
                     </div>
                     <div class="col">
-                        <div class="field calendar"><input name="contact-arrival" type="text" placeholder="Arrival Date" id="contact-arrival" value="" readonly /><i class="fa fa-calendar-o"></i></div>
-                        <div class="field calendar"><input name="contact-departure" type="text" placeholder="Departure Date" id="contact-departure" value="" readonly /><i class="fa fa-calendar-o"></i></div>
+                        <div class="field calendar"><input name="contact-arrival" type="text" placeholder="Llegada" id="contact-arrival" required value="<?=$arrival?>"  /><i class="fa fa-calendar-o"></i></div>
+                        <div class="field calendar"><input name="contact-departure" type="text" placeholder="Salida" id="contact-departure" required value="<?=$departure?>"  /><i class="fa fa-calendar-o"></i></div>
                         <div class="select">
-                        	<select name="contact-rooms" id="contact-rooms" class="infants">
-                                <option  value="1">1 Room</option>
-                                <option  value="2" >2 Rooms</option>
-                                <option  value="3" >3 Rooms</option>
+
+                        	<select name="contact-habitacion" id="contact-habitacion" class="infants" required>
+
+                                <option value="">Habitación</option>
+
+                                @foreach ($habitaciones as $hab)
+
+                                    <option value="{{ $hab->str_habitacion }}" @if($hab->str_habitacion == $habitacion) selected="selected" @endif >{{ $hab->str_habitacion }}</option>
+
+                                @endforeach
+
                             </select>
-                            <select name="contact-adults" id="contact-adults" class="adults">
-                                <option  value="1" >1 Adult</option>
-                                <option  value="2">2 Adults</option>
-                                <option  value="3" >3 Adults</option>
-                                <option  value="4" >4 Adults</option>
-                                <option  value="5" >5 Adults</option>
+
+                            <select name="contact-adultos" id="contact-adultos" class="adults" required>
+
+                                <option value="">Adultos</option>
+                                
+                                <?php
+
+                                    for ($i=1; $i < 10; $i++) { ?>
+
+                                        <option value="{{ $i }}" @if($i == $adultos) selected="selected" @endif >{{ $i }} @if($i > 1) Adultos @else Adulto @endif</option>
+                            
+                                <?php }?>
+                    
                             </select>
-                            <select name="contact-children" id="contact-children" class="children">
-                                <option selected value="0">0 Children</option>
-                                <option  value="1" >1 Child</option>
-                                <option  value="2" >2 Children</option>
-                                <option  value="3" >3 Children</option>
-                                <option  value="4" >4 Children</option>
+
+                            <select name="contact-ninos" id="contact-ninos" class="children" required>
+
+                                <option value="">Niños</option>                              
+
+                                <?php
+
+                                    for ($i=0; $i < 3; $i++) { ?>
+                                    
+                                        <option value="{{ $i }}" @if($i == $ninos) selected="selected" @endif >{{ $i }} @if($i > 1) Niños @else Niño @endif</option>
+
+                                <?php }?>
+
                             </select>
+
                         </div>
                     </div>
                     <div class="col">
-                        <div class="field"><textarea name="contact-message" placeholder="Message" id="contact-message"></textarea></div>
+                        <div class="field"><textarea name="contact-message" placeholder="Mensaje" id="contact-message"></textarea></div>
                     </div>
                     <!-- Honeypot (for bot spam) --><input name="contact-email2" type="text" placeholder="Email Address" autocomplete="false" class="honeypot" value="" />
                     <button name="send" value="sendform"><span data-hover="Enviar Reservación">Enviar Reservación</span></button>
-                </form>
+                    
+                    {!! csrf_field() !!} 
+
+                {!! Form::close() !!}
+
             </div>
             <!-- Contact Form | END -->
 
@@ -70,12 +125,10 @@
 
             </p>
 
-            <p style="margin:0;">
+            <p style="text-align: justify;">
               
                 Nuestra ubicación privilegiada nos situa a solo cinco minutos del casco histórico de Pampatar, donde se puede disfrutar de diversas atracciones turísticas como el Castillo San Carlos de Borromeo, la iglesia del Cristo del Buen Viaje y algunas playas. Además, la ciudad de pampatar cuenta con una amplia zona gastronómica para todos los gustos, así como bares, discotecas y restaurantes muy cercanos a nuestras instalaciones.
-            </p>
-
-            <p style="margin:0;">
+            <br>
                 Nos encontramos a 10 minutos de los principales centros comerciales de la isla y aproximadamente a 50 y 60 minutos del aeropuerto y terminal de ferry, respectivamente.
 
             </p>

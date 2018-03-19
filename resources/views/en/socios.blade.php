@@ -9,9 +9,7 @@
                 <h1><span>Atención al Socio</span>
                 <span class="tagline">Disfrute de las vacaciones de su vida</span></h1>
             </div>
-        </div>
-
-        @include('reservacion-rci')
+        </div>       
 
     </header>
     <!-- Header | END -->
@@ -20,61 +18,130 @@
     	<div class="centre">
 
             <!-- Contact Form | START -->
-            <div id="contact" style="text-align: center;">
+            <div id="contact">
                 <img src="{{ asset('base-hotel/preview/images/HH_Piscina_Toldos_07_atencion.jpg') }}" width="1200" height="400" alt="" />
-                    <form name="contact" action="#" method="post">
-                    <div class="col">
-                        <div class="field mandatory"><input name="contact-contrato" type="text" placeholder="N° Contrato" id="contact-contrato" value="" /></div>   
-                        <div class="field mandatory"><input name="contact-cedula" type="text" placeholder="N° Cédula" id="contact-cedula" value="" /></div>
-                        <div class="field mandatory"><input name="contact-name" type="text" placeholder="Nombre y Apellido" id="contact-name" value="" /></div>                                               
-                    </div>
+
+                    @if(Session::has('message'))
+                    
+                        {{Session::get('message')}}
+
+                    @endif           
+
+                    {!! Form::open(['route' => 'enviar', 'method'=>'PUT', 'id' => 'demo-form', 'name' => 'demo-form', 'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false']) !!} 
 
                     <div class="col">
-
-                        <div class="select">
-                            <div class="field mandatory"><input name="contact-phone" type="text" placeholder="N° Teléfono" id="contact-phone" value="" /></div>
-                             <div class="field mandatory"><input name="contact-email" type="text" placeholder="Correo Electrónico" id="contact-email" value="" /></div>
-                            <select name="contact-rooms" id="contact-rooms" class="">
-                                <option  value="">Adultos</option>
-                                <option  value="2" >2 Adultos</option>
-                                <option  value="3" >3 Adultos</option>
-                            </select>
-                            <select name="contact-rooms" id="contact-rooms" class="">
-                                <option  value="">Niños</option>
-                                <option  value="2" >2 Niños</option>
-                                <option  value="3" >3 Niños</option>
-                            </select>
-                            <select name="contact-rooms" id="contact-rooms" class="">
-                                <option  value="">Infantes</option>
-                                <option  value="2" >2 Infantes</option>
-                                <option  value="3" >3 Infantes</option>
-                            </select>                                                        
-
+                        
+                        <div class="field mandatory">
+                            <input name="contact-contrato" type="text" placeholder="N° Contrato" id="contact-contrato" value="" required/>
+                        </div>   
+                        
+                        <div class="field mandatory">
+                            <input name="contact-cedula" type="text" placeholder="N° Cédula" id="contact-cedula" value="" required/>
                         </div>
+                        
+                        <div class="field mandatory">
+                            <input name="contact-name" type="text" placeholder="Nombre y Apellido" id="contact-name" value="" required/>
+                        </div>   
+                                                                  
                     </div>
-                    <div class="col">
-                        <div class="select">
 
-                            <select name="contact-rooms" id="contact-rooms" class="">
-                                <option  value="">Capacidad</option>
-                                <option  value="2" >2 Personas</option>
-                                <option  value="3" >3 Personas</option>
+                    <div class="col">
+
+                        <div class="field mandatory">
+                            <input name="contact-phone" type="text" placeholder="N° Teléfono" id="contact-phone" value="" required/>
+                        </div>
+                        
+                         <div class="field mandatory">
+                            <input name="contact-email" type="email" placeholder="Correo Electrónico" id="contact-email" value="" required/>
+                        </div>
+
+                        <div class="select">                                    
+                                        
+                            <select name="contact-adultos" id="contact-adultos" class="" required>
+
+                                <option value="">Adultos</option>
+
+                                <?php
+
+                                    for ($i=1; $i < 7; $i++) { ?>
+                                    
+                                        <option value="{{ $i }}">{{ $i }} @if($i > 1) Adultos @else Adulto @endif</option>
+
+                                <?php }?>
+
                             </select>
 
-                            <select name="contact-rooms" id="contact-rooms" class="">
-                                <option  value="">Semana</option>
+                            <select name="contact-ninos" id="contact-ninos" class="" required>
+
+                                <option value="">Niños</option>
+
+                                <?php
+
+                                    for ($i=0; $i < 6; $i++) { ?>
+                                    
+                                        <option value="{{ $i }}">{{ $i }} @if($i > 1) Niños @else Niño @endif</option>
+
+                                <?php }?>
+
+                            </select>
+                      
+                            <select name="contact-infantes" id="contact-infantes" class="" required>
+
+                                <option value="">Infantes</option>
+
+                                <?php
+
+                                    for ($i=0; $i < 6; $i++) { ?>
+                                    
+                                        <option value="{{ $i }}">{{ $i }} @if($i > 1) Infantes @else Infante @endif</option>
+
+                                <?php }?>
+
+                            </select> 
+                                                                                                                                
+                        </div>
+                                                                 
+                    </div>
+
+                    <div class="col">
+                        <div class="field"><textarea name="contact-message" placeholder="Mensaje" id="contact-message"></textarea></div>
+                        <div class="select">
+                            
+                            <select name="contact-capacidad" id="contact-capacidad" class="" required>
+                                <option  value="">Capacidad</option>
                                 <option  value="2" >2 </option>
                                 <option  value="3" >3 </option>
+                                <option  value="3" >4 </option>
+                                <option  value="3" >6 </option>
                             </select>
 
-                        </div>
+                            <select name="contact-semana" id="contact-semana" class="" required>
+                                
+                                <option  value="">Semanas</option>
+
+                                @foreach ($semanas as $semana) 
+                                     
+                                    <option  value="{{$semana->id }}: {{ $semana->str_semana_inicio }} - {{ $semana->str_semana_fin }}">
+                                        
+                                       Semana {{$semana->id }}: {{ $semana->str_semana_inicio }} - {{ $semana->str_semana_fin }}
+
+                                    </option>
+
+                                @endforeach
+
+                            </select>    
+
+                        </div>  
+                    
                     </div>
 
+                       <button name="send" value="sendform">
+                        <span data-hover="Enviar Reservación">Enviar Reservación</span>
+                    </button>
+                    {!! csrf_field() !!} 
+                    
+                {!! Form::close() !!}
 
-                    <!-- Honeypot (for bot spam) -->
-                    <input name="contact-email2" type="text" placeholder="Email Address" autocomplete="false" class="honeypot" value="" />
-                    <button name="send" value="sendform"><span data-hover="Enviar Reservación">Enviar Reservación</span></button>
-                </form>
             </div>
             <!-- Contact Form | END -->
 
@@ -82,17 +149,17 @@
 
                 <h2><strong>Atención</strong> al Socio</h2>
 
-                <p>
+                <p style="text-align: justify;">
                     Ante todo  reciba  nuestra más cordial saludo,  en nuestro esfuerzo para darle la mayor atención, le informamos que para el uso y disfrute de su semana vacacional podrá <b>hacer su reservación y aclarar dudas</b> a través de nuestro correo electrónico <a href="mailto:atencionalsocio@hippocampus.com.ve">atencionalsocio@hippocampus.com.ve</a> 
                     <br>
                     También pueden contactarnos por el número telefónico <b>+58 (295) 331.13.50</b>
                 </p>
 
-                <p>
+                <p style="text-align: justify;">
                     La solicitud de reservación deberá hacerse con un mínimo de 90 días de antelación para  semanas de temporada alta  y un mínimo de 21 días para las de temporada baja, todo sujeto a disponibilidad.  Dependiendo la capacidad según contrato.
                 </p>
 
-                <p>
+                <p style="text-align: justify;">
                     Le Anexamos el Calendario de Semanas para que pueda Programar y Planificar con tiempo sus vacaciones. Recuerde que las semanas, dependen del tipo de contrato adquirido: Silver o Gold.<br>Las semanas son de Sábado a Sábado, (Entrada: 4:00 pm y Salida: 11:00 am).
                 </p>
 
@@ -111,19 +178,19 @@
 
                 </p>
 
-                <p>
+                <p style="text-align: justify;">
                     La anulación de una reservación deberá hacerse con un mínimo de 30 días de antelación, de no hacer la notificación, se considerará la semana como utilizada.
                     <br>
                     La semana no disfrutada en el año correspondiente de uso, solo podrá ser usada dentro de los primeros seis (6) meses del año inmediato siguiente y únicamente en temporada baja.                                    
                 </p>
 
-                <p>
+                <p style="text-align: center;">
                     <b>
                         PARA HACER USO DE SU SEMANA ANUAL ES INDISPENSABLE TENER CUBIERTA LA CUOTA DE MANTENIMIENTO O CONDOMINIO CORRESPONDIENTE Y ESTAR AL DÍA CON TODAS SUS OBLIGACIONES
                     </b>
                 </p>
 
-                <p>
+                <p style="text-align: justify;">
                     La única empresa encargada de la cobranza de nuestros socios es <strong>FIDELITAS</strong>, sólo a través de ella se canalizarán los pagos y todo lo referente a su estado de cuenta y recibos.
                 </p>
 

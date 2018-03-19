@@ -269,12 +269,183 @@ class PublicController extends Controller
 
         $mail->AddReplyTo($_POST['contact-email'], $_POST['contact-name']);
         //$mail->addAddress("atencionalsocio@hippocampus.com.ve");
+        $mail->addAddress($_POST['contact-email']);//correo del socio
         $mail->addAddress("ezebarazarte@gmail.com");//buzón al cual va a llegar el email
         
         $mail->Subject = "hippocampusvacationclub.com - Socio RCI: ".$_POST['contact-contrato'] ;
         //$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
-        $mail->msgHTML($message);
-        $mail->AltBody = 'Contactanos';
+        
+
+        $body= '<table style="background-color: #F0F0F0" width="100%" border="0" align="center">
+    
+                    <tr>
+
+                        <td>
+                            
+                            <table style="background-color: white" width="50%" border="0" align="center">
+                                
+                                <tr>
+                                    <td align="left" width="25%">
+                                        <div align="center">
+                                            <img src="http://hippocampusvacationclub.com/sites/default/files/Logo%20hvc%20new_0.png" width="80px">
+                                        </div>
+                                    </td>
+
+                                    <td align="center" width="50%">
+                                        <strong>
+                                            HIPPOCAMPUS VACATION CLUB
+                                        </strong>
+                                        <b>Innovamos para ti</b>
+                                    </td>
+
+                                    <td align="right" width="25%">
+                                        <div align="center">
+                                            <h3>
+                                                <b>+58 (295) 331.13.50</b>
+                                            </h3>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td align="center" colspan="3" style="background-image: url(\'http://hippocampusvacationclub.com/sites/default/files/styles/baner/public/vista.jpg?itok=FVdwGhRq\'); height: 400px">                      
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td align="center" colspan="3">
+
+                                        <h2>
+                                            Estimado(a): '.$_POST['contact-name'].'
+                                        </h2>
+
+                                        <p style="text-align: center">
+                                            Gracias por hacer la reservación de su semana con nosotros. <br>En breves momentos nos estaremos comunicando con usted.
+                                        </p>
+
+
+                                    </td>
+                                </tr>
+
+                                <tr>
+
+                                    <td align="center" colspan="3">
+
+                                        <p style="text-align: center;">
+
+                                            <table align="center" border="0">
+
+                                                <tr>
+
+                                                    <td>
+                                                        N° Contrato:
+                                                    <td>
+                                                    <td>'.$_POST['contact-contrato'].'</td>
+
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td>
+                                                        Cédula:
+                                                    <td>
+                                                    <td>'.$_POST['contact-cedula'].'</td>
+
+                                                </tr>                                                                          
+
+                                                <tr>
+
+                                                    <td>
+                                                        Teléfono:
+                                                    <td>
+                                                    <td>'.$_POST['contact-phone'].'</td>
+
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td>
+                                                        Correo Electrónico:
+                                                    <td>
+                                                    <td>'.$_POST['contact-email'].'</td>
+
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td>
+                                                        Adulto(s):
+                                                    <td>
+                                                    <td>'.$_POST['contact-adultos'].'</td>
+
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td>
+                                                        Niño(s):
+                                                    <td>
+                                                    <td>'.$_POST['contact-ninos'].'</td>
+
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td>
+                                                        Infantes:
+                                                    <td>
+                                                    <td>'.$_POST['contact-infantes'].'</td>
+
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td>
+                                                        Capacidad:
+                                                    <td>
+                                                    <td>'.$_POST['contact-capacidad'].'</td>
+
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td>
+                                                        Semana:
+                                                    <td>
+                                                    <td>'.$_POST['contact-semana'].'</td>
+
+                                                </tr>                                                
+
+                                                <tr>
+
+                                                    <td>
+                                                        Mensaje:
+                                                    <td>
+                                                    <td>'.$_POST['contact-message'].'</td>
+
+                                                </tr>                                
+                                                                                
+                                            </table>
+                                          
+                                        </p>                    
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                        </td>
+
+                    </tr>
+
+                </table>';
+
+        $mail->msgHTML($body);
+
+
+        $mail->AltBody = $message;
         //$mail->addAttachment('images/imagen_adjunta.png');
          
         if (!$mail->send()) {
@@ -371,7 +542,7 @@ class PublicController extends Controller
      */
     public function enviarReservacion()
     {       
-        
+
         $message = "Nombre y Apellido: ".$_POST['contact-name']."<br>";
         $message .= "Teléfono: ".$_POST['contact-phone']."<br>";
         $message .= "Correo Electrónico: ".$_POST['contact-email']."<br>";
@@ -413,23 +584,168 @@ class PublicController extends Controller
 
         $mail->Username = "atrellus@gmail.com";
         $mail->Password = "falcor90dvv";
-        $mail->SetFrom('webmaster@hippocampus.com.ve');        
+        $mail->SetFrom('webmaster@hippocampus.com.ve');      
 
         $mail->AddReplyTo($_POST['contact-email'], $_POST['contact-name']);
         //$mail->addAddress("atencionalsocio@hippocampus.com.ve");
+
+        $mail->addAddress($_POST['contact-email']);//correo del huesped
         $mail->addAddress("ezebarazarte@gmail.com");//buzón al cual va a llegar el email
+        
         
         $mail->Subject = "hippocampusvacationclub.com - Reserva de Habitaciones: ".$_POST['contact-name'] ;
         //$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
-        $mail->msgHTML($message);
-        $mail->AltBody = 'Contactanos';
+        //$mail->msgHTML($message);
+
+        $body= '<table style="background-color: #F0F0F0" width="100%" border="0" align="center">
+    
+                    <tr>
+
+                        <td>
+                            
+                            <table style="background-color: white" width="50%" border="0" align="center">
+                                
+                                <tr>
+                                    <td align="left" width="25%">
+                                        <div align="center">
+                                            <img src="http://hippocampusvacationclub.com/sites/default/files/Logo%20hvc%20new_0.png" width="80px">
+                                        </div>
+                                    </td>
+
+                                    <td align="center" width="50%">
+                                        <strong>
+                                            HIPPOCAMPUS VACATION CLUB
+                                        </strong>
+                                        <b>Innovamos para ti</b>
+                                    </td>
+
+                                    <td align="right" width="25%">
+                                        <div align="center">
+                                            <h3>
+                                                <b>+58 (295) 331.13.23</b>
+                                            </h3>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td align="center" colspan="3" style="background-image: url(\'http://hippocampusvacationclub.com/sites/default/files/styles/baner/public/vista.jpg?itok=FVdwGhRq\'); height: 400px">                      
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td align="center" colspan="3">
+
+                                        <h2>
+                                            Estimado(a): '.$_POST['contact-name'].'
+                                        </h2>
+
+                                        <p style="text-align: center">
+                                            Gracias por hacer la reservación de su habitación <b>'.$_POST['contact-habitacion'].'</b> con nosotros. <br>En breves momentos nos estaremos comunicando con usted.
+                                        </p>
+
+
+                                    </td>
+                                </tr>
+
+                                <tr>
+
+                                    <td align="center" colspan="3">
+
+                                        <p style="text-align: center;">
+
+                                            <table align="center" border="0">                                
+
+                                                <tr>
+
+                                                    <td>
+                                                        Teléfono:
+                                                    <td>
+                                                    <td>'.$_POST['contact-phone'].'</td>
+
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td>
+                                                        Correo Electrónico:
+                                                    <td>
+                                                    <td>'.$_POST['contact-email'].'</td>
+
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td>
+                                                        Adulto(s):
+                                                    <td>
+                                                    <td>'.$_POST['contact-adultos'].'</td>
+
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td>
+                                                        Niño(s):
+                                                    <td>
+                                                    <td>'.$_POST['contact-ninos'].'</td>
+
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td>
+                                                        Llegada:
+                                                    <td>
+                                                    <td>'.$_POST['contact-arrival'].'</td>
+
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td>
+                                                        Salida:
+                                                    <td>
+                                                    <td>'.$_POST['contact-departure'].'</td>
+
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td>
+                                                        Mensaje:
+                                                    <td>
+                                                    <td>'.$_POST['contact-message'].'</td>
+
+                                                </tr>                                
+                                                                                
+                                            </table>
+                                          
+                                        </p>                    
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                        </td>
+
+                    </tr>
+
+                </table>';
+
+        $mail->msgHTML($body);
+
+        $mail->AltBody = $message;
         //$mail->addAttachment('images/imagen_adjunta.png');
          
         if (!$mail->send()) {
             //echo "Error: " . $mail->ErrorInfo;
             Session::flash('message','Error!'.$mail->ErrorInfo);
         } else {
-            Session::flash('message','Su reservación fue enviado exitosamente!');
+            Session::flash('message','Su reservación fue enviada exitosamente!');
         }
 
         return Redirect::to('/Contáctanos');

@@ -2,28 +2,40 @@
     <div id="nav">
         <div class="centre">
 
-            @if (Route::current()->getName() == 'home')
+            @if ( !empty(Route::current()))
 
-                <a href="{{ route('home')}}" class="logo">
+                @if (Route::current()->getName() == 'home')
 
-                    <img alt="" src="{{ asset('base-hotel/system/images/logohvc.png') }}" />
+                    <a href="{{ route('home')}}" class="logo">
 
-                </a>
+                        <img alt="" src="{{ asset('base-hotel/system/images/logohvc.png') }}" />
+
+                    </a>
+
+                @else
+
+                    <a href="{{ route('home')}}" class="logo2">
+
+                        <img alt="" src="{{ asset('base-hotel/system/images/logohvc2.png') }}" />
+
+                    </a>            
+                
+                @endif
 
             @else
 
-                <a href="{{ route('home')}}" class="logo2">
+                    <a href="{{ route('home')}}" class="logo2">
 
-                    <img alt="" src="{{ asset('base-hotel/system/images/logohvc2.png') }}" />
+                        <img alt="" src="{{ asset('base-hotel/system/images/logohvc2.png') }}" />
 
-                </a>            
-            
+                    </a>               
+
             @endif  
 
             <nav>
                 <ul>
                 	<li class="mobile"><a href="contact.php" class="navbook">Reservar Ahora</a></li>
-                    <li><a href="{{ route('home')}}"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                    <li><a href="{{ route('home')}}" title="Inicio"><i class="fa fa-home" aria-hidden="true"></i></a></li>
                     <li><a href="{{ route('about')}}">HVC</a>
                     <li><a href="{{ route('accommodation')}}">Habitaciones</a>
 
@@ -31,7 +43,7 @@
                             <li><a href="{{ route('matrimonial') }}">Matrimonial</a></li>
                             <li><a href="{{ route('matrimonialSofa') }}">Matrimonial + Sofá</a></li>
                             <li><a href="{{ route('doble') }}">Doble</a></li>
-                            <li><a href="{{ route('duplex') }}">Duplex</a></li>
+                            <li><a href="{{ route('duplex') }}">Duplex 2 Ambientes</a></li>
                         </ul>
 
                     </li>

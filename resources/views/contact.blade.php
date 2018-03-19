@@ -40,9 +40,16 @@
             <!-- Contact Form | START -->
         	<div id="contact">
             	<img src="{{ asset('base-hotel/preview/images/contacto.jpg') }}" width="1200" height="400" alt="" />
+                
                     @if(Session::has('message'))
-                    
-                        {{Session::get('message')}}
+                                        
+                        <div class="alert success">
+                            <i class="fa fa-check-circle"></i> 
+                            <strong>
+                                {{Session::get('message')}}
+                            </strong> 
+                            Gracias por hacer la reservación de su habitación con nosotros. En breves momentos nos estaremos comunicando con usted.
+                        </div>                        
 
                     @endif           
 

@@ -1,35 +1,49 @@
     <!-- Check Rates Banner | START -->
     <div id="check">
         <div class="centre">
-            <form action="{{ route('contact')}}" method="post">
+
+            {!! Form::open(['route' => 'reservacion', 'id' => '', '', 'enctype'=>'multipart/form-data', 'class' => '']) !!}                 
+
                 <div class="field calendar"><input name="arrival" type="text" placeholder="LLegada" id="arrival" readonly /><i class="fa fa-calendar-o"></i></div>
                 <div class="field calendar"><input name="departure" type="text" placeholder="Salida" id="departure" readonly /><i class="fa fa-calendar-o"></i></div>
                 <div class="field select">
-                    <select name="rooms">
-                        <option value="Matrimonial">Matrimonial</option>
-                        <option value="Matrimonial + Sofá">Matrimonial + Sofá</option>
-                        <option value="Familiar">Familiar</option>
-                        <option value="Duplex">Duplex</option>
+
+                    <select name="habitacion">
+
+                        @foreach ($habitaciones as $hab)
+
+                            <option value="{{ $hab->str_habitacion }}">{{ $hab->str_habitacion }}</option>
+
+                        @endforeach
+
                     </select>
                     <i class="fa fa-chevron-down"></i>
                 </div>
                 <div class="field select">
-                    <select name="adults">
-                        <option value="1 Adulto">1 Adulto</option>
-                        <option value="2 Adultos">2 Adultos</option>
-                        <option value="3 Adultos">3 Adultos</option>
-                        <option value="4 Adultos">4 Adultos</option>
-                        <option value="5 Adultos">5 Adultos</option>
+                    <select name="adultos">
+
+                        <?php
+
+                            for ($i=1; $i < 10; $i++) { ?>
+                            
+                                <option value="{{ $i }}">{{ $i }} @if($i > 1) Adultos @else Adulto @endif</option>
+
+                        <?php }?>
+
                     </select>
                     <i class="fa fa-chevron-down"></i>
                 </div>
                 <div class="field select">
-                    <select name="Niños">
-                        <option value="0 Niños">0 Niños</option>
-                        <option value="1 Niño">1 Niño</option>
-                        <option value="2 Niños">2 Niños</option>
-                        <option value="3 Niños">3 Niños</option>
-                        <option value="4 Niños">4 Niños</option>
+                    <select name="ninos">
+
+                        <?php
+
+                            for ($i=0; $i < 3; $i++) { ?>
+                            
+                                <option value="{{ $i }}">{{ $i }} @if($i > 1) Niños @else Niño @endif</option>
+
+                        <?php }?>
+
                     </select>
                     <i class="fa fa-chevron-down"></i>
                 </div>
@@ -37,7 +51,8 @@
 
                 {!! csrf_field() !!} 
                 
-            </form>
+            {!! Form::close() !!}
+
         </div>
     </div>
     <!-- Check Rates Banner | END -->
