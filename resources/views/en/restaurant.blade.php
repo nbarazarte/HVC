@@ -1,4 +1,4 @@
-@extends('app')
+@extends('en.app')
 
 @section('content')
 
@@ -10,7 +10,7 @@
             </div>
         </div>
 
-        @include('reservacion')
+        @include('en.reservacion')
 
     </header>
     <!-- Header | END -->

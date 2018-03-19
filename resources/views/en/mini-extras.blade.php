@@ -3,7 +3,7 @@
                         	<div class="item">
                                 <img alt="" src="{{ asset('base-hotel/preview/images/knela-380.jpg') }}" width="380" height="250" />
                                 <div class="details">
-                                    <a href="{{ route('especial')}}">
+                                    <a href="{{ route('especialIngles')}}">
                                         <div class="title">Piel Knela<br />
                                         <span>Collection C.A.</span></div>
                                         
@@ -14,7 +14,7 @@
                             <div class="item">
                                 <img alt="" src="{{ asset('base-hotel/preview/images/joe-380.jpg') }}" width="380" height="250" />
                                 <div class="details">
-                                    <a href="{{ route('especial')}}">
+                                    <a href="{{ route('especialIngles')}}">
                                         <div class="title">JOE'S Gril<br />
                                         <span>Restaurant</span></div>
                                         
@@ -25,7 +25,7 @@
                             <div class="item">
                                 <img alt="" src="{{ asset('base-hotel/preview/images/bio-380.jpg') }}" width="380" height="250" />
                                 <div class="details">
-                                    <a href="{{ route('especial')}}">
+                                    <a href="{{ route('especialIngles')}}">
                                         <div class="title">BIO Thai<br />
                                         <span>Center C.A.</span></div>
                                         
@@ -36,7 +36,7 @@
                             <div class="item">
                                 <img alt="" src="{{ asset('base-hotel/preview/images/ciber-380.jpg') }}" width="380" height="250" />
                                 <div class="details">
-                                    <a href="{{ route('especial')}}">
+                                    <a href="{{ route('especialIngles')}}">
                                         <div class="title">Sala de Internet<br />
                                         <span>HVC</span></div>
                                         

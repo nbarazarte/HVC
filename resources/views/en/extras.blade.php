@@ -6,21 +6,21 @@
 
             @if ( 
 
-                    (Route::current()->getName() != 'especial') &&
-                    (Route::current()->getName() != 'matrimonial') &&
-                    (Route::current()->getName() != 'matrimonialSofa') &&
-                    (Route::current()->getName() != 'doble') &&
-                    (Route::current()->getName() != 'duplex')
+                    (Route::current()->getName() != 'especialIngles') &&
+                    (Route::current()->getName() != 'matrimonialIngles') &&
+                    (Route::current()->getName() != 'matrimonialSofaIngles') &&
+                    (Route::current()->getName() != 'dobleIngles') &&
+                    (Route::current()->getName() != 'duplexIngles')
 
                 )
 
-               @include('extras2')
+               @include('en.extras2')
 
             @endif
 
         @else
 
-            @include('extras2')
+            @include('en.extras2')
 
         @endif
 
@@ -54,7 +54,7 @@
                     Excelente atención de parte de su personal, volvería con toda seguridad.
                 </p>
                 <div class="author">&ndash; <strong>Jaennie Pineda</strong> <span>(Caracas, Venezuela)</span></div>
-                <a href="{{ route('contact')}}" class="button"><span data-hover="Reservar Ahora">Reservar Ahora</span></a>
+                <a href="{{ route('contactIngles')}}" class="button"><span data-hover="Reservar Ahora">Reservar Ahora</span></a>
             </div>
             <!-- Footer Testimonial | END -->
 

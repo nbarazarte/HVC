@@ -1,4 +1,4 @@
-@extends('app')
+@extends('en.app')
 
 @section('content')
 
@@ -11,7 +11,7 @@
             </div>
         </div>
         
-        @include('reservacion')
+        @include('en.reservacion')
 
     </header>
     <!-- Header | END -->
@@ -57,7 +57,7 @@
                     </div>
                     <!-- Instagram | END -->                    
                     
-                    <a href="{{ route('restaurant') }}" class="button"><span data-hover="Ver más">Ver más</span></a>
+                    <a href="{{ route('restaurantIngles') }}" class="button"><span data-hover="Ver más">Ver más</span></a>
                     
 
                 </div>

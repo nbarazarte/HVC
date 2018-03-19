@@ -1,4 +1,4 @@
-@extends('app')
+@extends('en.app')
 
 @section('content')
 
@@ -51,6 +51,6 @@
     </main>
     <!-- Content | END -->
 
-    @include('gallerySlider')
+    @include('en.gallerySlider')
 
 @endsection

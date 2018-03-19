@@ -17,11 +17,11 @@
 
     @if ( !empty(Route::current()) )
 
-        @if (Route::current()->getName() == 'home')
+        @if (Route::current()->getName() == 'homeIngles')
 
             <body class="home2 fullwidth">
 
-        @elseif ((Route::current()->getName() == 'accommodation') || (Route::current()->getName() == 'about') || (Route::current()->getName() == 'rci') || (Route::current()->getName() == 'contact') || (Route::current()->getName() == 'reservacion') || (Route::current()->getName() == 'restaurant') || (Route::current()->getName() == 'socios') || (Route::current()->getName() == 'eventos') || (Route::current()->getName() == 'fly') || (Route::current()->getName() == 'error') || (Route::current()->getName() == 'suscripcion') || (Route::current()->getName() == 'suscripcionFallida') )
+        @elseif ((Route::current()->getName() == 'accommodationIngles') || (Route::current()->getName() == 'aboutIngles') || (Route::current()->getName() == 'rciIngles') || (Route::current()->getName() == 'contactIngles') || (Route::current()->getName() == 'reservacionIngles') || (Route::current()->getName() == 'restaurantIngles') || (Route::current()->getName() == 'sociosIngles') || (Route::current()->getName() == 'eventosIngles') || (Route::current()->getName() == 'flyIngles') || (Route::current()->getName() == 'errorIngles') || (Route::current()->getName() == 'suscripcionIngles') || (Route::current()->getName() == 'suscripcionFallidaIngles') )
 
             <body class="fullwidth">
 
@@ -31,16 +31,16 @@
 
         @endif  
 
-        @include('menu')
+        @include('en.menu')
 
-        @if (Route::current()->getName() == 'home')
+        @if (Route::current()->getName() == 'homeIngles')
 
             <!-- Header | START -->
             <header>
 
-                @include('slider')
+                @include('en.slider')
 
-                @include('reservacion')
+                @include('en.reservacion')
 
             </header>
             <!-- Header | END -->
@@ -51,9 +51,9 @@
 
             @yield('content')
 
-            @include('extras')
+            @include('en.extras')
 
-            @include('footer')
+            @include('en.footer')
 
         </div>
 
@@ -61,15 +61,15 @@
 
         <body class="fullwidth"> 
 
-            @include('menu')
+            @include('en.menu')
 
             <div id="container">
 
                 @yield('content')
 
-                 @include('extras')
+                 @include('en.extras')
 
-                @include('footer')
+                @include('en.footer')
 
             </div>            
 

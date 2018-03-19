@@ -34,7 +34,7 @@
 
             <nav>
                 <ul>
-                	<li class="mobile"><a href="contact.php" class="navbook">Reservar Ahora</a></li>
+                	<li class="mobile"><a href="{{ route('contact')}}" class="navbook">Reservar Ahora</a></li>
                     <li><a href="{{ route('home')}}" title="Inicio"><i class="fa fa-home" aria-hidden="true"></i></a></li>
                     <li><a href="{{ route('about')}}">HVC</a>
                     <li><a href="{{ route('accommodation')}}">Habitaciones</a>
@@ -49,7 +49,7 @@
                     </li>
                     <li><a href="{{ route('especial')}}">Servicios</a></li>
                     <li><a href="{{ route('gallery')}}">Galería</a></li>
-                    <li><a href="{{ route('restaurant')}}">Restaurant</a></li>
+                    <li><a href="{{ route('restaurant')}}">Restaurante</a></li>
                     <li><a href="{{ route('eventos')}}">Eventos</a></li>
                 
                     <li><a href="#">Socios</a>
@@ -57,7 +57,7 @@
                         <ul>
                             <li><a href="{{ route('rci') }}">RCI</a></li>
                             <li><a href="{{ route('socios') }}">Atención al Socio</a></li>
-                            <li><a href="{{ route('fly') }}">Fly & Buy</a></li>
+                            <li><a href="{{ route('fly') }}">Fly & Buy HVC</a></li>
                         </ul>
 
                     </li>
@@ -69,7 +69,7 @@
             <div id="language">
             	<ul>
                 	<li class="es"><a>ES</a></li>
-                    <li class="en"><a href="#">EN</a></li>
+                    <li class="en"><a href="{{ route('homeIngles')}}">EN</a></li>
                     
                 </ul>
             </div>

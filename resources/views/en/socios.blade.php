@@ -1,4 +1,4 @@
-@extends('app')
+@extends('en.app')
 
 @section('content')
 
@@ -21,9 +21,9 @@
             <div id="contact">
                 <img src="{{ asset('base-hotel/preview/images/HH_Piscina_Toldos_07_atencion.jpg') }}" width="1200" height="400" alt="" />
 
-                    @include('mensajes')       
+                    @include('en.mensajes')       
 
-                    {!! Form::open(['route' => 'enviar', 'method'=>'PUT', 'id' => 'demo-form', 'name' => 'demo-form', 'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false']) !!} 
+                    {!! Form::open(['route' => 'enviarIngles', 'method'=>'PUT', 'id' => 'demo-form', 'name' => 'demo-form', 'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false']) !!} 
 
                     <div class="col">
                         

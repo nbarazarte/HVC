@@ -1,4 +1,4 @@
-@extends('app')
+@extends('en.app')
 
 @section('content')
 
@@ -26,7 +26,7 @@
                     
                     La dirección de correo electrónico ya se encuentra registrada en nuestros sistemas<br>
 
-                    <a href="{{route('home')}}"> <i class="fa fa-home" aria-hidden="true"></i> Inicio</a>
+                    <a href="{{route('homeIngles')}}"> <i class="fa fa-home" aria-hidden="true"></i> Home</a>
 
                 </p>    
            

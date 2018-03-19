@@ -6,7 +6,7 @@
                 <div class="news">
                     <div class="title"><span>Newsletter</span></div>
                     <div class="subscribe">
-                        {!! Form::open(['route' => 'newsletter', 'id' => '', '', 'enctype'=>'multipart/form-data', 'class' => '']) !!}                 
+                        {!! Form::open(['route' => 'newsletterIngles', 'id' => '', '', 'enctype'=>'multipart/form-data', 'class' => '']) !!}                 
                             <input name="str_email" type="email" placeholder="Dirección de Correo" required/>
                             <button><span data-hover="Suscribir">Suscribir</span></button>
                             {!! csrf_field() !!} 
@@ -42,8 +42,8 @@
                     </script> 
                     <strong>Hippocampus Vacation Club</strong>
                 </span>
-                <a href="{{ route('home')}}">
-                    <i class="fa fa-home" aria-hidden="true"></i> Inicio
+                <a href="{{ route('homeIngles')}}">
+                    <i class="fa fa-home" aria-hidden="true"></i> Home
                 </a>
                 <a href="#">
                     Sitemap

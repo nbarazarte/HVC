@@ -11,17 +11,23 @@
 |
 */
 
+Route::group(['prefix' => '/en/'], function () {
+	
+	include('rutasIngles.php');
+
+});
+
 Route::get('/', [
 	'uses' => 'PublicController@index',
 	'as' =>'home'
 ]);
 
-Route::get('/HVC', [
+Route::get('/Nosotros', [
 	'uses' => 'PublicController@about',
 	'as' =>'about'
 ]);
 
-Route::get('/Restaurant', [
+Route::get('/Restaurante', [
 	'uses' => 'PublicController@restaurant',
 	'as' =>'restaurant'
 ]);
@@ -41,12 +47,12 @@ Route::put('Enviando-Reservación', [
 		'as' =>'enviarReservacion'
 ]);
 
-Route::get('/RCI', [
+Route::get('/Socio-RCI', [
 	'uses' => 'PublicController@rci',
 	'as' =>'rci'
 ]);
 
-Route::get('/Fly&Buy', [
+Route::get('/Fly&Buy-HVC', [
 	'uses' => 'PublicController@fly',
 	'as' =>'fly'
 ]);
@@ -101,12 +107,12 @@ Route::get('/Servicios', [
 	'as' =>'especial'
 ]);
 
-Route::post('/Newsletter', [
+Route::post('/Boletin', [
 	'uses' => 'PublicController@postNewsletter',
 	'as' =>'newsletter'
 ]);
 
-Route::get('/Error', [
+Route::get('/Página-No-Existe', [
 	'uses' => 'PublicController@error',
 	'as' =>'error'
 ]);

@@ -2,17 +2,17 @@
     <div id="check">
         <div class="centre">
 
-            {!! Form::open(['route' => 'reservacion', 'id' => '', '', 'enctype'=>'multipart/form-data', 'class' => '']) !!}                 
+            {!! Form::open(['route' => 'reservacionIngles', 'id' => '', '', 'enctype'=>'multipart/form-data', 'class' => '']) !!}                 
 
-                <div class="field calendar"><input name="arrival" type="text" placeholder="LLegada" id="arrival" readonly /><i class="fa fa-calendar-o"></i></div>
-                <div class="field calendar"><input name="departure" type="text" placeholder="Salida" id="departure" readonly /><i class="fa fa-calendar-o"></i></div>
+                <div class="field calendar"><input name="arrival" type="text" placeholder="Arrival" id="arrival" readonly /><i class="fa fa-calendar-o"></i></div>
+                <div class="field calendar"><input name="departure" type="text" placeholder="Departure" id="departure" readonly /><i class="fa fa-calendar-o"></i></div>
                 <div class="field select">
 
                     <select name="habitacion">
 
                         @foreach ($habitaciones as $hab)
 
-                            <option value="{{ $hab->str_habitacion }}">{{ $hab->str_habitacion }}</option>
+                            <option value="{{ $hab->str_rooms }}">{{ $hab->str_rooms }}</option>
 
                         @endforeach
 

@@ -1,4 +1,4 @@
-@extends('app')
+@extends('en.app')
 
 @section('content')
 
@@ -10,7 +10,7 @@
             </div>
         </div>
         
-        @include('reservacion')
+        @include('en.reservacion')
 
     </header>
     <!-- Header | END -->
@@ -73,11 +73,11 @@
                     <div id="block">
                         <div class="blocktitle"><a href="contact.php">Stay from <span>$149</span> per night</a></div>
                         
-                        @include('habitacionesLista')
+                        @include('en.habitacionesLista')
                         
                     </div>
                     <!-- List Items (Specials Slider) | START -->
-                    @include('mini-extras')
+                    @include('en.mini-extras')
                     <!-- List Items (Specials Slider) | END -->
                 </div>
             </aside>

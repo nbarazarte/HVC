@@ -4,9 +4,9 @@
 
             @if ( !empty(Route::current()))
 
-                @if (Route::current()->getName() == 'home')
+                @if (Route::current()->getName() == 'homeIngles')
 
-                    <a href="{{ route('home')}}" class="logo">
+                    <a href="{{ route('homeIngles')}}" class="logo">
 
                         <img alt="" src="{{ asset('base-hotel/system/images/logohvc.png') }}" />
 
@@ -14,7 +14,7 @@
 
                 @else
 
-                    <a href="{{ route('home')}}" class="logo2">
+                    <a href="{{ route('homeIngles')}}" class="logo2">
 
                         <img alt="" src="{{ asset('base-hotel/system/images/logohvc2.png') }}" />
 
@@ -24,7 +24,7 @@
 
             @else
 
-                    <a href="{{ route('home')}}" class="logo2">
+                    <a href="{{ route('homeIngles')}}" class="logo2">
 
                         <img alt="" src="{{ asset('base-hotel/system/images/logohvc2.png') }}" />
 
@@ -34,47 +34,47 @@
 
             <nav>
                 <ul>
-                	<li class="mobile"><a href="contact.php" class="navbook">Reservar Ahora</a></li>
-                    <li><a href="{{ route('home')}}" title="Inicio"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-                    <li><a href="{{ route('about')}}">HVC</a>
-                    <li><a href="{{ route('accommodation')}}">Habitaciones</a>
+                	<li class="mobile"><a href="{{ route('contactIngles')}}" class="navbook">Reservar Ahora</a></li>
+                    <li><a href="{{ route('homeIngles')}}" title="Inicio"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                    <li><a href="{{ route('aboutIngles')}}">HVC</a>
+                    <li><a href="{{ route('accommodationIngles')}}">Accommodation</a>
 
                         <ul>
-                            <li><a href="{{ route('matrimonial') }}">Matrimonial</a></li>
-                            <li><a href="{{ route('matrimonialSofa') }}">Matrimonial + Sofá</a></li>
-                            <li><a href="{{ route('doble') }}">Doble</a></li>
-                            <li><a href="{{ route('duplex') }}">Duplex 2 Ambientes</a></li>
+                            <li><a href="{{ route('matrimonialIngles') }}">Matrimonial</a></li>
+                            <li><a href="{{ route('matrimonialSofaIngles') }}">Matrimonial + Sofa</a></li>
+                            <li><a href="{{ route('dobleIngles') }}">Doble</a></li>
+                            <li><a href="{{ route('duplexIngles') }}">Duplex 2 Main Rooms</a></li>
                         </ul>
 
                     </li>
-                    <li><a href="{{ route('especial')}}">Servicios</a></li>
-                    <li><a href="{{ route('gallery')}}">Galería</a></li>
-                    <li><a href="{{ route('restaurant')}}">Restaurant</a></li>
-                    <li><a href="{{ route('eventos')}}">Eventos</a></li>
+                    <li><a href="{{ route('especialIngles')}}">Services</a></li>
+                    <li><a href="{{ route('galleryIngles')}}">Gallery</a></li>
+                    <li><a href="{{ route('restaurantIngles')}}">Restaurant</a></li>
+                    <li><a href="{{ route('eventosIngles')}}">Events</a></li>
                 
-                    <li><a href="#">Socios</a>
+                    <li><a href="#">Partners</a>
 
                         <ul>
-                            <li><a href="{{ route('rci') }}">RCI</a></li>
-                            <li><a href="{{ route('socios') }}">Atención al Socio</a></li>
-                            <li><a href="{{ route('fly') }}">Fly & Buy</a></li>
+                            <li><a href="{{ route('rciIngles') }}">Partner RCI</a></li>
+                            <li><a href="{{ route('sociosIngles') }}">Attention-to-Partner</a></li>
+                            <li><a href="{{ route('flyIngles') }}">Fly & Buy</a></li>
                         </ul>
 
                     </li>
-                    <li><a href="{{ route('contact')}}">Contáctanos</a></li>
+                    <li><a href="{{ route('contactIngles')}}">Contact</a></li>
                 </ul>
                 <a id="pull"><i class="fa fa-bars"></i></a>
             </nav>
             <!-- Languages | START -->
             <div id="language">
             	<ul>
-                	<li class="es"><a>ES</a></li>
-                    <li class="en"><a href="#">EN</a></li>
+                	<li class="en"><a>EN</a></li>
+                    <li class="es"><a href="{{ route('home')}}">ES</a></li>
                     
                 </ul>
             </div>
             <!-- Languages | END -->
-            <a href="{{ route('contact')}}" class="book"><span data-hover="Reservar Ahora">Reservar Ahora</span> </a>
+            <a href="{{ route('contactIngles')}}" class="book"><span data-hover="Reservar Ahora">Reservar Ahora</span> </a>
             <div class="shadow"></div>
         </div>
     </div>
