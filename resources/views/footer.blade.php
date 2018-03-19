@@ -43,9 +43,9 @@
                     <strong>Hippocampus Vacation Club</strong>
                 </span>
                 <a href="{{ route('home')}}">
-                    Inicio
+                    <i class="fa fa-home" aria-hidden="true"></i> Inicio
                 </a>
-                <a href="sitemap.html">
+                <a href="#">
                     Sitemap
                 </a>
 
