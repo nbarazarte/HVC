@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 19-03-2018 a las 01:59:11
+-- Tiempo de generación: 19-03-2018 a las 04:24:42
 -- Versión del servidor: 10.1.26-MariaDB-0+deb9u1
 -- Versión de PHP: 7.0.27-0+deb9u1
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `cat_habitaciones` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `str_habitacion` varchar(50) NOT NULL,
+  `str_rooms` varchar(50) NOT NULL,
   `bol_eliminado` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -36,11 +37,11 @@ CREATE TABLE `cat_habitaciones` (
 -- Volcado de datos para la tabla `cat_habitaciones`
 --
 
-INSERT INTO `cat_habitaciones` (`id`, `str_habitacion`, `bol_eliminado`) VALUES
-(1, 'Matrimonial', 0),
-(2, 'Matrimonial + Sofá', 0),
-(3, 'Familiar', 0),
-(4, 'Duplex 2 Ambientes', 0);
+INSERT INTO `cat_habitaciones` (`id`, `str_habitacion`, `str_rooms`, `bol_eliminado`) VALUES
+(1, 'Matrimonial', 'Matrimonial', 0),
+(2, 'Matrimonial + Sofá', 'Matrimonial + Sofa', 0),
+(3, 'Familiar', 'Family', 0),
+(4, 'Duplex 2 Ambientes', 'Duplex 2 Main Rooms', 0);
 
 -- --------------------------------------------------------
 
@@ -159,6 +160,13 @@ CREATE TABLE `tbl_newsletter` (
   `bol_eliminado` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `tbl_newsletter`
+--
+
+INSERT INTO `tbl_newsletter` (`id`, `str_email`, `created_at`, `updated_at`, `bol_eliminado`) VALUES
+(26, 'orlando@gmail.com', '2018-03-19 09:14:21', '2018-03-19 09:14:21', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -251,7 +259,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT de la tabla `tbl_newsletter`
 --
 ALTER TABLE `tbl_newsletter`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
