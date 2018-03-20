@@ -11,6 +11,10 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use Validator;
 
+use Twocheckout;
+use Twocheckout_Charge;
+use Twocheckout_Error;
+
 class PublicController extends Controller
 {
     /**
@@ -552,8 +556,8 @@ class PublicController extends Controller
         $message .= "Llegada: ".$_POST['contact-arrival']."<br>";
         $message .= "Salida: ".$_POST['contact-departure']."<br>";
         $message .= "Tipo de Habitación: ".$_POST['contact-habitacion']."<br>";
-        $message .= "Comentarios: ".$_POST['contact-message'];       
-                
+        $message .= "Comentarios: ".$_POST['contact-message'];
+                    
         /*
         $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
         $cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
@@ -749,10 +753,55 @@ class PublicController extends Controller
             Session::flash('message','Su reservación fue enviada exitosamente!');
         }
 
-        return Redirect::to('/Contáctanos');
+        return view('realizarPago', compact($_POST));
+
+        //return Redirect::to('/Contáctanos');
 
         //return Redirect::to('http://'.$_SERVER['SERVER_NAME'].'/');
 
     }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function pago()
+    {
+        
+        Twocheckout::privateKey('20AE389A-A1AF-4A70-9598-7FB2041A2F9D');
+        Twocheckout::sellerId('901375053');
+        Twocheckout::sandbox(true);
+
+        try {
+            $charge = Twocheckout_Charge::auth(array(
+                "merchantOrderId" => "123",
+                "token"      => $_POST['token'],
+                "currency"   => 'USD',
+                "total"      => '10.00',
+                "billingAddr" => array(
+                    "name" => 'Testing Tester',
+                    "addrLine1" => '123 Test St',
+                    "city" => 'Columbus',
+                    "state" => 'OH',
+                    "zipCode" => '43123',
+                    "country" => 'USA',
+                    "email" => 'example@2co.com',
+                    "phoneNumber" => '555-555-5555'
+                )
+            ));
+
+            if ($charge['response']['responseCode'] == 'APPROVED') {
+                echo "Thanks for your Order!";
+                echo "<h3>Return Parameters:</h3>";
+                echo "<pre>";
+                print_r($charge);
+                echo "</pre>";
+
+            }
+        } catch (Twocheckout_Error $e) {print_r($e->getMessage());}
+
+        //return redirect()->back();
+    } 
 
 }

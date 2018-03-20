@@ -45,7 +45,7 @@ Route::get('/Events', [
 	'as' =>'eventosIngles'
 ]);
 
-Route::get('/Rooms', [
+Route::get('/Accommodation', [
 	'uses' => 'PublicControllerIngles@accommodation',
 	'as' =>'accommodationIngles'
 ]);

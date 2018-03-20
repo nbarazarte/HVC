@@ -21,7 +21,7 @@
 
             <body class="home2 fullwidth">
 
-        @elseif ((Route::current()->getName() == 'accommodation') || (Route::current()->getName() == 'about') || (Route::current()->getName() == 'rci') || (Route::current()->getName() == 'contact') || (Route::current()->getName() == 'reservacion') || (Route::current()->getName() == 'restaurant') || (Route::current()->getName() == 'socios') || (Route::current()->getName() == 'eventos') || (Route::current()->getName() == 'fly') || (Route::current()->getName() == 'error') || (Route::current()->getName() == 'suscripcion') || (Route::current()->getName() == 'suscripcionFallida') )
+        @elseif ((Route::current()->getName() == 'accommodation') || (Route::current()->getName() == 'about') || (Route::current()->getName() == 'rci') || (Route::current()->getName() == 'contact') || (Route::current()->getName() == 'reservacion') || (Route::current()->getName() == 'restaurant') || (Route::current()->getName() == 'socios') || (Route::current()->getName() == 'eventos') || (Route::current()->getName() == 'fly') || (Route::current()->getName() == 'error') || (Route::current()->getName() == 'enviarReservacion') )
 
             <body class="fullwidth">
 
@@ -91,6 +91,63 @@
         ga('send', 'pageview');
 
     </script>
+
+    <!-- Pasarela de pagos -->
+
+        @if (Route::current()->getName() == 'pago')
+
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+            <script src="https://www.2checkout.com/checkout/api/2co.min.js"></script>
+
+            <script>
+                // Called when token created successfully.
+                var successCallback = function(data) {
+                    var myForm = document.getElementById('myCCForm');
+
+                    // Set the token as the value for the token input
+                    myForm.token.value = data.response.token.token;
+
+                    // IMPORTANT: Here we call `submit()` on the form element directly instead of using jQuery to prevent and infinite token request loop.
+                    myForm.submit();
+                };
+
+                // Called when token creation fails.
+                var errorCallback = function(data) {
+                    if (data.errorCode === 200) {tokenRequest();} else {alert(data.errorMsg);}
+                };
+
+                var tokenRequest = function() {
+                    // Setup token request arguments
+                    var args = {
+                        sellerId: "901375053",
+                        publishableKey: "B0E9CB39-97DD-43C9-A59D-1B78EFF5D416",
+                        ccNo: $("#ccNo").val(),
+                        cvv: $("#cvv").val(),
+                        expMonth: $("#expMonth").val(),
+                        expYear: $("#expYear").val()
+                    };
+
+                    // Make the token request
+                    TCO.requestToken(successCallback, errorCallback, args);
+                };
+
+                $(function() {
+                    // Pull in the public encryption key for our environment
+                    TCO.loadPubKey('sandbox');
+
+                    $("#myCCForm").submit(function(e) {
+                        // Call our token request function
+                        tokenRequest();
+
+                        // Prevent form from submitting
+                        return false;
+                    });
+                });
+            </script>
+
+        @endif
+    
+    <!-- fin -->
 
     </body>
 

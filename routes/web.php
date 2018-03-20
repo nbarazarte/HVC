@@ -127,6 +127,11 @@ Route::get('/Suscripción-Fallida', [
 	'as' =>'suscripcionFallida'
 ]);
 
+Route::put('/Pago', [
+	'uses' => 'PublicController@pago',
+	'as' =>'pago'
+]);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
