@@ -39,7 +39,7 @@
                         <span class="month">Nov</span>
                         <span class="day">27</span>
                     </div>
-                    <p class="title">Free Wi-Fi in all rooms</p>
+                    <p class="title"> Free Wi-Fi in all rooms </p>
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque...</p>
                 </a>
             </div>
@@ -48,13 +48,14 @@
             <!-- Footer Testimonial | START -->
             <div class="footertestimonial">
                 <i class="fa fa-quote-left"></i>
-                <p class="title">Un lugar ideal para el descanso</p>
+                <p class="title">
+                    A ideal place for the rest
+                </p>
                 <p>
-                    Un lugar muy agradable, con buena música y comida y una vista espectacular al mar.<br>
-                    Excelente atención de parte de su personal, volvería con toda seguridad.
+                    A very nice place, with good music and food and a spetacle view sea.<br>Excellente attention from part of personal, I would go back in all safety.
                 </p>
                 <div class="author">&ndash; <strong>Jaennie Pineda</strong> <span>(Caracas, Venezuela)</span></div>
-                <a href="{{ route('contactIngles')}}" class="button"><span data-hover="Reservar Ahora">Reservar Ahora</span></a>
+                <a href="{{ route('contactIngles')}}" class="button"><span data-hover=" Book online"> Book online</span></a>
             </div>
             <!-- Footer Testimonial | END -->
 

@@ -57,7 +57,7 @@
 
                         	<select name="contact-habitacion" id="contact-habitacion" class="infants" required>
 
-                                <option value="">Habitación</option>
+                                <option value="">Tipo Hab.</option>
 
                                 @foreach ($habitaciones as $hab)
 
@@ -146,8 +146,8 @@
 			var marker = new google.maps.Marker({
 			position: latlng, 
 			map: map,
-			//icon: "base-hotel/system/images/point.png"
-            icon: none
+			icon: "base-hotel/system/images/point.png"
+            //icon: none
 			});
 			}
 			function loadScript() {

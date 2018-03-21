@@ -682,7 +682,7 @@ article .button { margin:7px 30px 10px 0; float:left; }
 #contact input, #contact textarea, #contact select { width:100%; height:45px; padding:0 15px; font:14px/20px 'Open Sans', sans-serif; letter-spacing:.4px; border:none; box-sizing:border-box; background:none; z-index:2; position:relative; }
 #contact select { width:31.33%; padding:0 10px; margin-right:2%; background:#FFF; border-radius:3px; box-shadow:1px 1px 0 rgba(0,0,0,.1); float:left; }
 #contact select:last-child { width:33.33%; margin:0; }
-#contact textarea { height:96px; padding:12px 15px; display:block; }/*eight:149px*/
+#contact textarea { height:149px; padding:12px 15px; display:block; }/*eight:149px*/
 #contact .field.calendar input { cursor:pointer; }
 #contact .field i { font-size:16px; color:#CCC; position:absolute; margin-top:14px; right:15px; z-index:1; }
 #contact button { width:30%; margin:10px 0 20px; font-size:14px; border-radius:3px; }

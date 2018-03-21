@@ -57,11 +57,11 @@
 
                         	<select name="contact-habitacion" id="contact-habitacion" class="infants" required>
 
-                                <option value="">Habitación</option>
+                                <option value="">Rooms</option>
 
                                 @foreach ($habitaciones as $hab)
 
-                                    <option value="{{ $hab->str_habitacion }}" @if($hab->str_habitacion == $habitacion) selected="selected" @endif >{{ $hab->str_habitacion }}</option>
+                                    <option value="{{ $hab->str_rooms }}" @if($hab->str_rooms == $habitacion) selected="selected" @endif >{{ $hab->str_rooms }}</option>
 
                                 @endforeach
 
@@ -69,7 +69,7 @@
 
                             <select name="contact-adultos" id="contact-adultos" class="adults" required>
 
-                                <option value="">Adultos</option>
+                                <option value="">Adults</option>
                                 
                                 <?php
 
@@ -83,13 +83,13 @@
 
                             <select name="contact-ninos" id="contact-ninos" class="children" required>
 
-                                <option value="">Niños</option>                              
+                                <option value="">Children</option>                              
 
                                 <?php
 
                                     for ($i=0; $i < 3; $i++) { ?>
                                     
-                                        <option value="{{ $i }}" @if($i == $ninos) selected="selected" @endif >{{ $i }} @if($i > 1) Niños @else Niño @endif</option>
+                                        <option value="{{ $i }}" @if($i == $ninos) selected="selected" @endif >{{ $i }} @if($i > 1) Children @else Child @endif</option>
 
                                 <?php }?>
 

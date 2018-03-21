@@ -7,11 +7,11 @@
         <div class="centre">
             <h1>Disfruta con nosotros <strong>la mejor Experiencia en Margarita</strong></h1>
             <p>
-                Su Hotel Hippocampus Vacation Club tiene una ubicación privilegiada frente a la hermosa bahía de Pampatar, Contando con 146 habitaciones de uso Hotelero y Tiempo Compartido. Situado a solo 50 minutos del aeropuerto Internacional del Caribe Santiago Mariño y a 15 minutos de la ciudad de Porlamar.
+                Su Hotel Hippocampus Vacation Club tiene una ubicación privilegiada frente a la hermosa bahía de Pampatar, contando con 146 habitaciones de uso hotelero y tiempo compartido. Situado a solo 50 minutos del aeropuerto Internacional del Caribe Santiago Mariño y a 15 minutos de la ciudad de Porlamar.
             </p>
 
             <p>
-                Disfrutaras de Alojamiento en confortables habitaciones con Desayuno Incluido, Wi-Fi, Piscinas Panorámicas, Jacuzzi, Servicio de Toallas, Entretenimiento diurno, Agencia de Viajes, Acceso directo al Restauran y estacionamiento techado. Ademas de la cercanía a las playas más reconocidas de la zona gastronómica y la vida nocturna de la Isla de Margarita.
+                Disfrutaras de Alojamiento en confortables habitaciones con desayuno incluido, wi-fi, piscinas panorámicas, jacuzzi, servicio de toallas, entretenimiento diurno, agencia de viajes, acceso directo al restaurant y estacionamiento techado. Ademas de la cercanía a las playas más reconocidas de la zona gastronómica y la vida nocturna de la Isla de Margarita.
             </p>
 
             <!-- USP Boxes | START -->

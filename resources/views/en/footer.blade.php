@@ -7,8 +7,8 @@
                     <div class="title"><span>Newsletter</span></div>
                     <div class="subscribe">
                         {!! Form::open(['route' => 'newsletterIngles', 'id' => '', '', 'enctype'=>'multipart/form-data', 'class' => '']) !!}                 
-                            <input name="str_email" type="email" placeholder="Dirección de Correo" required/>
-                            <button><span data-hover="Suscribir">Suscribir</span></button>
+                            <input name="str_email" type="email" placeholder="Email Address" required/>
+                            <button><span data-hover="Subscribe">Subscribe</span></button>
                             {!! csrf_field() !!} 
                             
                          {!! Form::close() !!}
@@ -24,7 +24,7 @@
             	<div class="contact">
                 	<p>
                 		<strong class="phone"> <i class="fa fa-phone-square"></i> +58 (295) 331.13.00</strong><br />              	
-                    	<i class="fa fa-map-marker"></i> Calle El Cristo, edifc. Complejo Hippocampus, sector La Caranta.<br />Isla de Margarita. Venezuela
+                    	<i class="fa fa-map-marker"></i> Street of Christ, building Hippocampus complex, neighborhood Caranta.<br /> Margarita Island. Venezuela
                 	</p>
                 </div>
                 <!-- Contact Details | END -->

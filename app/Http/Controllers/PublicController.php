@@ -753,12 +753,25 @@ class PublicController extends Controller
             Session::flash('message','Su reservación fue enviada exitosamente!');
         }
 
-        return view('realizarPago', compact($_POST));
+        //return redirect()->back();
 
-        //return Redirect::to('/Contáctanos');
+        Session::push('datos', $_POST);
+        //dd(Session::get('datos'));die();
+
+        return Redirect::to('/Realizar-Pago');
 
         //return Redirect::to('http://'.$_SERVER['SERVER_NAME'].'/');
 
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function realizarPago()
+    {
+         return view('realizarPago');
     }
 
     /**

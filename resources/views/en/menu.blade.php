@@ -34,7 +34,7 @@
 
             <nav>
                 <ul>
-                	<li class="mobile"><a href="{{ route('contactIngles')}}" class="navbook">Reservar Ahora</a></li>
+                	<li class="mobile"><a href="{{ route('contactIngles')}}" class="navbook"> Book Online</a></li>
                     <li><a href="{{ route('homeIngles')}}" title="Inicio"><i class="fa fa-home" aria-hidden="true"></i></a></li>
                     <li><a href="{{ route('aboutIngles')}}">HVC</a>
                     <li><a href="{{ route('accommodationIngles')}}">Accommodation</a>
@@ -42,7 +42,7 @@
                         <ul>
                             <li><a href="{{ route('matrimonialIngles') }}">Matrimonial</a></li>
                             <li><a href="{{ route('matrimonialSofaIngles') }}">Matrimonial + Sofa</a></li>
-                            <li><a href="{{ route('dobleIngles') }}">Doble</a></li>
+                            <li><a href="{{ route('dobleIngles') }}">Double</a></li>
                             <li><a href="{{ route('duplexIngles') }}">Duplex 2 Main Rooms</a></li>
                         </ul>
 
@@ -74,7 +74,7 @@
                 </ul>
             </div>
             <!-- Languages | END -->
-            <a href="{{ route('contactIngles')}}" class="book"><span data-hover="Reservar Ahora">Reservar Ahora</span> </a>
+            <a href="{{ route('contactIngles')}}" class="book"><span data-hover="Book Online "> Book Online </span> </a>
             <div class="shadow"></div>
         </div>
     </div>

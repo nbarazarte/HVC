@@ -26,7 +26,7 @@
 
                             for ($i=1; $i < 10; $i++) { ?>
                             
-                                <option value="{{ $i }}">{{ $i }} @if($i > 1) Adultos @else Adulto @endif</option>
+                                <option value="{{ $i }}">{{ $i }} @if($i > 1) Adults @else Adult @endif</option>
 
                         <?php }?>
 
@@ -40,14 +40,14 @@
 
                             for ($i=0; $i < 3; $i++) { ?>
                             
-                                <option value="{{ $i }}">{{ $i }} @if($i > 1) Niños @else Niño @endif</option>
+                                <option value="{{ $i }}">{{ $i }} @if($i > 1) Children @else Child @endif</option>
 
                         <?php }?>
 
                     </select>
                     <i class="fa fa-chevron-down"></i>
                 </div>
-                <button><span data-hover="Reservar Ahora">Reservar Ahora</span></button>
+                <button><span data-hover="Book A Room"> Book A Room</span></button>
 
                 {!! csrf_field() !!} 
                 

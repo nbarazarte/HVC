@@ -5,13 +5,13 @@
     <!-- Content | START -->
     <main>
         <div class="centre">
-            <h1>Disfruta con nosotros <strong>la mejor Experiencia en Margarita</strong></h1>
-            <p>
-                Su Hotel Hippocampus Vacation Club tiene una ubicación privilegiada frente a la hermosa bahía de Pampatar, Contando con 146 habitaciones de uso Hotelero y Tiempo Compartido. Situado a solo 50 minutos del aeropuerto Internacional del Caribe Santiago Mariño y a 15 minutos de la ciudad de Porlamar.
+            <h1> Enjoy With Us <strong> The Best Experience in Margarita</strong></h1>
+            <p>               
+                His Hotel Hippocampus Vacation Club have a privileged ubication in front of at the beautiful bay of Pampatar, count with 146 Bedrooms of use Hotelier and Shared Time. Located a only 50 minutes the airport international of Caribbean Santiago Mariño and a 15 minutes of the Polarmar City.
             </p>
 
             <p>
-                Disfrutaras de Alojamiento en confortables habitaciones con Desayuno Incluido, Wi-Fi, Piscinas Panorámicas, Jacuzzi, Servicio de Toallas, Entretenimiento diurno, Agencia de Viajes, Acceso directo al Restauran y estacionamiento techado. Ademas de la cercanía a las playas más reconocidas de la zona gastronómica y la vida nocturna de la Isla de Margarita.
+                You will Enjoy of accommodation in confortables bedrooms With breakfast include, wi-fi, panoramic pool, jacuzzi, services of towel, entertainment diunal, travels of agency, access direct the restaurant and covered parking. besides of the outskirts of the beaches more knowed of the gastronomy zone and nigth lives of the Margarita island.
             </p>
 
             <!-- USP Boxes | START -->
@@ -19,21 +19,23 @@
                 <div class="box">
                     
                     <i class="fa fa-bed" aria-hidden="true"></i>
-                    <h3>Toda Una Experiencia Hotelera</h3>
-                    <p>Cómodas y confortables habitaciones equipadas para toda la familia. Ven y disfruta de nuestra terraza con la mejor vista a la bahía de Pampatar, te esperamos.</p>
+                    <h3> All a Hotel Experience </h3>
+                    <p>
+                        Confort and confortables bedrooms equipped for all the family. Come and enjoy of our terrace with the best view at the pampatar bay, to wait for.
+                    </p>
                 </div>
                 <div class="box">
                     <i class="fa fa-cutlery"></i>
-                    <h3>Una Fusión de Sabores</h3>
+                    <h3> A Fusion of Flavors </h3>
                     <p>
-                        Lo mejor de la Gastronomía de Venezuela converge en cada plato para complacer a los paladares más exigentes, te invitamos a degustar nuestras delicateses.
+                        The best Venezuelan gastronomy converge in each dish for please at the tastes more demanding, we invite at digust our deli.
                     </p>
                 </div>
                 <div class="box">
                     <i class="fa fa-briefcase" aria-hidden="true"></i>
-                    <h3>Encuentros Corporativos</h3>
+                    <h3>Coporate Meetings </h3>
                     <p>
-                        Con instalaciones que cuentan con todo lo necesario para llevar a cabo las más productivas reuniones de negocios en un ambiente cómodo y agradable.
+                        With installation that count with all it necesary to bring about the more productive meetings of business in a environment confortable and nice.
                     </p>
                 </div>
             </section>

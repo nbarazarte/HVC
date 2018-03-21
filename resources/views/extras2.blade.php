@@ -37,8 +37,7 @@
                                         <div class="title">BioThai<br />
                                         <span>Center C.A.</span></div>
                                         <p>
-                                            En BioThai Center somos un oasis ubicado en el corazón de Pampatar, Un espacio de bienestar y cuidado personal para hombres y mujeres.
-
+                                            En BioThai Center somos un oasis ubicado en el corazón de Pampatar, un espacio de bienestar y cuidado personal para hombres y mujeres.
                                         </p>
                                         <div class="button"><span data-hover="Ver más">Ver más</span></div>
                                     </a>

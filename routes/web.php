@@ -117,14 +117,9 @@ Route::get('/Página-No-Existe', [
 	'as' =>'error'
 ]);
 
-Route::get('/Suscripción-Realizada', [
-	'uses' => 'PublicController@suscripcion',
-	'as' =>'suscripcion'
-]);
-
-Route::get('/Suscripción-Fallida', [
-	'uses' => 'PublicController@suscripcionfallida',
-	'as' =>'suscripcionFallida'
+Route::get('/Realizar-Pago', [
+	'uses' => 'PublicController@realizarPago',
+	'as' =>'realizarPago'
 ]);
 
 Route::put('/Pago', [
