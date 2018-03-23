@@ -117,14 +117,9 @@ Route::get('/Página-No-Existe', [
 	'as' =>'error'
 ]);
 
-Route::get('/Realizar-Pago', [
+Route::get('/Datos-Reservación', [
 	'uses' => 'PublicController@realizarPago',
 	'as' =>'realizarPago'
-]);
-
-Route::put('/Pago', [
-	'uses' => 'PublicController@pago',
-	'as' =>'pago'
 ]);
 
 Auth::routes();

@@ -100,14 +100,9 @@ Route::get('/Page-No-Exist', [
 	'as' =>'errorIngles'
 ]);
 
-Route::get('/Subscription-Realized', [
-	'uses' => 'PublicControllerIngles@suscripcion',
-	'as' =>'suscripcionIngles'
-]);
-
-Route::get('/Subscription-Failed', [
-	'uses' => 'PublicControllerIngles@suscripcionfallida',
-	'as' =>'suscripcionFallidaIngles'
+Route::get('/Reservation-Data', [
+	'uses' => 'PublicControllerIngles@realizarPagoIngles',
+	'as' =>'realizarPagoIngles'
 ]);
 
 ?>

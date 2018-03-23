@@ -50,7 +50,7 @@
                 <i class="fa fa-quote-left"></i>
                 <p class="title">Un lugar ideal para el descanso</p>
                 <p>
-                    Un lugar muy agradable, con buena música y comida y una vista espectacular al mar.<br>
+                    Un lugar muy agradable, con buena música, comida y una vista espectacular al mar.<br>
                     Excelente atención de parte de su personal, volvería con toda seguridad.
                 </p>
                 <div class="author">&ndash; <strong>Jaennie Pineda</strong> <span>(Caracas, Venezuela)</span></div>

@@ -11,6 +11,10 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use Validator;
 
+use Twocheckout;
+use Twocheckout_Charge;
+use Twocheckout_Error;
+
 class PublicControllerIngles extends Controller
 {
     /**
@@ -263,8 +267,8 @@ class PublicControllerIngles extends Controller
         //$mail->Password = "Monitor.2017";
         //$mail->SetFrom('socialmedia@monitorbg.com');
 
-        $mail->Username = "atrellus@gmail.com";
-        $mail->Password = "falcor90dvv";
+        $mail->Username = "hippocampusclubhotel@gmail.com";
+        $mail->Password = "worl35Z23";
         $mail->SetFrom('webmaster@hippocampus.com.ve');        
 
         $mail->AddReplyTo($_POST['contact-email'], $_POST['contact-name']);
@@ -420,7 +424,7 @@ class PublicControllerIngles extends Controller
                                                 <tr>
 
                                                     <td>
-                                                        Mensaje:
+                                                        Comentarios:
                                                     <td>
                                                     <td>'.$_POST['contact-message'].'</td>
 
@@ -455,7 +459,7 @@ class PublicControllerIngles extends Controller
             Session::flash('message','Su reservación fue enviada exitosamente!');
         }
 
-        return Redirect::to('/Attention-to-Partner');
+        return Redirect::to('/Atención-al-Socio');
 
         //return Redirect::to('http://'.$_SERVER['SERVER_NAME'].'/');
 
@@ -552,8 +556,8 @@ class PublicControllerIngles extends Controller
         $message .= "Llegada: ".$_POST['contact-arrival']."<br>";
         $message .= "Salida: ".$_POST['contact-departure']."<br>";
         $message .= "Tipo de Habitación: ".$_POST['contact-habitacion']."<br>";
-        $message .= "Comentarios: ".$_POST['contact-message'];       
-                
+        $message .= "Comentarios: ".$_POST['contact-message'];
+                    
         /*
         $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
         $cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
@@ -583,8 +587,8 @@ class PublicControllerIngles extends Controller
         //$mail->Password = "Monitor.2017";
         //$mail->SetFrom('socialmedia@monitorbg.com');
 
-        $mail->Username = "atrellus@gmail.com";
-        $mail->Password = "falcor90dvv";
+        $mail->Username = "hippocampusclubhotel@gmail.com";
+        $mail->Password = "worl35Z23";
         $mail->SetFrom('webmaster@hippocampus.com.ve');      
 
         $mail->AddReplyTo($_POST['contact-email'], $_POST['contact-name']);
@@ -715,7 +719,7 @@ class PublicControllerIngles extends Controller
                                                 <tr>
 
                                                     <td>
-                                                        Mensaje:
+                                                        Comentarios:
                                                     <td>
                                                     <td>'.$_POST['contact-message'].'</td>
 
@@ -749,10 +753,27 @@ class PublicControllerIngles extends Controller
             Session::flash('message','Su reservación fue enviada exitosamente!');
         }
 
-        return Redirect::to('/Contact');
+        //return redirect()->back();
+
+        Session::flush();
+
+        Session::push('datos', $_POST);
+        //dd(Session::get('datos'));die();
+
+        return Redirect::to('/en/Reservation-Data');
 
         //return Redirect::to('http://'.$_SERVER['SERVER_NAME'].'/');
 
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function realizarPagoIngles()
+    {
+         return view('en.realizarPago');
     }
 
 }

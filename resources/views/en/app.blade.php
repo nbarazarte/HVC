@@ -21,7 +21,7 @@
 
             <body class="home2 fullwidth">
 
-        @elseif ((Route::current()->getName() == 'accommodationIngles') || (Route::current()->getName() == 'aboutIngles') || (Route::current()->getName() == 'rciIngles') || (Route::current()->getName() == 'contactIngles') || (Route::current()->getName() == 'reservacionIngles') || (Route::current()->getName() == 'restaurantIngles') || (Route::current()->getName() == 'sociosIngles') || (Route::current()->getName() == 'eventosIngles') || (Route::current()->getName() == 'flyIngles') || (Route::current()->getName() == 'errorIngles') || (Route::current()->getName() == 'suscripcionIngles') || (Route::current()->getName() == 'suscripcionFallidaIngles') )
+        @elseif ((Route::current()->getName() == 'accommodationIngles') || (Route::current()->getName() == 'aboutIngles') || (Route::current()->getName() == 'rciIngles') || (Route::current()->getName() == 'contactIngles') || (Route::current()->getName() == 'reservacionIngles') || (Route::current()->getName() == 'restaurantIngles') || (Route::current()->getName() == 'sociosIngles') || (Route::current()->getName() == 'eventosIngles') || (Route::current()->getName() == 'flyIngles') || (Route::current()->getName() == 'errorIngles') || (Route::current()->getName() == 'enviarReservacionIngles') || (Route::current()->getName() == 'realizarPagoIngles') )
 
             <body class="fullwidth">
 
@@ -91,6 +91,16 @@
         ga('send', 'pageview');
 
     </script>
+
+    <!-- Pasarela de pagos -->
+
+        @if (Route::current()->getName() == 'realizarPagoIngles')
+
+            <script src="https://www.2checkout.com/static/checkout/javascript/direct.min.js"></script>
+
+        @endif
+    
+    <!-- fin -->
 
     </body>
 

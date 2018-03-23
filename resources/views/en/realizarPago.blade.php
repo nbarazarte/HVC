@@ -1,4 +1,4 @@
-@extends('app')
+@extends('en.app')
 
 @section('content')
 
@@ -6,7 +6,7 @@
 	<header>
     	<div id="header">
         	<div class="h1">
-                <h1><span>Datos de la Reservación</span>
+                <h1><span>Reservation Data</span>
                 <span class="tagline">Innovando para ti</span></h1>
             </div>
         </div>

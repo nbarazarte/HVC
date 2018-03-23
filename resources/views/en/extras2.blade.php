@@ -9,8 +9,9 @@
                                         <div class="title">Piel Knela<br />
                                         <span>Collection C.A.</span></div>
                                             <p>
-                                                ¿Llegaste a Hippocampus Vacation Club y no tienes traje de baño? <br>
-                                                Despreocúpate, Piel Knela te proporcionará lo que necesites.
+                                                 <br>
+                                                
+                                                You arrived at Hippocampus Vacation Club and you don't have swimsuit? <br> Don't worried, Piel Kanela provide to that it you need.
 
 
                                             </p>
@@ -26,7 +27,7 @@
                                         <span>Restaurant C.A.</span></div>
                                         <p>
                                             A place full of magic and fusions of flavors<br>
-                                            Visit us! Here all is Always Deliciuos!
+                                            Visit us! Here all is Always Delicious!
                                         </p>
                                         <div class="button"><span data-hover="See more">See more</span></div>
                                     </a>
@@ -49,10 +50,11 @@
                                 <img alt="" src="{{ asset('base-hotel/preview/images/ciber.jpg') }}" width="1200" height="400" />
                                 <div class="details">
                                     <a href="{{ route('especialIngles')}}">
-                                        <div class="title"> Hall of Enthernet<br />
+                                        <div class="title"> Hall Of Internet <br />
                                         <span>HVC</span></div>
                                         <p>
-                                            En Hippocampus Vacation Club ponemos a su alcance un área para que usted se mantenga conectado con el mundo cuando lo necesite.
+                                            
+                                             In Hippocampus Vacation Club we put at your disposal an area for that maintain you connected with the world when you need it.
                                         </p>
                                         <div class="button"><span data-hover="See more">See more</span></div>
                                     </a>

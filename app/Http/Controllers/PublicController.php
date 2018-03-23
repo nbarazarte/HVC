@@ -267,8 +267,8 @@ class PublicController extends Controller
         //$mail->Password = "Monitor.2017";
         //$mail->SetFrom('socialmedia@monitorbg.com');
 
-        $mail->Username = "atrellus@gmail.com";
-        $mail->Password = "falcor90dvv";
+        $mail->Username = "hippocampusclubhotel@gmail.com";
+        $mail->Password = "worl35Z23";
         $mail->SetFrom('webmaster@hippocampus.com.ve');        
 
         $mail->AddReplyTo($_POST['contact-email'], $_POST['contact-name']);
@@ -424,7 +424,7 @@ class PublicController extends Controller
                                                 <tr>
 
                                                     <td>
-                                                        Mensaje:
+                                                        Comentarios:
                                                     <td>
                                                     <td>'.$_POST['contact-message'].'</td>
 
@@ -587,8 +587,8 @@ class PublicController extends Controller
         //$mail->Password = "Monitor.2017";
         //$mail->SetFrom('socialmedia@monitorbg.com');
 
-        $mail->Username = "atrellus@gmail.com";
-        $mail->Password = "falcor90dvv";
+        $mail->Username = "hippocampusclubhotel@gmail.com";
+        $mail->Password = "worl35Z23";
         $mail->SetFrom('webmaster@hippocampus.com.ve');      
 
         $mail->AddReplyTo($_POST['contact-email'], $_POST['contact-name']);
@@ -719,7 +719,7 @@ class PublicController extends Controller
                                                 <tr>
 
                                                     <td>
-                                                        Mensaje:
+                                                        Comentarios:
                                                     <td>
                                                     <td>'.$_POST['contact-message'].'</td>
 
@@ -755,10 +755,12 @@ class PublicController extends Controller
 
         //return redirect()->back();
 
+        Session::flush();
+
         Session::push('datos', $_POST);
         //dd(Session::get('datos'));die();
 
-        return Redirect::to('/Realizar-Pago');
+        return Redirect::to('/Datos-Reservación');
 
         //return Redirect::to('http://'.$_SERVER['SERVER_NAME'].'/');
 
@@ -773,48 +775,5 @@ class PublicController extends Controller
     {
          return view('realizarPago');
     }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function pago()
-    {
-        
-        Twocheckout::privateKey('20AE389A-A1AF-4A70-9598-7FB2041A2F9D');
-        Twocheckout::sellerId('901375053');
-        Twocheckout::sandbox(true);
-
-        try {
-            $charge = Twocheckout_Charge::auth(array(
-                "merchantOrderId" => "123",
-                "token"      => $_POST['token'],
-                "currency"   => 'USD',
-                "total"      => '10.00',
-                "billingAddr" => array(
-                    "name" => 'Testing Tester',
-                    "addrLine1" => '123 Test St',
-                    "city" => 'Columbus',
-                    "state" => 'OH',
-                    "zipCode" => '43123',
-                    "country" => 'USA',
-                    "email" => 'example@2co.com',
-                    "phoneNumber" => '555-555-5555'
-                )
-            ));
-
-            if ($charge['response']['responseCode'] == 'APPROVED') {
-                echo "Thanks for your Order!";
-                echo "<h3>Return Parameters:</h3>";
-                echo "<pre>";
-                print_r($charge);
-                echo "</pre>";
-
-            }
-        } catch (Twocheckout_Error $e) {print_r($e->getMessage());}
-
-        //return redirect()->back();
-    } 
 
 }

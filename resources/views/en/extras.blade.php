@@ -52,7 +52,8 @@
                     A ideal place for the rest
                 </p>
                 <p>
-                    A very nice place, with good music and food and a spetacle view sea.<br>Excellente attention from part of personal, I would go back in all safety.
+                    A very nice place, with good music, food and a spectacular view of the sea. <br>
+                    Excellent attention from your staff, I would go back in all safety.
                 </p>
                 <div class="author">&ndash; <strong>Jaennie Pineda</strong> <span>(Caracas, Venezuela)</span></div>
                 <a href="{{ route('contactIngles')}}" class="button"><span data-hover=" Book online"> Book online</span></a>

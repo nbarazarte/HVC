@@ -6,7 +6,7 @@
     	<div id="header">
         	<div class="h1">
                 <h1><span>Restaurant</span>
-                <span class="tagline">Una Experiencia Gastronómica</span></h1>
+                <span class="tagline">A Gastronomy Experience </span></h1>
             </div>
         </div>
 
@@ -37,7 +37,11 @@
 
                     <h2><strong>JOE'S Gril</strong> Restaurant</h2>
                     <p style="text-align: justify;">
-                        Nuestra misión dentro del hotel <strong>Hippocampus Vacation Club</strong>, es brindar un servicio extraordinario, ofreciendo una oferta gastronómica variada como: desayunos, almuerzos, snacks, pizzas, cenas, sopas entre muchas más. Proveemos un menú ejecutivo y una gran variedad en la carta para que nuestros huéspedes se sientan a gusto en el restaurant o mientras disfrutan de un día soleado en la piscina.
+                        
+                        
+                        Our mision in of hotel <strong>Hippocampus Vacation Club</strong>, is to provide extraodinary services, offering a varied gastronomy as: breakfasts, lunch, snacks, pizzas, dinner, soups among many more. We provide a executive menu and a great variety for that guests it feels at ease in the restaurant or while enjoying a sunny day in the pool.
+                     
+
                     </p>
 
                     <h2 style="margin:0;"><strong>+58 (295) 267.62.13 </strong></h2>
@@ -55,10 +59,10 @@
 
                     <!-- Menu | START -->
                     <section id="menu">
-                    	<h3><i class="fa fa-cutlery"></i> Menú de Comidas</h3>
+                    	<h3><i class="fa fa-cutlery"></i> Food menu </h3>
                     	<div class="menu">
                             <h4>
-                            	Desayunos <span></span>
+                            	Breakfast <span></span>
                             	<img alt="" src="{{ asset('base-hotel/preview/images/desayunos.jpg') }}" width="120" height="120" />
                             </h4>
                             <ul>
@@ -78,21 +82,21 @@
                                 </li>
                                 <li>
                                     <h5>Empanadas</h5>
-                                    <p>Queso, Carne Mechada, Carne Molida, Pabellón, Dominó, Salchicha</p>
+                                    <p> cheese, meatloaf, Carne Molida, Pabellón, Dominó, Salchicha</p>
                                     <div class="price">
                                         <div></div>
                                     </div>
                                 </li>
                                 <li>
                                     <h5>Pabellon Criollo</h5>
-                                    <p>Arroz Blanco, Caraotas, Tajadas, Carne Mechada, Huevo</p>
+                                    <p> white rice, beans, slice, meatloaf, egg </p>
                                     <div class="price">
                                         <div></div>
                                     </div>
                                 </li>
                                 <li>
                                     <h5>Pabellón Margariteño</h5>
-                                    <p>Arroz Blanco, Caraotas, Tajadas, Cazón</p>
+                                    <p>white rice, beans, slice, dogfish </p>
                                     <div class="price">
                                         <div></div>
                                     </div>
