@@ -43,7 +43,7 @@
 
                     @include('mensajes')          
 
-                    {!! Form::open(['route' => 'enviarReservacion', 'method'=>'PUT', 'id' => 'demo-form', 'name' => 'demo-form', 'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false']) !!} 
+                    {!! Form::open(['route' => 'enviarReservacion', 'method'=>'PUT', 'id' => 'demo-form', 'name' => 'demo-form', 'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false', 'onsubmit' => 'diferencia()']) !!} 
 
                 	<div class="col">
                         <div class="field mandatory"><input name="contact-name" type="text" placeholder="Nombre y Apellido" id="contact-name" value="" required/></div>
@@ -98,12 +98,32 @@
                         </div>
                     </div>
                     <div class="col">
+                        <input type="hidden" id="cant_dias" name="cant_dias" value="">
                         <div class="field"><textarea name="contact-message" placeholder="Mensaje" id="contact-message"></textarea></div>
                     </div>
                     <!-- Honeypot (for bot spam) --><input name="contact-email2" type="text" placeholder="Email Address" autocomplete="false" class="honeypot" value="" />
-                    <button name="send" value="sendform"><span data-hover="Enviar Reservación">Enviar Reservación</span></button>
+
+                    @if (Auth::user())
+                         
+                        <button name="send" value="sendform"><span data-hover="Enviar Reservación">Enviar Reservación</span></button>
+
+                       @if ( Session::has('reservacion') )
+
+                            <button type="button" name="Pagar" value="">
+                                <a href="{{ route('realizarPago')}}">
+                                    <span data-hover="Pagar Reservación">Pagar Reservación</span>
+                                </a>
+                            </button>
+
+                       @endif
+
+                    @else
+
+                        logueate
+
+                    @endif
                     
-                    {!! csrf_field() !!} 
+                   {!! csrf_field() !!} 
 
                 {!! Form::close() !!}
 
@@ -132,6 +152,28 @@
         </div>
         <!-- Google Map | START -->
         <script>
+
+            function diferencia(){
+
+                var llegada = $("#contact-arrival").val();
+                var salida = $("#contact-departure").val();
+                var date1 = new Date(llegada);
+                var date2 = new Date(salida);
+                var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+                var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
+
+
+                if(diffDays == 0){
+
+                    var diffDays = 1;
+
+                }
+
+
+                $("#cant_dias").val(diffDays);
+
+            }
+
 			function initialize() {
 			
             var latlng = new google.maps.LatLng(10.997358,-63.7885197,17);
@@ -163,6 +205,7 @@
             <div id="googlemap"></div>
         </div>
         <!-- Google Map | END -->
+
     </main>
     <!-- Content | END -->
 

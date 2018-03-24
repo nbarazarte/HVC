@@ -753,17 +753,36 @@ class PublicController extends Controller
             Session::flash('message','Su reservación fue enviada exitosamente!');
         }
 
-        //return redirect()->back();
+        //pido el precio de la habitación:
+        $str_precio = DB::table('cat_habitaciones')->select('str_precio')->where('str_habitacion', $_POST['contact-habitacion'] )->get();
 
-        Session::flush();
+        foreach ($str_precio[0] as $key => $value) {
+           
+            $precio[$key] = $value;  
+        }
 
-        Session::push('datos', $_POST);
-        //dd(Session::get('datos'));die();
+        //asigno el valor del precio a una variable:
+        $precio_habitacion = $precio[$key];
+        $total_pagar = $_POST['cant_dias'] * $precio_habitacion;
 
-        return Redirect::to('/Datos-Reservación');
+        //lo asigno a lo que viene por post del formulario:
+        //dd($_POST);die();
+        array_push($_POST, $_POST['contact-precioHabitacion']=$precio_habitacion, $_POST['contact-totalPagar']=$total_pagar);
+        //dd($_POST);die();
+
+        $datos = $_POST;
+
+        //return view('realizarPago', compact('datos'));
 
         //return Redirect::to('http://'.$_SERVER['SERVER_NAME'].'/');
 
+        //Session::flush();
+
+        
+        session()->put('reservacion', 'true');
+
+
+        return redirect()->back();
     }
 
     /**
@@ -773,7 +792,7 @@ class PublicController extends Controller
      */
     public function realizarPago()
     {
-         return view('realizarPago');
+        return view('realizarPago');
     }
 
 }

@@ -100,7 +100,7 @@ Route::get('/Page-No-Exist', [
 	'as' =>'errorIngles'
 ]);
 
-Route::get('/Reservation-Data', [
+Route::get('/Pay-Reservation', [
 	'uses' => 'PublicControllerIngles@realizarPagoIngles',
 	'as' =>'realizarPagoIngles'
 ]);

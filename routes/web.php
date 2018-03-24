@@ -117,7 +117,7 @@ Route::get('/Página-No-Existe', [
 	'as' =>'error'
 ]);
 
-Route::get('/Datos-Reservación', [
+Route::get('/Pagar-Reservación', [
 	'uses' => 'PublicController@realizarPago',
 	'as' =>'realizarPago'
 ]);

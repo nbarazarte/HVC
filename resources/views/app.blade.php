@@ -94,11 +94,11 @@
 
     <!-- Pasarela de pagos -->
 
-        @if (Route::current()->getName() == 'realizarPago')
+        
 
             <script src="https://www.2checkout.com/static/checkout/javascript/direct.min.js"></script>
 
-        @endif
+        
     
     <!-- fin -->
 
