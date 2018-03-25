@@ -7,7 +7,7 @@
                                         <div class="title">Piel Knela<br />
                                         <span>Collection C.A.</span></div>
                                         
-                                        <div class="button"><span data-hover="Ver más">Ver más</span></div>
+                                        <div class="button"><span data-hover="See more">See more</span></div>
                                     </a>
                                 </div>
                             </div>
@@ -18,7 +18,7 @@
                                         <div class="title">JOE'S Gril<br />
                                         <span>Restaurant</span></div>
                                         
-                                        <div class="button"><span data-hover="Ver más">Ver más</span></div>
+                                        <div class="button"><span data-hover="See more">See more</span></div>
                                     </a>
                                 </div>
                             </div>                            
@@ -29,7 +29,7 @@
                                         <div class="title">BIO Thai<br />
                                         <span>Center C.A.</span></div>
                                         
-                                        <div class="button"><span data-hover="Ver más">Ver más</span></div>
+                                        <div class="button"><span data-hover="See more">See more</span></div>
                                     </a>
                                 </div>
                             </div>
@@ -37,10 +37,10 @@
                                 <img alt="" src="{{ asset('base-hotel/preview/images/ciber-380.jpg') }}" width="380" height="250" />
                                 <div class="details">
                                     <a href="{{ route('especialIngles')}}">
-                                        <div class="title">Sala de Internet<br />
+                                        <div class="title">Internet Lounge<br />
                                         <span>HVC</span></div>
                                         
-                                        <div class="button"><span data-hover="Ver más">Ver más</span></div>
+                                        <div class="button"><span data-hover="See more">See more</span></div>
                                     </a>
                                 </div>
                             </div>                            

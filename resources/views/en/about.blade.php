@@ -53,7 +53,7 @@
 
                 <ul class="tags">
                     <li>Comfortable Rooms</li>
-                    <li>Security Box</li>
+                    <li>Safe-Deposit Box</li>
                     <li>WI-FI service</li>
                     <li>Buffet Breakfast</li>
                     <li>2 Panoramic Pools + Jacuzzi</li>
