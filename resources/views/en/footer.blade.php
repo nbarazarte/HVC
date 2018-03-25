@@ -24,7 +24,7 @@
             	<div class="contact">
                 	<p>
                 		<strong class="phone"> <i class="fa fa-phone-square"></i> +58 (295) 331.13.00</strong><br />              	
-                    	<i class="fa fa-map-marker"></i> Street of Christ, building Hippocampus complex, neighborhood Caranta.<br /> Margarita Island. Venezuela
+                    	<i class="fa fa-map-marker"></i> El Cristo Street, Hippocampus Complex building, La Caranta sector.<br>Margarita Island. Venezuela
                 	</p>
                 </div>
                 <!-- Contact Details | END -->

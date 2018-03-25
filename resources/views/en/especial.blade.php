@@ -6,8 +6,8 @@
 	<header>
     	<div id="header">
         	<div class="h1">
-                <h1><span>Servicios Especiales</span>
-                <span class="tagline">Tiendas, Spa y Restaurant</span></h1>
+                <h1><span>Special Services</span>
+                <span class="tagline">Shops, Spa, Restaurant and Internet</span></h1>
             </div>
         </div>
         
@@ -27,9 +27,9 @@
                     <h2>Piel Knela<br />
                     <span>Colection C.A.</span></h2>
                         <p align="justify">
-                            En la calidez de la isla de Margarita, se encuentra Piel Knela, atendida por su propia dueña, ella te asesorará con el traje de baño perfecto para lucir durante tu estadía en el hotel Hippocampus Vacation Club. <br>
-                            Piel Knela contiente una variedad de accesorios para damas y próximamente para caballeros.<br>
-                            ¿Llegaste a Hippocampus Vacation Club y no tienes traje de baño? Despreocúpate, Piel Knela te proporcionará lo que necesites.
+                            In the warmth of the island of Margarita, Piel Knela, attended by its owner, will advise you with the perfect swimsuit to wear during your stay at the Hippocampus Vacation Club hotel. <br>
+                            Piel Knela contains a variety of accessories for ladies and soon for men.<br>
+                            You arrived at Hippocampus Vacation Club and you don't have swimsuit? Don't worried, Piel Kanela provide to that it you need.
                         </p>
 
                 </div>
@@ -42,8 +42,8 @@
                     <h2>JOE'S Gril<br />
                     <span>Restaurant C.A.</span></h2>
                     <p align="justify">
-                        Un Lugar lleno de magia y fusiones de sabores.<br>
-                        ¡Visitanos! Aquí todo es ¡Siempre Delicioso!
+                        A place full of magic and fusions of flavors<br>
+                        Visit us! Here all is Always Delicious!
                     </p>
 
                     <!-- Instagram | START -->
@@ -57,7 +57,7 @@
                     </div>
                     <!-- Instagram | END -->                    
                     
-                    <a href="{{ route('restaurantIngles') }}" class="button"><span data-hover="Ver más">Ver más</span></a>
+                    <a href="{{ route('restaurantIngles') }}" class="button"><span data-hover="See more">See more</span></a>
                     
 
                 </div>
@@ -70,10 +70,8 @@
                 	<h2>BioThai<br />
                     <span>Center C.A.</span></h2>
                     <p align="justify">
-                        
-                        En BioThai Center somos un oasis ubicado en el corazón de Pampatar.<br>
-                        Un espacio de bienestar y cuidado personal para hombres y mujeres, diseñado para mejorar tanto la salud física como emocional del cuerpo y olvidarte del estrés de la ciudad.
-
+                        In BioThai Center we are an oasis located in the heart of Pampatar.<br>
+                        A place of well-being and personal care for men and women, designed to improve both the physical and emotional health of the body and forget about the stress of the city.
                     </p>
         
                     <!-- Instagram | START -->
@@ -95,11 +93,11 @@
                     <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/ciber-770.jpg') }}" width="770" height="400" /></div>
                 </div>
                 <div class="details">
-                    <h2>Sala de Internet<br />
+                    <h2>Internet Lounge<br />
                     <span>HVC</span></h2>
                     <p align="justify">
-                        Además de ofrecer a nuestros huéspedes el servicio de Wi-Fi, tambien contamos con un área exclusiva para acceder a internet las 24 horas del día durante su estancia en el hotel.<br>
-                        Mantengase conectado con el mundo cuando usted lo necesite.
+                        In addition to offering our guests Wi-Fi service, we also have an exclusive area to access the internet 24 hours a day during your stay at the hotel.<br>
+                        Stay connected to the world when you need it.
                     </p>                    
 
                 </div>

@@ -58,7 +58,7 @@
                     <li>2 Piscinas Panorámicas + Jacuzzi</li>
                     <li>Tumbonas y Sombrillas</li>
                     <li>Terraza Panorámica</li>                    
-                    <li>Restaurante Guanabana</li>
+                    <li>Restaurante</li>
                     <li>Actividades de Entretenimiento</li>
                     <li>Salón para Reuniones</li>
                     <li>Línea de Taxi</li>

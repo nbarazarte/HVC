@@ -7,7 +7,7 @@
     	<div id="header">
         	<div class="h1">
                 <h1><span>Servicios Especiales</span>
-                <span class="tagline">Tiendas, Spa y Restaurant</span></h1>
+                <span class="tagline">Tiendas, Spa, Restaurante e Internet</span></h1>
             </div>
         </div>
         

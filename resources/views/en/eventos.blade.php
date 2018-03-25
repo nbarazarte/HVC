@@ -6,8 +6,8 @@
 	<header>
     	<div id="header">
         	<div class="h1">
-                <h1><span>Eventos Sociales y Corporativos</span>
-                <span class="tagline">Organice sus reuniones y eventos con nosotros</span></h1>
+                <h1><span>Social and Corporate Events</span>
+                <span class="tagline">ORGANIZE YOUR MEETINGS AND EVENTS WITH US</span></h1>
             </div>
         </div>
 
@@ -32,17 +32,16 @@
             </div>
 
             <div id="content">
-                <h2><strong>Eventos Sociales </strong>y Corporativos</h2>
+                <h2><strong>Social and </strong>Corporate Events</h2>
                 <p style="text-align: justify;">
-                    Celebra junto a la familia de <strong>Hippocampus Vacation Club</strong>, tus eventos sociales y corporativos con un toque de elegancia, originalidad y buen gusto.<br>
-                    De la mano de nuestro gran aliado <strong>JOE'S</strong> ofrecemos música en vivo, shows de entretenimiento y diversas actividades en temporadas como fiestas de fin de año.
-                    Queremos ser parte de momentos inolvidables, llenos de creatividad, que hagan sentir a tus invitados en un ambiente ameno y confortable.                    
+                    Celebrate together with the <strong>Hippocampus Vacation Club</strong> family, your social and corporate events with a touch of elegance, originality and good taste.<br>
+                    With the help of our great ally, <strong>JOE'S</strong>, we offer live music, entertainment shows and various activities in seasons such as end of the year parties. We want to be part of unforgettable moments, full of creativity, that make your guests feel in a pleasant and comfortable environment.                                       
                 </p>
             
                 <h2 style="margin:0;"><strong>+58 (295) 331.13.00</strong></h2>
                 <p style="margin:0;">
                     
-                    <i class="fa fa-map-marker"></i>  Calle El Cristo, edifc. Complejo Hippocampus, sector La Caranta.<br />Isla de Margarita. Venezuela            
+                    <i class="fa fa-map-marker"></i> El Cristo Street, Hippocampus Complex building, La Caranta sector.<br>Margarita Island. Venezuela
                 </p>  
 
                 <br>

@@ -6,8 +6,8 @@
 	<header>
     	<div id="header">
         	<div class="h1">
-                <h1><span>Galería</span>
-                <span class="tagline">Vive de Cerca la Experiencia</span></h1>
+                <h1><span>Gallery</span>
+                <span class="tagline">Live the Experience Close</span></h1>
             </div>
         </div>
         

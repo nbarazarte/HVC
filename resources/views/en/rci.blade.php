@@ -7,7 +7,7 @@
     	<div id="header">
         	<div class="h1">
                 <h1><span>RCI</span>
-                <span class="tagline">Disfrute de las vacaciones de su vida</span></h1>
+                <span class="tagline">Enjoy the vacations of your life</span></h1>
             </div>
         </div>
 
@@ -33,35 +33,35 @@
             <div id="content">
                 <h2><strong>RCI</strong></h2>
                 <p style="text-align: justify;">
-                    RCI es una de las  empresas de Intercambios Vacacionales más grandes a nivel mundial.  RCI funciona como un Banco de espacios donde usted puede Depositar su semana vacacional, si no desea usarla en su Resort, siempre y cuando esté vigente en su año y al día con el Condominio, e Intercambiarla por otra a través de ellos con las mismas características de la suya. No se depositará semanas de años anteriores y una vez depositada su semana no se podrá reversar.
+                    RCI is one of the largest companies worldwide Vacation Exchange. RCI Bank operates as a space where you can Placing your vacation week, if you want to use in your Resort, provided you are current on your year and a day with the Condominium, and exchange it for another through them with the same characteristics yours. Not weeks prior years and once deposited deposit your week will not be able to reverse.
                 </p>
 
                 <p style="text-align: justify;">
-                    Su afiliación a RCI a través de su Resort Hippocampus Vacation Club será hasta dos años gratuitos por la compra de su contrato. Luego de pagar todos sus gastos administrativos se le enviara por correo electrónico en un lapso no mayor de 45 días hábiles su código de afiliación para disfrutar de los beneficios de ser miembro de tan prestigiosa cadena de intercambio.
+                    Your membership to RCI through its Hippocampus Vacation Club Resort will be up to two free years for the purchase of his contract. After paying all administrative costs will be sent by email within no more business within 45 days of your membership code to enjoy the benefits of being a member of such a prestigious chain exchange.
                 </p>
 
                 <p style="text-align: justify;">
-                    De esta manera usted podrá hacer Intercambios Vacacionales con otros  Hoteles y Resort afiliados a RCI dentro y fuera de Venezuela, en la misma temporada según la disponibilidad y capacidad que usted tiene en Hippocampus, mediante el pago previo a RCI de una Cuota de Intercambio. La tasa de intercambio se pagara en bolívares a RCI si el intercambio es nacional y en caso de hacer intercambio internacional la tasa será pagada en dólares.
+                    This way you can make Vacation Exchange with other hotels and affiliated to RCI Resort in and out of Venezuela, in the same season as the availability and capacity you have in Hippocampus, by pre-paying a fee RCI Exchange. The interchange fee is paid in bolivars at RCI if the exchange is national and in case of making international exchange rate will be paid in dollars.
                 </p>
 
                 <p style="text-align: justify;">                   
-                    El Certificado de Semana Bono entregado al momento de la compra tiene validez de un año a partir de la afiliación a RCI y tiene restricciones de temporada y destinos, los cuales están descritos al reverso del mismo. La semana bono no genera pago de cuota de condominio ya que es una semana adicional, sin embargo para realizar el intercambio debe cancelar la cuota indicada por RCI para su uso.
+                    Bono Week Certificate given at the time of purchase is valid for one year from RCI membership and has seasonal restrictions and destinations, which are described on the back of it. The week bonus payment does not generate condo fee because it is an additional week, however for the exchange must pay the fee indicated by RCI for use.
                 </p>
 
                 <p style="text-align: justify;">
-                    La solicitud de depósito de semana la podrá solicitar desde los 01 de octubre de cada año cuando realice el pago de su condominio y estar al día con todas las obligaciones del contrato. Recuerde  que  al  realizar  su  solicitud  con  anticipación  son  mayores  las posibilidades  de contar con las opciones vacacionales más solicitadas dependiendo su destino a visitar.
+                    Application week deposit upon application from October 1 of each year when you checkout your condo and keep up with all obligations of the contract. Remember to make your request in advance are most likely to have major vacation options depending on your destination to visit.
                 </p>
 
                 <p style="text-align: justify;">
-                    Cuando usted decida hacer el depósito de su semana deberá solicitarlo  a través del correo: <strong><a href="mailto:atencionalsocio@hippocampus.com.ve">atencionalsocio@hippocampus.com.ve</a>.</strong><br> Para mayor información puede contactarnos a través de nuestro número Master <strong>+58 (295) 331.13.50.</strong>
+                    When you decide to deposit your week should apply through the mail: <strong><a href="mailto:atencionalsocio@hippocampus.com.ve">atencionalsocio@hippocampus.com.ve</a>.</strong><br> or more information you can contact us through our toll Master <strong>+58 (295) 331.13.50.</strong>
     
-                    <br> De igual modo para saber más sobre la cadena de Intercambio RCI (Resort Condominios International, se pueden comunicar únicamente por teléfono fijo CANTV a través del siguiente teléfono <strong>0800-1003853.</strong>
+                    <br> For more information on RCI Exchange chain (Resort Condominiums International, can communicate only by landline through the phone <strong>0800-1003853.</strong>
                 </p>
             
                 <h2 style="margin:0;"><strong>+58 (295) 331.13.50</strong></h2>
                 <p style="margin:0;">
                     <a href="mailto:atencionalsocio@hippocampus.com.ve">atencionalsocio@hippocampus.com.ve</a><br />
-                    <i class="fa fa-map-marker"></i>  Calle El Cristo, edifc. Complejo Hippocampus, sector La Caranta.<br />Isla de Margarita. Venezuela            
+                    <i class="fa fa-map-marker"></i> El Cristo Street, Hippocampus Complex building, La Caranta sector.<br> Margarita Island. Venezuela
                 </p>  
 
                 <br>

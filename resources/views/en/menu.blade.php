@@ -61,7 +61,7 @@
                         </ul>
 
                     </li>
-                    <li><a href="{{ route('contactIngles')}}">Contact</a></li>
+                    <li><a href="{{ route('contactIngles')}}">Contact us</a></li>
                 </ul>
                 <a id="pull"><i class="fa fa-bars"></i></a>
             </nav>

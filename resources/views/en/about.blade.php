@@ -7,7 +7,7 @@
     	<div id="header">
         	<div class="h1">
                 <h1><span>Hippocampus Vacation Club</span>
-                <span class="tagline">Innovando para ti</span></h1>
+                <span class="tagline">INNOVATING FOR YOU</span></h1>
             </div>
         </div>
 
@@ -33,39 +33,40 @@
                 </div>
             </div>
             <div id="content">
-                <h2><strong>Atención de Servicio</strong> y Calidad</h2>
-                <p style="text-align: justify;">
-                    Hippocampus Vacation Club, C.A. desde 1992 se convirtió en una organización de servicios turísticos (Hotelero & Tiempo Compartido), con una excelente ubicación en la Isla de Margarita y capacidad de dar respuestas de calidad a sus clientes. Con más de <?=$ano = date('Y') - 1992 ?> años de experiencia y grandes aprendizajes en el área, nuestro norte es mantener a nuestra organización dentro de la preferencia del turista nacional e internacional, enfocando y orientando nuestros esfuerzos a la plena satisfacción de las expectativas que cada uno de nuestros usuarios al momento de planificar sus vacaciones y elegir como destino la Isla de Margarita.
-                </p>
+                <h2><strong>ATTENTION OF SERVICE </strong> AND QUALITY</h2>
 
                 <p style="text-align: justify;">
-                    Nuestra misión es ser la opción de preferencia para las familias en el momento de planificar sus vacaciones en la Isla de Margarita, caracterizada por nuestra orientación a la satisfacción de las expectativas de nuestros clientes, brindándoles buen servicio y atención de calidad.
-                </p>
+                    Hippocampus Vacation Club, CA from 1992 became an organization of tourist services (Hospitality & Timeshare), with an excellent location on the island of Margarita and ability to provide quality answers to their customers. With over <?=$ano = date('Y') - 1992 ?> years of experience and great learning in the area, our focus is to keep our organization within the preference of national and international tourists, focusing and guiding our efforts to fully satisfy the expectations of each of our users to When planning your holiday and choose destination Margarita Island.
+                </p>                
 
-                <p style="text-align: justify;">
-                    Tenemos la visión de convertirnos en la mejor organización turística de la Isla de Margarita, sinónimo y garantía de vacaciones inolvidables y gratas experiencias enmarcadas en el acogedor ambiente de sus instalaciones y servicios, dirigidos a la plena satisfacción.
+                <p style="text-align: justify;">                    
+                    Our mission is to be the preferred option for families when planning your vacation on the island of Margarita, characterized by our focus on meeting the expectations of our customers by providing good service and quality care.
                 </p>
 
                 <p style="text-align: justify;">                    
-                    Con la mejor ubicación frente a la bahía de Pampatar y a pocos minutos de los centros comerciales y a la ciudad de Porlamar <strong>HIPPOCAMPUS VACATION CLUB</strong> cuenta con las siguientes facilidades a sus huéspedes:
+                    We have the vision of becoming the best tourist organization Margarita Island, synonym and guarantee unforgettable holidays and pleasant experiences framed in the cozy atmosphere of its facilities and services aimed at the satisfaction.
+                </p>
+                
+                <p style="text-align: justify;">                 
+                    With the best location facing the Bay of Pampatar and a few minutes from shopping centers and the city of Porlamar <strong>HIPPOCAMPUS VACATION CLUB</strong> has the following facilities to its guests:                    
                 </p>
 
                 <ul class="tags">
-                    <li>Habitaciones Confortables</li>
-                    <li>Caja de Seguridad</li>
-                    <li>Servicio de WI-FI</li>
-                    <li>Desayuno Tipo Buffet</li>
-                    <li>2 Piscinas Panorámicas + Jacuzzi</li>
-                    <li>Tumbonas y Sombrillas</li>
-                    <li>Terraza Panorámica</li>                    
-                    <li>Restaurante Guanabana</li>
-                    <li>Actividades de Entretenimiento</li>
-                    <li>Salón para Reuniones</li>
-                    <li>Línea de Taxi</li>
+                    <li>Comfortable Rooms</li>
+                    <li>Security Box</li>
+                    <li>WI-FI service</li>
+                    <li>Buffet Breakfast</li>
+                    <li>2 Panoramic Pools + Jacuzzi</li>
+                    <li>Sun loungers and Parasols</li>
+                    <li>Panoramic Terrace</li>                    
+                    <li>Restaurant</li>
+                    <li>Entreteinment Activities</li>
+                    <li>Meeting Room</li>
+                    <li>Taxi Line</li>
                     <li>Spa</li>
                     <li>Minimarket</li>
-                    <li>Salón de Internet</li>
-                    <li>Estacionamiento Techado</li>
+                    <li>Internet Lounge</li>
+                    <li>Covered Parking</li>
                 </ul>
                 <!-- Stats | START -->
                 <section id="stats">

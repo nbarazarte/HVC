@@ -80,7 +80,7 @@ Route::post('/Contact', [
 	'as' =>'reservacionIngles'
 ]);
 
-Route::get('/Contact', [
+Route::get('/Contact-us', [
 	'uses' => 'PublicControllerIngles@contact',
 	'as' =>'contactIngles'
 ]);

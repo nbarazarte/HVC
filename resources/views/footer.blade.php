@@ -24,7 +24,7 @@
             	<div class="contact">
                 	<p>
                 		<strong class="phone"> <i class="fa fa-phone-square"></i> +58 (295) 331.13.00</strong><br />              	
-                    	<i class="fa fa-map-marker"></i> Calle El Cristo, edifc. Complejo Hippocampus, sector La Caranta.<br />Isla de Margarita. Venezuela
+                    	<i class="fa fa-map-marker"></i> Calle El Cristo, edificio Complejo Hippocampus, sector La Caranta.<br />Isla de Margarita. Venezuela
                 	</p>
                 </div>
                 <!-- Contact Details | END -->

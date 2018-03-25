@@ -9,11 +9,7 @@
                                         <div class="title">Piel Knela<br />
                                         <span>Collection C.A.</span></div>
                                             <p>
-                                                 <br>
-                                                
                                                 You arrived at Hippocampus Vacation Club and you don't have swimsuit? <br> Don't worried, Piel Kanela provide to that it you need.
-
-
                                             </p>
                                         <div class="button"><span data-hover="See more">See more</span></div>
                                     </a>
@@ -50,10 +46,9 @@
                                 <img alt="" src="{{ asset('base-hotel/preview/images/ciber.jpg') }}" width="1200" height="400" />
                                 <div class="details">
                                     <a href="{{ route('especialIngles')}}">
-                                        <div class="title"> Hall Of Internet <br />
+                                        <div class="title">Internet Lounge<br />
                                         <span>HVC</span></div>
-                                        <p>
-                                            
+                                        <p>                                            
                                              In Hippocampus Vacation Club we put at your disposal an area for that maintain you connected with the world when you need it.
                                         </p>
                                         <div class="button"><span data-hover="See more">See more</span></div>
