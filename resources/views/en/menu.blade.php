@@ -56,7 +56,7 @@
 
                         <ul>
                             <li><a href="{{ route('rciIngles') }}">Partner RCI</a></li>
-                            <li><a href="{{ route('sociosIngles') }}">Attention-to-Partner</a></li>
+                            <li><a href="{{ route('sociosIngles') }}">Member Service</a></li>
                             <li><a href="{{ route('flyIngles') }}">Fly & Buy</a></li>
                         </ul>
 
@@ -74,7 +74,19 @@
                 </ul>
             </div>
             <!-- Languages | END -->
-            <a href="{{ route('contactIngles')}}" class="book"><span data-hover="Book Online "> Book Online </span> </a>
+
+            @if (Auth::user())
+                <a href="{{ route('logout') }}" class="book" title="Logout">
+                    <span data-hover="{{ Auth::user()->name }}">{{ Auth::user()->name }}</span>
+                    
+                </a>
+            @else
+                <a href="{{ url('/login') }}" class="promopopup book" >
+                    <span data-hover="Log In Now">Log In Now</span> 
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>
+                </a>
+            @endif
+
             <div class="shadow"></div>
         </div>
     </div>

@@ -41,9 +41,9 @@
         	<div id="contact">
             	<img src="{{ asset('base-hotel/preview/images/contacto.jpg') }}" width="1200" height="400" alt="" />
 
-                    @include('mensajes')          
-
-                    {!! Form::open(['route' => 'enviarReservacion', 'method'=>'PUT', 'id' => 'demo-form', 'name' => 'demo-form', 'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false', 'onsubmit' => 'diferencia()']) !!} 
+                    @include('mensajes')
+            
+                    {!! Form::open(['route' => 'contact', 'method'=>'POST', 'id' => 'demo-form', 'name' => 'demo-form', 'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false', 'onsubmit' => 'diferencia()']) !!} 
 
                 	<div class="col">
                         <div class="field mandatory"><input name="contact-name" type="text" placeholder="Nombre y Apellido" id="contact-name" value="" required/></div>
@@ -51,8 +51,8 @@
                         <div class="field mandatory"><input name="contact-phone" type="text" placeholder="N° de Teléfono" id="contact-phone" value="" required/></div>
                     </div>
                     <div class="col">
-                        <div class="field calendar"><input name="contact-arrival" type="text" placeholder="Llegada" id="contact-arrival" required value="<?=$arrival?>"  /><i class="fa fa-calendar-o"></i></div>
-                        <div class="field calendar"><input name="contact-departure" type="text" placeholder="Salida" id="contact-departure" required value="<?=$departure?>"  /><i class="fa fa-calendar-o"></i></div>
+                        <div class="field calendar"><input name="contact-arrival" type="text" placeholder="Fecha de Llegada" id="contact-arrival" required value="<?=$arrival?>"  /><i class="fa fa-calendar-o"></i></div>
+                        <div class="field calendar"><input name="contact-departure" type="text" placeholder="Fecha de Salida" id="contact-departure" required value="<?=$departure?>"  /><i class="fa fa-calendar-o"></i></div>
                         <div class="select">
 
                         	<select name="contact-habitacion" id="contact-habitacion" class="infants" required>
@@ -98,30 +98,20 @@
                         </div>
                     </div>
                     <div class="col">
-                        <input type="hidden" id="cant_dias" name="cant_dias" value="">
+                        <input type="hidden" id="cant-dias" name="cant-dias" value="">
+
+                        <input type="hidden" id="contact-llegada" name="contact-llegada" value="">
+                        <input type="hidden" id="contact-salida" name="contact-salida" value="">
+
                         <div class="field"><textarea name="contact-message" placeholder="Mensaje" id="contact-message"></textarea></div>
                     </div>
                     <!-- Honeypot (for bot spam) --><input name="contact-email2" type="text" placeholder="Email Address" autocomplete="false" class="honeypot" value="" />
 
-                    @if (Auth::user())
-                         
-                        <button name="send" value="sendform"><span data-hover="Enviar Reservación">Enviar Reservación</span></button>
+                    
 
-                       @if ( Session::has('reservacion') )
+                    <button name="send" value="sendform"><span data-hover="Hacer Solicitud de Reserva">Hacer Solicitud de Reserva</span></button>
 
-                            <button type="button" name="Pagar" value="">
-                                <a href="{{ route('realizarPago')}}">
-                                    <span data-hover="Pagar Reservación">Pagar Reservación</span>
-                                </a>
-                            </button>
 
-                       @endif
-
-                    @else
-
-                        logueate
-
-                    @endif
                     
                    {!! csrf_field() !!} 
 
@@ -129,6 +119,8 @@
 
             </div>
             <!-- Contact Form | END -->
+
+            
 
             <h2 style="margin:0;"><strong>+58 (295) 331.13.23</strong></h2>
             <p style="margin:0;">
@@ -162,15 +154,24 @@
                 var timeDiff = Math.abs(date2.getTime() - date1.getTime());
                 var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
 
-
                 if(diffDays == 0){
 
                     var diffDays = 1;
 
                 }
 
+                $("#cant-dias").val(diffDays);
 
-                $("#cant_dias").val(diffDays);
+                var months = ["01", "02", "03", "04", "05", "06", "07", "08","09", "10", "11", "12"];
+
+                var fe = new Date(llegada);
+                var fs = new Date(salida);
+
+                var namedMonth1 = months[fe.getMonth()];
+                var namedMonth2 = months[fs.getMonth()];
+
+                $("#contact-llegada").val(fe.getFullYear()+"-"+namedMonth1+"-"+ fe.getDate());
+                $("#contact-salida").val(fs.getFullYear()+"-"+namedMonth2+"-"+ fs.getDate());
 
             }
 

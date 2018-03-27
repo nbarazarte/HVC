@@ -6,8 +6,8 @@
 	<header>
     	<div id="header">
         	<div class="h1">
-                <h1><span>Atención al Socio</span>
-                <span class="tagline">Disfrute de las vacaciones de su vida</span></h1>
+                <h1><span>Member Service</span>
+                <span class="tagline">Enjoy the vacations of your life</span></h1>
             </div>
         </div>       
 
@@ -28,15 +28,15 @@
                     <div class="col">
                         
                         <div class="field mandatory">
-                            <input name="contact-contrato" type="text" placeholder="N° Contrato" id="contact-contrato" value="" required/>
+                            <input name="contact-contrato" type="text" placeholder="Contract Number" id="contact-contrato" value="" required/>
                         </div>   
                         
                         <div class="field mandatory">
-                            <input name="contact-cedula" type="text" placeholder="N° Cédula" id="contact-cedula" value="" required/>
+                            <input name="contact-cedula" type="text" placeholder="ID Card" id="contact-cedula" value="" required/>
                         </div>
                         
                         <div class="field mandatory">
-                            <input name="contact-name" type="text" placeholder="Nombre y Apellido" id="contact-name" value="" required/>
+                            <input name="contact-name" type="text" placeholder="Your Name" id="contact-name" value="" required/>
                         </div>   
                                                                   
                     </div>
@@ -44,24 +44,24 @@
                     <div class="col">
 
                         <div class="field mandatory">
-                            <input name="contact-phone" type="text" placeholder="N° Teléfono" id="contact-phone" value="" required/>
+                            <input name="contact-phone" type="text" placeholder="Phone Number" id="contact-phone" value="" required/>
                         </div>
                         
                          <div class="field mandatory">
-                            <input name="contact-email" type="email" placeholder="Correo Electrónico" id="contact-email" value="" required/>
+                            <input name="contact-email" type="email" placeholder="Email" id="contact-email" value="" required/>
                         </div>
 
                         <div class="select">                                    
                                         
                             <select name="contact-adultos" id="contact-adultos" class="" required>
 
-                                <option value="">Adultos</option>
+                                <option value="">Adults</option>
 
                                 <?php
 
                                     for ($i=1; $i < 7; $i++) { ?>
                                     
-                                        <option value="{{ $i }}">{{ $i }} @if($i > 1) Adultos @else Adulto @endif</option>
+                                        <option value="{{ $i }}">{{ $i }} @if($i > 1) Adults @else Adult @endif</option>
 
                                 <?php }?>
 
@@ -69,13 +69,13 @@
 
                             <select name="contact-ninos" id="contact-ninos" class="" required>
 
-                                <option value="">Niños</option>
+                                <option value="">Children</option>
 
                                 <?php
 
                                     for ($i=0; $i < 6; $i++) { ?>
                                     
-                                        <option value="{{ $i }}">{{ $i }} @if($i > 1) Niños @else Niño @endif</option>
+                                        <option value="{{ $i }}">{{ $i }} @if($i > 1) Children @else Child @endif</option>
 
                                 <?php }?>
 
@@ -83,13 +83,13 @@
                       
                             <select name="contact-infantes" id="contact-infantes" class="" required>
 
-                                <option value="">Infantes</option>
+                                <option value="">Infants</option>
 
                                 <?php
 
                                     for ($i=0; $i < 6; $i++) { ?>
                                     
-                                        <option value="{{ $i }}">{{ $i }} @if($i > 1) Infantes @else Infante @endif</option>
+                                        <option value="{{ $i }}">{{ $i }} @if($i > 1) Infants @else Infant @endif</option>
 
                                 <?php }?>
 
@@ -100,11 +100,11 @@
                     </div>
 
                     <div class="col">
-                        <div class="field"><textarea name="contact-message" placeholder="Mensaje" id="contact-message"></textarea></div>
+                        <div class="field"><textarea name="contact-message" placeholder="Message" id="contact-message"></textarea></div>
                         <div class="select">
                             
                             <select name="contact-capacidad" id="contact-capacidad" class="" required>
-                                <option  value="">Capacidad</option>
+                                <option  value="">Capacity</option>
                                 <option  value="2" >2 </option>
                                 <option  value="3" >3 </option>
                                 <option  value="3" >4 </option>
@@ -113,13 +113,13 @@
 
                             <select name="contact-semana" id="contact-semana" class="" required>
                                 
-                                <option  value="">Semanas</option>
+                                <option  value="">Weeks</option>
 
                                 @foreach ($semanas as $semana) 
                                      
                                     <option  value="{{$semana->id }}: {{ $semana->str_semana_inicio }} - {{ $semana->str_semana_fin }}">
                                         
-                                       Semana {{$semana->id }}: {{ $semana->str_semana_inicio }} - {{ $semana->str_semana_fin }}
+                                       Week {{$semana->id }}: {{ $semana->str_semana_inicio }} - {{ $semana->str_semana_fin }}
 
                                     </option>
 
@@ -132,7 +132,7 @@
                     </div>
 
                        <button name="send" value="sendform">
-                        <span data-hover="Enviar Reservación">Enviar Reservación</span>
+                        <span data-hover="Send Reservation">Send Reservation</span>
                     </button>
                     {!! csrf_field() !!} 
                     
@@ -143,20 +143,20 @@
 
             <div id="content">
 
-                <h2><strong>Atención</strong> al Socio</h2>
+                <h2><strong>Member</strong> Service</h2>
 
                 <p style="text-align: justify;">
-                    Ante todo  reciba  nuestra más cordial saludo,  en nuestro esfuerzo para darle la mayor atención, le informamos que para el uso y disfrute de su semana vacacional podrá <b>hacer su reservación y aclarar dudas</b> a través de nuestro correo electrónico <a href="mailto:atencionalsocio@hippocampus.com.ve">atencionalsocio@hippocampus.com.ve</a> 
+                    Above all receive our warmest greetings in our efforts to give the most attention, please note that for the use and enjoyment of your holiday week you can <b>make your reservation</b> through our email <a href="mailto:atencionalsocio@hippocampus.com.ve">atencionalsocio@hippocampus.com.ve</a> 
                     <br>
-                    También pueden contactarnos por el número telefónico <b>+58 (295) 331.13.50</b>
+                    You can also contact us by phone number <b>+58 (295) 331.13.50</b>
                 </p>
 
                 <p style="text-align: justify;">
-                    La solicitud de reservación deberá hacerse con un mínimo de 90 días de antelación para  semanas de temporada alta  y un mínimo de 21 días para las de temporada baja, todo sujeto a disponibilidad.  Dependiendo la capacidad según contrato.
+                    The reservation request must be made at least 90 days in advance for peak weeks and a minimum of 21 days for low season, all subject to availability. Depending on the capacity under contract.
                 </p>
 
                 <p style="text-align: justify;">
-                    Le Anexamos el Calendario de Semanas para que pueda Programar y Planificar con tiempo sus vacaciones. Recuerde que las semanas, dependen del tipo de contrato adquirido: Silver o Gold.<br>Las semanas son de Sábado a Sábado, (Entrada: 4:00 pm y Salida: 11:00 am).
+                    We attach Le Weeks Calendar so you can Scheduling and Planning ahead your vacation. Remember weeks, depending on the type of contract purchased: Silver or Gold.<br>The weeks are from Saturday to Saturday (Check In: ​​4:00 pm Check Out: 11:00 am).
                 </p>
 
                 <p style="text-align: justify;">
@@ -164,10 +164,10 @@
                     <ul style="text-align: justify;">
 
                         <li>
-                            <b>Silver:</b> Derecho de uso desde la Sem 3 hasta la 27 y desde la 40 hasta la semana 49.
+                            <b>Silver:</b> Right of use since Sem 3 up to 27 and from 40 to week 49.
                         </li>
                         <li>
-                            <b>Gold:</b> Derecho de uso en cualquier semana del año.
+                            <b>Gold:</b> Right of use in any week of the year.
                         </li>                                   
 
                     </ul>
@@ -175,30 +175,30 @@
                 </p>
 
                 <p style="text-align: justify;">
-                    La anulación de una reservación deberá hacerse con un mínimo de 30 días de antelación, de no hacer la notificación, se considerará la semana como utilizada.
+                    The cancellation of a reservation must be made at least 30 days prior notice not to be considered as used week.
                     <br>
-                    La semana no disfrutada en el año correspondiente de uso, solo podrá ser usada dentro de los primeros seis (6) meses del año inmediato siguiente y únicamente en temporada baja.                                    
+                    The week is not spent in the corresponding year of use, it may only be used within the first six (6) months immediately subsequent year and only in low season.                                 
                 </p>
 
                 <p style="text-align: center;">
                     <b>
-                        PARA HACER USO DE SU SEMANA ANUAL ES INDISPENSABLE TENER CUBIERTA LA CUOTA DE MANTENIMIENTO O CONDOMINIO CORRESPONDIENTE Y ESTAR AL DÍA CON TODAS SUS OBLIGACIONES
+                        TO MAKE USE OF ITS ANNUAL WEEK IS REQUIRED TO HAVE COVERED THE MAINTENANCE FEE OR CONDOMINIUM FOR AND BE A DAY WITH ALL OBLIGATIONS
                     </b>
                 </p>
 
                 <p style="text-align: justify;">
-                    La única empresa encargada de la cobranza de nuestros socios es <strong>FIDELITAS</strong>, sólo a través de ella se canalizarán los pagos y todo lo referente a su estado de cuenta y recibos.
+                    The only company responsible for the collection of our partners is <strong>FIDELITAS</strong>, only through it will be channeled payments and everything related to your account statement and receipts.
                 </p>
 
                 <h2 style="margin:0;"><strong>+58 (412) 197.37.32</strong></h2>
                 <h2 style="margin:0;"><strong>+58 (412) 289.67.44</strong></h2>
                 <p style="margin:0;">
                     <a href="mailto:pagosfidelitasvzla@fdlcs.com">pagosfidelitasvzla@fdlcs.com</a><br />
-                    <i class="fa fa-map-marker"></i> Av. Libertador, Multicentro Empresarial del Este. Núcleo C. Piso 8 Ofic. 82C. Chacao. <br>Caracas 1060, Venezuela.            
+                    <i class="fa fa-map-marker"></i> Libertador Avenue, Multicentro Empresarial del Este Building. Core C. Floor 8 Office 82C. Chacao.<br>Caracas 1060, Venezuela.
                 </p>
 
                 <p>
-                    <b>Las Cuentas Bancarias para hacer sus depósitos, son las siguientes a nombre de: </b>
+                    <b>The Bank Accounts to make your deposits, are the following in the name of:</b>
                 </p>   
 
             </div>
@@ -213,8 +213,8 @@
                         
                         <table>
                             <tr>
-                                <th>Banco</th>
-                                <th>cuenta Corriente</th>
+                                <th>Bank</th>
+                                <th>Checking Account</th>
                             </tr>
                             <tr>
                                 <td><strong>MERCANTIL</strong></td>

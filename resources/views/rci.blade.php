@@ -6,7 +6,7 @@
 	<header>
     	<div id="header">
         	<div class="h1">
-                <h1><span>RCI</span>
+                <h1><span>Socio RCI</span>
                 <span class="tagline">Disfrute de las vacaciones de su vida</span></h1>
             </div>
         </div>

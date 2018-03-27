@@ -21,13 +21,18 @@
 
             <body class="home2 fullwidth">
 
-        @elseif ((Route::current()->getName() == 'accommodation') || (Route::current()->getName() == 'about') || (Route::current()->getName() == 'rci') || (Route::current()->getName() == 'contact') || (Route::current()->getName() == 'reservacion') || (Route::current()->getName() == 'restaurant') || (Route::current()->getName() == 'socios') || (Route::current()->getName() == 'eventos') || (Route::current()->getName() == 'fly') || (Route::current()->getName() == 'error') || (Route::current()->getName() == 'enviarReservacion') || (Route::current()->getName() == 'realizarPago') )
-
-            <body class="fullwidth">
+        @elseif (   (Route::current()->getName() == 'matrimonial') || 
+                    (Route::current()->getName() == 'matrimonialSofa') || 
+                    (Route::current()->getName() == 'doble') || 
+                    (Route::current()->getName() == 'duplex') || 
+                    (Route::current()->getName() == 'gallery') 
+                )
+            
+            <body>
 
         @else
 
-            <body>
+            <body class="fullwidth">
 
         @endif  
 

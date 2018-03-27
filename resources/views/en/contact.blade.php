@@ -43,16 +43,16 @@
 
                     @include('mensajes')          
 
-                    {!! Form::open(['route' => 'enviarReservacion', 'method'=>'PUT', 'id' => 'demo-form', 'name' => 'demo-form', 'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false', 'onsubmit' => 'diferencia()']) !!} 
+                    {!! Form::open(['route' => 'enviarReservacionIngles', 'method'=>'PUT', 'id' => 'demo-form', 'name' => 'demo-form', 'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false', 'onsubmit' => 'diferencia()']) !!} 
 
                     <div class="col">
-                        <div class="field mandatory"><input name="contact-name" type="text" placeholder="Name and last name" id="contact-name" value="" required/></div>
+                        <div class="field mandatory"><input name="contact-name" type="text" placeholder="Your Name" id="contact-name" value="" required/></div>
                         <div class="field mandatory"><input name="contact-email" type="email" placeholder="Email" id="contact-email" value="" required/></div>
-                        <div class="field mandatory"><input name="contact-phone" type="text" placeholder="Phone number" id="contact-phone" value="" required/></div>
+                        <div class="field mandatory"><input name="contact-phone" type="text" placeholder="Phone Number" id="contact-phone" value="" required/></div>
                     </div>
                     <div class="col">
-                        <div class="field calendar"><input name="contact-arrival" type="text" placeholder="Arrival" id="contact-arrival" required value="<?=$arrival?>"  /><i class="fa fa-calendar-o"></i></div>
-                        <div class="field calendar"><input name="contact-departure" type="text" placeholder="Departure" id="contact-departure" required value="<?=$departure?>"  /><i class="fa fa-calendar-o"></i></div>
+                        <div class="field calendar"><input name="contact-arrival" type="text" placeholder="Arrival Date" id="contact-arrival" required value="<?=$arrival?>"  /><i class="fa fa-calendar-o"></i></div>
+                        <div class="field calendar"><input name="contact-departure" type="text" placeholder="Departure Date" id="contact-departure" required value="<?=$departure?>"  /><i class="fa fa-calendar-o"></i></div>
                         <div class="select">
 
                             <select name="contact-habitacion" id="contact-habitacion" class="infants" required>
@@ -61,7 +61,7 @@
 
                                 @foreach ($habitaciones as $hab)
 
-                                    <option value="{{ $hab->str_habitacion }}" @if($hab->str_habitacion == $habitacion) selected="selected" @endif >{{ $hab->str_habitacion }}</option>
+                                    <option value="{{ $hab->str_rooms }}" @if($hab->str_rooms == $habitacion) selected="selected" @endif >{{ $hab->str_rooms }}</option>
 
                                 @endforeach
 
@@ -75,7 +75,7 @@
 
                                     for ($i=1; $i < 10; $i++) { ?>
 
-                                        <option value="{{ $i }}" @if($i == $adultos) selected="selected" @endif >{{ $i }} @if($i > 1) Adultos @else Adulto @endif</option>
+                                        <option value="{{ $i }}" @if($i == $adultos) selected="selected" @endif >{{ $i }} @if($i > 1) Adults @else Adult @endif</option>
                             
                                 <?php }?>
                     
@@ -105,13 +105,13 @@
 
                     @if (Auth::user())
                          
-                        <button name="send" value="sendform"><span data-hover="Send Reservation">Send Reservation</span></button>
+                        <button name="send" value="sendform"><span data-hover="Send Booking Request">Send Booking Request</span></button>
 
                        @if ( Session::has('reservacion') )
 
                             <button type="button" name="Pagar" value="">
-                                <a href="{{ route('realizarPago')}}">
-                                    <span data-hover="Pagar Reservación">Pagar Reservación</span>
+                                <a href="{{ route('realizarPagoIngles')}}">
+                                    <span data-hover="Make Payment">Make Payment</span>
                                 </a>
                             </button>
 
@@ -119,7 +119,9 @@
 
                     @else
 
-                        logueate
+                        <button type="button" class="promopopup" name="" value="">
+                            <span data-hover="Login">Login</span>
+                        </button>
 
                     @endif
                     

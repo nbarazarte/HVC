@@ -21,15 +21,20 @@
 
             <body class="home2 fullwidth">
 
-        @elseif ((Route::current()->getName() == 'accommodationIngles') || (Route::current()->getName() == 'aboutIngles') || (Route::current()->getName() == 'rciIngles') || (Route::current()->getName() == 'contactIngles') || (Route::current()->getName() == 'reservacionIngles') || (Route::current()->getName() == 'restaurantIngles') || (Route::current()->getName() == 'sociosIngles') || (Route::current()->getName() == 'eventosIngles') || (Route::current()->getName() == 'flyIngles') || (Route::current()->getName() == 'errorIngles') || (Route::current()->getName() == 'enviarReservacionIngles') || (Route::current()->getName() == 'realizarPagoIngles') )
-
-            <body class="fullwidth">
+        @elseif (   (Route::current()->getName() == 'matrimonialIngles') || 
+                    (Route::current()->getName() == 'matrimonialSofaIngles') || 
+                    (Route::current()->getName() == 'dobleIngles') || 
+                    (Route::current()->getName() == 'duplexIngles') || 
+                    (Route::current()->getName() == 'galleryIngles') 
+                )
+            
+            <body>
 
         @else
 
-            <body>
+            <body class="fullwidth">
 
-        @endif  
+        @endif 
 
         @include('en.menu')
 
@@ -75,7 +80,7 @@
 
     @endif
 
-    @include('promo')
+    @include('en.promo')
 
     {!! Html::script('base-hotel/system/js/plugins.js') !!}
     {!! Html::script('base-hotel/system/js/global.js') !!}
@@ -94,11 +99,11 @@
 
     <!-- Pasarela de pagos -->
 
-        @if (Route::current()->getName() == 'realizarPagoIngles')
+        
 
             <script src="https://www.2checkout.com/static/checkout/javascript/direct.min.js"></script>
 
-        @endif
+        
     
     <!-- fin -->
 

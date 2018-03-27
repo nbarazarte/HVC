@@ -15,7 +15,7 @@ Route::get('/Restaurant', [
 	'as' =>'restaurantIngles'
 ]);
 
-Route::get('/Attention-to-Partner', [
+Route::get('/Member-Service', [
 	'uses' => 'PublicControllerIngles@socios',
 	'as' =>'sociosIngles'
 ]);
@@ -40,7 +40,7 @@ Route::get('/Fly&Buy', [
 	'as' =>'flyIngles'
 ]);
 
-Route::get('/Events', [
+Route::get('/Social-and-Corporate-Events', [
 	'uses' => 'PublicControllerIngles@eventos',
 	'as' =>'eventosIngles'
 ]);
@@ -65,7 +65,7 @@ Route::get('/Double-Room', [
 	'as' =>'dobleIngles'
 ]);
 
-Route::get('/Duplex-Room', [
+Route::get('/Duplex-2-Main-Room', [
 	'uses' => 'PublicControllerIngles@duplex',
 	'as' =>'duplexIngles'
 ]);
@@ -85,7 +85,7 @@ Route::get('/Contact-us', [
 	'as' =>'contactIngles'
 ]);
 
-Route::get('/Services', [
+Route::get('/Special-Services', [
 	'uses' => 'PublicControllerIngles@especial',
 	'as' =>'especialIngles'
 ]);
@@ -100,7 +100,7 @@ Route::get('/Page-No-Exist', [
 	'as' =>'errorIngles'
 ]);
 
-Route::get('/Pay-Reservation', [
+Route::get('/Make-Payment', [
 	'uses' => 'PublicControllerIngles@realizarPagoIngles',
 	'as' =>'realizarPagoIngles'
 ]);

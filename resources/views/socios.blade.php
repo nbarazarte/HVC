@@ -214,7 +214,7 @@
                         <table>
                             <tr>
                                 <th>Banco</th>
-                                <th>cuenta Corriente</th>
+                                <th>Cuenta Corriente</th>
                             </tr>
                             <tr>
                                 <td><strong>MERCANTIL</strong></td>

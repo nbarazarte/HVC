@@ -37,6 +37,10 @@ class PublicControllerIngles extends Controller
      */
     public function index()
     {
+
+        // Via a request instance...
+        session()->put('idioma', 'en');
+
         return view('en.index');
     }
 
@@ -299,6 +303,7 @@ class PublicControllerIngles extends Controller
                                         <strong>
                                             HIPPOCAMPUS VACATION CLUB
                                         </strong>
+                                        <br>
                                         <b>Innovamos para ti</b>
                                     </td>
 
@@ -352,7 +357,7 @@ class PublicControllerIngles extends Controller
                                                 <tr>
 
                                                     <td>
-                                                        Cédula:
+                                                        ID Card:
                                                     <td>
                                                     <td>'.$_POST['contact-cedula'].'</td>
 
@@ -361,7 +366,7 @@ class PublicControllerIngles extends Controller
                                                 <tr>
 
                                                     <td>
-                                                        Teléfono:
+                                                        Phone Number:
                                                     <td>
                                                     <td>'.$_POST['contact-phone'].'</td>
 
@@ -370,7 +375,7 @@ class PublicControllerIngles extends Controller
                                                 <tr>
 
                                                     <td>
-                                                        Correo Electrónico:
+                                                        Email:
                                                     <td>
                                                     <td>'.$_POST['contact-email'].'</td>
 
@@ -379,7 +384,7 @@ class PublicControllerIngles extends Controller
                                                 <tr>
 
                                                     <td>
-                                                        Adulto(s):
+                                                        Adult(s):
                                                     <td>
                                                     <td>'.$_POST['contact-adultos'].'</td>
 
@@ -388,7 +393,7 @@ class PublicControllerIngles extends Controller
                                                 <tr>
 
                                                     <td>
-                                                        Niño(s):
+                                                        Children:
                                                     <td>
                                                     <td>'.$_POST['contact-ninos'].'</td>
 
@@ -397,7 +402,7 @@ class PublicControllerIngles extends Controller
                                                 <tr>
 
                                                     <td>
-                                                        Infantes:
+                                                        Infants:
                                                     <td>
                                                     <td>'.$_POST['contact-infantes'].'</td>
 
@@ -406,7 +411,7 @@ class PublicControllerIngles extends Controller
                                                 <tr>
 
                                                     <td>
-                                                        Capacidad:
+                                                        Capacity:
                                                     <td>
                                                     <td>'.$_POST['contact-capacidad'].'</td>
 
@@ -415,7 +420,7 @@ class PublicControllerIngles extends Controller
                                                 <tr>
 
                                                     <td>
-                                                        Semana:
+                                                        Week:
                                                     <td>
                                                     <td>'.$_POST['contact-semana'].'</td>
 
@@ -424,7 +429,7 @@ class PublicControllerIngles extends Controller
                                                 <tr>
 
                                                     <td>
-                                                        Comentarios:
+                                                        Message:
                                                     <td>
                                                     <td>'.$_POST['contact-message'].'</td>
 
@@ -456,10 +461,10 @@ class PublicControllerIngles extends Controller
             //echo "Error: " . $mail->ErrorInfo;
             Session::flash('message','Error!'.$mail->ErrorInfo);
         } else {
-            Session::flash('message','Su reservación fue enviada exitosamente!');
+            Session::flash('message','Your reservation was successfully sent!');
         }
 
-        return Redirect::to('/Atención-al-Socio');
+        return Redirect::to('/Member-Service');
 
         //return Redirect::to('http://'.$_SERVER['SERVER_NAME'].'/');
 
@@ -472,7 +477,7 @@ class PublicControllerIngles extends Controller
      */
     public function error()
     {
-        return view('errors.404En');
+        return view('en.errors.404');
     } 
 
     /**
@@ -488,7 +493,7 @@ class PublicControllerIngles extends Controller
 
         if ($validator->fails()) {
 
-            Session::flash('messageError','La dirección de correo electrónico ya se encuentra registrada en nuestros sistemas');
+            Session::flash('messageError','The email address is already registered in our systems');
             return redirect()->back();
             //return redirect('/Suscripción-Fallida');
 
@@ -503,7 +508,7 @@ class PublicControllerIngles extends Controller
         $this->create($request->all());
 
         //return redirect($this->redirectPath()); 
-        Session::flash('message','¡Gracias por suscribirse!');
+        Session::flash('message','¡Thanks for subscribing!');
         return redirect()->back();
         //return Redirect::to('/Suscripción-Realizada'); 
         
@@ -589,7 +594,7 @@ class PublicControllerIngles extends Controller
 
         $mail->Username = "hippocampusclubhotel@gmail.com";
         $mail->Password = "worl35Z23";
-        $mail->SetFrom('webmaster@hippocampus.com.ve');      
+        $mail->SetFrom('reservaciones1@hippocampus.com.ve', 'HVC');      
 
         $mail->AddReplyTo($_POST['contact-email'], $_POST['contact-name']);
         //$mail->addAddress("atencionalsocio@hippocampus.com.ve");
@@ -598,7 +603,7 @@ class PublicControllerIngles extends Controller
         $mail->addAddress("ezebarazarte@gmail.com");//buzón al cual va a llegar el email
         
         
-        $mail->Subject = "hippocampusvacationclub.com - Reserva de Habitaciones: ".$_POST['contact-name'] ;
+        $mail->Subject = "Web - Room Reservation: ".utf8_decode($_POST['contact-name']);
         //$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
         //$mail->msgHTML($message);
 
@@ -621,6 +626,7 @@ class PublicControllerIngles extends Controller
                                         <strong>
                                             HIPPOCAMPUS VACATION CLUB
                                         </strong>
+                                        <br>
                                         <b>Innovamos para ti</b>
                                     </td>
 
@@ -643,13 +649,12 @@ class PublicControllerIngles extends Controller
                                     <td align="center" colspan="3">
 
                                         <h2>
-                                            Estimado(a): '.$_POST['contact-name'].'
+                                            Dear: '.$_POST['contact-name'].'
                                         </h2>
 
                                         <p style="text-align: center">
-                                            Gracias por hacer la reservación de su habitación <b>'.$_POST['contact-habitacion'].'</b> con nosotros. <br>En breves momentos nos estaremos comunicando con usted.
+                                            Thank you for booking your <b>'.$_POST['contact-habitacion'].'</b> with us. <br>In a few moments we will be communicating with you.
                                         </p>
-
 
                                     </td>
                                 </tr>
@@ -665,7 +670,7 @@ class PublicControllerIngles extends Controller
                                                 <tr>
 
                                                     <td>
-                                                        Teléfono:
+                                                        Phone Number:
                                                     <td>
                                                     <td>'.$_POST['contact-phone'].'</td>
 
@@ -674,7 +679,7 @@ class PublicControllerIngles extends Controller
                                                 <tr>
 
                                                     <td>
-                                                        Correo Electrónico:
+                                                        Email:
                                                     <td>
                                                     <td>'.$_POST['contact-email'].'</td>
 
@@ -683,7 +688,7 @@ class PublicControllerIngles extends Controller
                                                 <tr>
 
                                                     <td>
-                                                        Adulto(s):
+                                                        Adult(s):
                                                     <td>
                                                     <td>'.$_POST['contact-adultos'].'</td>
 
@@ -692,7 +697,7 @@ class PublicControllerIngles extends Controller
                                                 <tr>
 
                                                     <td>
-                                                        Niño(s):
+                                                        Children:
                                                     <td>
                                                     <td>'.$_POST['contact-ninos'].'</td>
 
@@ -701,7 +706,7 @@ class PublicControllerIngles extends Controller
                                                 <tr>
 
                                                     <td>
-                                                        Llegada:
+                                                        Arrival Date:
                                                     <td>
                                                     <td>'.$_POST['contact-arrival'].'</td>
 
@@ -710,7 +715,7 @@ class PublicControllerIngles extends Controller
                                                 <tr>
 
                                                     <td>
-                                                        Salida:
+                                                        Departure Date:
                                                     <td>
                                                     <td>'.$_POST['contact-departure'].'</td>
 
@@ -719,7 +724,7 @@ class PublicControllerIngles extends Controller
                                                 <tr>
 
                                                     <td>
-                                                        Comentarios:
+                                                        Message:
                                                     <td>
                                                     <td>'.$_POST['contact-message'].'</td>
 
@@ -750,20 +755,39 @@ class PublicControllerIngles extends Controller
             //echo "Error: " . $mail->ErrorInfo;
             Session::flash('message','Error!'.$mail->ErrorInfo);
         } else {
-            Session::flash('message','Su reservación fue enviada exitosamente!');
+            Session::flash('message','Your reservation was successfully sent!');
         }
 
-        //return redirect()->back();
+        //pido el precio de la habitación:
+        $str_precio = DB::table('cat_habitaciones')->select('str_precio')->where('str_rooms', $_POST['contact-habitacion'] )->get();
 
-        Session::flush();
+        foreach ($str_precio[0] as $key => $value) {
+           
+            $precio[$key] = $value;  
+        }
 
-        Session::push('datos', $_POST);
-        //dd(Session::get('datos'));die();
+        //asigno el valor del precio a una variable:
+        $precio_habitacion = $precio[$key];
+        $total_pagar = $_POST['cant_dias'] * $precio_habitacion;
 
-        return Redirect::to('/en/Reservation-Data');
+        //lo asigno a lo que viene por post del formulario:
+        //dd($_POST);die();
+        array_push($_POST, $_POST['contact-precioHabitacion']=$precio_habitacion, $_POST['contact-totalPagar']=$total_pagar);
+        //dd($_POST);die();
+
+        $datos = $_POST;
+
+        return view('en.realizarPago', compact('datos'));
 
         //return Redirect::to('http://'.$_SERVER['SERVER_NAME'].'/');
 
+        //Session::flush();
+
+        
+        session()->put('reservacion', 'true');
+
+
+        return redirect()->back();
     }
 
     /**
@@ -773,7 +797,7 @@ class PublicControllerIngles extends Controller
      */
     public function realizarPagoIngles()
     {
-         return view('en.realizarPago');
+        return view('en.realizarPago');
     }
 
 }

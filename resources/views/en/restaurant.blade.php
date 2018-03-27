@@ -37,11 +37,7 @@
 
                     <h2><strong>JOE'S Gril</strong> Restaurant</h2>
                     <p style="text-align: justify;">
-                        
-                        
                         Our mision in of hotel <strong>Hippocampus Vacation Club</strong>, is to provide extraodinary services, offering a varied gastronomy as: breakfasts, lunch, snacks, pizzas, dinner, soups among many more. We provide a executive menu and a great variety for that guests it feels at ease in the restaurant or while enjoying a sunny day in the pool.
-                     
-
                     </p>
 
                     <h2 style="margin:0;"><strong>+58 (295) 267.62.13 </strong></h2>
@@ -59,7 +55,7 @@
 
                     <!-- Menu | START -->
                     <section id="menu">
-                    	<h3><i class="fa fa-cutlery"></i> Food menu </h3>
+                    	<h3><i class="fa fa-cutlery"></i> Food Menu</h3>
                     	<div class="menu">
                             <h4>
                             	Breakfast <span></span>
@@ -75,28 +71,28 @@
                                 </li>
                                 <li>
                                     <h5>Arepas</h5>
-                                    <p>Queso, Jamón, Jamón y Queso, Carne Mechada, Carne Molida, Dominó, Cazón, Reina Pepiada, Salchicha, Mixta</p>
+                                    <p>Cheese, Ham, Ham and Cheese, Meatloaf, Ground Beef, Domino, Dogfish, Queen Pepiada, Sausage, Mixed</p>
                                     <div class="price">
                                         <div></div>
                                     </div>
                                 </li>
                                 <li>
                                     <h5>Empanadas</h5>
-                                    <p> cheese, meatloaf, Carne Molida, Pabellón, Dominó, Salchicha</p>
+                                    <p> Cheese, meatloaf, Ground Beef, Pavilion, Domino, Sausage</p>
                                     <div class="price">
                                         <div></div>
                                     </div>
                                 </li>
                                 <li>
                                     <h5>Pabellon Criollo</h5>
-                                    <p> white rice, beans, slice, meatloaf, egg </p>
+                                    <p> White rice, Beans, Fried plantain slices, Meatloaf, Egg </p>
                                     <div class="price">
                                         <div></div>
                                     </div>
                                 </li>
                                 <li>
                                     <h5>Pabellón Margariteño</h5>
-                                    <p>white rice, beans, slice, dogfish </p>
+                                    <p>White rice, Beans, Fried plantain slices, Dogfish </p>
                                     <div class="price">
                                         <div></div>
                                     </div>
@@ -105,20 +101,21 @@
                         </div>
                         <div class="menu">
                             <h4>
-                            	Rompe Dieta <span></span>
+                            	Break Diet <span></span>
                                 <img alt="" src="{{ asset('base-hotel/preview/images/dining-thumb-lunch.jpg') }}" width="120" height="120" />
                             </h4>
                             <ul>
                                 <li>
                                     <h5>Club House</h5>
-                                    <p>Pollo o Chuleta</p>
+                                    <p>Chicken or Chop</p>
                                     <div class="price">
                                     	<div></div>
                                     </div>
                                 </li>
                                 <li>
                                     <h5>Shawarma</h5>
-                                    <p>500 gramos de pechuga de pollo sin hueso (cortada en tiras), 2 cucharadas de jugo de limón, 1 cucharadita de curry en polvo, 2 cucharaditas de aceite de oliva, ¾ cucharadita de sal, ½ cucharadita de comino, 3 dientes de ajo picado</p>
+                                    <p>
+                                        500 grams of boneless chicken breast (cut into strips), 2 tablespoons of lemon juice, 1 teaspoon of curry powder, 2 teaspoons of olive oil, &frac34; teaspoon of salt, &frac12; teaspoon of cumin, 3 cloves of chopped garlic</p>
                                     <div class="price">
                                     	<div></div>
                                     </div>
@@ -132,21 +129,22 @@
                                 </li>
                                 <li>
                                     <h5>Hamburguesa Capresa</h5>
-                                    <p>Queso Mozzarella, Tomate, Lechuga, Chuleta y Pesto</p>
+                                    <p>Mozzarella Cheese, Tomato, Lettuce, Chop and Pesto</p>
                                     <div class="price">
                                     	<div></div>
                                     </div>
                                 </li>
                                 <li>
                                     <h5>Plátano Burger</h5>
-                                    <p>200grs de Carne, Jamón, Queso Rallado,Tocineta y Plátano</p>
+                                    <p>200grs of Meat, Ham, Grated Cheese, Bacon and Banana</p>
                                     <div class="price">
                                         <div></div>
                                     </div>
                                 </li>
                                 <li>
                                     <h5>La Pololo</h5>
-                                    <p>200grs de Pollo, Huevo,Tocineta y Ensalada César sobre la Hamburguesa</p>
+                                    <p>
+                                        200grs of Chicken, Egg, Bacon and Caesar salad over the Hamburger</p>
                                     <div class="price">
                                         <div></div>
                                     </div>
@@ -167,21 +165,21 @@
                             </h4>
                             <ul>
                                 <li>
-                                    <h5>Tostones con Queso</h5>
+                                    <h5>Tostones with cheese</h5>
                                     <p></p>
                                     <div class="price">
                                     	<div></div>
                                     </div>
                                 </li>
                                 <li>
-                                    <h5>Patacones con 1 Contorno</h5>
+                                    <h5>Patacones with 1 Contour</h5>
                                     <p></p>
                                     <div class="price">
                                     	<div></div>
                                     </div>
                                 </li>
                                 <li class="">
-                                    <h5>Patacones con 2 Contornos</h5>
+                                    <h5>Patacones with 2 Contours</h5>
                                     <p></p>
                                     <div class="price">
                                     	<div></div>
@@ -198,7 +196,7 @@
                         </div>
                         <div class="menu">
                             <h4>
-                                Raciones <span></span>
+                                Portions <span></span>
                                 <img alt="" src="{{ asset('base-hotel/preview/images/raciones.jpg') }}" width="120" height="120" />
                             </h4>
                             <ul>
@@ -210,14 +208,14 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <h5>Yuca Frita</h5>
+                                    <h5>Fried yucca</h5>
                                     <p></p>
                                     <div class="price">
                                         <div></div>
                                     </div>
                                 </li>
                                 <li class="">
-                                    <h5>Tajadas con Queso</h5>
+                                    <h5>Fried plantain slices with cheese</h5>
                                     <p></p>
                                     <div class="price">
                                         <div></div>
@@ -234,7 +232,7 @@
                         </div>
                         <div class="menu">
                             <h4>
-                                Especialidades <span></span>
+                                Specialty <span></span>
                                 <img alt="" src="{{ asset('base-hotel/preview/images/dining-thumb-dinner.jpg') }}" width="120" height="120" />
                             </h4>
                             <ul>
@@ -246,21 +244,21 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <h5>Plato para Picar</h5>
+                                    <h5>Chopping Plate</h5>
                                     <p></p>
                                     <div class="price">
                                         <div></div>
                                     </div>
                                 </li>
                                 <li class="">
-                                    <h5>Pechuga a la Plancha</h5>
+                                    <h5>Grilled chicken breast</h5>
                                     <p></p>
                                     <div class="price">
                                         <div></div>
                                     </div>
                                 </li>
                                 <li>
-                                    <h5>Rueda de Atún</h5>
+                                    <h5>Tuna Wheel</h5>
                                     <p></p>
                                     <div class="price">
                                         <div></div>
@@ -268,44 +266,44 @@
                                 </li>
                             </ul>
                         </div>                                               
-                        <h3><i class="fa fa-glass"></i> Menú de Bebidas</h3>
+                        <h3><i class="fa fa-glass"></i> Drinks Menu</h3>
                         <div class="menu">
                             <h4>
-                                No Alcohólicas
+                                Non-Alcoholic
                                 <img alt="" src="{{ asset('base-hotel/preview/images/jugos.jpg') }}" width="120" height="120" />
                             </h4>
                             <ul>
                                 <li>
                                     <h5>Nestea</h5>
-                                    <p>Durazno, Limón</p>
+                                    <p>Peach, Lemon</p>
                                     <div class="price">
                                         <div></div>
                                     </div>
                                 </li>
                                 <li>
-                                    <h5>Refresco 1,5 Lts</h5>
-                                    <p>Cola, Limón, Naranja, Uva, Colita</p>
+                                    <h5>Soda 1,5 Lts</h5>
+                                    <p>Cola, Lemon, Orange, Grape, Colita</p>
                                     <div class="price">
                                         <div></div>
                                     </div>
                                 </li>
                                 <li>
-                                    <h5>Refresco 2 Lts</h5>
-                                    <p>Cola, Limón, Naranja, Uva, Colita</p>
+                                    <h5>Soda 2 Lts</h5>
+                                    <p>Cola, Lemon, Orange, Grape, Colita</p>
                                     <div class="price">
                                         <div></div>
                                     </div>
                                 </li>
                                 <li>
-                                    <h5>Jarra de Nestea</h5>
-                                    <p>Limón, Durazno</p>
+                                    <h5>Nestea Jar</h5>
+                                    <p>Lemon, Peach</p>
                                     <div class="price">
                                         <div></div>
                                     </div>
                                 </li>
                                 <li>
-                                    <h5>Jugo Natural</h5>
-                                    <p>Fresa, Mora, Piña, Melón, Lechoza, Naranja, Limonada, Parchita, Pera, Melocotón</p>
+                                    <h5>Natural Juice</h5>
+                                    <p>Strawberry, Blackberry, Pineapple, Melon, Papaya, Orange, Lemonade, Parchita, Pear, Peach</p>
                                     <div class="price">
                                         <div></div>
                                     </div>
@@ -314,77 +312,81 @@
                         </div>                        
                     	<div class="menu">
                             <h4>
-                            	Alcohólicas
+                            	Alcoholic
                                 <img alt="" src="{{ asset('base-hotel/preview/images/dining-thumb-drinks2.jpg') }}" width="120" height="120" />
                             </h4>
                             <ul>
                                 <li>
                                     <h5>Caipiriña</h5>
-                                    <p>Lima Tahití o limón, Cachaça, Azúcar, Hielo Picado</p>
+                                    <p>
+                                        Lima Tahiti or lemon, Cachaça, Sugar, Crushed Ice
+                                    </p>
                                     <div class="price">
                                     	<div></div>
                                     </div>
                                 </li>
                                 <li>
                                     <h5>Cuba Libre</h5>
-                                    <p>Amargo Angostura, Limón, Refresco de Cola, Ron Oscuro</p>
+                                    <p>Amargo Angostura, Lemon, Cola Refreshment, Dark Rum</p>
                                     <div class="price">
                                     	<div></div>
                                     </div>
                                 </li>
                                 <li>
-                                    <h5>Cucaracha</h5>
-                                    <p>Una parte de Tequila, Una parte de licor de Café (Kahlua)</p>
+                                    <h5>Cockroach Cocktail</h5>
+                                    <p>A part of Tequila, A part of Coffee liqueur (Kahlua)</p>
                                     <div class="price">
                                     	<div></div>
                                     </div>
                                 </li>
                                 <li>
                                     <h5>Daikiri</h5>
-                                    <p>Hielo, 45ml de Ron Blanco, 30ml de zumo de lima, 15ml de almíbar o 50gr de azúcar, Corteza de lima</p>
+                                    <p>Ice, 45 ml of White Rum, 30 ml of lime juice, 15ml of syrup or 50gr of sugar, Lime Bark</p>
                                     <div class="price">
                                         <div></div>
                                     </div>
                                 </li>
                                 <li>
                                     <h5>Margarita</h5>
-                                    <p>1 1/2 oz. de Tequila, 1 1/2 oz. de Triple Sec, 1 oz. de Jugo de Limón, Hielo</p>
+                                    <p>1 &frac12; oz. of Tequila, 1 &frac12; oz. of Triple Sec, 1 oz. of Lemon Juice, Ice</p>
                                     <div class="price">
                                         <div></div>
                                     </div>
                                 </li>
                                 <li>
                                     <h5>Mojito</h5>
-                                    <p>2 ramitas de Menta o Yerbabuena, 2 cucharaditas de azúcar, El zumo de 1 lima, 45 ml (más o menos) de Ron Blanco, Un poco de hielo picado o triturado, Soda o agua con gas hasta llenar 2/3 del vaso</p>
+                                    <p>                                        
+                                        2 sprigs of Mint or Yerbabuena, 2 teaspoons of sugar, The juice of 1 lime, 45 ml (more or less) of White Rum, A bit of crushed or crushed ice, Soda or sparkling water to fill 2/3 of the glass
+                                    </p>
                                     <div class="price">
                                         <div></div>
                                     </div>
                                 </li>
                                 <li>
                                     <h5>Piña Colada</h5>
-                                    <p><b>Original:</b> 1 parte de Ron Blanco, 3 partes de zumo de Piña, 1 parte de leche o crema de coco (no agua de coco) y hielo picado</p>
-                                    <p><b>Adaptación:</b> 1 parte de Ron Blanco, 1 parte de Malibú, 1 parte de Mangaroca, 3 partes de zumo de Piña, hielo picado</p>
+                                    <p><b>Original:</b> 1 part of Ron Blanco, 3 parts of pineapple juice, 1 part of milk or coconut cream (not coconut water) and crushed ice</p>
+                                    <p><b>Adaptation:</b> 1 part of Ron Blanco, 1 part of Malibu, 1 part of Mangaroca, 3 parts of pineapple juice, crushed ice</p>
                                     <div class="price">
                                         <div></div>
                                     </div>
                                 </li>
                                 <li>
-                                    <h5>Príncipe Azul</h5>
-                                    <p>1 1/2 oz (45 ml) Vodka, 1/2 oz oz (15 ml) Licor de Manzana, 4 oz (120 ml) Zumo de Manzana, 1/2 oz (15 ml) Azúcar líquida, 4 Laminas de Jengibre, Manzana (opcional para decorar con dos bolas)</p>
+                                    <h5>Blue Prince</h5>
+                                    <p>1 &frac12; oz (45 ml) Vodka, &frac12; oz (15 ml) Apple Liqueur, 4 oz. (120 ml) Apple Juice, &frac12; oz. (15 ml) Liquid sugar, 4 layers of Ginger, Apple (optional to decorate with two balls)</p>
                                     <div class="price">
                                         <div></div>
                                     </div>
                                 </li>
                                 <li>
                                     <h5>Tinto Verano</h5>
-                                    <p>1 Botella de Vino Tinto joven, 1 litro de Refresco de Limón, Rodajas de Limón y Naranja, Hielo</p>
+                                    <p>1 Bottle of Young Red Wine, 1 liter of Lemon Refreshment, Lemon and Orange Slices, Ice</p>
                                     <div class="price">
                                         <div></div>
                                     </div>
                                 </li>
                                 <li>
-                                    <h5>Sangría</h5>
-                                    <p>1 Botella de vino (cualquier precio está bien), 1 Refresco de Limón o Ginger Ale, 1 vaso de algún otro licor (Brandy, Whiskey, Tequila), Durazno, Naranja, Limón, Manzana, Azúcar Canela</p>
+                                    <h5>Sangaree</h5>
+                                    <p>1 Bottle of wine (any price is fine), 1 Lemon or Ginger Ale Refreshment, 1 glass of some other liquor (Brandy, Whiskey, Tequila), Peach, Orange, Lemon, Apple, Cinnamon Sugar</p>
                                     <div class="price">
                                         <div></div>
                                     </div>
@@ -393,34 +395,38 @@
                         </div>
                         <div class="menu">
                             <h4>
-                            	Cafetería <span></span>
+                            	Coffee <span></span>
                                 <img alt="" src="{{ asset('base-hotel/preview/images/dining-thumb-coffee.jpg') }}" width="120" height="120" />
                             </h4>
                             <ul>
                                 <li>
                                     <h5>Cappuccino</h5>
-                                    <p>1 Café Espresso (7-8gr de café recién molido),120 ml de leche entera fresca y fría, 1 jarra de leche de 25cl para hacer la espuma, 1 taza de Cappuccino de unos 175 ml, 1 cafetera espresso (usando agua purificada), 1 molino de Café, 1 tamper (compresor de café)</p>
+                                    <p>
+                                        1 Espresso coffee (7-8gr of freshly ground coffee), 120 ml of fresh and cold whole milk, 1 jug of milk of 25cl to make the foam, 1 cup of Cappuccino of about 175 ml, 1 espresso machine (using purified water) , 1 coffee mill, 1 tamper (coffee compressor)
+                                    </p>
                                     <div class="price">
                                     	<div></div>
                                     </div>
                                 </li>
                                 <li>
                                     <h5>Flat White</h5>
-                                    <p>Café, Leche Emulsionada</p>
+                                    <p>
+                                        Coffee, Emulsified Milk
+                                    </p>
                                     <div class="price">
                                     	<div></div>
                                     </div>
                                 </li>
                                 <li>
                                     <h5>Latte</h5>
-                                    <p>Café Molido, Leche, Cafetera Espresso, Azúcar (opcional)</p>
+                                    <p>Ground Coffee, Milk, Coffee Espresso, Sugar (optional)</p>
                                     <div class="price">
                                     	<div></div>
                                     </div>
                                 </li>
                                 <li>
                                     <h5>Macchiato</h5>
-                                    <p>Una cápsula de Grand Cru Roma, Indriya from India, Volluto o Volluto Decaffeinato, Azúcar blanca, 20 ml de leche fría, Virutas de chocolate</p>
+                                    <p>One capsule of Grand Cru Roma, Indriya from India, Volluto or Volluto Decaffeinato, White sugar, 20 ml of cold milk, Chocolate chips</p>
                                     <div class="price">
                                     	<div></div>
                                     </div>

@@ -42,22 +42,21 @@ Route::put('Enviando', [
 		'as' =>'enviar'
 ]);
 
-Route::put('Enviando-Reservación', [
-		'uses' => 'PublicController@enviarReservacion',
-		'as' =>'enviarReservacion'
-]);
+
+
+
 
 Route::get('/Socio-RCI', [
 	'uses' => 'PublicController@rci',
 	'as' =>'rci'
 ]);
 
-Route::get('/Fly&Buy-HVC', [
+Route::get('/Fly&Buy', [
 	'uses' => 'PublicController@fly',
 	'as' =>'fly'
 ]);
 
-Route::get('/Eventos', [
+Route::get('/Eventos-Sociales-y-Corporativos', [
 	'uses' => 'PublicController@eventos',
 	'as' =>'eventos'
 ]);
@@ -82,7 +81,7 @@ Route::get('/Habitación-Doble', [
 	'as' =>'doble'
 ]);
 
-Route::get('/Habitación-Duplex', [
+Route::get('/Habitación-Duplex-2-Ambientes', [
 	'uses' => 'PublicController@duplex',
 	'as' =>'duplex'
 ]);
@@ -92,7 +91,7 @@ Route::get('/Galería', [
 	'as' =>'gallery'
 ]);
 
-Route::post('/Contáctanos', [
+Route::post('/', [
 	'uses' => 'PublicController@reservacion',
 	'as' =>'reservacion'
 ]);
@@ -102,7 +101,9 @@ Route::get('/Contáctanos', [
 	'as' =>'contact'
 ]);
 
-Route::get('/Servicios', [
+Route::post('/Contáctanos', 'PublicController@solicitarReservacion');
+
+Route::get('/Servicios-Especiales', [
 	'uses' => 'PublicController@especial',
 	'as' =>'especial'
 ]);
@@ -117,11 +118,30 @@ Route::get('/Página-No-Existe', [
 	'as' =>'error'
 ]);
 
-Route::get('/Pagar-Reservación', [
-	'uses' => 'PublicController@realizarPago',
-	'as' =>'realizarPago'
-]);
+
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+
+Route::post('/Reservar', [
+	'uses' => 'HomeController@postReservaciones',
+	'as' =>'reservar'
+]);
+
+Route::post('Enviando-Reservación', [
+		'uses' => 'HomeController@enviarReservacion',
+		'as' =>'enviarReservacion'
+]);
+
+Route::get('/Pagar-Reservación', [
+	'uses' => 'HomeController@realizarPago',
+	'as' =>'realizarPago'
+]);
+
+Route::get('Salir', [
+				'uses' => 'Auth\LoginController@logout',
+				'as' =>'logout'
+]);

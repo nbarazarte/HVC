@@ -114,7 +114,7 @@
                                 </li>
                                 <li>
                                     <h5>Shawarma</h5>
-                                    <p>500 gramos de pechuga de pollo sin hueso (cortada en tiras), 2 cucharadas de jugo de limón, 1 cucharadita de curry en polvo, 2 cucharaditas de aceite de oliva, ¾ cucharadita de sal, ½ cucharadita de comino, 3 dientes de ajo picado</p>
+                                    <p>500 gramos de pechuga de pollo sin hueso (cortada en tiras), 2 cucharadas de jugo de limón, 1 cucharadita de curry en polvo, 2 cucharaditas de aceite de oliva, &frac34; cucharadita de sal, &frac12;  cucharadita de comino, 3 dientes de ajo picado</p>
                                     <div class="price">
                                     	<div></div>
                                     </div>
@@ -301,7 +301,7 @@
                                 </li>
                                 <li>
                                     <h5>Jugo Natural</h5>
-                                    <p>Fresa, Mora, Piña, Melón, Lechoza, Naranja, Limonada, Parchita, Pera, Melocotón</p>
+                                    <p>Fresa, Mora, Piña, Melón, Lechosa, Naranja, Limonada, Parchita, Pera, Melocotón</p>
                                     <div class="price">
                                         <div></div>
                                     </div>
@@ -344,7 +344,7 @@
                                 </li>
                                 <li>
                                     <h5>Margarita</h5>
-                                    <p>1 1/2 oz. de Tequila, 1 1/2 oz. de Triple Sec, 1 oz. de Jugo de Limón, Hielo</p>
+                                    <p>1 &frac12; oz. de Tequila, 1 &frac12; oz. de Triple Sec, 1 oz. de Jugo de Limón, Hielo</p>
                                     <div class="price">
                                         <div></div>
                                     </div>
@@ -366,7 +366,7 @@
                                 </li>
                                 <li>
                                     <h5>Príncipe Azul</h5>
-                                    <p>1 1/2 oz (45 ml) Vodka, 1/2 oz oz (15 ml) Licor de Manzana, 4 oz (120 ml) Zumo de Manzana, 1/2 oz (15 ml) Azúcar líquida, 4 Laminas de Jengibre, Manzana (opcional para decorar con dos bolas)</p>
+                                    <p>1 &frac12; oz (45 ml) Vodka, &frac12; oz (15 ml) Licor de Manzana, 4 oz (120 ml) Zumo de Manzana, &frac12; oz (15 ml) Azúcar líquida, 4 Laminas de Jengibre, Manzana (opcional para decorar con dos bolas)</p>
                                     <div class="price">
                                         <div></div>
                                     </div>
