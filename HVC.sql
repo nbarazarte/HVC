@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 19-03-2018 a las 04:24:42
+-- Tiempo de generación: 27-03-2018 a las 17:27:58
 -- Versión del servidor: 10.1.26-MariaDB-0+deb9u1
 -- Versión de PHP: 7.0.27-0+deb9u1
 
@@ -30,6 +30,7 @@ CREATE TABLE `cat_habitaciones` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `str_habitacion` varchar(50) NOT NULL,
   `str_rooms` varchar(50) NOT NULL,
+  `str_precio` decimal(50,0) NOT NULL,
   `bol_eliminado` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -37,11 +38,11 @@ CREATE TABLE `cat_habitaciones` (
 -- Volcado de datos para la tabla `cat_habitaciones`
 --
 
-INSERT INTO `cat_habitaciones` (`id`, `str_habitacion`, `str_rooms`, `bol_eliminado`) VALUES
-(1, 'Matrimonial', 'Matrimonial', 0),
-(2, 'Matrimonial + Sofá', 'Matrimonial + Sofa', 0),
-(3, 'Familiar', 'Family', 0),
-(4, 'Duplex 2 Ambientes', 'Duplex 2 Main Rooms', 0);
+INSERT INTO `cat_habitaciones` (`id`, `str_habitacion`, `str_rooms`, `str_precio`, `bol_eliminado`) VALUES
+(1, 'Matrimonial', 'Matrimonial', '20', 0),
+(2, 'Matrimonial + Sofá', 'Matrimonial + Sofa', '25', 0),
+(3, 'Doble', 'Double', '30', 0),
+(4, 'Duplex 2 Ambientes', 'Duplex 2 Main Rooms', '40', 0);
 
 -- --------------------------------------------------------
 
@@ -165,7 +166,24 @@ CREATE TABLE `tbl_newsletter` (
 --
 
 INSERT INTO `tbl_newsletter` (`id`, `str_email`, `created_at`, `updated_at`, `bol_eliminado`) VALUES
-(26, 'orlando@gmail.com', '2018-03-19 09:14:21', '2018-03-19 09:14:21', 0);
+(29, 'atrellus@gmail.com', '2018-03-27 09:28:11', '2018-03-27 09:28:11', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tbl_reservaciones`
+--
+
+CREATE TABLE `tbl_reservaciones` (
+  `id` int(11) NOT NULL,
+  `lng_idtipohab` int(11) NOT NULL,
+  `lng_idpersona` int(11) NOT NULL,
+  `dmt_fecha_entrada` date NOT NULL,
+  `dmt_fecha_salida` date NOT NULL,
+  `bol_eliminado` tinyint(1) NOT NULL DEFAULT '0',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -188,7 +206,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Neil', 'ezebarazarte@gmail.com', '$2y$10$Z.efkkaHE.8/wi9QLJzd7.TyibrZu1t1Kt1InKXKyzEg5oQjnrx9a', 'Dk1XBmvV2uma1QVaQwo7KRZmqz75vPZpngYV0MvQCAL58EZu732rJ8Wk59Ze', '2018-03-01 22:55:03', '2018-03-01 23:08:05');
+(1, 'Neel Barazarte', 'ezebarazarte@gmail.com', '$2y$10$Z.efkkaHE.8/wi9QLJzd7.TyibrZu1t1Kt1InKXKyzEg5oQjnrx9a', 'XwackeXe5mDZHpQmAmw3oQBNZhycZaWSNy5AmpViHFlauY1mZoBhoOl4rGbO', '2018-03-01 22:55:03', '2018-03-27 20:48:11'),
+(2, 'Maritza Aché', 'maache@gmail.com', '$2y$10$2MOS9Q6Z4wfmG63vHh/Q4.g/TLzSHcdfo7.tuBIIEIX2.NAnrNehm', 'TJZ6AwxQIQEs2E6f1TeAD2frrBCotxgn3ByYo2HWZVCe9drWpbWTCjP9Stch', '2018-03-23 11:09:27', '2018-03-27 03:28:51'),
+(3, 'Jaennie Pineda', 'jdelvpineda@gmail.com', '$2y$10$Goqv.vMKHhsPpaED6OJ93OB53gEoH5ODhqimN7SHCexHuNu8E9cS2', 'Z5ceDqRpI3goVQjquLraDOyCXb6pEYP9G0W5GmowQ4MNEYDyvFjTIXpAo9ZN', '2018-03-27 20:56:12', '2018-03-28 00:26:05');
 
 --
 -- Índices para tablas volcadas
@@ -230,6 +250,12 @@ ALTER TABLE `tbl_newsletter`
   ADD UNIQUE KEY `str_email` (`str_email`);
 
 --
+-- Indices de la tabla `tbl_reservaciones`
+--
+ALTER TABLE `tbl_reservaciones`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `users`
 --
 ALTER TABLE `users`
@@ -259,12 +285,17 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT de la tabla `tbl_newsletter`
 --
 ALTER TABLE `tbl_newsletter`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+--
+-- AUTO_INCREMENT de la tabla `tbl_reservaciones`
+--
+ALTER TABLE `tbl_reservaciones`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
