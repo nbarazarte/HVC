@@ -85,6 +85,8 @@ Route::get('/Contact-us', [
 	'as' =>'contactIngles'
 ]);
 
+Route::post('/Contact-us', 'PublicControllerIngles@solicitarReservacion');
+
 Route::get('/Special-Services', [
 	'uses' => 'PublicControllerIngles@especial',
 	'as' =>'especialIngles'
@@ -98,11 +100,6 @@ Route::post('/Newsletter', [
 Route::get('/Page-No-Exist', [
 	'uses' => 'PublicControllerIngles@error',
 	'as' =>'errorIngles'
-]);
-
-Route::get('/Make-Payment', [
-	'uses' => 'PublicControllerIngles@realizarPagoIngles',
-	'as' =>'realizarPagoIngles'
 ]);
 
 ?>

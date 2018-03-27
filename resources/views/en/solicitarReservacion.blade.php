@@ -23,8 +23,8 @@
 	<header>
     	<div id="header">
         	<div class="h1">
-                <h1><span>Solicitar Reservación</span>
-                <span class="tagline">Innovando para ti</span></h1>
+                <h1><span>Request Reservation</span>
+                <span class="tagline">Innovating for you</span></h1>
             </div>
         </div>
 
@@ -37,7 +37,7 @@
 
             <div id="content">
 
-                <h2><strong>Datos de la</strong> Reservación</h2>
+                <h2><strong>Reservation</strong> Data</h2>
 
                     @if($flag == "true")
 
@@ -49,14 +49,14 @@
 
                                 <tr>
                                     <td>
-                                        <b>Nombre del Huésped:</b>
+                                        <b>Name:</b>
                                     </td>
                                     <td>
                                         {{ $persona['contact-name'] }}
                                         <input type="hidden" name="contact-name" readonly value="{{ $persona['contact-name'] }}">
                                     </td>
                                     <td>
-                                        <b>Correo Electrónico:</b>
+                                        <b>Email:</b>
                                     </td>
                                     <td>
                                         {{ $persona['contact-email'] }}
@@ -65,14 +65,14 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <b>N° de Teléfono:</b>
+                                        <b>Phone Number:</b>
                                     </td>
                                     <td>
                                         {{ $persona['contact-phone'] }}
                                         <input type="hidden" name="contact-phone" readonly value="{{ $persona['contact-phone'] }}">
                                     </td>
                                     <td>
-                                        <b>Tipo de Habitación:</b>
+                                        <b>Accommodation:</b>
                                     </td>
                                     <td>
                                         {{ $persona['contact-habitacion'] }}
@@ -82,14 +82,14 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <b>Cantidad de Niños:</b>
+                                        <b>Children:</b>
                                     </td>
                                     <td>
                                         {{ $persona['contact-ninos'] }}
                                         <input type="hidden" name="contact-ninos" readonly value="{{ $persona['contact-ninos'] }}">
                                     </td>
                                     <td>
-                                        <b>Precio de la Habitacion:</b>
+                                        <b>Price of the Room:</b>
                                     </td>
                                     <td>
                                         Bs. {{ number_format($persona['contact-precioHabitacion'], 2, ',', '.')   }}
@@ -98,14 +98,14 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <b>Cantidad de Adultos:</b>
+                                        <b>Adults:</b>
                                     </td>
                                     <td>
                                         {{ $persona['contact-adultos'] }}
                                         <input type="hidden" name="contact-adultos" readonly value="{{ $persona['contact-adultos'] }}">
                                     </td>
                                     <td>
-                                        <b>Fecha de Llegada:</b>
+                                        <b>Arrival Date:</b>
                                     </td>
                                     <td>
                                         {{ $persona['contact-arrival'] }}
@@ -115,14 +115,14 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <b>Total de Días:</b>
+                                        <b>Total Days:</b>
                                     </td>
                                     <td>                                    
                                         {{ $persona['cant-dias'] }}
                                         <input type="hidden" name="cant-dias" readonly value="{{ $persona['cant-dias'] }}">
                                     </td>
                                     <td>
-                                        <b>Fecha de Salida:</b>
+                                        <b>Departure Date:</b>
                                     </td>
                                     <td>
                                          {{ $persona['contact-departure'] }}
@@ -131,7 +131,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="4"><b>Comentarios:</b>  {{ $persona['contact-message'] }}
+                                    <td colspan="4"><b>Message:</b>  {{ $persona['contact-message'] }}
                                         <input type="hidden" name="contact-message" readonly value="{{ $persona['contact-message'] }}">
                                     </td>                                    
                                 </tr>
@@ -141,7 +141,7 @@
                     @if (Auth::user())
 
                         <button name="send" value="sendform">
-                            <a class="button"><span data-hover="Hacer la Reservación">Hacer la Reservación</span></a> 
+                            <a class="button"><span data-hover="Make a Reservation">Make a Reservation</span></a> 
                         </button>
                          
                     @else

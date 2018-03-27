@@ -42,10 +42,6 @@ Route::put('Enviando', [
 		'as' =>'enviar'
 ]);
 
-
-
-
-
 Route::get('/Socio-RCI', [
 	'uses' => 'PublicController@rci',
 	'as' =>'rci'
@@ -118,27 +114,28 @@ Route::get('/Página-No-Existe', [
 	'as' =>'error'
 ]);
 
-
-
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
-
+//Route::get('/home', 'HomeController@index');
 
 Route::post('/Reservar', [
 	'uses' => 'HomeController@postReservaciones',
 	'as' =>'reservar'
 ]);
 
-Route::post('Enviando-Reservación', [
-		'uses' => 'HomeController@enviarReservacion',
-		'as' =>'enviarReservacion'
+Route::post('/Reservar', [
+	'uses' => 'HomeController@postReservaciones',
+	'as' =>'reservar'
 ]);
 
 Route::get('/Pagar-Reservación', [
 	'uses' => 'HomeController@realizarPago',
 	'as' =>'realizarPago'
+]);
+
+Route::get('/Make-Payment', [
+	'uses' => 'HomeController@realizarPago',
+	'as' =>'realizarPagoIngles'
 ]);
 
 Route::get('Salir', [

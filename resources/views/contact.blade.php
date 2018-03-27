@@ -109,7 +109,7 @@
 
                     
 
-                    <button name="send" value="sendform"><span data-hover="Hacer Solicitud de Reserva">Hacer Solicitud de Reserva</span></button>
+                    <button name="send" value="sendform"><span data-hover="Buscar Disponibilidad">Buscar Disponibilidad</span></button>
 
 
                     

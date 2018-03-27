@@ -43,7 +43,7 @@
 
                     @include('mensajes')          
 
-                    {!! Form::open(['route' => 'enviarReservacionIngles', 'method'=>'PUT', 'id' => 'demo-form', 'name' => 'demo-form', 'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false', 'onsubmit' => 'diferencia()']) !!} 
+                    {!! Form::open(['route' => 'contactIngles', 'method'=>'POST', 'id' => 'demo-form', 'name' => 'demo-form', 'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false', 'onsubmit' => 'diferencia()']) !!} 
 
                     <div class="col">
                         <div class="field mandatory"><input name="contact-name" type="text" placeholder="Your Name" id="contact-name" value="" required/></div>
@@ -98,32 +98,20 @@
                         </div>
                     </div>
                     <div class="col">
-                        <input type="hidden" id="cant_dias" name="cant_dias" value="">
+                        <input type="hidden" id="cant-dias" name="cant-dias" value="">
+
+                        <input type="hidden" id="contact-llegada" name="contact-llegada" value="">
+                        <input type="hidden" id="contact-salida" name="contact-salida" value="">
+
                         <div class="field"><textarea name="contact-message" placeholder="Message" id="contact-message"></textarea></div>
                     </div>
                     <!-- Honeypot (for bot spam) --><input name="contact-email2" type="text" placeholder="Email Address" autocomplete="false" class="honeypot" value="" />
 
-                    @if (Auth::user())
-                         
-                        <button name="send" value="sendform"><span data-hover="Send Booking Request">Send Booking Request</span></button>
 
-                       @if ( Session::has('reservacion') )
 
-                            <button type="button" name="Pagar" value="">
-                                <a href="{{ route('realizarPagoIngles')}}">
-                                    <span data-hover="Make Payment">Make Payment</span>
-                                </a>
-                            </button>
+                    <button name="send" value="sendform"><span data-hover="Check Availability">Check Availability</span></button>
 
-                       @endif
 
-                    @else
-
-                        <button type="button" class="promopopup" name="" value="">
-                            <span data-hover="Login">Login</span>
-                        </button>
-
-                    @endif
                     
                    {!! csrf_field() !!} 
 
@@ -131,6 +119,8 @@
 
             </div>
             <!-- Contact Form | END -->
+
+
 
             <h2 style="margin:0;"><strong>+58 (295) 331.13.23</strong></h2>
             <p style="margin:0;">
@@ -145,7 +135,8 @@
             </p>
 
             <p style="text-align: justify;">
-                Our privileged location puts us just five minutes from the historic center of Pampatar, where you can enjoy various tourist attractions such as the Castillo San Carlos de Borromeo, the church of Cristo del Buen Viaje and some beaches. In addition, the city of pampatar has a large gastronomic area for all tastes, as well as bars, clubs and restaurants very close to our facilities.<br>
+                Our privileged location puts us just five minutes from the historic center of Pampatar, where you can enjoy various tourist attractions such as the Castillo San Carlos de Borromeo, the church of Cristo del Buen Viaje and some beaches. In addition, the city of pampatar has a large gastronomic area for all tastes, as well as bars, clubs and restaurants very close to our facilities.
+            <br>
                 We are 10 minutes from the main commercial centers of the island and approximately 50 and 60 minutes from the airport and ferry terminal, respectively.
             </p>
         </div>
@@ -161,15 +152,24 @@
                 var timeDiff = Math.abs(date2.getTime() - date1.getTime());
                 var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
 
-
                 if(diffDays == 0){
 
                     var diffDays = 1;
 
                 }
 
+                $("#cant-dias").val(diffDays);
 
-                $("#cant_dias").val(diffDays);
+                var months = ["01", "02", "03", "04", "05", "06", "07", "08","09", "10", "11", "12"];
+
+                var fe = new Date(llegada);
+                var fs = new Date(salida);
+
+                var namedMonth1 = months[fe.getMonth()];
+                var namedMonth2 = months[fs.getMonth()];
+
+                $("#contact-llegada").val(fe.getFullYear()+"-"+namedMonth1+"-"+ fe.getDate());
+                $("#contact-salida").val(fs.getFullYear()+"-"+namedMonth2+"-"+ fs.getDate());
 
             }
 
