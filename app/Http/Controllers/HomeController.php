@@ -263,7 +263,7 @@ class HomeController extends Controller
                                         </p>
 
                                         <p>
-                                            http://'.$_SERVER['SERVER_NAME'].'/PagarReservacion-'.$str_ruta['str_codigo'].'
+                                            http://'.$_SERVER['SERVER_NAME'].'/PagarReservación-'.$str_ruta['str_codigo'].'
                                         </p>                    
 
                                     </td>
@@ -525,7 +525,7 @@ class HomeController extends Controller
                                         </p>
 
                                         <p>
-                                            http://'.$_SERVER['SERVER_NAME'].'/PagarReservacion-'.$str_ruta['str_codigo'].'
+                                            http://'.$_SERVER['SERVER_NAME'].'/PagarReservación-'.$str_ruta['str_codigo'].'
                                         </p>                                                              
 
                                     </td>
@@ -659,9 +659,30 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function realizarPago()
+    public function realizarPago($codigo)
     {
-        return view('realizarPago');
+
+        $datos = DB::table('tbl_reservaciones')        
+        ->where('str_codigo', $codigo)
+        ->Where(function ($query) {
+            $query->where('lng_idpersona', '=', \Auth::user()->id);
+        })
+        ->Where(function ($query) {
+            $query->where('str_estatus_pago', '=', 'pendiente');
+        })          
+        ->get();
+
+        //dd($datos[0]);
+
+        if(empty( $datos[0] ) ){
+
+            return Redirect::to('/'); 
+
+        }else{
+
+            return view('realizarPago', compact('datos'));
+        }
+    
     }
 
 }
