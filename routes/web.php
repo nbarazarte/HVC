@@ -123,11 +123,6 @@ Route::post('/Reservar', [
 	'as' =>'reservar'
 ]);
 
-Route::post('/Reservar', [
-	'uses' => 'HomeController@postReservaciones',
-	'as' =>'reservar'
-]);
-
 Route::get('/Pagar-Reservación', [
 	'uses' => 'HomeController@realizarPago',
 	'as' =>'realizarPago'

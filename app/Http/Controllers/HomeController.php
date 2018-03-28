@@ -39,8 +39,17 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function enviarReservacion($request)
+    public function enviarReservacion($request, $id)
     {       
+        $ruta = DB::table('tbl_reservaciones')->select('str_codigo')->where('id', $id)->get();
+
+        foreach ($ruta[0] as $key => $value) {
+            
+            $str_ruta[$key] = $value;
+        }
+
+        //dd($ruta);die();
+
         //dd($request);die();
         $message = "Nombre y Apellido: ".$_POST['contact-name']."<br>";
         $message .= "Teléfono: ".$_POST['contact-phone']."<br>";
@@ -85,7 +94,7 @@ class HomeController extends Controller
 
         $mail->Username = "hippocampusclubhotel@gmail.com";
         $mail->Password = "worl35Z23";
-        $mail->SetFrom('reservaciones1@hippocampus.com.ve', 'HVC');      
+        $mail->SetFrom('reservaciones1@hippocampus.com.ve', 'Reservaciones Hippocampus');      
 
         $mail->AddReplyTo($_POST['contact-email'], $_POST['contact-name']);
         //$mail->addAddress("atencionalsocio@hippocampus.com.ve");
@@ -94,7 +103,7 @@ class HomeController extends Controller
         $mail->addAddress("ezebarazarte@gmail.com");//buzón al cual va a llegar el email
         
         
-        $mail->Subject = "Web - Reserva de Habitaciones: ".utf8_decode($_POST['contact-name']);
+        $mail->Subject = "Hotel Hippocampus Vacation Club: ".utf8_decode($_POST['contact-name']);
         //$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
         //$mail->msgHTML($message);
 
@@ -251,6 +260,10 @@ class HomeController extends Controller
                                                                                 
                                             </table>
                                           
+                                        </p>
+
+                                        <p>
+                                            http://'.$_SERVER['SERVER_NAME'].'/PagarReservacion-'.$str_ruta['str_codigo'].'
                                         </p>                    
 
                                     </td>
@@ -286,8 +299,18 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function enviarReservacionIngles($request)
+    public function enviarReservacionIngles($request, $id)
     {       
+        
+        $ruta = DB::table('tbl_reservaciones')->select('str_codigo')->where('id', $id)->get();
+
+        foreach ($ruta[0] as $key => $value) {
+            
+            $str_ruta[$key] = $value;
+        }
+
+        //dd($ruta);die();
+
         //dd($request);die();
         $message = "Name: ".$_POST['contact-name']."<br>";
         $message .= "Phone Number: ".$_POST['contact-phone']."<br>";
@@ -332,7 +355,7 @@ class HomeController extends Controller
 
         $mail->Username = "hippocampusclubhotel@gmail.com";
         $mail->Password = "worl35Z23";
-        $mail->SetFrom('reservaciones1@hippocampus.com.ve', 'HVC');      
+        $mail->SetFrom('reservaciones1@hippocampus.com.ve', 'Hippocampus Reservations ');      
 
         $mail->AddReplyTo($_POST['contact-email'], $_POST['contact-name']);
         //$mail->addAddress("atencionalsocio@hippocampus.com.ve");
@@ -341,7 +364,7 @@ class HomeController extends Controller
         $mail->addAddress("ezebarazarte@gmail.com");//buzón al cual va a llegar el email
         
         
-        $mail->Subject = "Web - Reserva de Habitaciones: ".utf8_decode($_POST['contact-name']);
+        $mail->Subject = "Hotel Hippocampus Vacation Club: ".utf8_decode($_POST['contact-name']);
         //$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
         //$mail->msgHTML($message);
 
@@ -499,7 +522,11 @@ class HomeController extends Controller
                                                                                 
                                             </table>
                                           
-                                        </p>                    
+                                        </p>
+
+                                        <p>
+                                            http://'.$_SERVER['SERVER_NAME'].'/PagarReservacion-'.$str_ruta['str_codigo'].'
+                                        </p>                                                              
 
                                     </td>
 
@@ -548,15 +575,16 @@ class HomeController extends Controller
             
         }
         
-        $this->create($request->all());
+        //$this->create($request->all());
+
 
         if(Session::get('idioma') == "es"){
             
-            $this->enviarReservacion($request);
+            $this->enviarReservacion($request,$this->create($request->all())->id);
 
         }else{
 
-            $this->enviarReservacionIngles($request);    
+            $this->enviarReservacionIngles($request,$this->create($request->all())->id);    
         }
         
         return redirect()->back();//realizar pago
@@ -574,7 +602,14 @@ class HomeController extends Controller
                 
             'contact-idHabitacion' => 'required|max:255',
             'contact-llegada' => 'required|max:255',
-            'contact-salida' => 'required|max:255',     
+            'contact-salida' => 'required|max:255',  
+            'contact-email' => 'required|max:255',
+            'contact-name' => 'required|max:255',
+            'contact-phone' => 'required|max:255',
+            'contact-precioHabitacion' => 'required|max:255',     
+            'contact-ninos' => 'required|max:255',
+            'contact-adultos' => 'required|max:255',
+            'cant-dias' => 'required|max:255',
 
         ]);
     }
@@ -594,9 +629,30 @@ class HomeController extends Controller
             'lng_idtipohab' => $data['contact-idHabitacion'],
             'dmt_fecha_entrada' => $data['contact-llegada'],
             'dmt_fecha_salida' => $data['contact-salida'],
+            'str_codigo' => \Auth::user()->id.$this->generarCodigo(100),
+            'str_email' => $data['contact-email'],
+            'str_nombre' => $data['contact-name'],
+            'str_telefono' => $data['contact-phone'],
+            'dbl_precio' => $data['contact-precioHabitacion'],
+            'int_ninos' => $data['contact-ninos'],
+            'int_adultos' => $data['contact-adultos'],
+            'int_dias' => $data['cant-dias'],
+            'str_mensaje' => $data['contact-message'],
 
         ]);
-    }   
+    }  
+
+    public function generarCodigo($longitud) {
+        $key = '';
+
+        $date=date_create();
+        //echo date_timestamp_get($date);  
+        $pattern = date_timestamp_get($date).'1234567890abcdefghijklmnopqrstuvwxyz';
+        $max = strlen($pattern)-1;
+        for($i=0;$i < $longitud;$i++) $key .= $pattern{mt_rand(0,$max)};
+
+        return $key;
+    }     
 
     /**
      * Show the application dashboard.

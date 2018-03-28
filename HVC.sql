@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 27-03-2018 a las 17:27:58
+-- Tiempo de generación: 28-03-2018 a las 01:58:43
 -- Versión del servidor: 10.1.26-MariaDB-0+deb9u1
 -- Versión de PHP: 7.0.27-0+deb9u1
 
@@ -176,8 +176,18 @@ INSERT INTO `tbl_newsletter` (`id`, `str_email`, `created_at`, `updated_at`, `bo
 
 CREATE TABLE `tbl_reservaciones` (
   `id` int(11) NOT NULL,
+  `str_estatus_pago` varchar(255) NOT NULL DEFAULT 'pendiente',
+  `str_codigo` varchar(255) NOT NULL,
   `lng_idtipohab` int(11) NOT NULL,
   `lng_idpersona` int(11) NOT NULL,
+  `str_email` varchar(255) NOT NULL,
+  `str_nombre` varchar(255) NOT NULL,
+  `str_telefono` varchar(255) NOT NULL,
+  `dbl_precio` decimal(65,0) NOT NULL,
+  `int_ninos` int(11) NOT NULL,
+  `int_adultos` int(11) NOT NULL,
+  `int_dias` int(11) NOT NULL,
+  `str_mensaje` text,
   `dmt_fecha_entrada` date NOT NULL,
   `dmt_fecha_salida` date NOT NULL,
   `bol_eliminado` tinyint(1) NOT NULL DEFAULT '0',
@@ -206,7 +216,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Neel Barazarte', 'ezebarazarte@gmail.com', '$2y$10$Z.efkkaHE.8/wi9QLJzd7.TyibrZu1t1Kt1InKXKyzEg5oQjnrx9a', 'XwackeXe5mDZHpQmAmw3oQBNZhycZaWSNy5AmpViHFlauY1mZoBhoOl4rGbO', '2018-03-01 22:55:03', '2018-03-27 20:48:11'),
+(1, 'Neel Barazarte', 'ezebarazarte@gmail.com', '$2y$10$Z.efkkaHE.8/wi9QLJzd7.TyibrZu1t1Kt1InKXKyzEg5oQjnrx9a', 'JKzPugLuEjB13jaxTy8LRQhksQSNXwJcHuIrzO2mFeiWRzNGw48Butby71Ow', '2018-03-01 22:55:03', '2018-03-28 05:38:17'),
 (2, 'Maritza Aché', 'maache@gmail.com', '$2y$10$2MOS9Q6Z4wfmG63vHh/Q4.g/TLzSHcdfo7.tuBIIEIX2.NAnrNehm', 'TJZ6AwxQIQEs2E6f1TeAD2frrBCotxgn3ByYo2HWZVCe9drWpbWTCjP9Stch', '2018-03-23 11:09:27', '2018-03-27 03:28:51'),
 (3, 'Jaennie Pineda', 'jdelvpineda@gmail.com', '$2y$10$Goqv.vMKHhsPpaED6OJ93OB53gEoH5ODhqimN7SHCexHuNu8E9cS2', 'Z5ceDqRpI3goVQjquLraDOyCXb6pEYP9G0W5GmowQ4MNEYDyvFjTIXpAo9ZN', '2018-03-27 20:56:12', '2018-03-28 00:26:05');
 
@@ -290,7 +300,7 @@ ALTER TABLE `tbl_newsletter`
 -- AUTO_INCREMENT de la tabla `tbl_reservaciones`
 --
 ALTER TABLE `tbl_reservaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
