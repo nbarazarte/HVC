@@ -118,10 +118,19 @@ Auth::routes();
 
 //Route::get('/home', 'HomeController@index');
 
-Route::post('/Reservar', [
-	'uses' => 'HomeController@postReservaciones',
+Route::get('/Solicitar-Reservación', [
+	'uses' => 'HomeController@getReservaciones',
 	'as' =>'reservar'
 ]);
+
+Route::post('/Solicitar-Reservación', 'HomeController@postReservaciones');
+
+
+
+
+
+
+
 
 Route::get('/PagarReservación-{codigo}', [
 	'uses' => 'HomeController@realizarPago',

@@ -75,7 +75,7 @@ Route::get('/Gallery', [
 	'as' =>'galleryIngles'
 ]);
 
-Route::post('/Contact', [
+Route::post('/', [
 	'uses' => 'PublicControllerIngles@reservacion',
 	'as' =>'reservacionIngles'
 ]);
@@ -101,5 +101,13 @@ Route::get('/Page-No-Exist', [
 	'uses' => 'PublicControllerIngles@error',
 	'as' =>'errorIngles'
 ]);
+
+
+Route::get('/Booking-Online', [
+	'uses' => 'HomeController@getReservacionesIngles',
+	'as' =>'reservarIngles'
+]);
+
+Route::post('/Booking-Online', 'HomeController@postReservaciones');
 
 ?>

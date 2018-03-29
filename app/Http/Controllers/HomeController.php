@@ -21,6 +21,11 @@ class HomeController extends Controller
      */
     public function __construct()
     {
+        
+        $habitaciones = DB::table('cat_habitaciones')->get();
+
+        \View::share(compact('habitaciones'));   
+
         $this->middleware('auth');
     }
 
@@ -555,6 +560,58 @@ class HomeController extends Controller
         //return Redirect::to('/Pagar-Reservación'); 
 
     }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getReservaciones()
+    {
+        
+        //dd(Session::get('test'));
+
+        $datos = Session::get('datosReserva');
+
+        //dd($datos[0][0]['datos']);die();
+
+        if(!empty($datos)) {
+
+            return view('solicitarReservacion',compact('datos'));
+
+        }else{
+
+            return view('contact');
+
+        }
+        
+    } 
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getReservacionesIngles()
+    {
+        
+        //dd(Session::get('test'));
+
+        $datos = Session::get('datosReserva');
+
+        //dd($datos[0][0]['datos']);die();
+
+        if(!empty($datos)) {
+
+            return view('en.solicitarReservacion',compact('datos'));
+
+        }else{
+
+            return view('en.contact');
+
+        }
+        
+    }        
 
     /**
      * Handle a registration request for the application.

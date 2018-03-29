@@ -571,14 +571,19 @@ class PublicControllerIngles extends Controller
         //lo asigno a lo que viene por post del formulario:
         //dd($_POST);die();
         array_push($_POST, $_POST['contact-idHabitacion']=$id_habitacion,$_POST['contact-precioHabitacion']=$precio_habitacion, $_POST['contact-totalPagar']=$total_pagar);
+
         //dd($_POST);die();
 
         $datos = $_POST;
 
-
         //dd($datos);die();
 
-        return view('en.solicitarReservacion', compact('datos'));
+        Session::pull('datosReserva', array(compact('datos')));//borra
+        Session::push('datosReserva', array(compact('datos')));//asigna
+
+        //dd(Session::get('datosReserva'));
+        //die();
+        return Redirect::to('/en/Booking-Online'); 
 
     }
 

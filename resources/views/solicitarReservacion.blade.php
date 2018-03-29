@@ -2,23 +2,16 @@
 
 @section('content')
 
-<?php
+    @foreach ($datos[0][0]['datos'] as $dato => $valor)
 
-    //dd($datos);die();
+    <?php
 
-    $flag = "false";
+        $persona[$dato] = $valor; 
+        
+    ?>    
 
-    if(!empty($datos)) {
+    @endforeach
 
-        $flag = "true";
-
-        foreach ($datos as $dato => $valor){
-
-            $persona[$dato] = $valor;
-
-        }    
-    }
-?>
 	<!-- Header | Start -->
 	<header>
     	<div id="header">
@@ -39,7 +32,6 @@
 
                 <h2><strong>Datos de la</strong> Reservación</h2>
 
-                    @if($flag == "true")
 
                         @include('mensajes')    
 
@@ -138,17 +130,9 @@
 
                             </table>
 
-                    @if (Auth::user())
-
                         <button name="send" value="sendform">
                             <a class="button"><span data-hover="Hacer la Reservación">Hacer la Reservación</span></a> 
-                        </button>
-                         
-                    @else
-
-                        Ud debe estar logueado
-
-                    @endif                            
+                        </button>                          
 
 
 
@@ -158,17 +142,6 @@
 
 
 
-                    @else
-
-                        <p style="">
-                            
-                            No hay datos<br>
-
-                            <a href="{{route('home')}}"> <i class="fa fa-home" aria-hidden="true"></i> Inicio</a>
-
-                        </p>  
-
-                    @endif
 
 
 
