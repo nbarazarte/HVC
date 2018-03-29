@@ -34,7 +34,11 @@
 
             <nav>
                 <ul>
-                	<li class="mobile"><a href="{{ route('contactIngles')}}" class="navbook"> Book Online</a></li>
+                    @if (Auth::user())
+                        <li class="mobile"><a href="{{ route('logout')}}" class="navbook">Logout {{ Auth::user()->name }}</a></li>
+                    @else
+                        <li class="mobile"><a href="{{ url('/login')}}" class="navbook">Login</a></li>
+                    @endif
                     <li><a href="{{ route('homeIngles')}}" title="Inicio"><i class="fa fa-home" aria-hidden="true"></i></a></li>
                     <li><a href="{{ route('aboutIngles')}}">HVC</a>
                     <li><a href="{{ route('accommodationIngles')}}">Accommodation</a>
@@ -76,13 +80,13 @@
             <!-- Languages | END -->
 
             @if (Auth::user())
-                <a href="{{ route('logout') }}" class="book" title="Logout">
-                    <span data-hover="{{ Auth::user()->name }}">{{ Auth::user()->name }}</span>
-                    
+                <a href="{{ route('logout') }}" class="book" title="Logout Now">
+                    <span data-hover="Logout Now">{{ Auth::user()->name }}</span>
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>
                 </a>
             @else
-                <a href="{{ url('/login') }}" class="promopopup book" >
-                    <span data-hover="Log In Now">Log In Now</span> 
+                <a href="{{ url('/login') }}" class="promopopup book" title="Login Now">
+                    <span data-hover="Login Now">Login Now</span> 
                     <i class="fa fa-sign-in" aria-hidden="true"></i>
                 </a>
             @endif

@@ -51,7 +51,7 @@
 
                         </div>                         
                         
-                        <button style="width: 100%" name="send" value="sendform"><span data-hover="Iniciar Sesión">Login</span></button>
+                        <button style="width: 100%" name="send" value="sendform"><span data-hover="Login">Login</span></button>
 
                         <div style="text-align: center">
                             <a class="btn btn-link" href="{{ url('/password/reset') }}">

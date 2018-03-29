@@ -292,7 +292,7 @@ class HomeController extends Controller
             //echo "Error: " . $mail->ErrorInfo;
             Session::flash('message','Error!'.$mail->ErrorInfo);
         } else {
-            Session::flash('message','Su reservación fue enviada exitosamente!');
+            Session::flash('message','Su reservación fue enviada exitosamente! Revisa el correo electrónico: '.$_POST['contact-email']);
         }
 
         //return Redirect::to('/Pagar-Reservación'); 
@@ -554,7 +554,7 @@ class HomeController extends Controller
             //echo "Error: " . $mail->ErrorInfo;
             Session::flash('message','Error!'.$mail->ErrorInfo);
         } else {
-            Session::flash('message','Your reservation was successfully sent!');
+            Session::flash('message','Your reservation was successfully sent! Check your email address: '.$_POST['contact-email']);
         }
 
         //return Redirect::to('/Pagar-Reservación'); 

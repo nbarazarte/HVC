@@ -34,7 +34,11 @@
 
             <nav>
                 <ul>
-                	<li class="mobile"><a href="{{ route('contact')}}" class="navbook">Reservar Ahora</a></li>
+                    @if (Auth::user())
+                        <li class="mobile"><a href="{{ route('logout')}}" class="navbook">Cerrar Sesión {{ Auth::user()->name }}</a></li>
+                    @else
+                        <li class="mobile"><a href="{{ url('/login')}}" class="navbook">Iniciar Sesión</a></li>
+                    @endif
                     <li><a href="{{ route('home')}}" title="Inicio"><i class="fa fa-home" aria-hidden="true"></i></a></li>
                     <li><a href="{{ route('about')}}">HVC</a>
                     <li><a href="{{ route('accommodation')}}">Habitaciones</a>
@@ -77,11 +81,11 @@
 
             @if (Auth::user())
                 <a href="{{ route('logout') }}" class="book" title="Cerrar Sesión">
-                    <span data-hover="{{ Auth::user()->name }}">{{ Auth::user()->name }}</span>
-                    
+                    <span data-hover="Cerrar Sesión">{{ Auth::user()->name }}</span>
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>
                 </a>
             @else
-                <a href="{{ url('/login') }}" class="promopopup book">
+                <a href="{{ url('/login') }}" class="promopopup book" title="Iniciar Sesión">
                     <span data-hover="Iniciar Sesión">Iniciar Sesión</span> 
                     <i class="fa fa-sign-in" aria-hidden="true"></i>
                 </a>

@@ -461,7 +461,7 @@ class PublicController extends Controller
             //echo "Error: " . $mail->ErrorInfo;
             Session::flash('message','Error!'.$mail->ErrorInfo);
         } else {
-            Session::flash('message','Su reservación fue enviada exitosamente!');
+            Session::flash('message','Su reservación fue enviada exitosamente! Revisa el correo electrónico: '.$_POST['contact-email']);
         }
 
         return Redirect::to('/Atención-al-Socio');
