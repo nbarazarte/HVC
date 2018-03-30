@@ -643,7 +643,9 @@ class HomeController extends Controller
         
         //$this->create($request->all());
 
-        $ruta = DB::table('tbl_reservaciones')->select('str_codigo')->where('id', $this->create($request->all())->id)->get();
+        $idreservacion = $this->create($request->all())->id;
+
+        $ruta = DB::table('tbl_reservaciones')->select('str_codigo')->where('id', $idreservacion)->get();
 
         foreach ($ruta[0] as $key => $value) {
             
@@ -651,15 +653,17 @@ class HomeController extends Controller
         }        
 
 
+        //echo "--->".Session::get('idioma');
+        //die();
         if(Session::get('idioma') == "es"){
-            
-            $this->enviarReservacion($request,$this->create($request->all())->id);
+
+            $this->enviarReservacion($request, $idreservacion);
 
             return Redirect::to('/Pagar-Reservación-'.$str_ruta["str_codigo"]); 
 
         }else{
 
-            $this->enviarReservacionIngles($request,$this->create($request->all())->id); 
+            $this->enviarReservacionIngles($request, $idreservacion); 
 
             return Redirect::to('/Make-Payment-'.$str_ruta["str_codigo"]); 
         }
@@ -785,33 +789,55 @@ class HomeController extends Controller
     public function pagado()
     {
 
+        $datos = DB::table('tbl_reservaciones as res')
+        ->where('str_codigo', $_REQUEST['send'])
+        ->Where(function ($query) {
+            $query->where('lng_idpersona', '=', \Auth::user()->id);
+        })
+        ->Where(function ($query) {
+            $query->where('str_estatus_pago', '=', 'pendiente');
+        })          
+        ->get();
 
-        $hashSecretWord = 'NzQ5Y2M5ZTYtZWY0YS00ZGFjLTg1NTYtNjU5OGJmMWU3MjU2'; //2Checkout Secret Word
-        $hashSid = 901375053; //2Checkout account number
-        $hashTotal = '20.00'; //Sale total to validate against
+               
+
+        //dd($datos[0]);die();
+
+        foreach ($datos[0] as $key => $value) {
+            
+            $resultados[$key] = $value;
+        }
+
+
+        $total = number_format($resultados['dbl_total_pagar'], 2, '.', '');
+
+        $hashSecretWord = env('HASHSECRETWORD', 'nada'); //2Checkout Secret Word
+        $hashSid = env('HASHID', 'nada'); //2Checkout account number
+
+        $hashTotal = $total; //Sale total to validate against
         $hashOrder = $_REQUEST['order_number']; //2Checkout Order Number
         $StringToHash = strtoupper(md5($hashSecretWord . $hashSid . $hashOrder . $hashTotal));
 
         if ($StringToHash != $_REQUEST['key']) {
 
-            $result = 'Fail - Hash Mismatch';
-
-            echo $result;
+           $result = 'Fail - Hash Mismatch';
         
-        } else { 
+        }else{ 
         
             $result = 'Success - Hash Matched';
 
-            return Redirect::to('/'); 
-        
+            $estatusPagado = DB::update('update tbl_reservaciones set str_estatus_pago = "'.$_REQUEST['order_number'].'" where lng_idpersona = '.\Auth::user()->id.' and str_codigo = "'.$_REQUEST['send'].'" ');            
+
+            if(Session::get('idioma') == "es"){
+
+                return Redirect::to('/'); 
+
+            }else{
+
+                return Redirect::to('/en'); 
+            } 
+
         }
-
-        //echo $result;
-
-         
-
-
-
 
     }    
 

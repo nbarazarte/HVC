@@ -66,7 +66,7 @@
                             <input type='text' name='zip' value='' placeholder='43228' required />
                         </div>
                                 
-                        <button style="width: 100%" name="send" value="sendform"><span data-hover="Pay">Pay</span></button>
+                        <button style="width: 100%" name="send" value="{{ $dato->str_codigo }}"><span data-hover="Pay">Pay</span></button>
                         
                     </div>
 
@@ -82,9 +82,9 @@
                         <div class="field mandatory">
                             <input type='text' name='phone' value='' placeholder='614-921-2450' required />
                         </div>
-                        <input type='hidden' name='sid' value='901375053' />
-                        <input type='hidden' name='mode' value='2CO' />
-                        <input type='hidden' name='li_0_type' value='product' />                         
+                        <input type='hidden' name='sid' value='{{env("HASHID","nada")}}' readonly />
+                        <input type='hidden' name='mode' value='2CO' readonly />
+                        <input type='hidden' name='li_0_type' value='product' readonly />                         
                     </div>
                     
                    {!! csrf_field() !!} 
