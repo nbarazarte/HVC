@@ -775,4 +775,44 @@ class HomeController extends Controller
     
     }
 
+
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function pagado()
+    {
+
+
+        $hashSecretWord = 'NzQ5Y2M5ZTYtZWY0YS00ZGFjLTg1NTYtNjU5OGJmMWU3MjU2'; //2Checkout Secret Word
+        $hashSid = 901375053; //2Checkout account number
+        $hashTotal = '20.00'; //Sale total to validate against
+        $hashOrder = $_REQUEST['order_number']; //2Checkout Order Number
+        $StringToHash = strtoupper(md5($hashSecretWord . $hashSid . $hashOrder . $hashTotal));
+
+        if ($StringToHash != $_REQUEST['key']) {
+
+            $result = 'Fail - Hash Mismatch';
+
+            echo $result;
+        
+        } else { 
+        
+            $result = 'Success - Hash Matched';
+
+            return Redirect::to('/'); 
+        
+        }
+
+        //echo $result;
+
+         
+
+
+
+
+    }    
+
 }

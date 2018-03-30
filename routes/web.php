@@ -142,6 +142,13 @@ Route::get('/Make-Payment-{codigo}', [
 	'as' =>'realizarPagoIngles'
 ]);
 
+
+
+Route::get('/Pago-Exitoso', [
+	'uses' => 'HomeController@pagado',
+	'as' =>'pagado'
+]);
+
 Route::get('Salir', [
 				'uses' => 'Auth\LoginController@logout',
 				'as' =>'logout'
