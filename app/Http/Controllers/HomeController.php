@@ -264,9 +264,14 @@ class HomeController extends Controller
                                         </p>
 
                                         <p>
-                                            <a href="http://'.env('DIRECCION','nada').'/PagarReservación-'.$str_ruta['str_codigo'].'">
-                                                http://'.env('DIRECCION','nada').'/PagarReservación-'.$str_ruta['str_codigo'].'
+                                            <a href="http://'.env('DIRECCION','nada').'/Pagar-Reservación-'.$str_ruta['str_codigo'].'">
+                                                http://'.env('DIRECCION','nada').'/Pagar-Reservación-'.$str_ruta['str_codigo'].'
                                             </a>
+
+                                            <form action="http://'.env('DIRECCION','nada').'/Pagar-Reservación-'.$str_ruta['str_codigo'].'">
+                                                <input type="submit" value="Pagar Reservación" />
+                                            </form>                                            
+
                                         </p>                       
 
                                     </td>
@@ -528,6 +533,10 @@ class HomeController extends Controller
                                             <a href="http://'.env('DIRECCION','nada').'/Make-Payment-'.$str_ruta['str_codigo'].'">
                                                 http://'.env('DIRECCION','nada').'/Make-Payment-'.$str_ruta['str_codigo'].'
                                             </a>
+
+                                            <form action="http://'.env('DIRECCION','nada').'/Make-Payment-'.$str_ruta['str_codigo'].'">
+                                                <input type="submit" value="Make Payment" />
+                                            </form>     
                                         </p>                                                              
 
                                     </td>
@@ -679,6 +688,7 @@ class HomeController extends Controller
             'contact-ninos' => 'required|max:255',
             'contact-adultos' => 'required|max:255',
             'cant-dias' => 'required|max:255',
+            'contact-totalPagar' => 'required|max:255',
 
         ]);
     }
@@ -707,6 +717,7 @@ class HomeController extends Controller
             'int_adultos' => $data['contact-adultos'],
             'int_dias' => $data['cant-dias'],
             'str_mensaje' => $data['contact-message'],
+            'dbl_total_pagar' => $data['contact-totalPagar'],  
 
         ]);
     }  
@@ -731,7 +742,8 @@ class HomeController extends Controller
     public function realizarPago($codigo)
     {
 
-        $datos = DB::table('tbl_reservaciones')        
+        $datos = DB::table('tbl_reservaciones as res')
+        ->join('cat_habitaciones as hab', 'hab.id', '=', 'res.lng_idtipohab')        
         ->where('str_codigo', $codigo)
         ->Where(function ($query) {
             $query->where('lng_idpersona', '=', \Auth::user()->id);

@@ -4,7 +4,7 @@
 
 @foreach ($datos as $dato)
     
-    
+   
 
 @endforeach
     
@@ -30,38 +30,40 @@
 
                     <div class="col">
                         <div class="field mandatory">
-                            <input type='text' name='li_0_name' value='invoice123' />
+                            <input type='text' name='li_0_name' readonly value='{{ $dato->str_habitacion }}' required />
                         </div>
 
                         <div class="field mandatory">
-                            <input type='text' name='li_0_price' value='25.99' />
+                             
+                            <input type='text' readonly name='totalPagar' value="{{ number_format($dato->dbl_total_pagar , 2, ',', '.') }}" />
+                            <input type='hidden' readonly name='li_0_price' value='{{ $dato->dbl_total_pagar }}' required />
                         </div>
 
                         <div class="field mandatory">
-                            <input type='text' name='card_holder_name' value='Checkout Shopper' />
+                            <input type='text' name='card_holder_name' value='' placeholder="Neil Barazarte" required />
                         </div>
 
                         <div class="field mandatory">
-                            <input type='text' name='street_address' value='123 Test Address' />
+                            <input type='text' name='street_address' value='' placeholder='123 Test Address' required />
                         </div>
                     </div>
 
                     <div class="col">                   
                 
                         <div class="field mandatory">
-                            <input type='text' name='street_address2' value='Suite 200' />
+                            <input type='text' name='street_address2' value='' placeholder='Suite 200' required />
                         </div>
 
                         <div class="field mandatory">
-                            <input type='text' name='city' value='Columbus' />
+                            <input type='text' name='city' value='' placeholder='Columbus' required />
                         </div>
 
                         <div class="field mandatory">
-                            <input type='text' name='state' value='OH' />
+                            <input type='text' name='state' value='' placeholder='OH' required />
                         </div>
 
                         <div class="field mandatory">
-                            <input type='text' name='zip' value='43228' />
+                            <input type='text' name='zip' value='' placeholder='43228' required />
                         </div>
                                 
                         <button style="width: 100%" name="send" value="sendform"><span data-hover="Pagar">Pagar</span></button>
@@ -74,11 +76,11 @@
                         </div>
 
                         <div class="field mandatory">
-                            <input type='text' name='email' value='example@2co.com' />
+                            <input type='text' name='email' value='' placeholder='hvc@gmail.com' required />
                         </div>
 
                         <div class="field mandatory">
-                            <input type='text' name='phone' value='614-921-2450' />
+                            <input type='text' name='phone' value='' placeholder='614-921-2450' required />
                         </div>
                         <input type='hidden' name='sid' value='901375053' />
                         <input type='hidden' name='mode' value='2CO' />

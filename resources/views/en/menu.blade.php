@@ -37,7 +37,7 @@
                     @if (Auth::user())
                         <li class="mobile"><a href="{{ route('logout')}}" class="navbook">Logout {{ Auth::user()->name }}</a></li>
                     @else
-                        <li class="mobile"><a href="{{ url('/login')}}" class="navbook">Login</a></li>
+                        <li class="mobile"><a href="{{ url('/login')}}" class="navbook">Login in to HVC</a></li>
                     @endif
                     <li><a href="{{ route('homeIngles')}}" title="Inicio"><i class="fa fa-home" aria-hidden="true"></i></a></li>
                     <li><a href="{{ route('aboutIngles')}}">HVC</a>
@@ -85,8 +85,8 @@
                     <i class="fa fa-sign-out" aria-hidden="true"></i>
                 </a>
             @else
-                <a href="{{ url('/login') }}" class="promopopup book" title="Login Now">
-                    <span data-hover="Login Now">Login Now</span> 
+                <a href="{{ url('/login') }}" class="promopopup book" title="Login in to HVC">
+                    <span data-hover="Login in to HVC">Login in to HVC</span> 
                     <i class="fa fa-sign-in" aria-hidden="true"></i>
                 </a>
             @endif

@@ -3,9 +3,11 @@
 @section('content')
 
 @foreach ($datos as $dato)
+    
+   
 
 @endforeach
-
+    
     <!-- Header | Start -->
     <header>
         <div id="header">
@@ -14,119 +16,90 @@
                 <span class="tagline">Innovating for you</span></h1>
             </div>
         </div>
-
     </header>
     <!-- Header | END -->
     <!-- Content | START -->
     <main>
         <div class="centre">
-            <!-- Slideshow -->
+            <!-- Contact Form | START -->
+            <div id="contact">
+                
+                @include('mensajes')
 
-            <div id="content">
+                <form action='https://sandbox.2checkout.com/checkout/purchase' method='post'>
 
-                        @include('mensajes')  
+                    <div class="col">
+                        <div class="field mandatory">
+                            <input type='text' name='li_0_name' readonly value='{{ $dato->str_habitacion }}' required />
+                        </div>
 
-                        <h2><strong>Payment</strong> Details</h2>
-
-                        <form action='https://sandbox.2checkout.com/checkout/purchase' method='post'>
-
-                            <table style="text-align: justify;">                                  
-
-                                <tr>
-                                    <td>
-                                        <b>Name Printed on the Credit Card:</b></td>
-                                    <td>
-                                        <input type='text' name='card_holder_name' value='' placeholder="Peter Quill" required />
-                                    </td>
-                                    <td>
-                                        <b>Address 1:</b>
-                                    </td>
-                                    <td>
-                                        <input type='text' name='street_address' placeholder="123 Test Address" value='' required />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <b>City:</b>
-                                    </td>
-                                    <td>
-                                        <input type='text' name='city' placeholder='Barquisimeto' value="" required />
-                                    </td>
-                                    <td>
-                                        <b>Address 2:</b>
-                                    </td>
-                                    <td>
-                                        <input type='text' name='street_address2' placeholder="Suite 200" value='' required />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <b>State / Province:</b>
-                                    </td>
-                                    <td>
-                                        <input type='text' name='state' placeholder="Lara" value='' required />
-                                    </td>
-                                    <td>
-                                        <b>Country:</b>
-                                    </td>
-                                    <td>
-                                        <input type='text' name='country' value='USA' required />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><b>Zip Code:</b></td>
-                                    <td>
-                                        <input type='text' name='zip' placeholder="43228" value='' required />
-                                    </td>
-                                    <td>
-                                        <b>Total to Pay:</b>
-                                    </td>
-                                    <td>
-                                        <b style="font-size: 18px">
-                                            
-                                            ${{ number_format($dato->dbl_precio, 2, ',', '.')   }}
-
-                                        </b>
-                                        <input type='text' name='li_0_price' value="{{ $dato->dbl_precio }}" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <b>Email Address:</b>
-                                    </td>
-
-                                    <td>
-                                        <input type='text' name='email' value="" placeholder="user@server.com" required />
-                                    </td>
-
-                                    <td>
-                                        <b>Phone Number:</b>
-                                    </td>
-
-                                    <td>
-                                        <input type='text' name='phone' value="" placeholder="+584141112233" required />
-                                    </td>
-                                </tr> 
-
-                            </table>
-
-                            <input type='text' name='li_0_name' value="habitacion" />
-
-                            <input type='text' name='sid' value='901375053' />
-                            <input type='text' name='mode' value='2CO' />
-                            <input type='text' name='li_0_type' value='product' />
+                        <div class="field mandatory">
                              
-                            <button name="send" value="sendform">
-                                <a class="button"><span data-hover="Make Payment">Make Payment</span></a> 
-                            </button>
+                            <input type='text' readonly name='totalPagar' value="{{ number_format($dato->dbl_total_pagar , 2, ',', '.') }}" />
+                            <input type='hidden' readonly name='li_0_price' value='{{ $dato->dbl_total_pagar }}' required />
+                        </div>
 
-                        </form>
+                        <div class="field mandatory">
+                            <input type='text' name='card_holder_name' value='' placeholder="Neil Barazarte" required />
+                        </div>
 
-  
+                        <div class="field mandatory">
+                            <input type='text' name='street_address' value='' placeholder='123 Test Address' required />
+                        </div>
+                    </div>
 
-            
-           
+                    <div class="col">                   
+                
+                        <div class="field mandatory">
+                            <input type='text' name='street_address2' value='' placeholder='Suite 200' required />
+                        </div>
+
+                        <div class="field mandatory">
+                            <input type='text' name='city' value='' placeholder='Columbus' required />
+                        </div>
+
+                        <div class="field mandatory">
+                            <input type='text' name='state' value='' placeholder='OH' required />
+                        </div>
+
+                        <div class="field mandatory">
+                            <input type='text' name='zip' value='' placeholder='43228' required />
+                        </div>
+                                
+                        <button style="width: 100%" name="send" value="sendform"><span data-hover="Pay">Pay</span></button>
+                        
+                    </div>
+
+                    <div class="col">
+                        <div class="field mandatory">
+                            <input type='text' name='country' value='USA' />
+                        </div>
+
+                        <div class="field mandatory">
+                            <input type='text' name='email' value='' placeholder='hvc@gmail.com' required />
+                        </div>
+
+                        <div class="field mandatory">
+                            <input type='text' name='phone' value='' placeholder='614-921-2450' required />
+                        </div>
+                        <input type='hidden' name='sid' value='901375053' />
+                        <input type='hidden' name='mode' value='2CO' />
+                        <input type='hidden' name='li_0_type' value='product' />                         
+                    </div>
+                    
+                   {!! csrf_field() !!} 
+
+                </form>
+
             </div>
+            <!-- Contact Form | END -->
+
+            <h2 style="margin:0;"><strong>+58 (295) 331.13.23</strong></h2>
+            <p style="margin:0;">
+                <a href="mailto:reservaciones1@hippocampus.com.ve">reservaciones1@hippocampus.com.ve</a><br />
+                <i class="fa fa-map-marker"></i> El Cristo Street, Hippocampus Complex building, La Caranta sector.<br>Margarita Island. Venezuela            
+            </p>        
+
         </div>
 
     </main>
