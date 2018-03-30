@@ -262,17 +262,13 @@ class PublicControllerIngles extends Controller
         $mail->isSMTP();
         $mail->SMTPDebug = 0;
         $mail->Debugoutput = 'html';
-        $mail->Host = "smtp.gmail.com";
-        $mail->Port = 465;
+        $mail->Host = env('MAIL_HOST','nada');
+        $mail->Port = env('MAIL_PORT','nada');
         $mail->SMTPAuth = true;
-        $mail->SMTPSecure = "ssl";
+        $mail->SMTPSecure = env('MAIL_ENCRYPTION','nada');
 
-        //$mail->Username = "socialmedia@monitorbg.com";
-        //$mail->Password = "Monitor.2017";
-        //$mail->SetFrom('socialmedia@monitorbg.com');
-
-        $mail->Username = "hippocampusclubhotel@gmail.com";
-        $mail->Password = "worl35Z23";
+        $mail->Username = env('MAIL_USERNAME','nada');
+        $mail->Password = env('MAIL_PASSWORD','nada');
         $mail->SetFrom('webmaster@hippocampus.com.ve');        
 
         $mail->AddReplyTo($_POST['contact-email'], $_POST['contact-name']);
@@ -464,7 +460,7 @@ class PublicControllerIngles extends Controller
             Session::flash('message','Your reservation was successfully sent! Check your email address: '.$_POST['contact-email']);
         }
 
-        return Redirect::to('/Member-Service');
+        return Redirect::to('/en/Member-Service');
 
         //return Redirect::to('http://'.$_SERVER['SERVER_NAME'].'/');
 
@@ -554,7 +550,7 @@ class PublicControllerIngles extends Controller
     {
     
         //pido el precio de la habitación:
-        $habitacion = DB::table('cat_habitaciones')->select('id','str_precio')->where('str_habitacion', $_POST['contact-habitacion'] )->get();
+        $habitacion = DB::table('cat_habitaciones')->select('id','str_dolares')->where('str_rooms', $_POST['contact-habitacion'] )->get();
 
         //dd($str_precio);
 
@@ -565,7 +561,7 @@ class PublicControllerIngles extends Controller
 
         //asigno el valor del id y el precio a una variable:
         $id_habitacion = $hab['id'];
-        $precio_habitacion = $hab['str_precio'];
+        $precio_habitacion = $hab['str_dolares'];
         $total_pagar = $_POST['cant-dias'] * $precio_habitacion;
 
         //lo asigno a lo que viene por post del formulario:

@@ -2,6 +2,36 @@
 
 @section('content')
 
+@foreach ($habitaciones as $hab)
+
+    @if( $hab->str_rooms == "Matrimonial")
+
+        <?php
+            $precioMatrimonial = number_format($hab->str_dolares, 2, ',', '.');
+        ?>
+
+    @elseif( $hab->str_rooms == "Matrimonial + Sofa")
+
+        <?php
+            $precioMatrimonialSofa = number_format($hab->str_dolares, 2, ',', '.');
+        ?>
+
+    @elseif( $hab->str_rooms == "Double")
+
+        <?php
+            $precioDoble = number_format($hab->str_dolares, 2, ',', '.');
+        ?>    
+
+    @elseif( $hab->str_rooms == "Duplex 2 Main Rooms")
+
+        <?php
+            $precioDuplex = number_format($hab->str_dolares, 2, ',', '.');
+        ?>
+
+    @endif
+
+@endforeach
+
 	<header>
     	<div id="header">
         	<div class="h1">
@@ -26,7 +56,7 @@
                     <div class="details">
                         <a href="{{ route('matrimonialIngles')}}">
                             <h3 class="title">Matrimonial<br />
-                            <span>Stay from $149 per night</span></h3>
+                            <span>Stay from ${{ $precioMatrimonial }} per night</span></h3>
                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh.</p>
                             <div class="button"><span data-hover="See more">See more</span></div>
                         </a>
@@ -37,7 +67,7 @@
                     <div class="details">
                         <a href="{{ route('matrimonialSofaIngles')}}">
                             <h3 class="title">Matrimonial + Sofa<br />
-                            <span>Stay from $199 per night</span></h3>
+                            <span>Stay from ${{ $precioMatrimonialSofa }} per night</span></h3>
                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh.</p>
                             <div class="button"><span data-hover="See more">See more</span></div>
                         </a>
@@ -48,7 +78,7 @@
                     <div class="details">
                         <a href="{{ route('dobleIngles')}}">
                             <h3 class="title">Double Room<br />
-                            <span>Stay from $225 per night</span></h3>
+                            <span>Stay from ${{ $precioDoble }} per night</span></h3>
                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh.</p>
                             <div class="button"><span data-hover="See more">See more</span></div>
                         </a>
@@ -59,7 +89,7 @@
                     <div class="details">
                         <a href="{{ route('duplexIngles')}}">
                             <h3 class="title">Duplex 2 Main Rooms<br />
-                            <span>Stay from $240 per night</span></h3>
+                            <span>Stay from ${{ $precioDuplex }} per night</span></h3>
                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh.</p>
                             <div class="button"><span data-hover="See more">See more</span></div>
                         </a>
@@ -78,38 +108,33 @@
                 
                 <table>
                     <tr>
-                        <th>Tipo de Habitación</th>
-                        <th>Temporada Baja</th>
-                        <th>Temporada Media</th>
-                        <th>Temporada Alta</th>
+                        <th>Room Type</th>
+                        <th>LOW SEASON</th>
+                        <th>High SEASON</th>
                     </tr>
                     <tr>
                         <td><strong>Matrimonial Room</strong></td>
-                        <td>$149</td>
-                        <td>$169</td>
+                        <td>${{ $precioMatrimonial }}</td>
                         <td>$199</td>
                     </tr>
                     <tr>
                         <td><strong>Matrimonial Room + Sofa</strong></td>
-                        <td>$199</td>
-                        <td>$219</td>
+                        <td>${{ $precioMatrimonialSofa }}</td>
                         <td>$249</td>
                     </tr>
                     <tr>
                         <td><strong>Double Room</strong></td>
-                        <td>$225</td>
-                        <td>$245</td>
+                        <td>${{ $precioDoble }}</td>
                         <td>$275</td>
                     </tr>
                     <tr>
                         <td><strong>Duplex 2 Main Rooms</strong></td>
-                        <td>$240</td>
-                        <td>$260</td>
+                        <td>${{ $precioDuplex }}</td>
                         <td>$290</td>
                     </tr>
 
                 </table>
-                <a href="{{ route('contactIngles')}}" class="button"><span data-hover="Book Online">Book Online</span></a>
+                <a href="{{ route('contactIngles')}}" class="button"><span data-hover="Book a Room">Book a Room</span></a>
             </div>
 
         </div>

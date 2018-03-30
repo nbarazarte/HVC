@@ -132,12 +132,12 @@ Route::post('/Solicitar-Reservación', 'HomeController@postReservaciones');
 
 
 
-Route::get('/PagarReservación-{codigo}', [
+Route::get('/Pagar-Reservación-{codigo}', [
 	'uses' => 'HomeController@realizarPago',
 	'as' =>'realizarPago'
 ]);
 
-Route::get('/Make-Payment', [
+Route::get('/Make-Payment-{codigo}', [
 	'uses' => 'HomeController@realizarPago',
 	'as' =>'realizarPagoIngles'
 ]);

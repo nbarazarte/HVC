@@ -88,17 +88,13 @@ class HomeController extends Controller
         $mail->isSMTP();
         $mail->SMTPDebug = 0;
         $mail->Debugoutput = 'html';
-        $mail->Host = "smtp.gmail.com";
-        $mail->Port = 465;
+        $mail->Host = env('MAIL_HOST','nada');
+        $mail->Port = env('MAIL_PORT','nada');
         $mail->SMTPAuth = true;
-        $mail->SMTPSecure = "ssl";
+        $mail->SMTPSecure = env('MAIL_ENCRYPTION','nada');
 
-        //$mail->Username = "socialmedia@monitorbg.com";
-        //$mail->Password = "Monitor.2017";
-        //$mail->SetFrom('socialmedia@monitorbg.com');
-
-        $mail->Username = "hippocampusclubhotel@gmail.com";
-        $mail->Password = "worl35Z23";
+        $mail->Username = env('MAIL_USERNAME','nada');
+        $mail->Password = env('MAIL_PASSWORD','nada');
         $mail->SetFrom('reservaciones1@hippocampus.com.ve', 'Reservaciones Hippocampus');      
 
         $mail->AddReplyTo($_POST['contact-email'], $_POST['contact-name']);
@@ -212,7 +208,7 @@ class HomeController extends Controller
                                                 <tr>
 
                                                     <td>
-                                                        Llegada:
+                                                        Fecha de Llegada:
                                                     <td>
                                                     <td>'.$_POST['contact-arrival'].'</td>
 
@@ -221,7 +217,7 @@ class HomeController extends Controller
                                                 <tr>
 
                                                     <td>
-                                                        Salida:
+                                                        Fecha de Salida:
                                                     <td>
                                                     <td>'.$_POST['contact-departure'].'</td>
 
@@ -239,9 +235,9 @@ class HomeController extends Controller
                                                 <tr>
 
                                                     <td>
-                                                        Precio de la Habitación:
+                                                        Precio por Noche:
                                                     <td>
-                                                    <td>'.$_POST['contact-precioHabitacion'].'</td>
+                                                    <td>'.number_format($_POST['contact-precioHabitacion'], 2, ',', '.').'</td>
 
                                                 </tr> 
 
@@ -250,7 +246,7 @@ class HomeController extends Controller
                                                     <td>
                                                         Total a Pagar:
                                                     <td>
-                                                    <td>'.$_POST['contact-precioHabitacion'] * $_POST['cant-dias'].'</td>
+                                                    <td>'.number_format($_POST['contact-totalPagar'], 2, ',', '.').'</td>
 
                                                 </tr>                                                                                                 
 
@@ -268,8 +264,10 @@ class HomeController extends Controller
                                         </p>
 
                                         <p>
-                                            http://'.$_SERVER['SERVER_NAME'].'/PagarReservación-'.$str_ruta['str_codigo'].'
-                                        </p>                    
+                                            <a href="http://'.env('DIRECCION','nada').'/PagarReservación-'.$str_ruta['str_codigo'].'">
+                                                http://'.env('DIRECCION','nada').'/PagarReservación-'.$str_ruta['str_codigo'].'
+                                            </a>
+                                        </p>                       
 
                                     </td>
 
@@ -295,7 +293,8 @@ class HomeController extends Controller
             Session::flash('message','Su reservación fue enviada exitosamente! Revisa el correo electrónico: '.$_POST['contact-email']);
         }
 
-        //return Redirect::to('/Pagar-Reservación'); 
+        //return Redirect::to('/Pagar-Reservación');
+
 
     }
 
@@ -349,17 +348,13 @@ class HomeController extends Controller
         $mail->isSMTP();
         $mail->SMTPDebug = 0;
         $mail->Debugoutput = 'html';
-        $mail->Host = "smtp.gmail.com";
-        $mail->Port = 465;
+        $mail->Host = env('MAIL_HOST','nada');
+        $mail->Port = env('MAIL_PORT','nada');
         $mail->SMTPAuth = true;
-        $mail->SMTPSecure = "ssl";
+        $mail->SMTPSecure = env('MAIL_ENCRYPTION','nada');
 
-        //$mail->Username = "socialmedia@monitorbg.com";
-        //$mail->Password = "Monitor.2017";
-        //$mail->SetFrom('socialmedia@monitorbg.com');
-
-        $mail->Username = "hippocampusclubhotel@gmail.com";
-        $mail->Password = "worl35Z23";
+        $mail->Username = env('MAIL_USERNAME','nada');
+        $mail->Password = env('MAIL_PASSWORD','nada');
         $mail->SetFrom('reservaciones1@hippocampus.com.ve', 'Hippocampus Reservations ');      
 
         $mail->AddReplyTo($_POST['contact-email'], $_POST['contact-name']);
@@ -503,7 +498,7 @@ class HomeController extends Controller
                                                     <td>
                                                         Price of the Romm:
                                                     <td>
-                                                    <td>'.$_POST['contact-precioHabitacion'].'</td>
+                                                    <td>'.number_format($_POST['contact-precioHabitacion'], 2, ',', '.').'</td>
 
                                                 </tr> 
 
@@ -512,7 +507,7 @@ class HomeController extends Controller
                                                     <td>
                                                         Total to Pay:
                                                     <td>
-                                                    <td>'.$_POST['contact-precioHabitacion'] * $_POST['cant-dias'].'</td>
+                                                    <td>'.number_format($_POST['contact-totalPagar'], 2, ',', '.').'</td>
 
                                                 </tr>                                                                                                 
 
@@ -530,7 +525,9 @@ class HomeController extends Controller
                                         </p>
 
                                         <p>
-                                            http://'.$_SERVER['SERVER_NAME'].'/PagarReservación-'.$str_ruta['str_codigo'].'
+                                            <a href="http://'.env('DIRECCION','nada').'/Make-Payment-'.$str_ruta['str_codigo'].'">
+                                                http://'.env('DIRECCION','nada').'/Make-Payment-'.$str_ruta['str_codigo'].'
+                                            </a>
                                         </p>                                                              
 
                                     </td>
@@ -558,6 +555,9 @@ class HomeController extends Controller
         }
 
         //return Redirect::to('/Pagar-Reservación'); 
+        
+
+        
 
     }
 
@@ -634,17 +634,29 @@ class HomeController extends Controller
         
         //$this->create($request->all());
 
+        $ruta = DB::table('tbl_reservaciones')->select('str_codigo')->where('id', $this->create($request->all())->id)->get();
+
+        foreach ($ruta[0] as $key => $value) {
+            
+            $str_ruta[$key] = $value;
+        }        
+
 
         if(Session::get('idioma') == "es"){
             
             $this->enviarReservacion($request,$this->create($request->all())->id);
 
+            return Redirect::to('/Pagar-Reservación-'.$str_ruta["str_codigo"]); 
+
         }else{
 
-            $this->enviarReservacionIngles($request,$this->create($request->all())->id);    
+            $this->enviarReservacionIngles($request,$this->create($request->all())->id); 
+
+            return Redirect::to('/Make-Payment-'.$str_ruta["str_codigo"]); 
         }
         
-        return redirect()->back();//realizar pago
+        
+        //return redirect()->back();//realizar pago
     }
 
     /**
@@ -737,7 +749,16 @@ class HomeController extends Controller
 
         }else{
 
-            return view('realizarPago', compact('datos'));
+            if(Session::get('idioma') == "es"){
+
+                return view('realizarPago', compact('datos'));
+
+            }else{
+
+                return view('en.realizarPago', compact('datos'));
+            }    
+
+            
         }
     
     }

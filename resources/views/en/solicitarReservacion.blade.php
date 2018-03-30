@@ -12,26 +12,27 @@
 
     @endforeach
 
-	<!-- Header | Start -->
-	<header>
-    	<div id="header">
-        	<div class="h1">
+    <!-- Header | Start -->
+    <header>
+        <div id="header">
+            <div class="h1">
                 <h1><span>Request Reservation</span>
                 <span class="tagline">Innovating for you</span></h1>
             </div>
         </div>
 
+    @include('reservacion')
+
     </header>
     <!-- Header | END -->
     <!-- Content | START -->
     <main>
-    	<div class="centre">
-        	<!-- Slideshow -->
+        <div class="centre">
+            <!-- Slideshow -->
 
             <div id="content">
 
-                <h2><strong>Reservation</strong> Data</h2>
-
+                <h2><strong></strong> {{ $persona['contact-habitacion'] }}</h2>
 
                         @include('mensajes')    
 
@@ -41,112 +42,97 @@
 
                                 <tr>
                                     <td>
-                                        <b>Name:</b>
-                                    </td>
-                                    <td>
+                                        <b>Name:</b><br>
                                         {{ $persona['contact-name'] }}
-                                        <input type="hidden" name="contact-name" readonly value="{{ $persona['contact-name'] }}">
                                     </td>
                                     <td>
-                                        <b>Email:</b>
-                                    </td>
-                                    <td>
+                                        <b>Email Address:</b><br>
                                         {{ $persona['contact-email'] }}
-                                        <input type="hidden" name="contact-email" readonly value="{{ $persona['contact-email'] }}">
                                     </td>
+
                                 </tr>
                                 <tr>
                                     <td>
-                                        <b>Phone Number:</b>
-                                    </td>
-                                    <td>
+                                        <b>Phone Number:</b><br>
                                         {{ $persona['contact-phone'] }}
-                                        <input type="hidden" name="contact-phone" readonly value="{{ $persona['contact-phone'] }}">
+
                                     </td>
                                     <td>
-                                        <b>Accommodation:</b>
-                                    </td>
-                                    <td>
-                                        {{ $persona['contact-habitacion'] }}
-                                        <input type="hidden" name="contact-habitacion" readonly value="{{ $persona['contact-habitacion'] }}">
-                                        <input type="hidden" name="contact-idHabitacion"  value="{{ $persona['contact-idHabitacion'] }}">
+                                        <b>Price per Night:</b><br>
+                                         ${{ number_format($persona['contact-precioHabitacion'], 2, ',', '.')   }}
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <b>Children:</b>
+                                        <b>Total Days:</b><br>
+                                        {{ $persona['cant-dias'] }}                                        
                                     </td>
                                     <td>
-                                        {{ $persona['contact-ninos'] }}
-                                        <input type="hidden" name="contact-ninos" readonly value="{{ $persona['contact-ninos'] }}">
+                                        <b>Total to Pay:</b><br>
+                                        ${{ number_format($persona['contact-totalPagar'], 2, ',', '.')   }}
                                     </td>
-                                    <td>
-                                        <b>Price of the Room:</b>
-                                    </td>
-                                    <td>
-                                        Bs. {{ number_format($persona['contact-precioHabitacion'], 2, ',', '.')   }}
-                                        <input type="hidden" name="contact-precioHabitacion" readonly value="{{ $persona['contact-precioHabitacion'] }}">
-                                    </td>
+     
                                 </tr>
                                 <tr>
+
                                     <td>
-                                        <b>Adults:</b>
-                                    </td>
-                                    <td>
-                                        {{ $persona['contact-adultos'] }}
-                                        <input type="hidden" name="contact-adultos" readonly value="{{ $persona['contact-adultos'] }}">
-                                    </td>
-                                    <td>
-                                        <b>Arrival Date:</b>
-                                    </td>
-                                    <td>
+                                        <b>Arrival Date:</b><br>
                                         {{ $persona['contact-arrival'] }}
-                                        <input type="hidden" name="contact-arrival"  value="{{ $persona['contact-arrival'] }}">
-                                        <input type="hidden" name="contact-llegada"  value="{{ $persona['contact-llegada'] }}">
                                     </td>
+
+                                    <td>
+                                        <b>Departure Date:</b><br>
+                                        {{ $persona['contact-departure'] }}
+                                    </td>                                    
+
                                 </tr>
                                 <tr>
+
                                     <td>
-                                        <b>Total Days:</b>
+                                        <b>Adults:</b><br>
+                                        {{ $persona['contact-adultos'] }}
                                     </td>
-                                    <td>                                    
-                                        {{ $persona['cant-dias'] }}
-                                        <input type="hidden" name="cant-dias" readonly value="{{ $persona['cant-dias'] }}">
-                                    </td>
+
                                     <td>
-                                        <b>Departure Date:</b>
+                                        <b>Children:</b><br>
+                                        {{ $persona['contact-ninos'] }}
                                     </td>
-                                    <td>
-                                         {{ $persona['contact-departure'] }}
-                                         <input type="hidden" name="contact-departure"  value="{{ $persona['contact-departure'] }}">
-                                         <input type="hidden" name="contact-salida"  value="{{ $persona['contact-salida'] }}">
-                                    </td>
+   
                                 </tr>
                                 <tr>
-                                    <td colspan="4"><b>Message:</b>  {{ $persona['contact-message'] }}
-                                        <input type="hidden" name="contact-message" readonly value="{{ $persona['contact-message'] }}">
+                                    <td colspan="2"><b>Message:</b> <br>
+                                        {{ $persona['contact-message'] }}        
                                     </td>                                    
                                 </tr>
 
                             </table>
 
                         <button name="send" value="sendform">
-                            <a class="button"><span data-hover="Make a Reservation">Make a Reservation</span></a> 
-                        </button>                          
+                            <a class="button"><span data-hover="Send Booking Request">Send Booking Request</span></a> 
+                        </button>    
 
+                         
+                            <input type="hidden" name="contact-totalPagar" readonly value="{{ $persona['contact-totalPagar'] }}">                     
 
+                            <input type="hidden" name="contact-name" readonly value="{{ $persona['contact-name'] }}">                                        
+                            <input type="hidden" name="contact-email" readonly value="{{ $persona['contact-email'] }}">
+                            <input type="hidden" name="contact-phone" readonly value="{{ $persona['contact-phone'] }}">                                        
+                            <input type="hidden" name="contact-habitacion" readonly value="{{ $persona['contact-habitacion'] }}">
+                            <input type="hidden" name="contact-idHabitacion"  value="{{ $persona['contact-idHabitacion'] }}">                                    
+                            <input type="hidden" name="contact-precioHabitacion" readonly value="{{ $persona['contact-precioHabitacion'] }}">
+                            <input type="hidden" name="contact-adultos" readonly value="{{ $persona['contact-adultos'] }}">
+                            <input type="hidden" name="contact-ninos" readonly value="{{ $persona['contact-ninos'] }}">
+                            <input type="hidden" name="contact-arrival"  value="{{ $persona['contact-arrival'] }}">
+                            <input type="hidden" name="contact-llegada"  value="{{ $persona['contact-llegada'] }}"> 
+                            <input type="hidden" name="contact-departure"  value="{{ $persona['contact-departure'] }}">
+                            <input type="hidden" name="contact-salida"  value="{{ $persona['contact-salida'] }}">
+                            <input type="hidden" name="cant-dias" readonly value="{{ $persona['cant-dias'] }}">
+                            <input type="hidden" name="contact-message" readonly value="{{ $persona['contact-message'] }}">
 
                             {!! csrf_field() !!} 
 
                         {!! Form::close() !!}
 
-
-
-
-
-
-            
-           
             </div>
         </div>
 
@@ -154,3 +140,4 @@
     <!-- Content | END -->
 
 @endsection
+

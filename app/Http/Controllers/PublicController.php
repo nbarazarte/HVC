@@ -262,17 +262,13 @@ class PublicController extends Controller
         $mail->isSMTP();
         $mail->SMTPDebug = 0;
         $mail->Debugoutput = 'html';
-        $mail->Host = "smtp.gmail.com";
-        $mail->Port = 465;
+        $mail->Host = env('MAIL_HOST','nada');
+        $mail->Port = env('MAIL_PORT','nada');
         $mail->SMTPAuth = true;
-        $mail->SMTPSecure = "ssl";
+        $mail->SMTPSecure = env('MAIL_ENCRYPTION','nada');
 
-        //$mail->Username = "socialmedia@monitorbg.com";
-        //$mail->Password = "Monitor.2017";
-        //$mail->SetFrom('socialmedia@monitorbg.com');
-
-        $mail->Username = "hippocampusclubhotel@gmail.com";
-        $mail->Password = "worl35Z23";
+        $mail->Username = env('MAIL_USERNAME','nada');
+        $mail->Password = env('MAIL_PASSWORD','nada');
         $mail->SetFrom('webmaster@hippocampus.com.ve');        
 
         $mail->AddReplyTo($_POST['contact-email'], $_POST['contact-name']);

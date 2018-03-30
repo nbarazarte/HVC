@@ -2,28 +2,10 @@
 
 @section('content')
 
-<?php
+@foreach ($datos as $dato)
 
-    
-    //dd($datos);die();
+@endforeach
 
-    //$datos = Session::get('datos');
-
-    //dd($datos[0]);
-
-    $flag = "false";
-
-    if(!empty($datos)) {
-
-        $flag = "true";
-
-        foreach ($datos as $dato => $valor){
-
-            $persona[$dato] = $valor;
-
-        }    
-    }
-?>
     <!-- Header | Start -->
     <header>
         <div id="header">
@@ -42,89 +24,7 @@
 
             <div id="content">
 
-                <h2><strong>Reservation</strong> Data</h2>
-
-                @if (Auth::user())
-
-                    @if($flag == "true")
-
-                        <table style="text-align: justify;">
-
-                            <tr>
-                                <td>
-                                    <b>Name:</b>
-                                </td>
-                                <td>
-                                    {{ $persona['contact-name'] }}
-                                </td>
-                                <td>
-                                    <b>Email:</b>
-                                </td>
-                                <td>
-                                    {{ $persona['contact-email'] }}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b>Phone Number:</b>
-                                </td>
-                                <td>
-                                    {{ $persona['contact-phone'] }}
-                                </td>
-                                <td>
-                                    <b>Accommodation:</b>
-                                </td>
-                                <td>
-                                    {{ $persona['contact-habitacion'] }}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b>Children:</b>
-                                </td>
-                                <td>
-                                    {{ $persona['contact-ninos'] }}
-                                </td>
-                                <td>
-                                    <b>Price of the Room:</b>
-                                </td>
-                                <td>
-                                    Bs. {{ number_format($persona['contact-precioHabitacion'], 2, ',', '.')   }}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b>Adults:</b>
-                                </td>
-                                <td>
-                                    {{ $persona['contact-adultos'] }}
-                                </td>
-                                <td>
-                                    <b>Arrival Date:</b>
-                                </td>
-                                <td>
-                                    {{ $persona['contact-arrival'] }}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b>Total Days:</b>
-                                </td>
-                                <td>                                    
-                                    {{ $persona['cant_dias'] }}
-                                </td>
-                                <td>
-                                    <b>Departure Date:</b>
-                                </td>
-                                <td>
-                                     {{ $persona['contact-departure'] }}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2"><b>Message:</b>  {{ $persona['contact-message'] }}</td>
-                            </tr>
-
-                        </table>
+                        @include('mensajes')  
 
                         <h2><strong>Payment</strong> Details</h2>
 
@@ -136,7 +36,7 @@
                                     <td>
                                         <b>Name Printed on the Credit Card:</b></td>
                                     <td>
-                                        <input type='text' name='card_holder_name' value='' placeholder="Neil E Barazarte A" required />
+                                        <input type='text' name='card_holder_name' value='' placeholder="Peter Quill" required />
                                     </td>
                                     <td>
                                         <b>Address 1:</b>
@@ -184,21 +84,37 @@
                                     <td>
                                         <b style="font-size: 18px">
                                             
-                                            Bs. {{ number_format($persona['contact-totalPagar'], 2, ',', '.')   }}
+                                            ${{ number_format($dato->dbl_precio, 2, ',', '.')   }}
 
                                         </b>
-                                        <input type='hidden' name='li_0_price' value="{{ $persona['contact-totalPagar'] }}" />
+                                        <input type='text' name='li_0_price' value="{{ $dato->dbl_precio }}" />
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td>
+                                        <b>Email Address:</b>
+                                    </td>
+
+                                    <td>
+                                        <input type='text' name='email' value="" placeholder="user@server.com" required />
+                                    </td>
+
+                                    <td>
+                                        <b>Phone Number:</b>
+                                    </td>
+
+                                    <td>
+                                        <input type='text' name='phone' value="" placeholder="+584141112233" required />
+                                    </td>
+                                </tr> 
 
                             </table>
 
-                            <input type='hidden' name='email' value="{{ $persona['contact-email'] }}" />
-                            <input type='hidden' name='phone' value="{{ $persona['contact-phone'] }}" />
-                            <input type='hidden' name='li_0_name' value="{{ $persona['contact-habitacion'] }}" />
-                            <input type='hidden' name='sid' value='901375053' />
-                            <input type='hidden' name='mode' value='2CO' />
-                            <input type='hidden' name='li_0_type' value='product' />
+                            <input type='text' name='li_0_name' value="habitacion" />
+
+                            <input type='text' name='sid' value='901375053' />
+                            <input type='text' name='mode' value='2CO' />
+                            <input type='text' name='li_0_type' value='product' />
                              
                             <button name="send" value="sendform">
                                 <a class="button"><span data-hover="Make Payment">Make Payment</span></a> 
@@ -206,30 +122,7 @@
 
                         </form>
 
-                    @else
-
-                        <p style="">
-                            
-                            No hay datos<br>
-
-                            <a href="{{route('home')}}"> <i class="fa fa-home" aria-hidden="true"></i> Inicio</a>
-
-                        </p>  
-
-                    @endif
-
-                @else
-
-                        <p style="">
-                            
-                            Debe estar logueado<br>
-
-                            <a href="{{route('home')}}"> <i class="fa fa-home" aria-hidden="true"></i> Inicio</a>
-
-                        </p>  
-
-
-                @endif    
+  
 
             
            
