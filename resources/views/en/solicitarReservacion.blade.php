@@ -50,8 +50,6 @@
                                         {{ $persona['contact-email'] }}
                                     </td>
 
-                                </tr>
-                                <tr>
                                     <td>
                                         <b>Phone Number:</b><br>
                                         {{ $persona['contact-phone'] }}
@@ -61,19 +59,17 @@
                                         <b>Price per Night:</b><br>
                                          ${{ number_format($persona['contact-precioHabitacion'], 2, ',', '.')   }}
                                     </td>
-                                </tr>
-                                <tr>
+
                                     <td>
                                         <b>Total Days:</b><br>
                                         {{ $persona['cant-dias'] }}                                        
                                     </td>
+                                </tr>
+                                <tr>
                                     <td>
                                         <b>Total to Pay:</b><br>
                                         ${{ number_format($persona['contact-totalPagar'], 2, ',', '.')   }}
                                     </td>
-     
-                                </tr>
-                                <tr>
 
                                     <td>
                                         <b>Arrival Date:</b><br>
@@ -84,9 +80,6 @@
                                         <b>Departure Date:</b><br>
                                         {{ $persona['contact-departure'] }}
                                     </td>                                    
-
-                                </tr>
-                                <tr>
 
                                     <td>
                                         <b>Adults:</b><br>
@@ -100,7 +93,7 @@
    
                                 </tr>
                                 <tr>
-                                    <td colspan="2"><b>Message:</b> <br>
+                                    <td colspan="5"><b>Message:</b> <br>
                                         {{ $persona['contact-message'] }}        
                                     </td>                                    
                                 </tr>

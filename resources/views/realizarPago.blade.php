@@ -4,8 +4,7 @@
 
 @foreach ($datos as $dato)
     
-   
-
+ 
 @endforeach
     
     <!-- Header | Start -->
@@ -19,25 +18,110 @@
     </header>
     <!-- Header | END -->
     <!-- Content | START -->
+
+
+    <main>
+        <div class="centre">
+            <!-- Slideshow -->
+
+            <div id="content">
+
+                <h2><strong>Habitación</strong> {{ $dato->str_habitacion }}</h2>
+
+                        @include('mensajes')    
+
+                            <table style="text-align: justify;">
+
+                                <tr>
+                                    <td>
+                                        <b>Nombre:</b><br>
+                                        {{ $dato->str_nombre }}
+                                    </td>
+                                    <td>
+                                        <b>Correo Electrónico:</b><br>
+                                        {{ $dato->str_email }}
+                                    </td>
+
+                                    <td>
+                                        <b>Teléfono:</b><br>
+                                        {{ $dato->str_telefono }}
+
+                                    </td>
+                                    <td>
+                                        <b>Precio:</b><br>
+                                        Bs. {{ number_format($dato->dbl_precio, 2, ',', '.')   }}
+                                    </td>
+
+                                    <td>
+                                        <b>Días:</b><br>
+                                        {{ $dato->int_dias }}                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <b>Total:</b><br>
+                                        Bs. {{ number_format($dato->dbl_total_pagar, 2, ',', '.')   }}
+                                    </td>
+     
+
+                                    <td>
+                                        <b>Llegada:</b><br>
+                                        {{ $dato->dmt_fecha_entrada }}
+                                    </td>
+
+                                    <td>
+                                        <b>Salida:</b><br>
+                                        {{ $dato->dmt_fecha_salida }}
+                                    </td>                                    
+
+
+                                    <td>
+                                        <b>Adulto(s):</b><br>
+                                        {{ $dato->int_adultos }}
+                                    </td>
+
+                                    <td>
+                                        <b>Niño(s):</b><br>
+                                        {{ $dato->int_ninos }}
+                                    </td>
+   
+                                </tr>
+                                <tr>
+                                    <td colspan="5"><b>Comentarios:</b> <br>
+                                        {{ $dato->str_mensaje }}        
+                                    </td>                                    
+                                </tr>
+
+                            </table>
+
+
+            </div>
+        </div>
+
+    </main>
+
+
+
+
+
+
     <main>
         <div class="centre">
             <!-- Contact Form | START -->
+
+
+
             <div id="contact">
+
                 
                 @include('mensajes')
 
+
                 <form action='https://sandbox.2checkout.com/checkout/purchase' method='post'>
 
-                    <div class="col">
-                        <div class="field mandatory">
-                            <input type='text' name='li_0_name' readonly value='{{ $dato->str_habitacion }}' required />
-                        </div>
 
-                        <div class="field mandatory">
-                             
-                            <input type='text' readonly name='totalPagar' value="{{ number_format($dato->dbl_total_pagar , 2, ',', '.') }}" />
-                            <input type='hidden' readonly name='li_0_price' value='{{ $dato->dbl_total_pagar }}' required />
-                        </div>
+
+                    <div class="col">
 
                         <div class="field mandatory">
                             <input type='text' name='card_holder_name' value='' placeholder="Neil Barazarte" required />
@@ -46,13 +130,15 @@
                         <div class="field mandatory">
                             <input type='text' name='street_address' value='' placeholder='123 Test Address' required />
                         </div>
-                    </div>
 
-                    <div class="col">                   
-                
                         <div class="field mandatory">
                             <input type='text' name='street_address2' value='' placeholder='Suite 200' required />
-                        </div>
+                        </div>  
+
+                    </div>
+
+
+                    <div class="col">   
 
                         <div class="field mandatory">
                             <input type='text' name='city' value='' placeholder='Columbus' required />
@@ -65,12 +151,11 @@
                         <div class="field mandatory">
                             <input type='text' name='zip' value='' placeholder='43228' required />
                         </div>
-                                
-                        <button style="width: 100%" name="send" value="{{ $dato->str_codigo }}"><span data-hover="Pagar">Pagar</span></button>
-                        
+
                     </div>
 
                     <div class="col">
+
                         <div class="field mandatory">
                             <input type='text' name='country' value='USA' />
                         </div>
@@ -82,10 +167,16 @@
                         <div class="field mandatory">
                             <input type='text' name='phone' value='' placeholder='614-921-2450' required />
                         </div>
+                        
+                        <input type='hidden' name='li_0_name' readonly value='{{ $dato->str_habitacion }}' required />
+                        <input type='hidden' readonly name='li_0_price' value='{{ $dato->dbl_total_pagar }}' required />                        
                         <input type='hidden' name='sid' value='{{env("HASHID","nada")}}' readonly />
                         <input type='hidden' name='mode' value='2CO' readonly />
-                        <input type='hidden' name='li_0_type' value='product' readonly />                          
+                        <input type='hidden' name='li_0_type' value='product' readonly />     
+
                     </div>
+
+                    <button  name="send" value="{{ $dato->str_codigo }}"><span data-hover="Pagar">Pagar</span></button>
                     
                    {!! csrf_field() !!} 
 

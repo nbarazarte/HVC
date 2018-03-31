@@ -790,6 +790,7 @@ class HomeController extends Controller
     {
 
         $datos = DB::table('tbl_reservaciones as res')
+        ->join('cat_habitaciones as hab', 'hab.id', '=', 'res.lng_idtipohab')    
         ->where('str_codigo', $_REQUEST['send'])
         ->Where(function ($query) {
             $query->where('lng_idpersona', '=', \Auth::user()->id);

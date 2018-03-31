@@ -50,57 +50,52 @@
                                         {{ $persona['contact-email'] }}
                                     </td>
 
-                                </tr>
-                                <tr>
                                     <td>
-                                        <b>N° de Teléfono:</b><br>
+                                        <b>Teléfono:</b><br>
                                         {{ $persona['contact-phone'] }}
 
                                     </td>
                                     <td>
-                                        <b>Precio por Noche:</b><br>
+                                        <b>Precio:</b><br>
                                         Bs. {{ number_format($persona['contact-precioHabitacion'], 2, ',', '.')   }}
+                                    </td>
+
+                                    <td>
+                                        <b>Días:</b><br>
+                                        {{ $persona['cant-dias'] }}                                        
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <b>Total de Días:</b><br>
-                                        {{ $persona['cant-dias'] }}                                        
-                                    </td>
-                                    <td>
-                                        <b>Total a Pagar:</b><br>
+                                        <b>Total:</b><br>
                                         Bs. {{ number_format($persona['contact-totalPagar'], 2, ',', '.')   }}
                                     </td>
      
-                                </tr>
-                                <tr>
 
                                     <td>
-                                        <b>Fecha de Llegada:</b><br>
+                                        <b>Llegada:</b><br>
                                         {{ $persona['contact-arrival'] }}
                                     </td>
 
                                     <td>
-                                        <b>Fecha de Salida:</b><br>
+                                        <b>Salida:</b><br>
                                         {{ $persona['contact-departure'] }}
                                     </td>                                    
 
-                                </tr>
-                                <tr>
 
                                     <td>
-                                        <b>Adultos:</b><br>
+                                        <b>Adulto(s):</b><br>
                                         {{ $persona['contact-adultos'] }}
                                     </td>
 
                                     <td>
-                                        <b>Niños:</b><br>
+                                        <b>Niño(s):</b><br>
                                         {{ $persona['contact-ninos'] }}
                                     </td>
    
                                 </tr>
                                 <tr>
-                                    <td colspan="2"><b>Comentarios:</b> <br>
+                                    <td colspan="5"><b>Comentarios:</b> <br>
                                         {{ $persona['contact-message'] }}        
                                     </td>                                    
                                 </tr>
@@ -138,5 +133,6 @@
 
     </main>
     <!-- Content | END -->
+
 
 @endsection
