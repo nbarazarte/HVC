@@ -108,7 +108,7 @@ class HomeController extends Controller
         //$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
         //$mail->msgHTML($message);
 
-        $body= '<table style="background-color: #F0F0F0" width="100%" border="0" align="center">
+        $body= '<table style="background-color: #F0F0F0;font:14px/25px \'Open Sans\', sans-serif;" width="100%" border="0" align="center">
     
                     <tr>
 
@@ -154,9 +154,8 @@ class HomeController extends Controller
                                         </h2>
 
                                         <p style="text-align: center">
-                                            Gracias por hacer la reservación de su habitación <b>'.$_POST['contact-habitacion'].'</b> con nosotros. <br>En breves momentos nos estaremos comunicando con usted.
+                                            Gracias por hacer la reservación de su habitación <b>'.$_POST['contact-habitacion'].'</b> con nosotros. <br>La reserva incluye alojamiento y desayuno, para el número de personas indicadas en la cotización.
                                         </p>
-
 
                                     </td>
                                 </tr>
@@ -167,109 +166,153 @@ class HomeController extends Controller
 
                                         <p style="text-align: center;">
 
-                                            <table align="center" border="0">                                
+                    <style>
+                        #tablaDatos tr:nth-child(even){background-color: #f2f2f2}
+                    </style>
 
-                                                <tr>
+                                            <table id="tablaDatos" style="text-align: justify;border-collapse: collapse; width: 100%;font:14px/25px \'Open Sans\', sans-serif;" border="0">
 
-                                                    <td>
-                                                        Teléfono:
-                                                    <td>
-                                                    <td>'.$_POST['contact-phone'].'</td>
+                                                <tr >
+                                    <th colspan="5" style="text-align: center; padding: 8px;background-color: #FBDAD2;color: black;">
+                                        DATOS DE LA RESERVACIÓN
+                                    </th>
+                                </tr>  
 
+                                                <tr style="background-color: #f2f2f2">
+
+                                                    <td style="text-align: left; padding: 8px;">
+                                                        <b>Nombre:</b><br> 
+                            '.$_POST['contact-name'].'
+                                                    </td>
+
+                                                    <td style="text-align: left; padding: 8px;">
+                                                        <b>Correo Electrónico:</b><br>
+                            '.$_POST['contact-email'].'
+                                                    </td>
+
+                                                    <td style="text-align: left; padding: 8px;">
+                                                        <b>Teléfono:</b><br>
+                            '.$_POST['contact-phone'].'
+                                                    </td>
+
+                                                    <td style="text-align: left; padding: 8px;">
+                                                        <b>Precio:</b><br>
+                            '.number_format($_POST['contact-precioHabitacion'], 2, ',', '.').'
+                                                    </td>
+
+                                                    <td style="text-align: left; padding: 8px;">
+                                                        <b>Días:</b><br>
+                            '.$_POST['cant-dias'].'
+                                                    </td>
                                                 </tr>
 
                                                 <tr>
+                                                    <td style="text-align: left; padding: 8px;">
+                                                        <b>Total a Pagar:</b><br>
+                            '.number_format($_POST['contact-totalPagar'], 2, ',', '.').'
+                                                    </td>
 
-                                                    <td>
-                                                        Correo Electrónico:
-                                                    <td>
-                                                    <td>'.$_POST['contact-email'].'</td>
+                                                    <td style="text-align: left; padding: 8px;">
+                                                        <b>Fecha de Llegada:</b><br>
+                            '.$_POST['contact-arrival'].'
+                                                    </td>
 
-                                                </tr>
+                                                    <td style="text-align: left; padding: 8px;">
+                                                        <b>Fecha de Salida:<b><br>
+                            '.$_POST['contact-departure'].'
+                                                    </td>
 
-                                                <tr>
+                                                    <td style="text-align: left; padding: 8px;">
+                                                        <b>Adultos:</b><br>
+                            '.$_POST['contact-adultos'].'
+                                                    </td>
 
-                                                    <td>
-                                                        Adulto(s):
-                                                    <td>
-                                                    <td>'.$_POST['contact-adultos'].'</td>
-
-                                                </tr>
-
-                                                <tr>
-
-                                                    <td>
-                                                        Niño(s):
-                                                    <td>
-                                                    <td>'.$_POST['contact-ninos'].'</td>
-
-                                                </tr>
-
-                                                <tr>
-
-                                                    <td>
-                                                        Fecha de Llegada:
-                                                    <td>
-                                                    <td>'.$_POST['contact-arrival'].'</td>
-
-                                                </tr>
-
-                                                <tr>
-
-                                                    <td>
-                                                        Fecha de Salida:
-                                                    <td>
-                                                    <td>'.$_POST['contact-departure'].'</td>
-
-                                                </tr>
-
-                                                <tr>
-
-                                                    <td>
-                                                        Total de Días:
-                                                    <td>
-                                                    <td>'.$_POST['cant-dias'].'</td>
-
-                                                </tr>
-
-                                                <tr>
-
-                                                    <td>
-                                                        Precio por Noche:
-                                                    <td>
-                                                    <td>'.number_format($_POST['contact-precioHabitacion'], 2, ',', '.').'</td>
-
-                                                </tr> 
-
-                                                <tr>
-
-                                                    <td>
-                                                        Total a Pagar:
-                                                    <td>
-                                                    <td>'.number_format($_POST['contact-totalPagar'], 2, ',', '.').'</td>
+                                                    <td style="text-align: left; padding: 8px;">
+                                                        <b>Niños:</b><br>
+                            '.$_POST['contact-ninos'].'
+                                                    </td>
 
                                                 </tr>                                                                                                 
 
-                                                <tr>
+                                                <tr style="background-color: #f2f2f2">
 
-                                                    <td>
-                                                        Comentarios:
-                                                    <td>
-                                                    <td>'.$_POST['contact-message'].'</td>
+                                                    <td colspan="5">
+                                                        <b>Comentarios:</b><br>
+                            '.$_POST['contact-message'].'
+                                                    </td>
 
                                                 </tr>                                
                                                                                 
                                             </table>
                                           
                                         </p>
+                    
+                    <h2>POLÍTICAS DE PAGO</h2>
+
+                    <p style="text-align: justify;">
+
+                        <ul style="text-align: justify;">
+
+                        <li>
+                            Transferencias y depósitos bancarios en efectivo o cheque del mismo banco o de otros bancos.
+                        </li>
+                        <li>
+                            Todas las operaciones se deben hacer con un mínimo de 03 días hábiles antes de su llegada para garantizar la reserva.
+                        </li>
+                   
+                        </ul>
+
+                        <b>Realizar el pago a nombre de:</b>
+
+                    </p>
+
+                <h2 style="margin:0;"><strong>HIPPOCAMPUS VACATIONS CLUB C.A. <br>J-30177391-8</strong></h2>
+
+                    <table id="tablaDatos">
+                        <tr>
+                            <th style="text-align: center; padding: 8px;background-color: #FBDAD2;color: black;">Banesco</th>
+                            <th style="text-align: center; padding: 8px;background-color: #FBDAD2;color: black;">BOD</th>
+                            <th style="text-align: center; padding: 8px;background-color: #FBDAD2;color: black;">Banco del Tesoro</th>
+                        </tr>
+                        <tr style="background-color: #f2f2f2">
+                            <td style="text-align: left; padding: 8px;"><b>0134-0343-1134-3101-5888</b></td>
+                            <td style="text-align: left; padding: 8px;"><b>0116-0450-13-0105891555</b></td>
+                            <td style="text-align: left; padding: 8px;"><b>0163-0617-74-6173007310</b></td>
+                        </tr>
+
+
+                    </table>
+
+                <p style="text-align: justify;">
+                    Una vez realizado el pago, usted puede enviar el comprobante y verificar los datos de la reserva través de:
+                </p>
+                <h2 style="margin:0;"><strong>+58 (295) 331.13.23</strong></h2>
+                <p style="margin:0;">
+                    <a href="mailto:reservaciones1@hippocampus.com.ve">reservaciones1@hippocampus.com.ve</a>          
+                </p>
+
+                <br>
+
+                <p style="text-align: justify;">
+                    Tan pronto el Hotel recibe su información de garantía le hará llegar la RECONFIRMACION en un periodo no mayor de 48 horas hábiles continuas después de recibido el soporte de pago, caso contrario o para cualquier duda por favor comuníquense con nosotros, que gustosamente será atendido.                    
+                </p>
+
+                <p style="text-align: justify;">
+                    <b>RECUERDE QUE ES INDISPENSABLE LA PRESENTACION DEL VOUCHER DE SERVICIO EN EL MOMENTO DEL CHECK-IN DEL CLIENTE.</b><br>
+                    En caso de no recibir la garantía en la fecha límite, su solicitud quedara automáticamente ANULADA, y se podrá procesar nuevamente de acuerdo a nuestra disponibilidad.             
+                </p>  
 
                                         <p>
                                             <a href="http://'.env('DIRECCION','nada').'/Pagar-Reservación-'.$str_ruta['str_codigo'].'">
-                                                http://'.env('DIRECCION','nada').'/Pagar-Reservación-'.$str_ruta['str_codigo'].'
+                                               http://'.env('DIRECCION','nada').'/Pagar-Reservación-'.$str_ruta['str_codigo'].'
                                             </a>
 
                                             <form action="http://'.env('DIRECCION','nada').'/Pagar-Reservación-'.$str_ruta['str_codigo'].'">
-                                                <input type="submit" value="Pagar Reservación" />
+                                                <input type="submit" style="font-family: Arial, \'Helvetica Neue\', Helvetica, sans-serif; display: block; display: inline-block; width: 200px; min-height: 20px; padding: 10px;
+                 background-color: #F04D22; border-radius: 3px; color: #ffffff; font-size: 15px; line-height: 25px;
+                 text-align: center; text-decoration: none; -webkit-text-size-adjust: none; background-color: #F04D22;" value="Pagar Reservación" />
+
+                                                        
                                             </form>                                            
 
                                         </p>                       
@@ -373,7 +416,7 @@ class HomeController extends Controller
         //$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
         //$mail->msgHTML($message);
 
-        $body= '<table style="background-color: #F0F0F0" width="100%" border="0" align="center">
+        $body= '<table style="background-color: #F0F0F0;font:14px/25px \'Open Sans\', sans-serif;" width="100%" border="0" align="center">
     
                     <tr>
 
@@ -419,10 +462,8 @@ class HomeController extends Controller
                                         </h2>
 
                                         <p style="text-align: center">
-                                            
-                                            Thank you for booking your room <b>'.$_POST['contact-habitacion'].'</b> with us. <br>In a few moments we will be communicating with you.
+                                            Thank you for booking your room <b>'.$_POST['contact-habitacion'].'</b> with us. <br>The reservation includes accommodation and breakfast, for the number of people indicated in the quote.
                                         </p>
-
 
                                     </td>
                                 </tr>
@@ -433,111 +474,154 @@ class HomeController extends Controller
 
                                         <p style="text-align: center;">
 
-                                            <table align="center" border="0">                                
+                    
 
-                                                <tr>
+                                            <table id="tablaDatos" style="text-align: justify;border-collapse: collapse; width: 100%;font:14px/25px \'Open Sans\', sans-serif;" border="0">
 
-                                                    <td>
-                                                        Phone Number:
-                                                    <td>
-                                                    <td>'.$_POST['contact-phone'].'</td>
+                                                <tr >
+                                    <th colspan="5" style="text-align: center; padding: 8px;background-color: #FBDAD2;color: black;">
+                                        RESERVATION DETAILS
+                                    </th>
+                                </tr>  
 
+                                                <tr style="background-color: #f2f2f2">
+
+                                                    <td style="text-align: left; padding: 8px;">
+                                                        <b>Name:</b><br> 
+                            '.$_POST['contact-name'].'
+                                                    </td>
+
+                                                    <td style="text-align: left; padding: 8px;">
+                                                        <b>Email Address:</b><br>
+                            '.$_POST['contact-email'].'
+                                                    </td>
+
+                                                    <td style="text-align: left; padding: 8px;">
+                                                        <b>Phone Number:</b><br>
+                            '.$_POST['contact-phone'].'
+                                                    </td>
+
+                                                    <td style="text-align: left; padding: 8px;">
+                                                        <b>Price:</b><br>
+                            '.number_format($_POST['contact-precioHabitacion'], 2, ',', '.').'
+                                                    </td>
+
+                                                    <td style="text-align: left; padding: 8px;">
+                                                        <b>Total Days:</b><br>
+                            '.$_POST['cant-dias'].'
+                                                    </td>
                                                 </tr>
 
                                                 <tr>
+                                                    <td style="text-align: left; padding: 8px;">
+                                                        <b>Total to Pay:</b><br>
+                            '.number_format($_POST['contact-totalPagar'], 2, ',', '.').'
+                                                    </td>
 
-                                                    <td>
-                                                        Email:
-                                                    <td>
-                                                    <td>'.$_POST['contact-email'].'</td>
+                                                    <td style="text-align: left; padding: 8px;">
+                                                        <b>Arrival Date:</b><br>
+                            '.$_POST['contact-arrival'].'
+                                                    </td>
 
-                                                </tr>
+                                                    <td style="text-align: left; padding: 8px;">
+                                                        <b>Departure Date:<b><br>
+                            '.$_POST['contact-departure'].'
+                                                    </td>
 
-                                                <tr>
+                                                    <td style="text-align: left; padding: 8px;">
+                                                        <b>Adults:</b><br>
+                            '.$_POST['contact-adultos'].'
+                                                    </td>
 
-                                                    <td>
-                                                        Adults:
-                                                    <td>
-                                                    <td>'.$_POST['contact-adultos'].'</td>
-
-                                                </tr>
-
-                                                <tr>
-
-                                                    <td>
-                                                        Children:
-                                                    <td>
-                                                    <td>'.$_POST['contact-ninos'].'</td>
-
-                                                </tr>
-
-                                                <tr>
-
-                                                    <td>
-                                                        Arrival Date:
-                                                    <td>
-                                                    <td>'.$_POST['contact-arrival'].'</td>
-
-                                                </tr>
-
-                                                <tr>
-
-                                                    <td>
-                                                        Departure Date:
-                                                    <td>
-                                                    <td>'.$_POST['contact-departure'].'</td>
-
-                                                </tr>
-
-                                                <tr>
-
-                                                    <td>
-                                                        Total Days:
-                                                    <td>
-                                                    <td>'.$_POST['cant-dias'].'</td>
-
-                                                </tr>
-
-                                                <tr>
-
-                                                    <td>
-                                                        Price of the Romm:
-                                                    <td>
-                                                    <td>'.number_format($_POST['contact-precioHabitacion'], 2, ',', '.').'</td>
-
-                                                </tr> 
-
-                                                <tr>
-
-                                                    <td>
-                                                        Total to Pay:
-                                                    <td>
-                                                    <td>'.number_format($_POST['contact-totalPagar'], 2, ',', '.').'</td>
+                                                    <td style="text-align: left; padding: 8px;">
+                                                        <b>Children:</b><br>
+                            '.$_POST['contact-ninos'].'
+                                                    </td>
 
                                                 </tr>                                                                                                 
 
-                                                <tr>
+                                                <tr style="background-color: #f2f2f2">
 
-                                                    <td>
-                                                        Message:
-                                                    <td>
-                                                    <td>'.$_POST['contact-message'].'</td>
+                                                    <td colspan="5">
+                                                        <b>Message:</b><br>
+                            '.$_POST['contact-message'].'
+                                                    </td>
 
                                                 </tr>                                
                                                                                 
                                             </table>
                                           
                                         </p>
+                    
+                    <h2>PAYMENT POLICIES</h2>
+
+                    <p style="text-align: justify;">
+
+                        <ul style="text-align: justify;">
+
+                        <li>
+                            Transfers and bank deposits in cash or check from the same bank or from other banks.
+                        </li>
+                        <li>
+                            All operations must be done with a minimum of 03 business days before your arrival to guarantee the reservation.
+                        </li>
+                   
+                        </ul>
+
+                        <b>Make the payment on behalf of:</b>
+
+                    </p>
+
+                <h2 style="margin:0;"><strong>HIPPOCAMPUS VACATIONS CLUB C.A. <br>J-30177391-8</strong></h2>
+
+                    <table id="tablaDatos">
+                        <tr>
+                            <th style="text-align: center; padding: 8px;background-color: #FBDAD2;color: black;">Banesco</th>
+                            <th style="text-align: center; padding: 8px;background-color: #FBDAD2;color: black;">BOD</th>
+                            <th style="text-align: center; padding: 8px;background-color: #FBDAD2;color: black;">Banco del Tesoro</th>
+                        </tr>
+                        <tr style="background-color: #f2f2f2">
+                            <td style="text-align: left; padding: 8px;"><b>0134-0343-1134-3101-5888</b></td>
+                            <td style="text-align: left; padding: 8px;"><b>0116-0450-13-0105891555</b></td>
+                            <td style="text-align: left; padding: 8px;"><b>0163-0617-74-6173007310</b></td>
+                        </tr>
+
+
+                    </table>
+
+                <p style="text-align: justify;">
+                    Once the payment is made, you can send the voucher and verify the reservation information through:
+                </p>
+                <h2 style="margin:0;"><strong>+58 (295) 331.13.23</strong></h2>
+                <p style="margin:0;">
+                    <a href="mailto:reservaciones1@hippocampus.com.ve">reservaciones1@hippocampus.com.ve</a>          
+                </p>
+
+                <br>
+
+                <p style="text-align: justify;">
+                    As soon as the hotel receives your guarantee information, you will receive the RECONFIRMATION in a period of no more than 48 continuous working hours after receiving the payment support, otherwise or for any questions please contact us, which will be gladly answered.                   
+                </p>
+
+                <p style="text-align: justify;">
+                    <b>REMEMBER THAT THE PRESENTATION OF THE SERVICE VOUCHER IS INDISPENSABLE AT THE MOMENT OF THE CUSTOMER\'S CHECK-IN.</b><br>
+                    In case of not receiving the guarantee on the deadline, your request will be automatically CANCELED, and may be processed again according to our availability.             
+                </p>  
 
                                         <p>
                                             <a href="http://'.env('DIRECCION','nada').'/Make-Payment-'.$str_ruta['str_codigo'].'">
-                                                http://'.env('DIRECCION','nada').'/Make-Payment-'.$str_ruta['str_codigo'].'
+                                               http://'.env('DIRECCION','nada').'/Make-Payment-'.$str_ruta['str_codigo'].'
                                             </a>
 
                                             <form action="http://'.env('DIRECCION','nada').'/Make-Payment-'.$str_ruta['str_codigo'].'">
-                                                <input type="submit" value="Make Payment" />
-                                            </form>     
-                                        </p>                                                              
+                                                <input type="submit" style="font-family: Arial, \'Helvetica Neue\', Helvetica, sans-serif; display: block; display: inline-block; width: 200px; min-height: 20px; padding: 10px;
+                 background-color: #F04D22; border-radius: 3px; color: #ffffff; font-size: 15px; line-height: 25px;
+                 text-align: center; text-decoration: none; -webkit-text-size-adjust: none; background-color: #F04D22;" value="Send Payment" />
+
+                                                        
+                                            </form>                                            
+
+                                        </p>                       
 
                                     </td>
 
