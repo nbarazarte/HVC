@@ -34,11 +34,28 @@
 
                 <h2><strong>Habitación</strong> {{ $persona['contact-habitacion'] }}</h2>
 
-                        @include('mensajes')    
+                    @include('mensajes')    
+
+                <p style="text-align: justify;">
+                    Estimado Cliente: <br>
+                    En <strong>HIPPOCAMPUS VACATION CLUB</strong> nos sentimos complacidos por su futura visita y esperamos que su estadía con nosotros sea placentera e inolvidable.
+                </p>
+
+                <p style="text-align: justify;">
+                    A continuación le enviaremos por correo electrónico la cotización de la reserva solicitada. <br>
+                    La reserva incluye alojamiento y desayuno, para el número de personas indicadas en la cotización.
+                </p>
+
 
                         {!! Form::open(['route' => 'reservar', 'method'=>'POST', 'id' => 'demo-form', 'name' => 'demo-form', 'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false']) !!} 
 
                             <table style="text-align: justify;">
+
+                                <tr style="text-align: center;">
+                                    <th colspan="5">
+                                        Datos de la reservación
+                                    </th>
+                                </tr>
 
                                 <tr>
                                     <td>

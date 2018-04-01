@@ -32,13 +32,35 @@
 
             <div id="content">
 
-                <h2><strong></strong> {{ $persona['contact-habitacion'] }}</h2>
+                <h2><strong>{{ $persona['contact-habitacion'] }}</strong> 
 
-                        @include('mensajes')    
+                    @if($persona['contact-habitacion'] != 'Duplex 2 Main Rooms')
+                        Room
+                    @endif
+                </h2>
+
+                        @include('mensajes')   
+
+                <p style="text-align: justify;">
+                    Dear Customer: <br>
+                    In <strong>HIPPOCAMPUS VACATION CLUB</strong> we are pleased for your future visit and we hope that your stay with us is pleasant and unforgettable.
+                </p>
+
+                <p style="text-align: justify;">
+                    Then we will send you by email the quote for the requested reservation.<br>
+                    The reservation includes accommodation and breakfast, for the number of people indicated in the quote.
+                </p>
+                      
 
                         {!! Form::open(['route' => 'reservarIngles', 'method'=>'POST', 'id' => 'demo-form', 'name' => 'demo-form', 'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false']) !!} 
 
                             <table style="text-align: justify;">
+
+                                <tr style="text-align: center;">
+                                    <th colspan="5">
+                                        Reservation details
+                                    </th>
+                                </tr>                                
 
                                 <tr>
                                     <td>
