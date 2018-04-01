@@ -36,6 +36,15 @@
                             @endif
                         </div>
                         <div class="field mandatory">
+                            <input id="str_ci_pasaporte" type="text" class="form-control" name="str_ci_pasaporte" placeholder="ID/Passport" value="{{ old('str_ci_pasaporte') }}" required autofocus>
+
+                            @if ($errors->has('str_ci_pasaporte'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('str_ci_pasaporte') }}</strong>
+                                </span>
+                            @endif
+                        </div>                           
+                        <div class="field mandatory">
                             <input id="email" type="email" class="form-control" name="email" placeholder="Email" value="{{ old('email') }}" required>
 
                             @if ($errors->has('email'))

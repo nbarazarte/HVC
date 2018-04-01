@@ -93,7 +93,7 @@
                                 </tr>
 
                             </table>
-
+                                
 
             </div>
         </div>
@@ -106,7 +106,7 @@
             <!-- Contact Form | START -->
             <div id="contact">
                 
-                @include('mensajes')
+                <h2><strong>Details of </strong>payment </h2>
 
                 <form action='https://sandbox.2checkout.com/checkout/purchase' method='post'>
 
@@ -157,7 +157,7 @@
                             <input type='text' name='phone' value='' placeholder='614-921-2450' required />
                         </div>
                         
-                        <input type='hidden' name='li_0_name' readonly value='{{ $dato->str_habitacion }}' required />
+                        <input type='hidden' name='li_0_name' readonly value='Room: {{ $dato->str_habitacion }} - Arrival Date: {{ $dato->dmt_fecha_entrada }} - Departure Date: {{ $dato->dmt_fecha_salida }}' required />
                         <input type='hidden' readonly name='li_0_price' value='{{ $dato->dbl_total_pagar }}' required />                        
                         <input type='hidden' name='sid' value='{{env("HASHID","nada")}}' readonly />
                         <input type='hidden' name='mode' value='2CO' readonly />

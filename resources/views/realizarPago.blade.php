@@ -100,26 +100,13 @@
 
     </main>
 
-
-
-
-
-
     <main>
         <div class="centre">
             <!-- Contact Form | START -->
 
-
-
             <div id="contact">
 
-                
-                @include('mensajes')
-
-
                 <form action='https://sandbox.2checkout.com/checkout/purchase' method='post'>
-
-
 
                     <div class="col">
 
@@ -136,7 +123,6 @@
                         </div>  
 
                     </div>
-
 
                     <div class="col">   
 
@@ -168,7 +154,7 @@
                             <input type='text' name='phone' value='' placeholder='614-921-2450' required />
                         </div>
                         
-                        <input type='hidden' name='li_0_name' readonly value='{{ $dato->str_habitacion }}' required />
+                        <input type='hidden' name='li_0_name' readonly value='Habitación: {{ $dato->str_habitacion }} - Fecha Llegada: {{ $dato->dmt_fecha_entrada }} - Fecha Salida: {{ $dato->dmt_fecha_salida }}' required />
                         <input type='hidden' readonly name='li_0_price' value='{{ $dato->dbl_total_pagar }}' required />                        
                         <input type='hidden' name='sid' value='{{env("HASHID","nada")}}' readonly />
                         <input type='hidden' name='mode' value='2CO' readonly />

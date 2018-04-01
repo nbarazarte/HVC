@@ -829,6 +829,8 @@ class HomeController extends Controller
 
             $estatusPagado = DB::update('update tbl_reservaciones set str_estatus_pago = "'.$_REQUEST['order_number'].'" where lng_idpersona = '.\Auth::user()->id.' and str_codigo = "'.$_REQUEST['send'].'" ');            
 
+            //dd($_REQUEST);
+            //die();
             if(Session::get('idioma') == "es"){
 
                 return Redirect::to('/'); 
