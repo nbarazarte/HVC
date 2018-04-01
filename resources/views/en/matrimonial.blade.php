@@ -2,6 +2,18 @@
 
 @section('content')
 
+@foreach ($habitaciones as $hab)
+
+    @if( $hab->str_habitacion == "Matrimonial")
+
+        <?php
+            $precioMatrimonial = number_format($hab->str_dolares, 2, ',', '.');
+        ?>
+
+    @endif
+
+@endforeach
+
 	<header>
     	<div id="header">
         	<div class="h1">
@@ -32,8 +44,12 @@
                 <!-- Slideshow | END -->
                 <div id="content">
                     <h2><strong>Matrimonial</strong> Room</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est.</p>
+                    <p>
+                        Comfortable room with a double bed, decorated with a pleasant style of soft colors where the special touch gives a beautiful and relaxing view of the Bay of Pampatar and the pool.
+                    </p>
+                    <p>
+                        To satisfy our visitors, all rooms have the following amenities:
+                    </p>
 
                     @include('en.caracteristicasHabitacion')
 
@@ -43,7 +59,7 @@
             <aside>
             	<div id="scroll">
                     <div id="block">
-                        <div class="blocktitle"><a href="contact.php">Stay from <span>$149</span> per night</a></div>
+                        <div class="blocktitle"><a href="contact.php">Stay from <span>${{ $precioMatrimonial }}</span> per night</a></div>
                         
                         @include('en.habitacionesLista')
 

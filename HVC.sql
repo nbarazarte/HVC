@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 28-03-2018 a las 01:58:43
+-- Tiempo de generación: 01-04-2018 a las 16:53:41
 -- Versión del servidor: 10.1.26-MariaDB-0+deb9u1
 -- Versión de PHP: 7.0.27-0+deb9u1
 
@@ -31,6 +31,7 @@ CREATE TABLE `cat_habitaciones` (
   `str_habitacion` varchar(50) NOT NULL,
   `str_rooms` varchar(50) NOT NULL,
   `str_precio` decimal(50,0) NOT NULL,
+  `str_dolares` decimal(50,0) NOT NULL,
   `bol_eliminado` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -38,11 +39,11 @@ CREATE TABLE `cat_habitaciones` (
 -- Volcado de datos para la tabla `cat_habitaciones`
 --
 
-INSERT INTO `cat_habitaciones` (`id`, `str_habitacion`, `str_rooms`, `str_precio`, `bol_eliminado`) VALUES
-(1, 'Matrimonial', 'Matrimonial', '20', 0),
-(2, 'Matrimonial + Sofá', 'Matrimonial + Sofa', '25', 0),
-(3, 'Doble', 'Double', '30', 0),
-(4, 'Duplex 2 Ambientes', 'Duplex 2 Main Rooms', '40', 0);
+INSERT INTO `cat_habitaciones` (`id`, `str_habitacion`, `str_rooms`, `str_precio`, `str_dolares`, `bol_eliminado`) VALUES
+(1, 'Matrimonial', 'Matrimonial', '3200', '20', 0),
+(2, 'Matrimonial + Sofá', 'Matrimonial + Sofa', '3600', '25', 0),
+(3, 'Doble', 'Double', '4000', '27', 0),
+(4, 'Duplex 2 Ambientes', 'Duplex 2 Main Rooms', '5300', '30', 0);
 
 -- --------------------------------------------------------
 
@@ -147,6 +148,14 @@ CREATE TABLE `password_resets` (
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `password_resets`
+--
+
+INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+('atrellus@gmail.com', '6c9d104ad4dcf7c3efa1c2543dbc821fe8688fbc39f0b9d12e101e08b16b0b8a', '2018-04-01 05:02:45'),
+('ezebarazarte@gmail.com', '024fd4f9d59f5b43a43391115417559c3622a2220c3410cbe3ce09442ac46824', '2018-04-01 06:53:43');
+
 -- --------------------------------------------------------
 
 --
@@ -184,6 +193,7 @@ CREATE TABLE `tbl_reservaciones` (
   `str_nombre` varchar(255) NOT NULL,
   `str_telefono` varchar(255) NOT NULL,
   `dbl_precio` decimal(65,0) NOT NULL,
+  `dbl_total_pagar` decimal(10,0) DEFAULT NULL,
   `int_ninos` int(11) NOT NULL,
   `int_adultos` int(11) NOT NULL,
   `int_dias` int(11) NOT NULL,
@@ -204,6 +214,7 @@ CREATE TABLE `tbl_reservaciones` (
 CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `str_ci_pasaporte` varchar(15) COLLATE utf8_unicode_ci NOT NULL COMMENT 'cedula o pasaporte',
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -215,10 +226,8 @@ CREATE TABLE `users` (
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Neel Barazarte', 'ezebarazarte@gmail.com', '$2y$10$Z.efkkaHE.8/wi9QLJzd7.TyibrZu1t1Kt1InKXKyzEg5oQjnrx9a', 'JKzPugLuEjB13jaxTy8LRQhksQSNXwJcHuIrzO2mFeiWRzNGw48Butby71Ow', '2018-03-01 22:55:03', '2018-03-28 05:38:17'),
-(2, 'Maritza Aché', 'maache@gmail.com', '$2y$10$2MOS9Q6Z4wfmG63vHh/Q4.g/TLzSHcdfo7.tuBIIEIX2.NAnrNehm', 'TJZ6AwxQIQEs2E6f1TeAD2frrBCotxgn3ByYo2HWZVCe9drWpbWTCjP9Stch', '2018-03-23 11:09:27', '2018-03-27 03:28:51'),
-(3, 'Jaennie Pineda', 'jdelvpineda@gmail.com', '$2y$10$Goqv.vMKHhsPpaED6OJ93OB53gEoH5ODhqimN7SHCexHuNu8E9cS2', 'Z5ceDqRpI3goVQjquLraDOyCXb6pEYP9G0W5GmowQ4MNEYDyvFjTIXpAo9ZN', '2018-03-27 20:56:12', '2018-03-28 00:26:05');
+INSERT INTO `users` (`id`, `name`, `str_ci_pasaporte`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Neil Barazarte', '16379712', 'ezebarazarte@gmail.com', '$2y$10$38SX6cT7M/cJslPE/TgIIeEJ/OTY9oB0jqahmYxCzZ31DzW.ePD1.', 'yh48bOLfi5NGQuJZkbvfwdgHJt0rhtzIJ4zqAXi4eNQjsabSGVGhfbtw934r', '2018-04-01 02:58:08', '2018-04-01 21:53:27');
 
 --
 -- Índices para tablas volcadas
@@ -270,7 +279,10 @@ ALTER TABLE `tbl_reservaciones`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
+  ADD UNIQUE KEY `users_email_unique` (`email`),
+  ADD UNIQUE KEY `str_ci_pasaporte` (`str_ci_pasaporte`),
+  ADD UNIQUE KEY `str_ci_pasaporte_2` (`str_ci_pasaporte`),
+  ADD UNIQUE KEY `str_ci_pasaporte_3` (`str_ci_pasaporte`,`email`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -300,12 +312,12 @@ ALTER TABLE `tbl_newsletter`
 -- AUTO_INCREMENT de la tabla `tbl_reservaciones`
 --
 ALTER TABLE `tbl_reservaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -56,8 +56,10 @@
                     <div class="details">
                         <a href="{{ route('matrimonial')}}">
                             <h3 class="title"> Matrimonial<br />
-                            <span>Stay from Bs. {{ $precioMatrimonial }} per night</span></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh.</p>
+                            <span>Desde Bs. {{ $precioMatrimonial }} por noche</span></h3>
+                            <p>
+                                Cómoda y confortable habitación con una cama matrimonial, decorada con un estilo agradable de colores suaves donde el toque especial lo brinda una hermosa y relajante vista a la bahía de Pampatar y a la piscina.                                
+                            </p>
                             <div class="button"><span data-hover="Ver más">Ver más</span></div>
                         </a>
                     </div>
@@ -67,8 +69,10 @@
                     <div class="details">
                         <a href="{{ route('matrimonialSofa')}}">
                             <h3 class="title"> Matrimonial + Sofá<br />
-                            <span>Stay from Bs. {{ $precioMatrimonialSofa }} per night</span></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh.</p>
+                            <span>Desde Bs. {{ $precioMatrimonialSofa }} por noche</span></h3>
+                            <p>
+                                Cómoda y confortable habitación la cual se ofrece en dos presentaciones: una cama matrimonial, y un sofá o una cama matrimonial y dos sofás camas individuales.
+                            </p>
                             <div class="button"><span data-hover="Ver más">Ver más</span></div>
                         </a>
                     </div>
@@ -78,8 +82,10 @@
                     <div class="details">
                         <a href="{{ route('doble')}}">
                             <h3 class="title"> Doble<br />
-                            <span>Stay from Bs. {{ $precioDoble }} per night</span></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh.</p>
+                            <span>Desde Bs. {{ $precioDoble }} por noche</span></h3>
+                            <p>
+                                Cómoda y confortable habitación con dos camas matrimoniales, decorada con un estilo agradable de colores suaves donde el toque especial lo brinda una hermosa y relajante vista a la bahía de Pampatar y a la piscina.                                
+                            </p>
                             <div class="button"><span data-hover="Ver más">Ver más</span></div>
                         </a>
                     </div>
@@ -89,8 +95,10 @@
                     <div class="details">
                         <a href="{{ route('duplex')}}">
                             <h3 class="title"> Duplex 2 Ambientes<br />
-                            <span>Stay from Bs. {{ $precioDuplex }} per night</span></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh.</p>
+                            <span>Desde Bs. {{ $precioDuplex }} por noche</span></h3>
+                            <p>
+                                Cómoda y confortable habitación para toda la familia que cuenta con dos cuartos, uno con una cama matrimonial y el otro con dos camas individuales, una sala de estar con 2 sofá cama y una cocina equipada y lista para utilizar.
+                            </p>
                             <div class="button"><span data-hover="Ver más">Ver más</span></div>
                         </a>
                     </div>
@@ -110,28 +118,23 @@
                 <table>
                     <tr>
                         <th>Tipo de Habitación</th>
-                        <th>Temporada Baja</th>
-                        <th>Temporada Alta</th>
+                        <th>Precio por Noche</th>
                     </tr>
                     <tr>
                         <td><strong>Matrimonial</strong></td>
-                        <td>{{ $precioMatrimonial }}</td>
-                        <td>$199</td>
+                        <td>Bs. {{ $precioMatrimonial }}</td>
                     </tr>
                     <tr>
                         <td><strong>Matrimonial + Sofá</strong></td>
-                        <td>{{ $precioMatrimonialSofa }}</td>
-                        <td>$249</td>
+                        <td>Bs. {{ $precioMatrimonialSofa }}</td>
                     </tr>
                     <tr>
                         <td><strong>Doble</strong></td>
-                        <td>{{ $precioDoble }}</td>
-                        <td>$275</td>
+                        <td>Bs. {{ $precioDoble }}</td>
                     </tr>
                     <tr>
                         <td><strong>Duplex</strong></td>
                         <td>{{ $precioDuplex }}</td>
-                        <td>$290</td>
                     </tr>
 
                 </table>

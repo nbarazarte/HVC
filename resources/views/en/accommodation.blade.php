@@ -57,7 +57,9 @@
                         <a href="{{ route('matrimonialIngles')}}">
                             <h3 class="title">Matrimonial<br />
                             <span>Stay from ${{ $precioMatrimonial }} per night</span></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh.</p>
+                            <p>
+                                Comfortable room with a double bed, decorated with a pleasant style of soft colors where the special touch gives a beautiful and relaxing view of the Bay of Pampatar and the pool.
+                            </p>
                             <div class="button"><span data-hover="See more">See more</span></div>
                         </a>
                     </div>
@@ -68,7 +70,9 @@
                         <a href="{{ route('matrimonialSofaIngles')}}">
                             <h3 class="title">Matrimonial + Sofa<br />
                             <span>Stay from ${{ $precioMatrimonialSofa }} per night</span></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh.</p>
+                            <p>
+                                Comfortable room which is offered in two presentations: a double bed, and a sofa or a double bed and two single sofa beds.
+                            </p>
                             <div class="button"><span data-hover="See more">See more</span></div>
                         </a>
                     </div>
@@ -79,7 +83,9 @@
                         <a href="{{ route('dobleIngles')}}">
                             <h3 class="title">Double Room<br />
                             <span>Stay from ${{ $precioDoble }} per night</span></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh.</p>
+                            <p>
+                                Comfortable room with two double beds, decorated with a pleasant style of soft colors where the special touch gives a beautiful and relaxing view of the Bay of Pampatar and the pool.
+                            </p>
                             <div class="button"><span data-hover="See more">See more</span></div>
                         </a>
                     </div>
@@ -90,7 +96,9 @@
                         <a href="{{ route('duplexIngles')}}">
                             <h3 class="title">Duplex 2 Main Rooms<br />
                             <span>Stay from ${{ $precioDuplex }} per night</span></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh.</p>
+                            <p>                                
+                                Comfortable room for the whole family that has two rooms, one with a double bed and the other with two single beds, a living room with 2 sofa beds and a kitchen equipped and ready to use.                               
+                            </p>
                             <div class="button"><span data-hover="See more">See more</span></div>
                         </a>
                     </div>
@@ -109,28 +117,23 @@
                 <table>
                     <tr>
                         <th>Room Type</th>
-                        <th>LOW SEASON</th>
-                        <th>High SEASON</th>
+                        <th>Price per night</th>
                     </tr>
                     <tr>
                         <td><strong>Matrimonial Room</strong></td>
                         <td>${{ $precioMatrimonial }}</td>
-                        <td>$199</td>
                     </tr>
                     <tr>
                         <td><strong>Matrimonial Room + Sofa</strong></td>
                         <td>${{ $precioMatrimonialSofa }}</td>
-                        <td>$249</td>
                     </tr>
                     <tr>
                         <td><strong>Double Room</strong></td>
                         <td>${{ $precioDoble }}</td>
-                        <td>$275</td>
                     </tr>
                     <tr>
                         <td><strong>Duplex 2 Main Rooms</strong></td>
                         <td>${{ $precioDuplex }}</td>
-                        <td>$290</td>
                     </tr>
 
                 </table>

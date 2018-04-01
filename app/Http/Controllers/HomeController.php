@@ -114,7 +114,7 @@ class HomeController extends Controller
 
                         <td>
                             
-                            <table style="background-color: white" width="50%" border="0" align="center">
+                            <table style="background-color: white" width="70%" border="0" align="center">
                                 
                                 <tr>
                                     <td align="left" width="25%">
@@ -218,7 +218,7 @@ class HomeController extends Controller
                                                     </td>
 
                                                     <td style="text-align: left; padding: 8px;">
-                                                        <b>Fecha de Salida:<b><br>
+                                                        <b>Fecha de Salida:</b><br>
                             '.$_POST['contact-departure'].'
                                                     </td>
 
@@ -422,7 +422,7 @@ class HomeController extends Controller
 
                         <td>
                             
-                            <table style="background-color: white" width="50%" border="0" align="center">
+                            <table style="background-color: white" width="70%" border="0" align="center">
                                 
                                 <tr>
                                     <td align="left" width="25%">
@@ -524,7 +524,7 @@ class HomeController extends Controller
                                                     </td>
 
                                                     <td style="text-align: left; padding: 8px;">
-                                                        <b>Departure Date:<b><br>
+                                                        <b>Departure Date:</b><br>
                             '.$_POST['contact-departure'].'
                                                     </td>
 

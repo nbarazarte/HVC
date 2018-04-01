@@ -2,6 +2,18 @@
 
 @section('content')
 
+@foreach ($habitaciones as $hab)
+
+    @if( $hab->str_habitacion == "Doble")
+
+        <?php
+            $precioDoble = number_format($hab->str_precio, 2, ',', '.');
+        ?>    
+
+    @endif
+
+@endforeach
+
 	<header>
     	<div id="header">
         	<div class="h1">
@@ -32,8 +44,10 @@
                 <!-- Slideshow | END -->
                 <div id="content">
                     <h2><strong>Habitación</strong> Doble</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est.</p>
+                    <p>Cómoda y confortable habitación con dos camas matrimoniales, decorada con un estilo agradable de colores suaves donde el toque especial lo brinda una hermosa y relajante vista a la bahía de Pampatar y a la piscina.</p>
+                    <p>
+                        Para satisfacer a nuestros visitantes, todas las habitaciones cuentan con las siguientes comodidades:
+                    </p>
 
                     @include('caracteristicasHabitacion')
 
@@ -43,7 +57,7 @@
             <aside>
             	<div id="scroll">
                     <div id="block">
-                        <div class="blocktitle"><a href="contact.php">Stay from <span>$149</span> per night</a></div>
+                        <div class="blocktitle"><a href="contact.php">Desde <span>Bs. {{ $precioDoble }}</span> por noche</a></div>
                         
                         @include('habitacionesLista')
                         
