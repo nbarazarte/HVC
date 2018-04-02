@@ -149,6 +149,14 @@ Route::get('/Pago-Exitoso', [
 	'as' =>'pagado'
 ]);
 
+
+
+Route::get('/Reservacion-Pagada-{codigo}', [
+	'uses' => 'HomeController@pago',
+	'as' =>'pago'
+]);
+
+
 Route::get('Salir', [
 				'uses' => 'Auth\LoginController@logout',
 				'as' =>'logout'

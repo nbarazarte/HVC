@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 01-04-2018 a las 16:53:41
+-- Tiempo de generación: 01-04-2018 a las 21:32:42
 -- Versión del servidor: 10.1.26-MariaDB-0+deb9u1
 -- Versión de PHP: 7.0.27-0+deb9u1
 
@@ -185,7 +185,7 @@ INSERT INTO `tbl_newsletter` (`id`, `str_email`, `created_at`, `updated_at`, `bo
 
 CREATE TABLE `tbl_reservaciones` (
   `id` int(11) NOT NULL,
-  `str_estatus_pago` varchar(255) NOT NULL DEFAULT 'pendiente',
+  `str_estatus_pago` varchar(20) DEFAULT NULL,
   `str_codigo` varchar(255) NOT NULL,
   `lng_idtipohab` int(11) NOT NULL,
   `lng_idpersona` int(11) NOT NULL,
@@ -227,7 +227,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `str_ci_pasaporte`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Neil Barazarte', '16379712', 'ezebarazarte@gmail.com', '$2y$10$38SX6cT7M/cJslPE/TgIIeEJ/OTY9oB0jqahmYxCzZ31DzW.ePD1.', 'yh48bOLfi5NGQuJZkbvfwdgHJt0rhtzIJ4zqAXi4eNQjsabSGVGhfbtw934r', '2018-04-01 02:58:08', '2018-04-01 21:53:27');
+(1, 'Neil Barazarte', '16379712', 'ezebarazarte@gmail.com', '$2y$10$38SX6cT7M/cJslPE/TgIIeEJ/OTY9oB0jqahmYxCzZ31DzW.ePD1.', 'AwI3xzmDX7t0bOaCOu2aCJq69SqWkYAaXt9wJCAHxooMqZ6JlMOoeWzpyG57', '2018-04-01 02:58:08', '2018-04-02 03:45:30');
 
 --
 -- Índices para tablas volcadas
@@ -272,7 +272,8 @@ ALTER TABLE `tbl_newsletter`
 -- Indices de la tabla `tbl_reservaciones`
 --
 ALTER TABLE `tbl_reservaciones`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `str_estatus_pago` (`str_estatus_pago`);
 
 --
 -- Indices de la tabla `users`

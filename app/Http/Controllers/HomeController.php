@@ -12,6 +12,7 @@ use Validator;
 use App\Reservaciones;
 use App\Http\Controllers\Auth;
 
+
 class HomeController extends Controller
 {
     /**
@@ -28,6 +29,68 @@ class HomeController extends Controller
 
         $this->middleware('auth');
     }
+
+
+    var $keys;
+    
+    public function crypt_key($ckey){
+        $this->keys = array();
+        
+        $c_key = base64_encode(sha1(md5($ckey)));
+        $c_key = substr($c_key, 0, round(ord($ckey{0})/5));
+        
+        $c2_key = base64_encode(md5(sha1($ckey)));
+        $last = strlen($ckey) - 1;
+        $c2_key = substr($c2_key, 1, round(ord($ckey{$last})/7));
+        
+        $c3_key = base64_encode(sha1(md5($c_key).md5($c2_key)));
+        $mid = round($last/2);
+        $c3_key = substr($c3_key, 1,  round(ord($ckey{(int)$mid})/9));
+        
+        $c_key = $c_key.$c2_key.$c3_key;
+        $c_key = base64_encode($c_key);
+        
+        for($i = 0; $i < strlen($c_key); $i++){
+            $this->keys[] = $c_key[$i];
+        }
+    }
+    
+    public function encrypt($string){
+        $string = base64_encode($string);
+        $keys = $this->keys;
+        for($i = 0; $i < strlen($string); $i++){
+            $id = $i % count($keys);
+            $ord = ord($string{$i});
+            $ord = $ord OR ord($keys[$id]);
+            $id++;
+            $ord = $ord AND ord($keys[$id]);
+            $id++;
+            $ord = $ord XOR ord($keys[$id]);
+            $id++;
+            $ord = $ord + ord($keys[$id]);
+            $string{$i} = chr($ord);
+        }
+        return base64_encode($string);
+    }
+    
+    public function decrypt($string){
+        $string = base64_decode($string);
+        $keys = $this->keys;
+        for($i = 0; $i < strlen($string); $i++){
+            $id = $i % count($keys);
+            $ord = ord($string{$i});
+            $ord = $ord XOR ord($keys[$id]);
+            $id++;
+            $ord = $ord AND ord($keys[$id]);
+            $id++;
+            $ord = $ord OR ord($keys[$id]);
+            $id++;
+            $ord = $ord - ord($keys[$id]);
+            $string{$i} = chr($ord);
+        }
+        return base64_decode($string);
+    }
+
 
     /**
      * Show the application dashboard.
@@ -836,9 +899,7 @@ class HomeController extends Controller
         ->Where(function ($query) {
             $query->where('lng_idpersona', '=', \Auth::user()->id);
         })
-        ->Where(function ($query) {
-            $query->where('str_estatus_pago', '=', 'pendiente');
-        })          
+       
         ->get();
 
         //dd($datos[0]);
@@ -863,8 +924,6 @@ class HomeController extends Controller
     
     }
 
-
-
     /**
      * Show the application dashboard.
      *
@@ -879,12 +938,8 @@ class HomeController extends Controller
         ->Where(function ($query) {
             $query->where('lng_idpersona', '=', \Auth::user()->id);
         })
-        ->Where(function ($query) {
-            $query->where('str_estatus_pago', '=', 'pendiente');
-        })          
+       
         ->get();
-
-               
 
         //dd($datos[0]);die();
 
@@ -892,7 +947,6 @@ class HomeController extends Controller
             
             $resultados[$key] = $value;
         }
-
 
         $total = number_format($resultados['dbl_total_pagar'], 2, '.', '');
 
@@ -911,10 +965,34 @@ class HomeController extends Controller
         
             $result = 'Success - Hash Matched';
 
-            $estatusPagado = DB::update('update tbl_reservaciones set str_estatus_pago = "'.$_REQUEST['order_number'].'" where lng_idpersona = '.\Auth::user()->id.' and str_codigo = "'.$_REQUEST['send'].'" ');            
+            //echo $_REQUEST['order_number']; "<br>";
 
+            $estatusPagado = DB::update('update tbl_reservaciones set str_estatus_pago = "'.$_REQUEST['order_number'].'" where lng_idpersona = '.\Auth::user()->id.' and str_codigo = "'.$_REQUEST['send'].'" ');            
             //dd($_REQUEST);
             //die();
+
+            $this->crypt_key('mat');
+            $order_numberEnc = $this->encrypt($_REQUEST['order_number']);
+
+            return Redirect::to('/Reservacion-Pagada-'.$order_numberEnc); 
+
+        }
+
+    } 
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function pago($codigo)
+    {
+        
+        $this->crypt_key('mat');
+        $order_number = $this->decrypt($codigo);
+
+        if(strlen($order_number) > 13){
+
             if(Session::get('idioma') == "es"){
 
                 return Redirect::to('/'); 
@@ -922,10 +1000,49 @@ class HomeController extends Controller
             }else{
 
                 return Redirect::to('/en'); 
-            } 
+            }              
 
+        }else{
+
+            //echo substr($order_number,0,13);
+            //echo "<br>";
+            //echo $order_number;die();
+
+            $datos = DB::table('tbl_reservaciones as res')  
+            ->where('str_estatus_pago', $order_number)
+            ->Where(function ($query) {
+                $query->where('lng_idpersona', '=', \Auth::user()->id);
+            })        
+            ->get();
+
+            //dd($datos[0]);die();
+
+            if(!empty($datos[0])){
+                
+            
+                if(Session::get('idioma') == "es"){
+
+                    return view('pagado');
+
+                }else{
+
+                    return view('en.pagado');
+                }                 
+
+            }else{
+
+                if(Session::get('idioma') == "es"){
+
+                    return Redirect::to('/'); 
+
+                }else{
+
+                    return Redirect::to('/en'); 
+                }             
+
+            }
         }
-
-    }    
+        
+    }       
 
 }
