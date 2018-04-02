@@ -134,7 +134,7 @@
                     </tr>
                     <tr>
                         <td><strong>Duplex</strong></td>
-                        <td>{{ $precioDuplex }}</td>
+                        <td>Bs. {{ $precioDuplex }}</td>
                     </tr>
 
                 </table>
