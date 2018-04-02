@@ -899,7 +899,10 @@ class HomeController extends Controller
         ->Where(function ($query) {
             $query->where('lng_idpersona', '=', \Auth::user()->id);
         })
-       
+        ->Where(function ($query) {
+            $query->where('str_estatus_pago', '=', null);
+        })
+              
         ->get();
 
         //dd($datos[0]);
