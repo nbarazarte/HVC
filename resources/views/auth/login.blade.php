@@ -62,7 +62,11 @@
                                 Registrarse
                             </a>
                             <br>
-                            <a href="{{route('home')}}"> <i class="fa fa-home" aria-hidden="true"></i> Inicio</a>                           
+                            <a href="{{route('home')}}"> <i class="fa fa-home" aria-hidden="true"></i> Inicio</a>
+
+                            <!--<a class="btn btn-link" href="{{ url('/redirect') }}">
+                                facebook
+                            </a>-->
                         </div> 
 
                     </div>

@@ -142,7 +142,7 @@
 
                 </p>
 
-                <h2 style="margin:0;"><strong>HIPPOCAMPUS VACATIONS CLUB C.A. <br>J-30177391-8</strong></h2>
+                <h2 style="margin:0;"><strong>HIPPOCAMPUS VACATION CLUB C.A. <br>J-30177391-8</strong></h2>
 
                     <table>
                         <tr>

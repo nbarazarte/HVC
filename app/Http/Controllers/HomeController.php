@@ -173,224 +173,232 @@ class HomeController extends Controller
 
         $body= '<table style="background-color: #F0F0F0;font:14px/25px \'Open Sans\', sans-serif;" width="100%" border="0" align="center">
     
-                    <tr>
+    <tr>
 
-                        <td>
+        <td>
+
+            <table style="background-color: white" width="70%" border="0" align="center">
+
+                <tr>
+
+                    <td>                        
+
+                        <table style="background-color: white" width="90%" border="0" align="center">
                             
-                            <table style="background-color: white" width="70%" border="0" align="center">
-                                
-                                <tr>
-                                    <td align="left" width="25%">
-                                        <div align="center">
-                                            <img src="http://hippocampusvacationclub.com/sites/default/files/Logo%20hvc%20new_0.png" width="80px">
-                                        </div>
-                                    </td>
+                            <tr>
+                                <td align="left" width="25%">
+                                    <div align="center">
+                                        <img src="http://hippocampusvacationclub.com/sites/default/files/Logo%20hvc%20new_0.png" width="80px">
+                                    </div>
+                                </td>
 
-                                    <td align="center" width="50%">
-                                        <strong>
-                                            HIPPOCAMPUS VACATION CLUB
-                                        </strong>
-                                        <br>
-                                        <b>Innovamos para ti</b>
-                                    </td>
+                                <td align="center" width="50%">
+                                    <strong>
+                                        HIPPOCAMPUS VACATION CLUB
+                                    </strong>
+                                    <br>
+                                    <b>Innovamos para ti</b>
+                                </td>
 
-                                    <td align="right" width="25%">
-                                        <div align="center">
-                                            <h3>
-                                                <b>+58 (295) 331.13.23</b>
-                                            </h3>
-                                        </div>
-                                    </td>
+                                <td align="right" width="25%">
+                                    <div align="center">
+                                        <h3>
+                                            <b>+58 (295) 331.13.23</b>
+                                        </h3>
+                                    </div>
+                                </td>
 
-                                </tr>
+                            </tr>
 
-                                <tr>
-                                    <td align="center" colspan="3" style="background-image: url(\'http://hippocampusvacationclub.com/sites/default/files/styles/baner/public/vista.jpg?itok=FVdwGhRq\'); height: 400px">                      
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td align="center" colspan="3" style="background-image: url(\'http://hippocampusvacationclub.com/sites/default/files/styles/baner/public/vista.jpg?itok=FVdwGhRq\'); height: 400px">                      
+                                </td>
+                            </tr>
 
-                                <tr>
-                                    <td align="center" colspan="3">
+                            <tr>
+                                <td align="center" colspan="3">
 
-                                        <h2>
-                                            Estimado(a): '.$_POST['contact-name'].'
-                                        </h2>
+                                    <h2>
+                                        Estimado(a): '.$_POST['contact-name'].'
+                                    </h2>
 
-                                        <p style="text-align: center">
-                                            Gracias por hacer la reservación de su habitación <b>'.$_POST['contact-habitacion'].'</b> con nosotros. <br>La reserva incluye alojamiento y desayuno, para el número de personas indicadas en la cotización.
-                                        </p>
+                                    <p style="text-align: center">
+                                        Gracias por hacer la reservación de su habitación <b>'.$_POST['contact-habitacion'].'</b> con nosotros. <br>La reserva incluye alojamiento y desayuno, para el número de personas indicadas en la cotización.
+                                    </p>
 
-                                    </td>
-                                </tr>
+                                </td>
+                            </tr>
 
-                                <tr>
+                            <tr>
 
-                                    <td align="center" colspan="3">
+                                <td align="center" colspan="3">
 
-                                        <p style="text-align: center;">
+                                    <p style="text-align: center;">
 
-                    <style>
-                        #tablaDatos tr:nth-child(even){background-color: #f2f2f2}
-                    </style>
+                                    <style>
+                                        #tablaDatos tr:nth-child(even){background-color: #f2f2f2}
+                                    </style>
 
-                                            <table id="tablaDatos" style="text-align: justify;border-collapse: collapse; width: 100%;font:14px/25px \'Open Sans\', sans-serif;" border="0">
+                                        <table id="tablaDatos" style="text-align: justify;border-collapse: collapse; width: 100%;font:14px/25px \'Open Sans\', sans-serif;" border="0">
 
-                                                <tr >
-                                    <th colspan="5" style="text-align: center; padding: 8px;background-color: #FBDAD2;color: black;">
-                                        DATOS DE LA RESERVACIÓN
-                                    </th>
-                                </tr>  
+                                            <tr>
+                                                <th colspan="5" style="text-align: center; padding: 8px;background-color: #FBDAD2;color: black;">
+                                                    DATOS DE LA RESERVACIÓN
+                                                </th>
+                                            </tr>  
 
-                                                <tr style="background-color: #f2f2f2">
+                                            <tr style="background-color: #f2f2f2">
 
-                                                    <td style="text-align: left; padding: 8px;">
-                                                        <b>Nombre:</b><br> 
-                            '.$_POST['contact-name'].'
-                                                    </td>
+                                                <td style="text-align: left; padding: 8px;">
+                                                    <b>Nombre:</b><br> 
+                                                    '.$_POST['contact-name'].'
+                                                </td>
 
-                                                    <td style="text-align: left; padding: 8px;">
-                                                        <b>Correo Electrónico:</b><br>
-                            '.$_POST['contact-email'].'
-                                                    </td>
+                                                <td style="text-align: left; padding: 8px;">
+                                                    <b>Correo Electrónico:</b><br>
+                                                    '.$_POST['contact-email'].'
+                                                </td>
 
-                                                    <td style="text-align: left; padding: 8px;">
-                                                        <b>Teléfono:</b><br>
-                            '.$_POST['contact-phone'].'
-                                                    </td>
+                                                <td style="text-align: left; padding: 8px;">
+                                                    <b>Teléfono:</b><br>
+                                                    '.$_POST['contact-phone'].'
+                                                </td>
 
-                                                    <td style="text-align: left; padding: 8px;">
-                                                        <b>Precio:</b><br>
-                            '.number_format($_POST['contact-precioHabitacion'], 2, ',', '.').'
-                                                    </td>
+                                                <td style="text-align: left; padding: 8px;">
+                                                    <b>Precio:</b><br>
+                                                    '.number_format($_POST['contact-precioHabitacion'], 2, ',', '.').'
+                                                </td>
 
-                                                    <td style="text-align: left; padding: 8px;">
-                                                        <b>Días:</b><br>
-                            '.$_POST['cant-dias'].'
-                                                    </td>
-                                                </tr>
+                                                <td style="text-align: left; padding: 8px;">
+                                                    <b>Días:</b><br>
+                                                    '.$_POST['cant-dias'].'
+                                                </td>
+                                            </tr>
 
-                                                <tr>
-                                                    <td style="text-align: left; padding: 8px;">
-                                                        <b>Total a Pagar:</b><br>
-                            '.number_format($_POST['contact-totalPagar'], 2, ',', '.').'
-                                                    </td>
+                                            <tr>
+                                                <td style="text-align: left; padding: 8px;">
+                                                    <b>Total a Pagar:</b><br>
+                                                    '.number_format($_POST['contact-totalPagar'], 2, ',', '.').'
+                                                </td>
 
-                                                    <td style="text-align: left; padding: 8px;">
-                                                        <b>Fecha de Llegada:</b><br>
-                            '.$_POST['contact-arrival'].'
-                                                    </td>
+                                                <td style="text-align: left; padding: 8px;">
+                                                    <b>Fecha de Llegada:</b><br>
+                                                    '.$_POST['contact-arrival'].'
+                                                </td>
 
-                                                    <td style="text-align: left; padding: 8px;">
-                                                        <b>Fecha de Salida:</b><br>
-                            '.$_POST['contact-departure'].'
-                                                    </td>
+                                                <td style="text-align: left; padding: 8px;">
+                                                    <b>Fecha de Salida:</b><br>
+                                                    '.$_POST['contact-departure'].'
+                                                </td>
 
-                                                    <td style="text-align: left; padding: 8px;">
-                                                        <b>Adultos:</b><br>
-                            '.$_POST['contact-adultos'].'
-                                                    </td>
+                                                <td style="text-align: left; padding: 8px;">
+                                                    <b>Adultos:</b><br>
+                                                    '.$_POST['contact-adultos'].'
+                                                </td>
 
-                                                    <td style="text-align: left; padding: 8px;">
-                                                        <b>Niños:</b><br>
-                            '.$_POST['contact-ninos'].'
-                                                    </td>
+                                                <td style="text-align: left; padding: 8px;">
+                                                    <b>Niños:</b><br>
+                                                    '.$_POST['contact-ninos'].'
+                                                </td>
 
-                                                </tr>                                                                                                 
+                                            </tr>                                                                                                 
 
-                                                <tr style="background-color: #f2f2f2">
+                                            <tr style="background-color: #f2f2f2">
 
-                                                    <td colspan="5">
-                                                        <b>Comentarios:</b><br>
-                            '.$_POST['contact-message'].'
-                                                    </td>
+                                                <td colspan="5">
+                                                    <b>Comentarios:</b><br>
+                                                    '.$_POST['contact-message'].'
+                                                </td>
 
-                                                </tr>                                
-                                                                                
-                                            </table>
-                                          
-                                        </p>
-                    
-                    <h2>POLÍTICAS DE PAGO</h2>
+                                            </tr>                                
+                                                                            
+                                        </table>
+                                      
+                                    </p>
 
-                    <p style="text-align: justify;">
+                                    <h2>POLÍTICAS DE PAGO</h2>
 
-                        <ul style="text-align: justify;">
+                                    <p style="text-align: justify;">
 
-                        <li>
-                            Transferencias y depósitos bancarios en efectivo o cheque del mismo banco o de otros bancos.
-                        </li>
-                        <li>
-                            Todas las operaciones se deben hacer con un mínimo de 03 días hábiles antes de su llegada para garantizar la reserva.
-                        </li>
-                   
-                        </ul>
+                                        <ul style="text-align: justify;">
 
-                        <b>Realizar el pago a nombre de:</b>
+                                        <li>
+                                            Transferencias y depósitos bancarios en efectivo o cheque del mismo banco o de otros bancos.
+                                        </li>
+                                        <li>
+                                            Todas las operaciones se deben hacer con un mínimo de 03 días hábiles antes de su llegada para garantizar la reserva.
+                                        </li>
 
-                    </p>
+                                        </ul>
 
-                <h2 style="margin:0;"><strong>HIPPOCAMPUS VACATIONS CLUB C.A. <br>J-30177391-8</strong></h2>
+                                        <b>Realizar el pago a nombre de:</b>
 
-                    <table id="tablaDatos">
-                        <tr>
-                            <th style="text-align: center; padding: 8px;background-color: #FBDAD2;color: black;">Banesco</th>
-                            <th style="text-align: center; padding: 8px;background-color: #FBDAD2;color: black;">BOD</th>
-                            <th style="text-align: center; padding: 8px;background-color: #FBDAD2;color: black;">Banco del Tesoro</th>
-                        </tr>
-                        <tr style="background-color: #f2f2f2">
-                            <td style="text-align: left; padding: 8px;"><b>0134-0343-1134-3101-5888</b></td>
-                            <td style="text-align: left; padding: 8px;"><b>0116-0450-13-0105891555</b></td>
-                            <td style="text-align: left; padding: 8px;"><b>0163-0617-74-6173007310</b></td>
-                        </tr>
+                                    </p>
 
+                                    <h2 style="margin:0;"><strong>HIPPOCAMPUS VACATION CLUB C.A. <br>J-30177391-8</strong></h2>
 
-                    </table>
+                                    <table id="tablaDatos">
+                                        <tr>
+                                            <th style="text-align: center; padding: 8px;background-color: #FBDAD2;color: black;">Banesco</th>
+                                            <th style="text-align: center; padding: 8px;background-color: #FBDAD2;color: black;">BOD</th>
+                                            <th style="text-align: center; padding: 8px;background-color: #FBDAD2;color: black;">Banco del Tesoro</th>
+                                        </tr>
+                                        <tr style="background-color: #f2f2f2">
+                                            <td style="text-align: left; padding: 8px;"><b>0134-0343-1134-3101-5888</b></td>
+                                            <td style="text-align: left; padding: 8px;"><b>0116-0450-13-0105891555</b></td>
+                                            <td style="text-align: left; padding: 8px;"><b>0163-0617-74-6173007310</b></td>
+                                        </tr>
 
-                <p style="text-align: justify;">
-                    Una vez realizado el pago, usted puede enviar el comprobante y verificar los datos de la reserva través de:
-                </p>
-                <h2 style="margin:0;"><strong>+58 (295) 331.13.23</strong></h2>
-                <p style="margin:0;">
-                    <a href="mailto:reservaciones1@hippocampus.com.ve">reservaciones1@hippocampus.com.ve</a>          
-                </p>
+                                    </table>
 
-                <br>
+                                    <p style="text-align: justify;">
+                                    Una vez realizado el pago, usted puede enviar el comprobante y verificar los datos de la reserva través de:
+                                    </p>
+                                    <h2 style="margin:0;"><strong>+58 (295) 331.13.23</strong></h2>
+                                    <p style="margin:0;">
+                                    <a href="mailto:reservaciones1@hippocampus.com.ve">reservaciones1@hippocampus.com.ve</a>          
+                                    </p>
 
-                <p style="text-align: justify;">
-                    Tan pronto el Hotel recibe su información de garantía le hará llegar la RECONFIRMACION en un periodo no mayor de 48 horas hábiles continuas después de recibido el soporte de pago, caso contrario o para cualquier duda por favor comuníquense con nosotros, que gustosamente será atendido.                    
-                </p>
+                                    <br>
 
-                <p style="text-align: justify;">
-                    <b>RECUERDE QUE ES INDISPENSABLE LA PRESENTACION DEL VOUCHER DE SERVICIO EN EL MOMENTO DEL CHECK-IN DEL CLIENTE.</b><br>
-                    En caso de no recibir la garantía en la fecha límite, su solicitud quedara automáticamente ANULADA, y se podrá procesar nuevamente de acuerdo a nuestra disponibilidad.             
-                </p>  
+                                    <p style="text-align: justify;">
+                                    Tan pronto el Hotel recibe su información de garantía le hará llegar la RECONFIRMACION en un periodo no mayor de 48 horas hábiles continuas después de recibido el soporte de pago, caso contrario o para cualquier duda por favor comuníquense con nosotros, que gustosamente será atendido.                    
+                                    </p>
 
-                                        <p>
-                                            <a href="http://'.env('DIRECCION','nada').'/Pagar-Reservación-'.$str_ruta['str_codigo'].'">
-                                               http://'.env('DIRECCION','nada').'/Pagar-Reservación-'.$str_ruta['str_codigo'].'
-                                            </a>
+                                    <p style="text-align: justify;">
+                                    <b>RECUERDE QUE ES INDISPENSABLE LA PRESENTACION DEL VOUCHER DE SERVICIO EN EL MOMENTO DEL CHECK-IN DEL CLIENTE.</b><br>
+                                    En caso de no recibir la garantía en la fecha límite, su solicitud quedara automáticamente ANULADA, y se podrá procesar nuevamente de acuerdo a nuestra disponibilidad.             
+                                    </p>  
 
-                                            <form action="http://'.env('DIRECCION','nada').'/Pagar-Reservación-'.$str_ruta['str_codigo'].'">
-                                                <input type="submit" style="font-family: Arial, \'Helvetica Neue\', Helvetica, sans-serif; display: block; display: inline-block; width: 200px; min-height: 20px; padding: 10px;
-                 background-color: #F04D22; border-radius: 3px; color: #ffffff; font-size: 15px; line-height: 25px;
-                 text-align: center; text-decoration: none; -webkit-text-size-adjust: none; background-color: #F04D22;" value="Pagar Reservación" />
+                                    <p>
+                                        <a href="http://'.env('DIRECCION','nada').'/Pagar-Reservación-'.$str_ruta['str_codigo'].'">
+                                           http://'.env('DIRECCION','nada').'/Pagar-Reservación-'.$str_ruta['str_codigo'].'
+                                        </a>
 
-                                                        
-                                            </form>                                            
+                                        <form action="http://'.env('DIRECCION','nada').'/Pagar-Reservación-'.$str_ruta['str_codigo'].'">
 
-                                        </p>                       
+                                            <input type="submit" style="font-family: Arial, \'Helvetica Neue\', Helvetica, sans-serif; display: block; display: inline-block; width: 200px; min-height: 20px; padding: 10px;background-color: #F04D22; border-radius: 3px; color: #ffffff; font-size: 15px; line-height: 25px;text-align: center; text-decoration: none; -webkit-text-size-adjust: none; background-color: #F04D22;" value="Pagar Reservación" />                                                    
+                                        </form>                                            
 
-                                    </td>
+                                    </p>                       
 
-                                </tr>
+                                </td>
 
-                            </table>
+                            </tr>
 
-                        </td>
+                        </table>
 
-                    </tr>
+                    </td>
 
-                </table>';
+                </tr>
+
+            </table>
+
+        </td>
+
+    </tr>
+
+</table>';
 
         $mail->msgHTML($body);
 
@@ -485,7 +493,13 @@ class HomeController extends Controller
 
                         <td>
                             
-                            <table style="background-color: white" width="70%" border="0" align="center">
+            <table style="background-color: white" width="70%" border="0" align="center">
+
+                <tr>
+
+                    <td>                        
+
+                        <table style="background-color: white" width="90%" border="0" align="center">
                                 
                                 <tr>
                                     <td align="left" width="25%">
@@ -635,7 +649,7 @@ class HomeController extends Controller
 
                     </p>
 
-                <h2 style="margin:0;"><strong>HIPPOCAMPUS VACATIONS CLUB C.A. <br>J-30177391-8</strong></h2>
+                <h2 style="margin:0;"><strong>HIPPOCAMPUS VACATION CLUB C.A. <br>J-30177391-8</strong></h2>
 
                     <table id="tablaDatos">
                         <tr>
@@ -682,21 +696,27 @@ class HomeController extends Controller
                  text-align: center; text-decoration: none; -webkit-text-size-adjust: none; background-color: #F04D22;" value="Send Payment" />
 
                                                         
-                                            </form>                                            
+                                        </form>                                            
 
-                                        </p>                       
+                                    </p>                       
 
-                                    </td>
+                                </td>
 
-                                </tr>
+                            </tr>
 
-                            </table>
+                        </table>
 
-                        </td>
+                    </td>
 
-                    </tr>
+                </tr>
 
-                </table>';
+            </table>
+
+        </td>
+
+    </tr>
+
+</table>';
 
         $mail->msgHTML($body);
 
@@ -806,13 +826,13 @@ class HomeController extends Controller
 
             $this->enviarReservacion($request, $idreservacion);
 
-            return Redirect::to('/Pagar-Reservación-'.$str_ruta["str_codigo"]); 
+            return Redirect::to('/Pagar-Reservación/'.$str_ruta["str_codigo"]); 
 
         }else{
 
             $this->enviarReservacionIngles($request, $idreservacion); 
 
-            return Redirect::to('/Make-Payment-'.$str_ruta["str_codigo"]); 
+            return Redirect::to('/Make-Payment/'.$str_ruta["str_codigo"]); 
         }
         
         
@@ -890,9 +910,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function realizarPago($codigo)
+    public function realizarPago($codigo)//Para pagar
     {
-
         $datos = DB::table('tbl_reservaciones as res')
         ->join('cat_habitaciones as hab', 'hab.id', '=', 'res.lng_idtipohab')        
         ->where('str_codigo', $codigo)
@@ -902,7 +921,6 @@ class HomeController extends Controller
         ->Where(function ($query) {
             $query->where('str_estatus_pago', '=', null);
         })
-              
         ->get();
 
         //dd($datos[0]);
@@ -922,7 +940,6 @@ class HomeController extends Controller
                 return view('en.realizarPago', compact('datos'));
             }    
 
-            
         }
     
     }
@@ -932,7 +949,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function pagado()
+    public function pagado()//Verifico si el pago se realizó con éxito
     {
 
         $datos = DB::table('tbl_reservaciones as res')
@@ -941,7 +958,6 @@ class HomeController extends Controller
         ->Where(function ($query) {
             $query->where('lng_idpersona', '=', \Auth::user()->id);
         })
-       
         ->get();
 
         //dd($datos[0]);die();
@@ -974,10 +990,10 @@ class HomeController extends Controller
             //dd($_REQUEST);
             //die();
 
-            $this->crypt_key('mat');
+            $this->crypt_key(env('KEY'));
             $order_numberEnc = $this->encrypt($_REQUEST['order_number']);
 
-            return Redirect::to('/Reservacion-Pagada-'.$order_numberEnc); 
+            return Redirect::to('/Reservacion-Pagada/'.$order_numberEnc); 
 
         }
 
@@ -990,39 +1006,63 @@ class HomeController extends Controller
      */
     public function pago($codigo)
     {
-        
-        $this->crypt_key('mat');
-        $order_number = $this->decrypt($codigo);
+        //echo strlen($codigo). "<br>";
 
-        if(strlen($order_number) > 13){
+        if(strlen($codigo) <= 67 ){
 
-            if(Session::get('idioma') == "es"){
+            //echo "encripta";
+            $this->crypt_key(env('KEY'));
+            $order_2CO = $this->decrypt($codigo);
+            $order_number = substr($order_2CO,0,13);            
 
-                return Redirect::to('/'); 
+            //echo $order_number. "<br>";
 
-            }else{
+            //die();
 
-                return Redirect::to('/en'); 
-            }              
-
-        }else{
-
-            //echo substr($order_number,0,13);
-            //echo "<br>";
-            //echo $order_number;die();
-
-            $datos = DB::table('tbl_reservaciones as res')  
-            ->where('str_estatus_pago', $order_number)
-            ->Where(function ($query) {
-                $query->where('lng_idpersona', '=', \Auth::user()->id);
-            })        
+            $num_ordenes = DB::table('tbl_reservaciones as res')  
+            ->select('str_estatus_pago')
+            ->where('lng_idpersona', \Auth::user()->id)
             ->get();
 
-            //dd($datos[0]);die();
+            //dd($num_ordenes);die();
+            //echo count($num_ordenes);               
+            //die();
 
-            if(!empty($datos[0])){
+            $iguales = "false";
+
+            for ($i=0; $i < count($num_ordenes); $i++) { 
+
+                //echo $i. "<br>";
+
+                foreach ($num_ordenes[$i] as $key => $value) {
+               
+                    if($value == $order_number){
+
+                        $iguales = "true";
+
+                    }else{
+
+                        $iguales = "false";
+
+                    }
                 
-            
+                }
+
+            }
+
+            //echo $iguales;
+
+            if($iguales == "true"){
+
+                $datos = DB::table('tbl_reservaciones as res')  
+                ->where('str_estatus_pago', $order_number)
+                ->Where(function ($query) {
+                    $query->where('lng_idpersona', '=', \Auth::user()->id);
+                })        
+                ->get();
+
+                //dd($datos[0]);die();
+
                 if(Session::get('idioma') == "es"){
 
                     return view('pagado');
@@ -1030,7 +1070,8 @@ class HomeController extends Controller
                 }else{
 
                     return view('en.pagado');
-                }                 
+                } 
+
 
             }else{
 
@@ -1041,11 +1082,24 @@ class HomeController extends Controller
                 }else{
 
                     return Redirect::to('/en'); 
-                }             
-
+                } 
             }
+
+        }else{
+
+            //echo "se sale";
+
+            if(Session::get('idioma') == "es"){
+
+                return Redirect::to('/'); 
+
+            }else{
+
+                return Redirect::to('/en'); 
+            } 
+
         }
-        
+
     }       
 
 }

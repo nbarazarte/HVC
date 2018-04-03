@@ -125,39 +125,35 @@ Route::get('/Solicitar-Reservación', [
 
 Route::post('/Solicitar-Reservación', 'HomeController@postReservaciones');
 
-
-
-
-
-
-
-
-Route::get('/Pagar-Reservación-{codigo}', [
+//Para pagar la reservación
+Route::get('/Pagar-Reservación/{codigo}', [
 	'uses' => 'HomeController@realizarPago',
 	'as' =>'realizarPago'
 ]);
 
-Route::get('/Make-Payment-{codigo}', [
+Route::get('/Make-Payment/{codigo}', [
 	'uses' => 'HomeController@realizarPago',
 	'as' =>'realizarPagoIngles'
 ]);
+/********************************************/
 
-
-
+//Aquí me direcciona 2CO
 Route::get('/Pago-Exitoso', [
 	'uses' => 'HomeController@pagado',
 	'as' =>'pagado'
 ]);
+/********************************************/
 
-
-
-Route::get('/Reservacion-Pagada-{codigo}', [
+Route::get('/Reservacion-Pagada/{codigo}', [
 	'uses' => 'HomeController@pago',
 	'as' =>'pago'
 ]);
-
 
 Route::get('Salir', [
 				'uses' => 'Auth\LoginController@logout',
 				'as' =>'logout'
 ]);
+
+//Rutas de Socialite (aún en desarrollo)
+Route::get('/redirect','SocialController@redirect');
+Route::get('/callback','SocialController@callback');
