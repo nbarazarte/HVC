@@ -152,4 +152,70 @@
     <!-- Content | END -->
 
 
+
+   <!-- Content | START -->
+    <main>
+        <div class="centre">
+            <!-- Contact Form | START -->
+            <div id="contact">
+
+
+                    {!! Form::open(['route' => 'contact', 'method'=>'POST', 'id' => 'demo-form', 'name' => 'demo-form', 'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false', 'onsubmit' => 'diferencia()']) !!} 
+                    
+                    <div class="col2">
+                        
+                    </div>
+
+                    <div class="col2">
+                        <div class="field mandatory"><input name="contact-name" type="text" placeholder="Nombre y Apellido" id="contact-name" value="" required/></div>
+                        
+    
+                    </div>
+                    <div class="col2">
+                        <div class="field mandatory"><input name="contact-cedula" type="text" placeholder="Cédula/Pasaporte" id="contact-cedula" value="" required/></div>
+                    </div>    
+
+                    <div class="col2">
+                        
+                    </div>                                    
+
+                    <button name="send" value="sendform"><span data-hover="Agregar Acompañantes">Agregar Acompañantes</span></button>
+
+
+                                      
+                   {!! csrf_field() !!} 
+
+                {!! Form::close() !!}  
+
+
+            </div>
+            <!-- Contact Form | END -->
+
+            
+
+            <h2 style="margin:0;"><strong>+58 (295) 331.13.23</strong></h2>
+            <p style="margin:0;">
+                <a href="mailto:reservaciones1@hippocampus.com.ve">reservaciones1@hippocampus.com.ve</a><br />
+                <i class="fa fa-map-marker"></i>  Calle El Cristo, edifc. Complejo Hippocampus, sector La Caranta.<br />Isla de Margarita. Venezuela            
+            </p>        
+
+            <p>
+
+                <h2 style="margin:0;"><strong>Frente a la Hermosa Bahía de Pampatar</strong></h2>
+
+            </p>
+
+            <p style="text-align: justify;">
+              
+                Nuestra ubicación privilegiada nos situa a solo cinco minutos del casco histórico de Pampatar, donde se puede disfrutar de diversas atracciones turísticas como el Castillo San Carlos de Borromeo, la iglesia del Cristo del Buen Viaje y algunas playas. Además, la ciudad de pampatar cuenta con una amplia zona gastronómica para todos los gustos, así como bares, discotecas y restaurantes muy cercanos a nuestras instalaciones.
+            <br>
+                Nos encontramos a 10 minutos de los principales centros comerciales de la isla y aproximadamente a 50 y 60 minutos del aeropuerto y terminal de ferry, respectivamente.
+
+            </p>
+        </div>
+
+
+    </main>
+    <!-- Content | END -->
+
 @endsection

@@ -131,7 +131,7 @@ Route::get('/Pagar-Reservación/{codigo}', [
 	'as' =>'realizarPago'
 ]);
 
-Route::get('/Make-Payment/{codigo}', [
+Route::get('/en/Make-Payment/{codigo}', [
 	'uses' => 'HomeController@realizarPago',
 	'as' =>'realizarPagoIngles'
 ]);

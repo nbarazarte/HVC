@@ -12,7 +12,6 @@ use Validator;
 use App\Reservaciones;
 use App\Http\Controllers\Auth;
 
-
 class HomeController extends Controller
 {
     /**
@@ -22,14 +21,12 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        
         $habitaciones = DB::table('cat_habitaciones')->get();
 
         \View::share(compact('habitaciones'));   
 
         $this->middleware('auth');
     }
-
 
     var $keys;
     
@@ -371,11 +368,11 @@ class HomeController extends Controller
                                     </p>  
 
                                     <p>
-                                        <a href="http://'.env('DIRECCION','nada').'/Pagar-Reservación-'.$str_ruta['str_codigo'].'">
+                                        <a href="http://'.env('DIRECCION','nada').'/Pagar-Reservación/'.$str_ruta['str_codigo'].'">
                                            http://'.env('DIRECCION','nada').'/Pagar-Reservación-'.$str_ruta['str_codigo'].'
                                         </a>
 
-                                        <form action="http://'.env('DIRECCION','nada').'/Pagar-Reservación-'.$str_ruta['str_codigo'].'">
+                                        <form action="http://'.env('DIRECCION','nada').'/Pagar-Reservación/'.$str_ruta['str_codigo'].'">
 
                                             <input type="submit" style="font-family: Arial, \'Helvetica Neue\', Helvetica, sans-serif; display: block; display: inline-block; width: 200px; min-height: 20px; padding: 10px;background-color: #F04D22; border-radius: 3px; color: #ffffff; font-size: 15px; line-height: 25px;text-align: center; text-decoration: none; -webkit-text-size-adjust: none; background-color: #F04D22;" value="Pagar Reservación" />                                                    
                                         </form>                                            
@@ -413,7 +410,6 @@ class HomeController extends Controller
         }
 
         //return Redirect::to('/Pagar-Reservación');
-
 
     }
 
@@ -686,11 +682,11 @@ class HomeController extends Controller
                 </p>  
 
                                         <p>
-                                            <a href="http://'.env('DIRECCION','nada').'/Make-Payment-'.$str_ruta['str_codigo'].'">
-                                               http://'.env('DIRECCION','nada').'/Make-Payment-'.$str_ruta['str_codigo'].'
+                                            <a href="http://'.env('DIRECCION','nada').'/en/Make-Payment/'.$str_ruta['str_codigo'].'">
+                                               http://'.env('DIRECCION','nada').'/en/Make-Payment/'.$str_ruta['str_codigo'].'
                                             </a>
 
-                                            <form action="http://'.env('DIRECCION','nada').'/Make-Payment-'.$str_ruta['str_codigo'].'">
+                                            <form action="http://'.env('DIRECCION','nada').'/en/Make-Payment/'.$str_ruta['str_codigo'].'">
                                                 <input type="submit" style="font-family: Arial, \'Helvetica Neue\', Helvetica, sans-serif; display: block; display: inline-block; width: 200px; min-height: 20px; padding: 10px;
                  background-color: #F04D22; border-radius: 3px; color: #ffffff; font-size: 15px; line-height: 25px;
                  text-align: center; text-decoration: none; -webkit-text-size-adjust: none; background-color: #F04D22;" value="Send Payment" />
@@ -732,9 +728,6 @@ class HomeController extends Controller
 
         //return Redirect::to('/Pagar-Reservación'); 
         
-
-        
-
     }
 
     /**
@@ -797,7 +790,6 @@ class HomeController extends Controller
      */
     public function postReservaciones(Request $request)
     {
-
         $validator = $this->validator($request->all());
 
         if ($validator->fails()) {
@@ -805,9 +797,77 @@ class HomeController extends Controller
              $this->throwValidationException(
                 $request, $validator
             );
-            
         }
         
+        //dd($request);
+        //echo "Solicitud: <br>Entrada: " .$request['contact-llegada']." --- Salida: ".$request['contact-salida']."--".$request['contact-idHabitacion'];
+
+        //$entrada = $request['contact-llegada'];
+        //$salida = $request['contact-salida'];
+
+        $entrada = '2018-04-21';
+        $salida = '2018-04-21';
+
+        //$fecha_entrada = strtotime($request['contact-llegada']);
+        //$fecha_salida = strtotime($request['contact-salida']);
+
+        $disponible = "false";
+
+        $filtro1 = DB::select("SELECT dmt_fecha_entrada, dmt_fecha_salida,
+
+                                (CASE 
+                                    WHEN ('".$salida."' = dmt_fecha_entrada) then 'true'
+                                    WHEN ('".$entrada."' = dmt_fecha_salida) then 'true'
+
+                                END) as entrar 
+
+                                FROM tbl_reservaciones
+
+                                WHERE 
+
+                                    ('".$entrada."' BETWEEN dmt_fecha_entrada and dmt_fecha_salida) 
+
+                                or 
+
+                                    ('".$salida."' BETWEEN dmt_fecha_entrada and dmt_fecha_salida)
+                                
+                                and lng_idtipohab = 4 "
+
+                            );
+
+        if( count($filtro1) == 0){
+
+            echo "Reserva: 1 ";//mando a reservar directo
+ 
+        }else{
+
+            //dd($filtro1);
+            
+            for ($i=0; $i < count($filtro1); $i++) { 
+
+                foreach ($filtro1[$i] as $key => $value) {
+               
+                    $datos['entrar'] = $value;
+
+                    if($datos['entrar'] == "true"){
+
+                        echo "pero puede reservar ";
+                        //con esta regla observo que puedo entrar cuando alguien sale el mismo día y que otra persona entra cuando yo salgo 
+
+                    }elseif ($datos['entrar'] == null) {
+             
+                        echo "No Disponible ";//busco la disponibilidad
+                
+                    }
+                }
+            }
+        }
+
+            echo $entrada. "--". $salida. "<br>";
+            dd($filtro1);
+
+        die();
+
         //$this->create($request->all());
 
         $idreservacion = $this->create($request->all())->id;
@@ -818,7 +878,6 @@ class HomeController extends Controller
             
             $str_ruta[$key] = $value;
         }        
-
 
         //echo "--->".Session::get('idioma');
         //die();
@@ -951,7 +1010,7 @@ class HomeController extends Controller
      */
     public function pagado()//Verifico si el pago se realizó con éxito
     {
-
+        //dd($_REQUEST);die();
         $datos = DB::table('tbl_reservaciones as res')
         ->join('cat_habitaciones as hab', 'hab.id', '=', 'res.lng_idtipohab')    
         ->where('str_codigo', $_REQUEST['send'])
@@ -1016,7 +1075,6 @@ class HomeController extends Controller
             $order_number = substr($order_2CO,0,13);            
 
             //echo $order_number. "<br>";
-
             //die();
 
             $num_ordenes = DB::table('tbl_reservaciones as res')  
@@ -1032,25 +1090,14 @@ class HomeController extends Controller
 
             for ($i=0; $i < count($num_ordenes); $i++) { 
 
-                //echo $i. "<br>";
-
                 foreach ($num_ordenes[$i] as $key => $value) {
                
                     if($value == $order_number){
 
                         $iguales = "true";
-
-                    }else{
-
-                        $iguales = "false";
-
                     }
-                
                 }
-
             }
-
-            //echo $iguales;
 
             if($iguales == "true"){
 
@@ -1072,7 +1119,6 @@ class HomeController extends Controller
                     return view('en.pagado');
                 } 
 
-
             }else{
 
                 if(Session::get('idioma') == "es"){
@@ -1086,8 +1132,6 @@ class HomeController extends Controller
             }
 
         }else{
-
-            //echo "se sale";
 
             if(Session::get('idioma') == "es"){
 

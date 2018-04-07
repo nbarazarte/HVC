@@ -94,7 +94,7 @@
                                         
                                         <?php
 
-                                            $date2 = new DateTime($dato->dmt_fecha_entrada);
+                                            $date2 = new DateTime($dato->dmt_fecha_salida);
                                             $fecha_salida = $date2->format('d-m-Y');
                                         ?>
 
@@ -164,8 +164,9 @@
 
                 <h2 style="margin:0;"><strong>+58 (295) 331.13.23</strong></h2>
                 <p style="margin:0;">
-                    <a href="mailto:reservaciones1@hippocampus.com.ve">reservaciones1@hippocampus.com.ve</a>          
-                </p>
+                    <a href="mailto:reservaciones1@hippocampus.com.ve">reservaciones1@hippocampus.com.ve</a><br />
+                    <i class="fa fa-map-marker"></i>  Calle El Cristo, edifc. Complejo Hippocampus, sector La Caranta.<br />Isla de Margarita. Venezuela            
+                </p>  
 
                 <br>
 
@@ -181,7 +182,16 @@
             </div>
 
             <br>
-            <h2 style="margin:0;"><strong>Pago</strong> en línea</h2>
+            <h2 style="margin:0; cursor: pointer;">
+                <strong>Pago</strong> en línea<br>
+                <i class="fa fa-cc-visa" aria-hidden="true" title="Visa"></i>
+                <i class="fa fa-cc-mastercard" aria-hidden="true" title="Mastercard"></i>
+                <i class="fa fa-cc-amex" aria-hidden="true" title="American Express"></i>
+                <i class="fa fa-cc-diners-club" aria-hidden="true" title="Diners Club"></i>
+                <i class="fa fa-cc-jcb" aria-hidden="true" title="JCB"></i>
+                <i class="fa fa-cc-discover" aria-hidden="true" title="Discover"></i>
+            </h2>
+
         </div>
 
     </main>
@@ -197,15 +207,15 @@
                     <div class="col">
 
                         <div class="field mandatory">
-                            <input type='text' name='card_holder_name' value='' placeholder="Neil Barazarte" required />
+                            <input type='text' name='card_holder_name' value='' placeholder="Nombre Impreso en la Tarjeta" required />
                         </div>
 
                         <div class="field mandatory">
-                            <input type='text' name='street_address' value='' placeholder='123 Test Address' required />
+                            <input type='text' name='street_address' value='' placeholder='Direccion 1' required />
                         </div>
 
                         <div class="field mandatory">
-                            <input type='text' name='street_address2' value='' placeholder='Suite 200' required />
+                            <input type='text' name='street_address2' value='' placeholder='Direccion 2' required />
                         </div>  
 
                     </div>
@@ -213,15 +223,15 @@
                     <div class="col">   
 
                         <div class="field mandatory">
-                            <input type='text' name='city' value='' placeholder='Columbus' required />
+                            <input type='text' name='city' value='' placeholder='Ciudad' required />
                         </div>
 
                         <div class="field mandatory">
-                            <input type='text' name='state' value='' placeholder='OH' required />
+                            <input type='text' name='state' value='' placeholder='Estado/Provincia' required />
                         </div>
 
                         <div class="field mandatory">
-                            <input type='text' name='zip' value='' placeholder='43228' required />
+                            <input type='text' name='zip' value='' placeholder='Código Postal' required />
                         </div>
 
                     </div>
@@ -233,11 +243,11 @@
                         </div>
 
                         <div class="field mandatory">
-                            <input type='text' name='email' value='' placeholder='hvc@gmail.com' required />
+                            <input type='text' name='email' value='' placeholder='Correo Electrónico' required />
                         </div>
 
                         <div class="field mandatory">
-                            <input type='text' name='phone' value='' placeholder='614-921-2450' required />
+                            <input type='text' name='phone' value='' placeholder='N° de Teléfono' required />
                         </div>
                         
                         <input type='hidden' name='li_0_name' readonly value='Habitación: {{ $dato->str_habitacion }} - Fecha Llegada: {{ $dato->dmt_fecha_entrada }} - Fecha Salida: {{ $dato->dmt_fecha_salida }}' required />
@@ -257,11 +267,7 @@
             </div>
             <!-- Contact Form | END -->
 
-            <h2 style="margin:0;"><strong>+58 (295) 331.13.23</strong></h2>
-            <p style="margin:0;">
-                <a href="mailto:reservaciones1@hippocampus.com.ve">reservaciones1@hippocampus.com.ve</a><br />
-                <i class="fa fa-map-marker"></i>  Calle El Cristo, edifc. Complejo Hippocampus, sector La Caranta.<br />Isla de Margarita. Venezuela            
-            </p>        
+      
 
         </div>
 

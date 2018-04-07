@@ -47,7 +47,7 @@
 
                     <div class="col">
                         <div class="field mandatory"><input name="contact-name" type="text" placeholder="Your Name" id="contact-name" value="" required/></div>
-                        <div class="field mandatory"><input name="contact-email" type="email" placeholder="Email" id="contact-email" value="" required/></div>
+                        <div class="field mandatory"><input name="contact-email" type="email" placeholder="Email Address" id="contact-email" value="" required/></div>
                         <div class="field mandatory"><input name="contact-phone" type="text" placeholder="Phone Number" id="contact-phone" value="" required/></div>
                     </div>
                     <div class="col">

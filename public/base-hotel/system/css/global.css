@@ -676,6 +676,7 @@ article .button { margin:7px 30px 10px 0; float:left; }
 #contact img { max-width:100%; height:auto; display:block; box-shadow:0 1px 0 rgba(0,0,0,.1); border-radius:5px 5px 0 0; position:relative; z-index:10; }
 #contact form { padding:20px; }
 #contact .col { width:33.33%; padding:20px; text-align:left; float:left; box-sizing:border-box; }
+#contact .col2 { width:25%; padding:20px; text-align:left; float:left; box-sizing:border-box; }
 #contact .field { width:100%; margin-bottom:7px; background:#FFF; border-radius:3px; box-shadow:1px 1px 0 rgba(0,0,0,.1); }
 #contact .field.mandatory:before { content:"\f069"; font-family:FontAwesome; font-size:10px; color:#999; position:absolute; top:10px; left:10px; opacity:.7; }
 #contact .field.mandatory input { padding-left:28px; }
@@ -1043,6 +1044,7 @@ main blockquote { margin-left:0; }
 #contact h2 { margin:15px 10px 0; }
 #contact p { padding:0 30px; }
 #contact .col { width:100%; padding:0 30px; }
+#contact .col2 { width:100%; padding:0 30px; }
 #contact textarea { margin-top:7px; }
 #contact button { width:calc(100% - 60px); margin-bottom:0; }
 .footertestimonial { padding-right:400px; }

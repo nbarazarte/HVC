@@ -8,7 +8,7 @@
     {!! Html::style('base-hotel/system/css/global.css') !!}
     {!! Html::style('base-hotel/system/css/colour-blue.css') !!}
     {!! Html::style('base-hotel/system/css/pattern-china.css') !!}
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     {!! Html::style('base-hotel/preview/css/styler.css') !!}
     <link rel="icon" href="{{ asset('base-hotel/system/images/favicon.png') }}" type="image/x-icon"/>
     <link rel="shortcut icon" href="{{ asset('base-hotel/system/images/favicon.png') }}" />
