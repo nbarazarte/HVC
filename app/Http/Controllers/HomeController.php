@@ -799,73 +799,99 @@ class HomeController extends Controller
             );
         }
         
-        //dd($request);
-        //echo "Solicitud: <br>Entrada: " .$request['contact-llegada']." --- Salida: ".$request['contact-salida']."--".$request['contact-idHabitacion'];
-
         //$entrada = $request['contact-llegada'];
         //$salida = $request['contact-salida'];
 
-        $entrada = '2018-04-21';
-        $salida = '2018-04-21';
+        $entrada = '2018-04-09';
+        $salida = '2018-04-10';
 
         //$fecha_entrada = strtotime($request['contact-llegada']);
         //$fecha_salida = strtotime($request['contact-salida']);
 
-        $disponible = "false";
+        $entrar = "";
 
-        $filtro1 = DB::select("SELECT dmt_fecha_entrada, dmt_fecha_salida,
+        $filtro1 = DB::select("SELECT dmt_fecha_entrada, dmt_fecha_salida, minfe, maxfs
 
-                                (CASE 
-                                    WHEN ('".$salida."' = dmt_fecha_entrada) then 'true'
-                                    WHEN ('".$entrada."' = dmt_fecha_salida) then 'true'
+    FROM tbl_reservaciones r
+    left JOIN (SELECT * FROM reservaciones) as rs ON rs.maxfs >= dmt_fecha_salida
 
-                                END) as entrar 
+    WHERE 
+    (
+        (   
+            ('".$entrada."' BETWEEN dmt_fecha_entrada and dmt_fecha_salida) 
+            
+            and 
+            
+            ('".$salida."' BETWEEN dmt_fecha_entrada and dmt_fecha_salida)
+        )
+    or 
+        (   (dmt_fecha_entrada BETWEEN '".$entrada."' and '".$salida."') 
+            
+            or
 
-                                FROM tbl_reservaciones
+            (dmt_fecha_salida BETWEEN '".$entrada."' and '".$salida."')
+        )
+    or 
+        (
+            (dmt_fecha_entrada = '".$entrada."') and (dmt_fecha_salida = '".$salida."')
+        )
+    ) 
+    and r.lng_idtipohab = 4 order by dmt_fecha_entrada"
 
-                                WHERE 
-
-                                    ('".$entrada."' BETWEEN dmt_fecha_entrada and dmt_fecha_salida) 
-
-                                or 
-
-                                    ('".$salida."' BETWEEN dmt_fecha_entrada and dmt_fecha_salida)
-                                
-                                and lng_idtipohab = 4 "
-
-                            );
+);
 
         if( count($filtro1) == 0){
 
-            echo "Reserva: 1 ";//mando a reservar directo
+            $entrar = "Disponible";//mando a reservar directo
  
         }else{
-
-            //dd($filtro1);
             
-            for ($i=0; $i < count($filtro1); $i++) { 
+            $entrar = "Ocupada";
+            $condicion = 'false';
+            $diasdiferencia = 0;
 
+            for ($i=0; $i < count($filtro1); $i++) 
+            { 
                 foreach ($filtro1[$i] as $key => $value) {
-               
-                    $datos['entrar'] = $value;
 
-                    if($datos['entrar'] == "true"){
+                    $datos[$key] = $value;
+                } 
 
-                        echo "pero puede reservar ";
-                        //con esta regla observo que puedo entrar cuando alguien sale el mismo día y que otra persona entra cuando yo salgo 
+                if(($entrada <= $datos['minfe']) and ($salida <= $datos['minfe'])){
 
-                    }elseif ($datos['entrar'] == null) {
-             
-                        echo "No Disponible ";//busco la disponibilidad
-                
-                    }
+                    $entrar = "Disponible1";//mando a reservar directo     
+                }
+
+                if(($entrada >= $datos['maxfs']) and ($salida >= $datos['maxfs'])){
+
+                    $entrar = "Disponible2";//mando a reservar directo     
+                }
+
+                if($entrada == $datos['dmt_fecha_salida']){
+
+                    $condicion = 'true';
+                }
+
+                if ($condicion == 'true') {
+
+                    $datetime1 = date_create($entrada);
+                    $datetime2 = date_create($datos['dmt_fecha_entrada']);
+                    $interval = date_diff($datetime1, $datetime2);
+                    $diasdiferencia = $interval->format('%d');
                 }
             }
-        }
 
+            if ($diasdiferencia == 1) {
+
+                $entrar = "Disponible3";
+            }
+
+            echo $entrar."<br>";
             echo $entrada. "--". $salida. "<br>";
             dd($filtro1);
 
+        }
+            
         die();
 
         //$this->create($request->all());
