@@ -118,9 +118,7 @@
                 {!! Form::close() !!}
 
             </div>
-            <!-- Contact Form | END -->
-
-            
+            <!-- Contact Form | END -->          
 
             <h2 style="margin:0;"><strong>+58 (295) 331.13.23</strong></h2>
             <p style="margin:0;">
@@ -170,8 +168,27 @@
                 var namedMonth1 = months[fe.getMonth()];
                 var namedMonth2 = months[fs.getMonth()];
 
-                $("#contact-llegada").val(fe.getFullYear()+"-"+namedMonth1+"-"+ fe.getDate());
-                $("#contact-salida").val(fs.getFullYear()+"-"+namedMonth2+"-"+ fs.getDate());
+                if (fe.getDate() <10) {
+
+                    var fecha_entrada = "0"+ fe.getDate();
+
+                }else{
+
+                    var fecha_entrada = fe.getDate();
+                }
+
+                if (fs.getDate() <10) {
+
+                    var fecha_salida = "0"+ fs.getDate();
+
+                }else{
+
+                    var fecha_salida = fs.getDate();
+
+                }
+
+                $("#contact-llegada").val(fe.getFullYear()+"-"+namedMonth1+"-"+ fecha_entrada);
+                $("#contact-salida").val(fs.getFullYear()+"-"+namedMonth2+"-"+ fecha_salida);
 
             }
 

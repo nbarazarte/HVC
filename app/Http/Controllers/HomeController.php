@@ -799,101 +799,6 @@ class HomeController extends Controller
             );
         }
         
-        //$entrada = $request['contact-llegada'];
-        //$salida = $request['contact-salida'];
-
-        $entrada = '2018-04-09';
-        $salida = '2018-04-10';
-
-        //$fecha_entrada = strtotime($request['contact-llegada']);
-        //$fecha_salida = strtotime($request['contact-salida']);
-
-        $entrar = "";
-
-        $filtro1 = DB::select("SELECT dmt_fecha_entrada, dmt_fecha_salida, minfe, maxfs
-
-    FROM tbl_reservaciones r
-    left JOIN (SELECT * FROM reservaciones) as rs ON rs.maxfs >= dmt_fecha_salida
-
-    WHERE 
-    (
-        (   
-            ('".$entrada."' BETWEEN dmt_fecha_entrada and dmt_fecha_salida) 
-            
-            and 
-            
-            ('".$salida."' BETWEEN dmt_fecha_entrada and dmt_fecha_salida)
-        )
-    or 
-        (   (dmt_fecha_entrada BETWEEN '".$entrada."' and '".$salida."') 
-            
-            or
-
-            (dmt_fecha_salida BETWEEN '".$entrada."' and '".$salida."')
-        )
-    or 
-        (
-            (dmt_fecha_entrada = '".$entrada."') and (dmt_fecha_salida = '".$salida."')
-        )
-    ) 
-    and r.lng_idtipohab = 4 order by dmt_fecha_entrada"
-
-);
-
-        if( count($filtro1) == 0){
-
-            $entrar = "Disponible";//mando a reservar directo
- 
-        }else{
-            
-            $entrar = "Ocupada";
-            $condicion = 'false';
-            $diasdiferencia = 0;
-
-            for ($i=0; $i < count($filtro1); $i++) 
-            { 
-                foreach ($filtro1[$i] as $key => $value) {
-
-                    $datos[$key] = $value;
-                } 
-
-                if(($entrada <= $datos['minfe']) and ($salida <= $datos['minfe'])){
-
-                    $entrar = "Disponible1";//mando a reservar directo     
-                }
-
-                if(($entrada >= $datos['maxfs']) and ($salida >= $datos['maxfs'])){
-
-                    $entrar = "Disponible2";//mando a reservar directo     
-                }
-
-                if($entrada == $datos['dmt_fecha_salida']){
-
-                    $condicion = 'true';
-                }
-
-                if ($condicion == 'true') {
-
-                    $datetime1 = date_create($entrada);
-                    $datetime2 = date_create($datos['dmt_fecha_entrada']);
-                    $interval = date_diff($datetime1, $datetime2);
-                    $diasdiferencia = $interval->format('%d');
-                }
-            }
-
-            if ($diasdiferencia == 1) {
-
-                $entrar = "Disponible3";
-            }
-
-            echo $entrar."<br>";
-            echo $entrada. "--". $salida. "<br>";
-            dd($filtro1);
-
-        }
-            
-        die();
-
         //$this->create($request->all());
 
         $idreservacion = $this->create($request->all())->id;
@@ -918,9 +823,8 @@ class HomeController extends Controller
             $this->enviarReservacionIngles($request, $idreservacion); 
 
             return Redirect::to('/Make-Payment/'.$str_ruta["str_codigo"]); 
-        }
-        
-        
+        }        
+
         //return redirect()->back();//realizar pago
     }
 

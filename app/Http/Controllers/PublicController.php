@@ -548,6 +548,108 @@ class PublicController extends Controller
     public function solicitarReservacion()
     {
     
+        $entrada = $_POST['contact-llegada'];
+        $salida = $_POST['contact-salida'];
+
+        //$entrada = '2018-04-12';
+        //$salida = '2018-04-14';
+
+        //$fecha_entrada = strtotime($request['contact-llegada']);
+        //$fecha_salida = strtotime($request['contact-salida']);
+
+        $entrar = "Ocupada";
+        $condicion = 'false';
+        $diasdiferencia = 0;
+
+        $filtro1 = DB::select("SELECT dmt_fecha_entrada, dmt_fecha_salida, minfe, maxfs
+                                FROM tbl_reservaciones r
+                                left JOIN (SELECT * FROM reservaciones) as rs ON rs.maxfs >= dmt_fecha_salida
+                                WHERE 
+                                (
+                                    (   
+                                        ('".$entrada."' BETWEEN dmt_fecha_entrada and dmt_fecha_salida) 
+                                        
+                                        and 
+                                        
+                                        ('".$salida."' BETWEEN dmt_fecha_entrada and dmt_fecha_salida)
+                                    )
+                                or 
+                                    (   (dmt_fecha_entrada BETWEEN '".$entrada."' and '".$salida."') 
+                                        
+                                        or
+
+                                        (dmt_fecha_salida BETWEEN '".$entrada."' and '".$salida."')
+                                    )
+                                or 
+                                    (
+                                        (dmt_fecha_entrada = '".$entrada."') and (dmt_fecha_salida = '".$salida."')
+                                    )
+                                ) 
+                                and r.lng_idtipohab = 4 order by dmt_fecha_entrada"
+
+                            );
+
+        if( count($filtro1) == 0){
+
+            $entrar = "Disponible";//mando a reservar directo
+ 
+        }else{
+            
+            for ($i=0; $i < count($filtro1); $i++) 
+            { 
+
+                foreach ($filtro1[$i] as $key => $value) {
+
+                    $datos[$key] = $value;
+                } 
+
+                if(($entrada <= $datos['minfe']) and ($salida <= $datos['minfe'])){
+
+                    $entrar = "Disponible";//1 mando a reservar directo     
+                }
+
+                if(($entrada >= $datos['maxfs']) and ($salida >= $datos['maxfs'])){
+
+                    $entrar = "Disponible";//2 mando a reservar directo     
+                }
+
+                if(($entrada == $datos['dmt_fecha_entrada']) and ($salida == $datos['dmt_fecha_salida'])){
+
+                   $condicion = 'false';
+
+                }
+
+                if(($entrada > $datos['dmt_fecha_entrada']) and ($entrada == $datos['dmt_fecha_salida']) ) {
+
+                    $condicion = 'true';
+                }
+
+                if ($condicion == 'true') {
+
+                    if(($entrada < $datos['dmt_fecha_entrada']) and ($salida == $datos['dmt_fecha_entrada']) ) {
+
+                        $entrar = 'Disponible';//3 mando a reservar directo
+                    }
+                }
+            }
+        }
+                           
+        /*
+            echo $entrar."<br>";
+            echo $entrada. "--". $salida. "<br>";
+            dd($filtro1); 
+            die();
+
+            */
+        
+
+        if($entrar != 'Disponible'){
+
+            Session::flash('message','No hay Disponibilidad de habitaciones');
+            return redirect()->back();//realizar pago
+        }
+        //die();
+
         //pido el precio de la habitación:
         $habitacion = DB::table('cat_habitaciones')->select('id','str_precio')->where('str_habitacion', $_POST['contact-habitacion'] )->get();
 
