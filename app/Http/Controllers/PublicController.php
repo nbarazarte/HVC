@@ -634,10 +634,26 @@ class PublicController extends Controller
                    $condicion = 'false';
                 }
 
-                if(($entrada > $datos['dmt_fecha_entrada']) and ($entrada == $datos['dmt_fecha_salida']) ) {
+                if (count($filtro1) == 2) {
+                    
+                    if(($entrada > $datos['dmt_fecha_entrada']) and ($entrada == $datos['dmt_fecha_salida']) ) {
 
-                    $condicion = 'true';
+                        $condicion = 'true';
+                    }
+
                 }
+
+                if (count($filtro1) > 2) {
+                    
+                    if(($entrada > $datos['dmt_fecha_entrada']) and ($entrada == $datos['dmt_fecha_salida']) ) {
+
+                        $condicion = 'true';
+                        
+                    }else{
+
+                        $condicion = 'false';
+                    }
+                }                
 
                 if ($condicion == 'true') {
 
@@ -657,7 +673,7 @@ class PublicController extends Controller
             }
         }
                            
-        //echo $entrar."<br>"; echo $entrada. "--". $salida. "<br>"; dd($filtro1); die();
+        echo $entrar."<br>"; echo $entrada. "--". $salida. "<br>"; dd($filtro1); die();
 
         $fecha_entrada = date("d/m/Y", strtotime($entrada));
         $fecha_salida = date("d/m/Y", strtotime($salida));
