@@ -39,9 +39,10 @@
         <div class="centre">
             <!-- Contact Form | START -->
             <div id="contact">
+                @include('mensajes')
                 <img src="{{ asset('base-hotel/preview/images/contacto.jpg') }}" width="1200" height="400" alt="" />
 
-                    @include('mensajes')          
+                    <!--include('mensajes')-->      
 
                     {!! Form::open(['route' => 'contactIngles', 'method'=>'POST', 'id' => 'demo-form', 'name' => 'demo-form', 'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false', 'onsubmit' => 'diferencia()']) !!} 
 

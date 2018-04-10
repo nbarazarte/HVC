@@ -85,7 +85,7 @@ Route::get('/Contact-us', [
 	'as' =>'contactIngles'
 ]);
 
-Route::post('/Contact-us', 'PublicControllerIngles@solicitarReservacion');
+Route::post('/Contact-us', 'PublicController@solicitarReservacion');
 
 Route::get('/Special-Services', [
 	'uses' => 'PublicControllerIngles@especial',

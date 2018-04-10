@@ -546,7 +546,7 @@ class PublicControllerIngles extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function solicitarReservacion()
+    public function solicitarReservacion()//No se esta usando
     {
     
         //pido el precio de la habitación:

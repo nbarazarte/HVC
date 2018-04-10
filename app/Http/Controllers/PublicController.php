@@ -548,12 +548,28 @@ class PublicController extends Controller
     public function solicitarReservacion()
     {
         //pido el precio de la habitación y el id:
-        $habitacion = DB::table('cat_habitaciones')->select('id','str_precio')->where('str_habitacion', $_POST['contact-habitacion'] )->get();
+        if(Session::get('idioma') == "es"){
 
-        foreach ($habitacion[0] as $key => $value) {
-           
-            $hab[$key] = $value;  
-        }
+            $habitacion = DB::table('cat_habitaciones')->select('id','str_precio')->where('str_habitacion', $_POST['contact-habitacion'] )->get();
+
+            foreach ($habitacion[0] as $key => $value) {
+               
+                $hab[$key] = $value;  
+            }    
+
+            $precio_habitacion = $hab['str_precio'];
+
+        }else{
+
+            $habitacion = DB::table('cat_habitaciones')->select('id','str_dolares')->where('str_rooms', $_POST['contact-habitacion'] )->get();
+
+            foreach ($habitacion[0] as $key => $value) {
+               
+                $hab[$key] = $value;  
+            }
+
+            $precio_habitacion = $hab['str_dolares'];
+        } 
 
         $id_habitacion = $hab['id'];
         $entrada = $_POST['contact-llegada'];
@@ -643,14 +659,33 @@ class PublicController extends Controller
                            
         //echo $entrar."<br>"; echo $entrada. "--". $salida. "<br>"; dd($filtro1); die();
 
+        $fecha_entrada = date("d/m/Y", strtotime($entrada));
+        $fecha_salida = date("d/m/Y", strtotime($salida));
+
         if($entrar != 'Disponible'){
 
-            Session::flash('message','No hay disponibilidad de habitaciones, entre las fechas seleccionadas: '.$entrada."-".$salida);
+            if(Session::get('idioma') == "es"){
+
+                Session::flash('message','No hay disponibilidad de habitaciones entre el: '.$fecha_entrada." y ".$fecha_salida);
+
+            }else{
+
+                Session::flash('message','There are no rooms available between: '.$fecha_entrada." and ".$fecha_salida);
+            } 
+
             //return redirect()->back();//realizar pago
-            return Redirect::to('/Contáctanos'); 
+            
+            if(Session::get('idioma') == "es"){
+
+                return Redirect::to('/Contáctanos'); 
+
+            }else{
+
+                return Redirect::to('/en/Contact-us'); 
+            }
         }
 
-        $precio_habitacion = $hab['str_precio'];
+        
         $total_pagar = $_POST['cant-dias'] * $precio_habitacion;
 
         //lo asigno a lo que viene por post del formulario:
@@ -662,8 +697,16 @@ class PublicController extends Controller
         Session::push('datosReserva', array(compact('datos')));//asigna
 
         //dd(Session::get('datosReserva'));
-        return Redirect::to('/Solicitar-Reservación'); 
 
+        if(Session::get('idioma') == "es"){
+
+            return Redirect::to('/Solicitar-Reservación'); 
+
+        }else{
+
+            return Redirect::to('/en/Booking-Online'); 
+        }         
+        
     } 
 
 }

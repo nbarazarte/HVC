@@ -822,7 +822,7 @@ class HomeController extends Controller
 
             $this->enviarReservacionIngles($request, $idreservacion); 
 
-            return Redirect::to('/Make-Payment/'.$str_ruta["str_codigo"]); 
+            return Redirect::to('/en/Make-Payment/'.$str_ruta["str_codigo"]); 
         }        
 
         //return redirect()->back();//realizar pago
