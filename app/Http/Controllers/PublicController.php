@@ -547,23 +547,23 @@ class PublicController extends Controller
      */
     public function solicitarReservacion()
     {
-    
+        //pido el precio de la habitación y el id:
+        $habitacion = DB::table('cat_habitaciones')->select('id','str_precio')->where('str_habitacion', $_POST['contact-habitacion'] )->get();
+
+        foreach ($habitacion[0] as $key => $value) {
+           
+            $hab[$key] = $value;  
+        }
+
+        $id_habitacion = $hab['id'];
         $entrada = $_POST['contact-llegada'];
         $salida = $_POST['contact-salida'];
-
-        //$entrada = '2018-04-12';
-        //$salida = '2018-04-14';
-
-        //$fecha_entrada = strtotime($request['contact-llegada']);
-        //$fecha_salida = strtotime($request['contact-salida']);
-
         $entrar = "Ocupada";
         $condicion = 'false';
-        $diasdiferencia = 0;
 
         $filtro1 = DB::select("SELECT dmt_fecha_entrada, dmt_fecha_salida, minfe, maxfs
                                 FROM tbl_reservaciones r
-                                left JOIN (SELECT * FROM reservaciones) as rs ON rs.maxfs >= dmt_fecha_salida
+                                left JOIN (SELECT * FROM reservaciones) as rs ON rs.maxfs >= dmt_fecha_salida and rs.lng_idtipohab = ".$id_habitacion."
                                 WHERE 
                                 (
                                     (   
@@ -585,7 +585,7 @@ class PublicController extends Controller
                                         (dmt_fecha_entrada = '".$entrada."') and (dmt_fecha_salida = '".$salida."')
                                     )
                                 ) 
-                                and r.lng_idtipohab = 4 order by dmt_fecha_entrada"
+                                and r.lng_idtipohab = ".$id_habitacion." order by dmt_fecha_entrada"
 
                             );
 
@@ -616,7 +616,6 @@ class PublicController extends Controller
                 if(($entrada == $datos['dmt_fecha_entrada']) and ($salida == $datos['dmt_fecha_salida'])){
 
                    $condicion = 'false';
-
                 }
 
                 if(($entrada > $datos['dmt_fecha_entrada']) and ($entrada == $datos['dmt_fecha_salida']) ) {
@@ -631,55 +630,38 @@ class PublicController extends Controller
                         $entrar = 'Disponible';//3 mando a reservar directo
                     }
                 }
+
+                if (count($filtro1) == 1) {
+                                        
+                    if (($entrada == $datos['dmt_fecha_salida']) or ($salida == $datos['dmt_fecha_entrada'])) {
+                        
+                        $entrar = 'Disponible';
+                    }
+                }
             }
         }
                            
-        /*
-            echo $entrar."<br>";
-            echo $entrada. "--". $salida. "<br>";
-            dd($filtro1); 
-            die();
-
-            */
-        
+        //echo $entrar."<br>"; echo $entrada. "--". $salida. "<br>"; dd($filtro1); die();
 
         if($entrar != 'Disponible'){
 
-            Session::flash('message','No hay Disponibilidad de habitaciones');
-            return redirect()->back();//realizar pago
-        }
-        //die();
-
-        //pido el precio de la habitación:
-        $habitacion = DB::table('cat_habitaciones')->select('id','str_precio')->where('str_habitacion', $_POST['contact-habitacion'] )->get();
-
-        //dd($str_precio);
-
-        foreach ($habitacion[0] as $key => $value) {
-           
-            $hab[$key] = $value;  
+            Session::flash('message','No hay disponibilidad de habitaciones, entre las fechas seleccionadas: '.$entrada."-".$salida);
+            //return redirect()->back();//realizar pago
+            return Redirect::to('/Contáctanos'); 
         }
 
-        //asigno el valor del id y el precio a una variable:
-        $id_habitacion = $hab['id'];
         $precio_habitacion = $hab['str_precio'];
         $total_pagar = $_POST['cant-dias'] * $precio_habitacion;
 
         //lo asigno a lo que viene por post del formulario:
-        //dd($_POST);die();
-        array_push($_POST, $_POST['contact-idHabitacion']=$id_habitacion,$_POST['contact-precioHabitacion']=$precio_habitacion, $_POST['contact-totalPagar']=$total_pagar);
-        
-        //dd($_POST);die();
+        array_push($_POST, $_POST['contact-idHabitacion']=$id_habitacion,$_POST['contact-precioHabitacion']=$precio_habitacion, $_POST['contact-totalPagar']=$total_pagar);        
 
         $datos = $_POST;
-
-        //dd($datos);die();
 
         Session::pull('datosReserva', array(compact('datos')));//borra
         Session::push('datosReserva', array(compact('datos')));//asigna
 
         //dd(Session::get('datosReserva'));
-        //die();
         return Redirect::to('/Solicitar-Reservación'); 
 
     } 
