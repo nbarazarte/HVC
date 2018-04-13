@@ -11,7 +11,7 @@
             </div>
         </div>
 
-    @include('reservacion')
+    @include('en.reservacion')
     
     </header>
     <!-- Header | END -->

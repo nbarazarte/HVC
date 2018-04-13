@@ -673,7 +673,7 @@ class PublicController extends Controller
             }
         }
                            
-        echo $entrar."<br>"; echo $entrada. "--". $salida. "<br>"; dd($filtro1); die();
+        //echo $entrar."<br>"; echo $entrada. "--". $salida. "<br>"; dd($filtro1); die();
 
         $fecha_entrada = date("d/m/Y", strtotime($entrada));
         $fecha_salida = date("d/m/Y", strtotime($salida));

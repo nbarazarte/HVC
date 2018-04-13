@@ -11,6 +11,7 @@ use PHPMailer\PHPMailer\Exception;
 use Validator;
 use App\Reservaciones;
 use App\Http\Controllers\Auth;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -938,7 +939,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function pagado()//Verifico si el pago se realizó con éxito
+    /*public function pagado()//Verifico si el pago se realizó con éxito
     {
         //dd($_REQUEST);die();
         $datos = DB::table('tbl_reservaciones as res')
@@ -948,8 +949,6 @@ class HomeController extends Controller
             $query->where('lng_idpersona', '=', \Auth::user()->id);
         })
         ->get();
-
-        //dd($datos[0]);die();
 
         foreach ($datos[0] as $key => $value) {
             
@@ -973,11 +972,7 @@ class HomeController extends Controller
         
             $result = 'Success - Hash Matched';
 
-            //echo $_REQUEST['order_number']; "<br>";
-
             $estatusPagado = DB::update('update tbl_reservaciones set str_estatus_pago = "'.$_REQUEST['order_number'].'" where lng_idpersona = '.\Auth::user()->id.' and str_codigo = "'.$_REQUEST['send'].'" ');            
-            //dd($_REQUEST);
-            //die();
 
             $this->crypt_key(env('KEY'));
             $order_numberEnc = $this->encrypt($_REQUEST['order_number']);
@@ -986,16 +981,16 @@ class HomeController extends Controller
 
         }
 
-    } 
+    }
+    */
 
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
      */
-    public function pago($codigo)
+   /* public function pago($codigo)
     {
-        //echo strlen($codigo). "<br>";
 
         if(strlen($codigo) <= 67 ){
 
@@ -1004,17 +999,10 @@ class HomeController extends Controller
             $order_2CO = $this->decrypt($codigo);
             $order_number = substr($order_2CO,0,13);            
 
-            //echo $order_number. "<br>";
-            //die();
-
             $num_ordenes = DB::table('tbl_reservaciones as res')  
             ->select('str_estatus_pago')
             ->where('lng_idpersona', \Auth::user()->id)
             ->get();
-
-            //dd($num_ordenes);die();
-            //echo count($num_ordenes);               
-            //die();
 
             $iguales = "false";
 
@@ -1037,8 +1025,6 @@ class HomeController extends Controller
                     $query->where('lng_idpersona', '=', \Auth::user()->id);
                 })        
                 ->get();
-
-                //dd($datos[0]);die();
 
                 if(Session::get('idioma') == "es"){
 
@@ -1071,9 +1057,77 @@ class HomeController extends Controller
 
                 return Redirect::to('/en'); 
             } 
-
         }
+    }  
+*/
+    /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function realizarPagoStripe(Request $request){
 
-    }       
+        //dd($request->all());
+
+        // Set your secret key: remember to change this to your live secret key in production
+        // See your keys here: https://dashboard.stripe.com/account/apikeys
+        \Stripe\Stripe::setApiKey("sk_test_6w4T1A4Nf1HFuDxMtjaFo72Y");
+
+        // Token is created using Checkout or Elements!
+        // Get the payment token ID submitted by the form:
+        $token = $_POST['stripeToken'];
+        $price = $_POST['price'];
+        $room = $_POST['room'];
+
+        $charge = \Stripe\Charge::create([
+            'amount' => $price,
+            'currency' => 'usd',
+            'description' => $room,
+            'source' => $token,
+            'receipt_email' => \Auth::user()->email,
+        ]);
+
+        //dd($charge);
+
+        $estatusPagado = DB::update('update tbl_reservaciones set str_estatus_pago = "'.$charge['id'].'" where lng_idpersona = '.\Auth::user()->id.' and str_codigo = "'.$_POST['codigo'].'" ');            
+
+        
+        if(Session::get('idioma') == "es"){
+
+            return Redirect::to('/Reservación-Pagada-Exitosamente/'.$_POST['codigo']);
+
+        }else{
+
+            return Redirect::to('/Reservation-Paid-Successfully/'.$_POST['codigo']);
+        }           
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function pagoStripe($codigo)
+    {
+
+        $datos = DB::table('tbl_reservaciones as res')  
+        ->where('str_estatus_pago', $codigo)
+        ->Where(function ($query) {
+            $query->where('lng_idpersona', '=', \Auth::user()->id);
+        })        
+        ->get();
+
+        //dd($datos[0]);die();
+
+        if(Session::get('idioma') == "es"){
+
+            return view('pagado');
+
+        }else{
+
+            return view('en.pagado');
+        }
+    }      
 
 }

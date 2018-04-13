@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 10-04-2018 a las 02:08:37
+-- Tiempo de generación: 12-04-2018 a las 14:17:33
 -- Versión del servidor: 10.1.26-MariaDB-0+deb9u1
 -- Versión de PHP: 7.0.27-0+deb9u1
 
@@ -176,8 +176,8 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_resets_table', 1);
+(6, '2014_10_12_000000_create_users_table', 1),
+(7, '2014_10_12_100000_create_password_resets_table', 1);
 
 -- --------------------------------------------------------
 
@@ -191,14 +191,6 @@ CREATE TABLE `password_resets` (
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Volcado de datos para la tabla `password_resets`
---
-
-INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
-('atrellus@gmail.com', '6c9d104ad4dcf7c3efa1c2543dbc821fe8688fbc39f0b9d12e101e08b16b0b8a', '2018-04-01 05:02:45'),
-('ezebarazarte@gmail.com', '6c206c809174fdd64e4cfe2d84531ef745021d52f27807a517cfc7aae0d7b7ac', '2018-04-04 04:19:51');
-
 -- --------------------------------------------------------
 
 --
@@ -210,6 +202,25 @@ CREATE TABLE `reservaciones` (
 ,`maxfs` date
 ,`lng_idtipohab` int(11)
 );
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `subscriptions`
+--
+
+CREATE TABLE `subscriptions` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `stripe_id` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `stripe_plan` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `trial_ends_at` timestamp NULL DEFAULT NULL,
+  `ends_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -268,28 +279,8 @@ CREATE TABLE `tbl_reservaciones` (
 
 INSERT INTO `tbl_reservaciones` (`id`, `str_estatus_pago`, `str_codigo`, `lng_idtipohab`, `lng_idpersona`, `str_email`, `str_nombre`, `str_telefono`, `dbl_precio`, `dbl_total_pagar`, `int_ninos`, `int_adultos`, `int_dias`, `str_mensaje`, `dmt_fecha_entrada`, `dmt_fecha_salida`, `bol_eliminado`, `created_at`, `updated_at`) VALUES
 (35, NULL, '132rq1ia8g2t10drhszt23p55c1b61l528vtul5rk3fzmcc0n5q2y262u0d585z7xakx5bktf15go02hm63v270lqawnt1ehw0ked', 4, 1, 'ezebarazarte@gmail.com', 'Neil Barazarte', '4142101096', '3600', '14400', 0, 1, 4, '', '2018-04-17', '2018-04-20', 0, '2018-04-07 00:53:34', '2018-04-04 19:33:43'),
-(38, NULL, '1l2h2ik1vk9j1j7211kr0469wm8j8q911y9nb92w6jryn1xvnva1288f21kx1z69o561u8c9y0eu2kr9t2l55ltr4e5k4c6nn14dp', 4, 2, 'ezebarazarte@gmail.com', 'Neil Barazarte', '4142101096', '3200', '32000', 0, 1, 10, '', '2018-04-15', '2018-04-16', 0, '2018-04-06 14:05:31', '2018-04-04 20:05:16'),
-(39, NULL, '1tnj60yo796dpd84y2hl3mly7hzsux300tuj03u6cu8oo52zixat497258gh335di1bbg3i245797aok5cfh236xuo313y290ioe7', 4, 1, 'ezebarazarte@gmail.com', 'Neil Barazarte', '4142101096', '30', '210', 0, 1, 7, '', '2018-04-10', '2018-04-15', 0, '2018-04-06 13:21:35', '2018-04-04 20:12:10'),
-(45, NULL, '11j5i1gg0gtur3dcx973x6dqr0zhdrn5v40v564jep319g2ev1s4rdney12i514ia9zt3j2s4t41hc17klx13cohj93d31s01j831', 4, 1, 'ezebarazarte@gmail.com', 'Neil Barazarte', '4142101096', '5300', '5300', 0, 1, 1, '', '2018-04-16', '2018-04-17', 0, '2018-04-10 01:31:01', '2018-04-10 01:31:01'),
-(46, NULL, '1hy0c5391d7ofsg1if8rt06m13wi2abhdihm8v9f1z50u5wtjcmv0zwvlueq6kv61hli973w5l00684rdykw912c5v48y3id3737a', 1, 1, 'ezebarazarte@gmail.com', 'Neil Barazarte', '4142101096', '3200', '22400', 0, 1, 7, '', '2018-04-12', '2018-04-19', 0, '2018-04-10 01:54:31', '2018-04-10 01:54:31'),
-(47, NULL, '1zr5298b8jgh0ebgi61g1kue6h65y3cr2f9n293jg33p34xu8xfmn1j4913y13ynl1kndd3bdjw3936wz2yz79d6o5qph4zc7qa63', 2, 1, 'ezebarazarte@gmail.com', 'Neil Barazarte', '4142101096', '3600', '25200', 0, 1, 7, '', '2018-04-12', '2018-04-19', 0, '2018-04-10 01:55:36', '2018-04-10 01:55:36'),
-(48, NULL, '1ibw2cxdmkj001z1nr55659ht2z35oyb1q183g1nq3ek5o5xmxqa0i5cp56evtgw7nxufk3ajd3hra2eds5v3pe1p88331ainh2bl', 3, 1, 'ezebarazarte@gmail.com', 'Neil Barazarte', '4142101096', '4000', '28000', 0, 1, 7, '', '2018-04-12', '2018-04-19', 0, '2018-04-10 01:57:08', '2018-04-10 01:57:08'),
-(49, NULL, '113osrj7u1lua332plu3gz2lf35u5ucm7wy8u215jih5w53km585frhr4p65l6i5mcdc0n9bp1y6u91bdb1qjd7imn887n1y5n7nt', 1, 1, 'ezebarazarte@gmail.com', 'Neil Barazarte', '4142101096', '3200', '3200', 0, 1, 1, '', '2018-04-19', '2018-04-20', 0, '2018-04-10 06:04:28', '2018-04-10 06:04:28'),
-(50, NULL, '11l12byc0596o3qshl6mq1iuc4g6v06ff679163nvb3vl1o228y31ck61az3o1huec63d6ug8301s057cbrl3686r6ae62pmp8thm', 1, 1, 'ezebarazarte@gmail.com', 'Neil Barazarte', '4142101096', '3200', '9600', 0, 1, 3, '', '2018-04-24', '2018-04-27', 0, '2018-04-10 06:07:16', '2018-04-10 06:07:16'),
-(51, NULL, '1ry290ie62h5i3wh6380512ece4it563wfznfjzl7da20o1006u6ju74f7ddkpoj7p4j0f6u7iw9oeuxdt7hg506672k1j2n0im5e', 1, 1, 'ezebarazarte@gmail.com', 'Neil Barazarte', '4142101096', '3200', '9600', 0, 1, 3, '', '2018-04-21', '2018-04-24', 0, '2018-04-10 06:34:06', '2018-04-10 06:34:06'),
-(52, NULL, '1328y232g7rlsa7fqo3e2df3fgnxvu75320c8ap531p2b78o6we5xf78r74a72k9u2uuf0w5ugur83xc133v7hz43p337cti375mq', 1, 1, 'ezebarazarte@gmail.com', 'Neil Barazarte', '4142101096', '3200', '121600', 0, 1, 7, '', '2018-05-01', '2018-05-08', 0, '2018-04-10 04:56:19', '2018-04-10 06:37:38'),
-(53, NULL, '18ppvg73cyl6ma82s43cmw39y4d7323wahxk92v1v572lggi6hinajb2303kcrns15o2sutp7mfvdjy2c9sfn1z759hssp5s27m04', 1, 1, 'ezebarazarte@gmail.com', 'Neil Barazarte', '4142101096', '3200', '6400', 0, 1, 2, '', '2018-04-29', '2018-05-01', 0, '2018-04-10 06:39:52', '2018-04-10 06:39:52'),
-(54, NULL, '1s33b382kzvx1nkh00l7600ll36918m5s56qgq6w1gtor2fp7m0ys7umj6pjyki2753730aoou3b30x72v63x791gkqibo63p3990', 1, 1, 'ezebarazarte@gmail.com', 'Neil Barazarte', '4142101096', '3200', '3200', 0, 1, 1, '', '2018-04-20', '2018-04-21', 0, '2018-04-10 07:31:16', '2018-04-10 07:31:16'),
-(55, NULL, '1xb2xvkyt5351zck6buh6474gpw036b3n8k2rwadge3n3w375od01s3d5lbeto175v811102em27n5z084ts3zx33bjstd18359yp', 1, 1, 'ezebarazarte@gmail.com', 'Neil Barazarte', '4142101096', '3200', '3200', 0, 1, 1, '', '2018-04-27', '2018-04-28', 0, '2018-04-10 08:06:48', '2018-04-10 08:06:48'),
-(56, NULL, '1433o3isz3219rsha1rp51jhfu383pvq360j333r1zo0eyal82s317ovv00327i1k3bh8m5xiveeanxfo2i3k3xp366ilbe6i6a1k', 1, 1, 'ezebarazarte@gmail.com', 'Neil Barazarte', '4142101096', '3200', '9600', 0, 1, 3, '', '2018-05-12', '2018-05-15', 0, '2018-04-10 08:10:38', '2018-04-10 08:10:38'),
-(57, NULL, '1xp6x3j1rad7484yqrliyggm3ox930p091itfq3jau29y85yv1xb8h3g5ki55pxj21495i9ovuy3t5c91hw4gdw3w7i52a859mdud', 1, 1, 'ezebarazarte@gmail.com', 'Neil Barazarte', '4142101096', '3200', '6400', 0, 1, 2, '', '2018-05-09', '2018-05-11', 0, '2018-04-10 08:13:09', '2018-04-10 08:13:09'),
-(58, NULL, '1xpa263s6a8urc936q17kwvp1768z3323m63x4k1svfz3whn3dro3h2u4lu5sglf9k583edwwx3d33rtdt43683ho3jvih7915okf', 1, 1, 'ezebarazarte@gmail.com', 'Neil Barazarte', '4142101096', '3200', '3200', 0, 1, 1, '', '2018-05-08', '2018-05-09', 0, '2018-04-10 08:14:58', '2018-04-10 08:14:58'),
-(59, NULL, '13nmx3r5t3tivfi10436bbl53pd81k33k1e3v3i12gm4bcrd345gr2q35gvjighy7f9jg2v302x53ws1203js3qtum09d51x4vf2s', 1, 1, 'ezebarazarte@gmail.com', 'Neil Barazarte', '4142101096', '3200', '3200', 0, 1, 1, '', '2018-05-11', '2018-05-12', 0, '2018-04-10 08:16:12', '2018-04-10 08:16:12'),
-(60, NULL, '1qvs019f7ng52fmhtzktq6mhu7w21mf6pxx3w0jl499beddqv52833wye6jk46k28ex8930i3b5zb5w3ekhq72x2qgr35m7c4o397', 1, 1, 'ezebarazarte@gmail.com', 'Neil Barazarte', '4142101096', '3200', '3200', 0, 1, 1, '', '2018-04-10', '2018-04-11', 0, '2018-04-10 08:19:27', '2018-04-10 08:19:27'),
-(61, NULL, '16a28nv393xy03hzs6ky5ds4u3c8377zflxn54lj42n20dtnd3c23uy93xd1lgmyq7maw9rnm5xhj3h31b1io1i0i5jbh6f32n226', 1, 1, 'ezebarazarte@gmail.com', 'Neil Barazarte', '4142101096', '3200', '12800', 0, 1, 4, '', '2018-05-15', '2018-05-19', 0, '2018-04-10 08:28:59', '2018-04-10 08:28:59'),
-(62, NULL, '1yv375mnne53bxg65vo2rk9ou5mf654xmbuz32l36jba28o19bcjc5ewz1hb2ws1fmwmkea2421y3p8lwtybc8l3j753xit8wu658', 1, 1, 'ezebarazarte@gmail.com', 'Neil Barazarte', '4142101096', '3200', '3200', 0, 1, 1, '', '2018-04-11', '2018-04-11', 0, '2018-04-10 08:57:38', '2018-04-10 08:57:38'),
-(63, NULL, '18jy95h1giu1m3f13e2vy1g35bp264t13q5nw4ju34w8ew140tuam6xl24pism7046l3634i4buwf3p75l5riev74f6632zv6vnce', 1, 1, 'ezebarazarte@gmail.com', 'Neil Barazarte', '4142101096', '3200', '3200', 0, 1, 1, '', '2018-04-11', '2018-04-12', 0, '2018-04-10 09:00:14', '2018-04-10 09:00:14'),
-(64, NULL, '1pi4lbbnc63b062g3g8o3f3fta5am4vj3157dluoit5y856y3wh28xkzi3b524u8fqu6zntw4pxhm7cxbsa7ezfo2mbxg6rwotekc', 4, 1, 'ezebarazarte@gmail.com', 'Neil Barazarte', '4142101096', '30', '30', 0, 1, 1, '', '2018-04-21', '2018-04-22', 0, '2018-04-10 09:07:14', '2018-04-10 09:07:14');
+(38, NULL, '1l2h2ik1vk9j1j7211kr0469wm8j8q911y9nb92w6jryn1xvnva1288f21kx1z69o561u8c9y0eu2kr9t2l55ltr4e5k4c6nn14dp', 4, 2, 'ezebarazarte@gmail.com', 'Neil Barazarte', '4142101096', '3200', '32000', 0, 1, 1, '', '2018-04-15', '2018-04-16', 0, '2018-04-12 04:15:36', '2018-04-04 20:05:16'),
+(39, NULL, '1tnj60yo796dpd84y2hl3mly7hzsux300tuj03u6cu8oo52zixat497258gh335di1bbg3i245797aok5cfh236xuo313y290ioe7', 4, 1, 'ezebarazarte@gmail.com', 'Neil Barazarte', '4142101096', '30', '210', 0, 1, 7, '', '2018-04-10', '2018-04-15', 0, '2018-04-06 13:21:35', '2018-04-04 20:12:10');
 
 -- --------------------------------------------------------
 
@@ -300,23 +291,25 @@ INSERT INTO `tbl_reservaciones` (`id`, `str_estatus_pago`, `str_codigo`, `lng_id
 CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `str_ci_pasaporte` varchar(15) COLLATE utf8_unicode_ci NOT NULL COMMENT 'cedula o pasaporte',
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `str_ci_pasaporte` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `stripe_id` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `card_brand` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `card_last_four` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `trial_ends_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `str_ci_pasaporte`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Neil Barazarte', '16379712', 'ezebarazarte@gmail.com', '$2y$10$38SX6cT7M/cJslPE/TgIIeEJ/OTY9oB0jqahmYxCzZ31DzW.ePD1.', '5wTt7R9tBFWm97k18UR2Pb06WrouKFnRFDCQzNG5W40g6kLiBqD0q15PKs1N', '2018-04-01 02:58:08', '2018-04-10 09:08:00'),
-(2, 'Jaennie Pineda', '13822350', 'jdelvpineda@gmail.com', '$2y$10$iO6xeJD0Gg6CCn086Zf1Sef8OD8WApV.SVlrxB8/1Mf2DpJWrJnhO', 'ynHKiAEOCI04Eel1sp8F9RrVORwoW2ju6fxoTZ8RJrdJ0kbIB4Yz9A0N3KY8', '2018-04-02 06:24:09', '2018-04-05 01:10:14'),
-(3, 'Tony Stark', '3724260', 'atrellus@gmail.com', '$2y$10$ytghmZXOUnsetoAo6hPHs.5QmDZC.NyQQUphuKlqb7wFlTj7acnGG', 'fmGsDK0tDkRHdsim0ZEptwhnTQyh2uvOiLKqLYUd0fA04rIop32Vs0cdTzVl', '2018-04-02 06:26:07', '2018-04-02 06:46:27'),
-(4, 'Peper Pops', '5143077', 'maritzaache@gmail.com', '$2y$10$wk0evHs2W9YyJ3TwLJ6.wePWh38mgdp5H/ECE99Sqd3m7QWbA6wpa', 'WUzl7qWGR34jJngpDcTTKwcg31Oe59sa6n9CToFdyWSydf5IJpt4eZBeOGui', '2018-04-02 06:37:47', '2018-04-02 06:50:50');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `str_ci_pasaporte`, `remember_token`, `created_at`, `updated_at`, `stripe_id`, `card_brand`, `card_last_four`, `trial_ends_at`) VALUES
+(1, 'Neil Barazarte', 'ezebarazarte@gmail.com', '$2y$10$kgLKDB1RmgTrUNq8WJJrbOs9NnTfwYVjd5dipKDmzKl70wuzIOMHW', '16379712', 'P6S7oo3l94Q4835RgcC1oPRkJxBUepkUpUz62GJzDbrhOQ2IytmxAaXuVP92', '2018-04-12 08:12:57', '2018-04-12 19:31:32', NULL, NULL, NULL, NULL),
+(2, 'Jaennie Pineda', 'jdelvpineda@gmail.com', '$2y$10$ppMcS6Wg2Kj7NWOchD.PcOMVMRPOnKdPTCyz448Dc4Ro8MIlwnCxK', '13822350', 'qR9f4pY02IGa2Lp02VUAiyeYHkJmXV2bbZLN4YvzrWLcINQqWCTYdcvSJUpu', '2018-04-12 19:32:00', '2018-04-12 20:04:03', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -325,7 +318,7 @@ INSERT INTO `users` (`id`, `name`, `str_ci_pasaporte`, `email`, `password`, `rem
 --
 DROP TABLE IF EXISTS `reservaciones`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `reservaciones`  AS  select min(`tbl_reservaciones`.`dmt_fecha_entrada`) AS `minfe`,max(`tbl_reservaciones`.`dmt_fecha_salida`) AS `maxfs`,`tbl_reservaciones`.`lng_idtipohab` AS `lng_idtipohab` from `tbl_reservaciones` group by `tbl_reservaciones`.`lng_idtipohab` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`hippo_admin`@`localhost` SQL SECURITY DEFINER VIEW `reservaciones`  AS  select min(`tbl_reservaciones`.`dmt_fecha_entrada`) AS `minfe`,max(`tbl_reservaciones`.`dmt_fecha_salida`) AS `maxfs`,`tbl_reservaciones`.`lng_idtipohab` AS `lng_idtipohab` from `tbl_reservaciones` group by `tbl_reservaciones`.`lng_idtipohab` ;
 
 --
 -- Índices para tablas volcadas
@@ -365,6 +358,12 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_token_index` (`token`);
 
 --
+-- Indices de la tabla `subscriptions`
+--
+ALTER TABLE `subscriptions`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `tbl_newsletter`
 --
 ALTER TABLE `tbl_newsletter`
@@ -384,10 +383,7 @@ ALTER TABLE `tbl_reservaciones`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`),
-  ADD UNIQUE KEY `str_ci_pasaporte` (`str_ci_pasaporte`),
-  ADD UNIQUE KEY `str_ci_pasaporte_2` (`str_ci_pasaporte`),
-  ADD UNIQUE KEY `str_ci_pasaporte_3` (`str_ci_pasaporte`,`email`);
+  ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -412,7 +408,12 @@ ALTER TABLE `cat_semanas`
 -- AUTO_INCREMENT de la tabla `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT de la tabla `subscriptions`
+--
+ALTER TABLE `subscriptions`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `tbl_newsletter`
 --
@@ -422,12 +423,12 @@ ALTER TABLE `tbl_newsletter`
 -- AUTO_INCREMENT de la tabla `tbl_reservaciones`
 --
 ALTER TABLE `tbl_reservaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

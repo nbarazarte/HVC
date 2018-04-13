@@ -135,19 +135,39 @@ Route::get('/en/Make-Payment/{codigo}', [
 	'uses' => 'HomeController@realizarPago',
 	'as' =>'realizarPagoIngles'
 ]);
-/********************************************/
 
+
+//Para pagar la reservación
+Route::post('/Pagar-Reservación-Stripe', [
+	'uses' => 'HomeController@realizarPagoStripe',
+	'as' =>'realizarPagoStripe'
+]);
+
+Route::get('/Reservación-Pagada-Exitosamente/{codigo}', [
+	'uses' => 'HomeController@pagoStripe',
+	'as' =>'pagoStripe'
+]);
+
+Route::get('/Reservation-Paid-Successfully/{codigo}', [
+	'uses' => 'HomeController@pagoStripe',
+	'as' =>'pagoStripe'
+]);
+
+/********************************************/
+/*
 //Aquí me direcciona 2CO
 Route::get('/Pago-Exitoso', [
 	'uses' => 'HomeController@pagado',
 	'as' =>'pagado'
 ]);
-/********************************************/
+
 
 Route::get('/Reservacion-Pagada/{codigo}', [
 	'uses' => 'HomeController@pago',
 	'as' =>'pago'
 ]);
+*/
+/********************************************/
 
 Route::get('Salir', [
 				'uses' => 'Auth\LoginController@logout',

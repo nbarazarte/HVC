@@ -208,6 +208,38 @@
             <!-- Contact Form | START -->
             <div id="contact">                
 
+<form action="{{ route('realizarPagoStripe')}}" method="POST">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_3sMD3SJvsJJkSKHzqwFTTaCi"
+    data-amount="{{ $dato->dbl_total_pagar * 100}}"
+    data-name="HIPPOCAMPUS VACATION CLUB C.A"
+    data-description="Habitación {{ $dato->str_habitacion }}"
+    data-image="{{ asset('base-hotel/system/images/logo-hvc-stripe.png') }}"
+    data-email="{{ Auth::user()->email }}"
+    data-label="Realizar Pago"
+    data-locale="auto">
+  </script>
+    <script>
+        // Hide default stripe button, be careful there if you
+        // have more than 1 button of that class
+        document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+    </script>  
+
+
+    <input type='hidden' name='room' readonly value='Habitación: {{ $dato->str_habitacion }} - Fecha Llegada: {{ $dato->dmt_fecha_entrada }} - Fecha Salida: {{ $dato->dmt_fecha_salida }}' required />
+    <input type='hidden' readonly name='price' value='{{ $dato->dbl_total_pagar *100}}' required />
+
+    <input type="hidden" name="codigo" value="{{ $dato->str_codigo }}">
+
+
+<button  name="send">
+    <span data-hover="Send Payment">Send Payment</span>
+</button>    
+
+</form> 
+<!--
+
                 <form action='https://sandbox.2checkout.com/checkout/purchase' method='post'>
 
                     <div class="col">
@@ -270,6 +302,8 @@
                    {!! csrf_field() !!} 
 
                 </form>
+
+            -->
 
             </div>
             <!-- Contact Form | END -->
