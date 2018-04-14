@@ -53,7 +53,7 @@
                 
             {!! Form::close() !!}
 
-            @include('mensajes')                           
+            @include('mensajes')                          
 
         </div>
     </div>

@@ -12,6 +12,7 @@ use Validator;
 use App\Reservaciones;
 use App\Http\Controllers\Auth;
 use App\User;
+use Stripe\Error\Card;
 
 class HomeController extends Controller
 {
@@ -1077,30 +1078,62 @@ class HomeController extends Controller
         // Token is created using Checkout or Elements!
         // Get the payment token ID submitted by the form:
         $token = $_POST['stripeToken'];
-        $price = $_POST['price'];
+        $price = $_POST['price']*100;
         $room = $_POST['room'];
 
-        $charge = \Stripe\Charge::create([
-            'amount' => $price,
-            'currency' => 'usd',
-            'description' => $room,
-            'source' => $token,
-            'receipt_email' => \Auth::user()->email,
-        ]);
+        try {
 
-        //dd($charge);
+            //$customer = \Stripe\Customer::all(array("email" => \Auth::user()->email));
+            //$id = $customer['data'][0]['id'];
 
-        $estatusPagado = DB::update('update tbl_reservaciones set str_estatus_pago = "'.$charge['id'].'" where lng_idpersona = '.\Auth::user()->id.' and str_codigo = "'.$_POST['codigo'].'" ');            
+            /*
+            \Stripe\Customer::create(array(
+              "email" => \Auth::user()->email,
+            ));
+            */
+            
+            $charge = \Stripe\Charge::create([
+                'amount' => $price,
+                'currency' => 'usd',
+                'description' => $room,
+                'source' => $token,
+                'receipt_email' => \Auth::user()->email,
+                //'customer' => 'cus_CgFzInIYY1O5gQ',
+                //'customer' => $id,
+                
+            ]);         
 
-        
-        if(Session::get('idioma') == "es"){
+            //dd($charge);die();
 
-            return Redirect::to('/Reservación-Pagada-Exitosamente/'.$_POST['codigo']);
+            if ($charge['status'] == "succeeded") {
+                
+                $estatusPagado = DB::update('update tbl_reservaciones set str_estatus_pago = "'.$charge['id'].'" where lng_idpersona = '.\Auth::user()->id.' and str_codigo = "'.$_POST['codigo'].'" ');
+                
+                if(Session::get('idioma') == "es"){
 
-        }else{
+                    return Redirect::to('/Reservación-Pagada-Exitosamente/'.$_POST['codigo']);
 
-            return Redirect::to('/Reservation-Paid-Successfully/'.$_POST['codigo']);
-        }           
+                }else{
+
+                    return Redirect::to('/Reservation-Paid-Successfully/'.$_POST['codigo']);
+                }  
+
+            }
+
+        } catch (Card $e) {
+            //dd('Card was declined');
+            
+            if(Session::get('idioma') == "es"){
+
+                Session::flash('message','Transacción Fallida: Para más información consulte con su banco');
+
+            }else{
+
+                Session::flash('message','Failed Transaction: For more information check with your bank');
+            }  
+
+            return redirect()->back();
+        }
     }
 
     /**
