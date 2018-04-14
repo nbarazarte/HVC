@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 12-04-2018 a las 14:17:33
+-- Tiempo de generación: 14-04-2018 a las 17:27:37
 -- Versión del servidor: 10.1.26-MariaDB-0+deb9u1
 -- Versión de PHP: 7.0.27-0+deb9u1
 
@@ -194,6 +194,34 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
+-- Estructura Stand-in para la vista `res`
+-- (Véase abajo para la vista actual)
+--
+CREATE TABLE `res` (
+`id` int(11)
+,`str_estatus_pago` varchar(30)
+,`str_codigo` varchar(255)
+,`lng_idtipohab` int(11)
+,`lng_idpersona` int(11)
+,`str_email` varchar(255)
+,`str_nombre` varchar(255)
+,`str_telefono` varchar(255)
+,`dbl_precio` decimal(65,0)
+,`dbl_total_pagar` decimal(10,0)
+,`int_ninos` int(11)
+,`int_adultos` int(11)
+,`int_dias` int(11)
+,`str_mensaje` text
+,`dmt_fecha_entrada` date
+,`dmt_fecha_salida` date
+,`bol_eliminado` tinyint(1)
+,`created_at` timestamp
+,`updated_at` timestamp
+);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura Stand-in para la vista `reservaciones`
 -- (Véase abajo para la vista actual)
 --
@@ -253,7 +281,7 @@ INSERT INTO `tbl_newsletter` (`id`, `str_email`, `created_at`, `updated_at`, `bo
 
 CREATE TABLE `tbl_reservaciones` (
   `id` int(11) NOT NULL,
-  `str_estatus_pago` varchar(20) DEFAULT NULL,
+  `str_estatus_pago` varchar(30) DEFAULT NULL,
   `str_codigo` varchar(255) NOT NULL,
   `lng_idtipohab` int(11) NOT NULL,
   `lng_idpersona` int(11) NOT NULL,
@@ -308,8 +336,19 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `str_ci_pasaporte`, `remember_token`, `created_at`, `updated_at`, `stripe_id`, `card_brand`, `card_last_four`, `trial_ends_at`) VALUES
-(1, 'Neil Barazarte', 'ezebarazarte@gmail.com', '$2y$10$kgLKDB1RmgTrUNq8WJJrbOs9NnTfwYVjd5dipKDmzKl70wuzIOMHW', '16379712', 'P6S7oo3l94Q4835RgcC1oPRkJxBUepkUpUz62GJzDbrhOQ2IytmxAaXuVP92', '2018-04-12 08:12:57', '2018-04-12 19:31:32', NULL, NULL, NULL, NULL),
-(2, 'Jaennie Pineda', 'jdelvpineda@gmail.com', '$2y$10$ppMcS6Wg2Kj7NWOchD.PcOMVMRPOnKdPTCyz448Dc4Ro8MIlwnCxK', '13822350', 'qR9f4pY02IGa2Lp02VUAiyeYHkJmXV2bbZLN4YvzrWLcINQqWCTYdcvSJUpu', '2018-04-12 19:32:00', '2018-04-12 20:04:03', NULL, NULL, NULL, NULL);
+(1, 'Neil Barazarte', 'ezebarazarte@gmail.com', '$2y$10$kgLKDB1RmgTrUNq8WJJrbOs9NnTfwYVjd5dipKDmzKl70wuzIOMHW', '16379712', '4JgwrXLx64XeHvZa2X7KU5VGlhHKWWXM4xgwZIrIJpJiMQe7KeeTUlfdOUUd', '2018-04-12 08:12:57', '2018-04-14 21:42:40', NULL, NULL, NULL, NULL),
+(2, 'Jaennie Pineda', 'jdelvpineda@gmail.com', '$2y$10$ppMcS6Wg2Kj7NWOchD.PcOMVMRPOnKdPTCyz448Dc4Ro8MIlwnCxK', '13822350', 'Gxf051ZB2Fobu3kfvu7Nnl8Y77pt69Ir6WJHGxw26FBSdLrasymVV1JeN8TH', '2018-04-12 19:32:00', '2018-04-14 21:32:13', NULL, NULL, NULL, NULL),
+(3, 'Maritza Aché', 'maritzaache@gmail.com', '$2y$10$c2jimxQ.hzksRh2R6UoyQ.GiK3b/0HYwXNpCcfnekIkuPSbPLa01C', '5143077', 'ApzMBRH2iNwYEzXW5ipxgksBBFeb1rzupnxHDE8vxX0YVA09CefDT6O5NqJ8', '2018-04-14 01:11:09', '2018-04-14 01:30:42', NULL, NULL, NULL, NULL),
+(4, 'argenis barazarte', 'jaenniedelv_pineda@hotmail.com', '$2y$10$qJfK6P5RCgfE4JKjGFYR9uGbkDRAjLnoenHrCeDjU9fNdFD9VCMHy', '3724260', 'TDmnwlfBNeCYq0u7v7LZwqEcuYdYPB3Cd0QIfZkOWDk14Yjw3AivGxyGr5Mx', '2018-04-14 21:44:03', '2018-04-14 23:12:08', NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `res`
+--
+DROP TABLE IF EXISTS `res`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `res`  AS  select `tbl_reservaciones`.`id` AS `id`,`tbl_reservaciones`.`str_estatus_pago` AS `str_estatus_pago`,`tbl_reservaciones`.`str_codigo` AS `str_codigo`,`tbl_reservaciones`.`lng_idtipohab` AS `lng_idtipohab`,`tbl_reservaciones`.`lng_idpersona` AS `lng_idpersona`,`tbl_reservaciones`.`str_email` AS `str_email`,`tbl_reservaciones`.`str_nombre` AS `str_nombre`,`tbl_reservaciones`.`str_telefono` AS `str_telefono`,`tbl_reservaciones`.`dbl_precio` AS `dbl_precio`,`tbl_reservaciones`.`dbl_total_pagar` AS `dbl_total_pagar`,`tbl_reservaciones`.`int_ninos` AS `int_ninos`,`tbl_reservaciones`.`int_adultos` AS `int_adultos`,`tbl_reservaciones`.`int_dias` AS `int_dias`,`tbl_reservaciones`.`str_mensaje` AS `str_mensaje`,`tbl_reservaciones`.`dmt_fecha_entrada` AS `dmt_fecha_entrada`,`tbl_reservaciones`.`dmt_fecha_salida` AS `dmt_fecha_salida`,`tbl_reservaciones`.`bol_eliminado` AS `bol_eliminado`,`tbl_reservaciones`.`created_at` AS `created_at`,`tbl_reservaciones`.`updated_at` AS `updated_at` from `tbl_reservaciones` ;
 
 -- --------------------------------------------------------
 
@@ -318,7 +357,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `str_ci_pasaporte`, `rem
 --
 DROP TABLE IF EXISTS `reservaciones`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`hippo_admin`@`localhost` SQL SECURITY DEFINER VIEW `reservaciones`  AS  select min(`tbl_reservaciones`.`dmt_fecha_entrada`) AS `minfe`,max(`tbl_reservaciones`.`dmt_fecha_salida`) AS `maxfs`,`tbl_reservaciones`.`lng_idtipohab` AS `lng_idtipohab` from `tbl_reservaciones` group by `tbl_reservaciones`.`lng_idtipohab` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `reservaciones`  AS  select min(`tbl_reservaciones`.`dmt_fecha_entrada`) AS `minfe`,max(`tbl_reservaciones`.`dmt_fecha_salida`) AS `maxfs`,`tbl_reservaciones`.`lng_idtipohab` AS `lng_idtipohab` from `tbl_reservaciones` group by `tbl_reservaciones`.`lng_idtipohab` ;
 
 --
 -- Índices para tablas volcadas
@@ -423,12 +462,12 @@ ALTER TABLE `tbl_newsletter`
 -- AUTO_INCREMENT de la tabla `tbl_reservaciones`
 --
 ALTER TABLE `tbl_reservaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
