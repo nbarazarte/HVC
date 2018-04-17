@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'str_ci_pasaporte'
+        'name', 'email', 'password', 'str_ci_pasaporte','str_genero', 'str_pais','blb_img','str_telefono'
     ];
 
     /**
@@ -33,5 +33,12 @@ class User extends Authenticatable
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new MyResetPassword($token));
-    }    
+    }
+
+    public function setBlbimgAttribute($valor){
+                
+        if(!empty($valor)){          
+            $this->attributes['blb_img'] = base64_encode(file_get_contents($valor));                                
+        }    
+    }       
 }

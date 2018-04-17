@@ -27,7 +27,7 @@
 
                     <div class="col">
                         <div class="field mandatory">
-                            <input id="email" type="email" class="form-control" name="email" placeholder="Email" value="{{ old('email') }}" required autofocus>
+                            <input id="email" type="email" class="form-control" name="email" placeholder="Email Address" value="{{ old('email') }}" required autofocus>
 
                             @if ($errors->has('email'))
                                 <span class="help-block">

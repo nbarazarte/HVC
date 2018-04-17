@@ -6,6 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use DB;
 
 class RegisterController extends Controller
 {
@@ -37,6 +38,11 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
+        
+        $paises = DB::table('paises')->pluck('str_paises');   
+
+        \View::share(compact('paises'));  
+
         $this->middleware('guest');
     }
 
@@ -50,9 +56,12 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
+            'str_telefono' => 'required|max:255',
             'str_ci_pasaporte' => 'required|max:255|unique:users',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+            'str_genero' => 'required|max:255',
+            'str_pais' => 'required|max:255',
         ]);
     }
 
@@ -64,11 +73,36 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'str_ci_pasaporte' => $data['str_ci_pasaporte'],
-            'password' => bcrypt($data['password']),
-        ]);
+
+
+
+        if(!empty($data['blb_img'])){
+
+            return User::create([
+
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'str_telefono' => $data['str_telefono'],
+                'str_ci_pasaporte' => $data['str_ci_pasaporte'],
+                'password' => bcrypt($data['password']),
+                'str_genero' => $data['str_genero'],                
+                'str_pais' => $data['str_pais'],
+                'blb_img' => $data['blb_img'],
+                //'blb_img' => base64_encode(file_get_contents($data['blb_img'])),
+            ]);
+
+        }else{
+
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'str_telefono' => $data['str_telefono'],
+                'str_ci_pasaporte' => $data['str_ci_pasaporte'],
+                'password' => bcrypt($data['password']),
+                'str_genero' => $data['str_genero'],
+                'str_pais' => $data['str_pais'],
+            ]);          
+        }
+
     }
 }
