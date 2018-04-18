@@ -879,7 +879,8 @@ class HomeController extends Controller
             'int_adultos' => $data['contact-adultos'],
             'int_dias' => $data['cant-dias'],
             'str_mensaje' => $data['contact-message'],
-            'dbl_total_pagar' => $data['contact-totalPagar'],  
+            'dbl_total_pagar' => $data['contact-totalPagar'],
+            'str_tipo_reserva' => 'Web',
 
         ]);
     }  

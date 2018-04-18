@@ -39,7 +39,9 @@ class RegisterController extends Controller
     public function __construct()
     {
         
-        $paises = DB::table('paises')->pluck('str_paises');   
+        $paises = DB::table('cat_paises')
+        ->select('id','str_paises')
+        ->get();   
 
         \View::share(compact('paises'));  
 
@@ -61,7 +63,7 @@ class RegisterController extends Controller
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
             'str_genero' => 'required|max:255',
-            'str_pais' => 'required|max:255',
+            'lng_idpais' => 'required|max:255',
         ]);
     }
 
@@ -86,7 +88,7 @@ class RegisterController extends Controller
                 'str_ci_pasaporte' => $data['str_ci_pasaporte'],
                 'password' => bcrypt($data['password']),
                 'str_genero' => $data['str_genero'],                
-                'str_pais' => $data['str_pais'],
+                'lng_idpais' => $data['lng_idpais'],
                 'blb_img' => $data['blb_img'],
                 //'blb_img' => base64_encode(file_get_contents($data['blb_img'])),
             ]);
@@ -100,7 +102,7 @@ class RegisterController extends Controller
                 'str_ci_pasaporte' => $data['str_ci_pasaporte'],
                 'password' => bcrypt($data['password']),
                 'str_genero' => $data['str_genero'],
-                'str_pais' => $data['str_pais'],
+                'lng_idpais' => $data['lng_idpais'],
             ]);          
         }
 

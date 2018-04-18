@@ -98,13 +98,13 @@
 
                         <div class="select">
                             
-                            <select name="str_pais" id="str_pais" class="infants" required style="width: 100%">
+                            <select name="lng_idpais" id="str_pais" class="infants" required style="width: 100%">
 
                                 <option value="">País</option>
 
-                                @foreach ($paises as $value)
+                                @foreach ($paises as $pais)
                                                 
-                                    <option value="{{$value}}" >{{$value}}</option>
+                                    <option value="{{$pais->id}}" >{{$pais->str_paises}}</option>
 
                                 @endforeach
 

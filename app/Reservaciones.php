@@ -19,6 +19,6 @@ class Reservaciones extends Model
      *
      * @var array
      */
-    protected $fillable = ['str_codigo','str_email','str_nombre','str_telefono','dbl_precio','dbl_total_pagar','int_ninos','int_adultos','int_dias','str_mensaje','lng_idpersona', 'lng_idtipohab', 'dmt_fecha_entrada', 'dmt_fecha_salida','created_at', 'updated_at', 'bol_eliminado'];    
+    protected $fillable = ['str_codigo','str_email','str_nombre','str_telefono','dbl_precio','dbl_total_pagar','int_ninos','int_adultos','int_dias','str_mensaje','lng_idpersona', 'lng_idtipohab', 'dmt_fecha_entrada', 'dmt_fecha_salida','created_at', 'updated_at', 'bol_eliminado','str_tipo_reserva'];    
 
 }
