@@ -54,7 +54,7 @@
 
                         {!! Form::open(['route' => 'reservarIngles', 'method'=>'POST', 'id' => 'demo-form', 'name' => 'demo-form', 'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false']) !!} 
 
-                            <table style="text-align: justify;">
+                            <table id="myTable" style="text-align: justify;">
 
                                 <tr style="text-align: center;">
                                     <th colspan="5">
@@ -114,6 +114,29 @@
                                     </td>
    
                                 </tr>
+
+                                <tr style="text-align: center;">
+                                    <th colspan="5">                                        
+                                        Detail of the Companions
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <b>Name and Surname:</b><br>
+                                    </td>
+                                    <td>
+                                        <b>ID/Passport:</b><br>
+                                    </td>
+
+                                    <td>
+                                        <b>Adult/Child</b>
+                                    </td>
+                                    <td colspan="2">
+                                        <input class="button" type="button" onclick="myFunction()" name="" value="Add">
+                                    </td>
+                                </tr> 
+
                                 <tr>
                                     <td colspan="5"><b>Message:</b> <br>
                                         {{ $persona['contact-message'] }}        
@@ -121,6 +144,26 @@
                                 </tr>
 
                             </table>
+
+                <script>
+                    function myFunction() {
+                        var table = document.getElementById("myTable");
+                        var row = table.insertRow(5);
+                        var cell1 = row.insertCell(0);
+                        var cell2 = row.insertCell(1);
+                        var cell3 = row.insertCell(2);
+                        var cell4 = row.insertCell(3);
+                        cell1.innerHTML = '<input style="width: 100%; height: 45px; padding: 0 15px; letter-spacing: .4px; border: none; box-sizing: border-box;font: 14px/20px \'Open Sans\', sans-serif; z-index: 2;position: relative;"  name="contact-name" type="text" placeholder="Name and Surname" id="contact-name" value="" required/>';
+                        cell2.innerHTML = '<input style="width: 100%; height: 45px; padding: 0 15px; letter-spacing: .4px; border: none; box-sizing: border-box;font: 14px/20px \'Open Sans\', sans-serif; z-index: 2;position: relative;" name="contact-cedula" type="text" placeholder="ID/Passport" id="contact-cedula" value="" required/>';
+                        cell3.innerHTML= '<select style="width: 100%; height: 45px; padding: 0 15px; letter-spacing: .4px; border: none; box-sizing: border-box;font: 14px/20px \'Open Sans\', sans-serif; z-index: 2;position: relative;" required><option value="">Select</option><option value="Adult">Adult</option><option value="Child">Child</option></select>';
+                        cell4.innerHTML= '<input class="button" type="button" onclick="deleteRow(this)" name="" value="Delete">';
+                    }
+
+                    function deleteRow(r) {
+                        var i = r.parentNode.parentNode.rowIndex;
+                        document.getElementById("myTable").deleteRow(i);
+                    }                   
+                </script>                             
 
                         <button name="send" value="sendform">
                             <a class="button"><span data-hover="Send Booking Request">Send Booking Request</span></a> 

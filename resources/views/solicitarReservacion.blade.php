@@ -49,7 +49,7 @@
 
                         {!! Form::open(['route' => 'reservar', 'method'=>'POST', 'id' => 'demo-form', 'name' => 'demo-form', 'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false']) !!} 
 
-                            <table style="text-align: justify;">
+                            <table id="myTable" style="text-align: justify;">
 
                                 <tr style="text-align: center;">
                                     <th colspan="5">
@@ -59,7 +59,7 @@
 
                                 <tr>
                                     <td>
-                                        <b>Nombre:</b><br>
+                                        <b>Nombre y Apellido:</b><br>
                                         {{ $persona['contact-name'] }}
                                     </td>
                                     <td>
@@ -88,7 +88,6 @@
                                         Bs. {{ number_format($persona['contact-totalPagar'], 2, ',', '.')   }}
                                     </td>
      
-
                                     <td>
                                         <b>Llegada:</b><br>
                                         {{ $persona['contact-arrival'] }}
@@ -98,7 +97,6 @@
                                         <b>Salida:</b><br>
                                         {{ $persona['contact-departure'] }}
                                     </td>                                    
-
 
                                     <td>
                                         <b>Adulto(s):</b><br>
@@ -111,6 +109,29 @@
                                     </td>
    
                                 </tr>
+
+                                <tr style="text-align: center;">
+                                    <th colspan="5">
+                                        Datos de los Acompañantes 
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <b>Nombre y Apellido:</b><br>
+                                    </td>
+                                    <td>
+                                        <b>Cédula/Pasaporte:</b><br>
+                                    </td>
+
+                                    <td>
+                                        <b>Adulto/Niño</b>
+                                    </td>
+                                    <td colspan="2">
+                                        <input class="button" type="button" onclick="myFunction()" name="" value="Añadir">
+                                    </td>
+                                </tr> 
+
                                 <tr>
                                     <td colspan="5"><b>Comentarios:</b> <br>
                                         {{ $persona['contact-message'] }}        
@@ -118,6 +139,27 @@
                                 </tr>
 
                             </table>
+     
+
+                <script>
+                    function myFunction() {
+                        var table = document.getElementById("myTable");
+                        var row = table.insertRow(5);
+                        var cell1 = row.insertCell(0);
+                        var cell2 = row.insertCell(1);
+                        var cell3 = row.insertCell(2);
+                        var cell4 = row.insertCell(3);
+                        cell1.innerHTML = '<input style="width: 100%; height: 45px; padding: 0 15px; letter-spacing: .4px; border: none; box-sizing: border-box;font: 14px/20px \'Open Sans\', sans-serif; z-index: 2;position: relative;"  name="contact-name" type="text" placeholder="Nombre y Apellido" id="contact-name" value="" required/>';
+                        cell2.innerHTML = '<input style="width: 100%; height: 45px; padding: 0 15px; letter-spacing: .4px; border: none; box-sizing: border-box;font: 14px/20px \'Open Sans\', sans-serif; z-index: 2;position: relative;" name="contact-cedula" type="text" placeholder="Cédula/Pasaporte" id="contact-cedula" value="" required/>';
+                        cell3.innerHTML= '<select style="width: 100%; height: 45px; padding: 0 15px; letter-spacing: .4px; border: none; box-sizing: border-box;font: 14px/20px \'Open Sans\', sans-serif; z-index: 2;position: relative;" required><option value="">Seleccione</option><option value="Adulto">Adulto</option><option value="Niño">Niño</option></select>';
+                        cell4.innerHTML= '<input class="button" type="button" onclick="deleteRow(this)" name="" value="Eliminar">';
+                    }
+
+                    function deleteRow(r) {
+                        var i = r.parentNode.parentNode.rowIndex;
+                        document.getElementById("myTable").deleteRow(i);
+                    }                   
+                </script>                               
 
                         <button name="send" value="sendform">
                             <a class="button"><span data-hover="Hacer la Reservación">Hacer la Reservación</span></a> 
@@ -159,39 +201,8 @@
             <!-- Contact Form | START -->
             <div id="contact">
 
-
-                    {!! Form::open(['route' => 'contact', 'method'=>'POST', 'id' => 'demo-form', 'name' => 'demo-form', 'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false', 'onsubmit' => 'diferencia()']) !!} 
-                    
-                    <div class="col2">
-                        
-                    </div>
-
-                    <div class="col2">
-                        <div class="field mandatory"><input name="contact-name" type="text" placeholder="Nombre y Apellido" id="contact-name" value="" required/></div>
-                        
-    
-                    </div>
-                    <div class="col2">
-                        <div class="field mandatory"><input name="contact-cedula" type="text" placeholder="Cédula/Pasaporte" id="contact-cedula" value="" required/></div>
-                    </div>    
-
-                    <div class="col2">
-                        
-                    </div>                                    
-
-                    <button name="send" value="sendform"><span data-hover="Agregar Acompañantes">Agregar Acompañantes</span></button>
-
-
-                                      
-                   {!! csrf_field() !!} 
-
-                {!! Form::close() !!}  
-
-
             </div>
             <!-- Contact Form | END -->
-
-            
 
             <h2 style="margin:0;"><strong>+58 (295) 331.13.23</strong></h2>
             <p style="margin:0;">
