@@ -10,6 +10,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use Validator;
 use App\Reservaciones;
+use App\Acompanantes;
 use App\Http\Controllers\Auth;
 use App\User;
 use Stripe\Error\Card;
@@ -744,11 +745,23 @@ class HomeController extends Controller
 
         $datos = Session::get('datosReserva');
 
+        $paises = DB::table('cat_paises as p')
+            ->select('p.id','p.str_paises')
+            ->orderBy('p.str_paises','asc')
+            ->get();    
+
+        $tipoPersona = DB::table('cat_datos_maestros as dm')
+            ->where('dm.str_tipo', '=', 'tipo_persona')
+            ->select('dm.id','dm.str_descripcion')            
+            ->orderBy('dm.str_descripcion','asc')
+            ->get();                    
+
+        //dd($tipoPersona);die();
         //dd($datos[0][0]['datos']);die();
 
         if(!empty($datos)) {
 
-            return view('solicitarReservacion',compact('datos'));
+            return view('solicitarReservacion',compact('datos','paises','tipoPersona'));
 
         }else{
 
@@ -770,11 +783,22 @@ class HomeController extends Controller
 
         $datos = Session::get('datosReserva');
 
+        $paises = DB::table('cat_paises as p')
+            ->select('p.id','p.str_paises')
+            ->orderBy('p.str_paises','asc')
+            ->get();         
+
+        $tipoPersona = DB::table('cat_datos_maestros as dm')
+            ->where('dm.str_tipo', '=', 'tipo_persona')
+            ->select('dm.id','dm.str_descripcion')            
+            ->orderBy('dm.str_descripcion','asc')
+            ->get();  
+
         //dd($datos[0][0]['datos']);die();
 
         if(!empty($datos)) {
 
-            return view('en.solicitarReservacion',compact('datos'));
+            return view('en.solicitarReservacion',compact('datos','paises','tipoPersona'));
 
         }else{
 
@@ -864,7 +888,7 @@ class HomeController extends Controller
     protected function create(array $data)
     {
         
-        return Reservaciones::create([
+        $reservaciones = Reservaciones::create([
 
             'lng_idpersona' => \Auth::user()->id,
             'lng_idtipohab' => $data['contact-idHabitacion'],
@@ -883,6 +907,36 @@ class HomeController extends Controller
             'str_tipo_reserva' => 'Web',
 
         ]);
+
+        $lastInsertedId = $reservaciones->id;
+
+        if(!empty($data['acompanante-name'])){
+
+            //dd($data['acompanante-name']);
+            //die();
+
+            $acompananteName = array_values($data['acompanante-name']);
+            $acompananteCedula = array_values($data['acompanante-cedula']);
+            $acompananteTipo = array_values($data['acompanante-tipo']);
+            $acompanantePais = array_values($data['acompanante-pais']);
+            
+            $total_acompanantes = count($acompananteName);
+            
+            for ($i = 0; $i <= $total_acompanantes - 1; $i++)
+            {
+                $acompanantesRes = Acompanantes::create([
+                    'lng_idreservacion' => $lastInsertedId,
+                    'str_nombre' => $acompananteName[$i],
+                    'str_ci_pasaporte' => $acompananteCedula[$i],
+                    'lng_idtipopersona' => $acompananteTipo[$i],
+                    'lng_idpais' => $acompanantePais[$i],
+                ]);
+            }
+        }
+
+        return $reservaciones;
+
+        //dd($data);die();
     }  
 
     public function generarCodigo($longitud) {

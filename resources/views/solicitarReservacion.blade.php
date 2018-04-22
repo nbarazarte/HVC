@@ -112,7 +112,7 @@
 
                                 <tr style="text-align: center;">
                                     <th colspan="5">
-                                        Datos de los Acompañantes 
+                                        Datos de los Acompañantes
                                     </th>
                                 </tr>
 
@@ -123,11 +123,14 @@
                                     <td>
                                         <b>Cédula/Pasaporte:</b><br>
                                     </td>
-
                                     <td>
                                         <b>Adulto/Niño</b>
                                     </td>
-                                    <td colspan="2">
+                                    <td>
+                                       <b>País</b>
+                                    </td>
+
+                                    <td>
                                         <input class="button" type="button" onclick="myFunction()" name="" value="Añadir">
                                     </td>
                                 </tr> 
@@ -149,10 +152,14 @@
                         var cell2 = row.insertCell(1);
                         var cell3 = row.insertCell(2);
                         var cell4 = row.insertCell(3);
-                        cell1.innerHTML = '<input style="width: 100%; height: 45px; padding: 0 15px; letter-spacing: .4px; border: none; box-sizing: border-box;font: 14px/20px \'Open Sans\', sans-serif; z-index: 2;position: relative;"  name="contact-name" type="text" placeholder="Nombre y Apellido" id="contact-name" value="" required/>';
-                        cell2.innerHTML = '<input style="width: 100%; height: 45px; padding: 0 15px; letter-spacing: .4px; border: none; box-sizing: border-box;font: 14px/20px \'Open Sans\', sans-serif; z-index: 2;position: relative;" name="contact-cedula" type="text" placeholder="Cédula/Pasaporte" id="contact-cedula" value="" required/>';
-                        cell3.innerHTML= '<select style="width: 100%; height: 45px; padding: 0 15px; letter-spacing: .4px; border: none; box-sizing: border-box;font: 14px/20px \'Open Sans\', sans-serif; z-index: 2;position: relative;" required><option value="">Seleccione</option><option value="Adulto">Adulto</option><option value="Niño">Niño</option></select>';
-                        cell4.innerHTML= '<input class="button" type="button" onclick="deleteRow(this)" name="" value="Eliminar">';
+                        var cell5 = row.insertCell(4);
+                        
+                        cell1.innerHTML = '<input style="width: 100%; height: 45px; padding: 0 15px; letter-spacing: .4px; border: none; box-sizing: border-box;font: 14px/20px \'Open Sans\', sans-serif; z-index: 2;position: relative;"  name="acompanante-name[]" type="text" placeholder="Nombre y Apellido" id="acompanante-name" value="" required/>';
+                        cell2.innerHTML = '<input style="width: 100%; height: 45px; padding: 0 15px; letter-spacing: .4px; border: none; box-sizing: border-box;font: 14px/20px \'Open Sans\', sans-serif; z-index: 2;position: relative;" name="acompanante-cedula[]" type="number" placeholder="Cédula/Pasaporte" id="acompanante-cedula" value="" required/>';
+                        cell3.innerHTML= '<select name="acompanante-tipo[]" id="acompanante-tipo" style="width: 100%; height: 45px; padding: 0 15px; letter-spacing: .4px; border: none; box-sizing: border-box;font: 14px/20px \'Open Sans\', sans-serif; z-index: 2;position: relative;" required><option value="">Seleccione</option>@foreach ($tipoPersona as $tipo)<option value="{{ $tipo->id}}">{{ $tipo->str_descripcion}}</option>@endforeach</select>';
+                        cell4.innerHTML= '<select name="acompanante-pais[]" id="acompanante-pais" style="width: 100%; height: 45px; padding: 0 15px; letter-spacing: .4px; border: none; box-sizing: border-box;font: 14px/20px \'Open Sans\', sans-serif; z-index: 2;position: relative;" required><option value="">Seleccione</option> @foreach ($paises as $pais)<option value="{{ $pais->id}}">{{ $pais->str_paises}}</option>@endforeach</select>';
+                        cell5.innerHTML= '<input class="button" type="button" onclick="deleteRow(this)" name="" value="Quitar">';
+
                     }
 
                     function deleteRow(r) {
