@@ -228,7 +228,7 @@
 
 
     <input type='hidden' name='room' readonly value='Habitación: {{ $dato->str_habitacion }} - Fecha Llegada: {{ $dato->dmt_fecha_entrada }} - Fecha Salida: {{ $dato->dmt_fecha_salida }}' required />
-    <input type='hidden' readonly name='price' value='{{ $dato->dbl_total_pagar *100}}' required />
+    <input type='hidden' readonly name='price' value='{{ $dato->dbl_total_pagar }}' required />
 
     <input type="hidden" name="codigo" value="{{ $dato->str_codigo }}">
 
