@@ -154,65 +154,7 @@
             </p>
         </div>
         <!-- Google Map | START -->
-        <script>
 
-            function diferencia(){
-
-                var llegada = $("#contact-arrival").val();
-                var salida = $("#contact-departure").val();
-                var date1 = new Date(llegada);
-                var date2 = new Date(salida);
-                var timeDiff = Math.abs(date2.getTime() - date1.getTime());
-                var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
-
-                if(diffDays == 0){
-
-                    var diffDays = 1;
-
-                }
-
-                $("#cant-dias").val(diffDays);
-
-                var months = ["01", "02", "03", "04", "05", "06", "07", "08","09", "10", "11", "12"];
-
-                var fe = new Date(llegada);
-                var fs = new Date(salida);
-
-                var namedMonth1 = months[fe.getMonth()];
-                var namedMonth2 = months[fs.getMonth()];
-
-                $("#contact-llegada").val(fe.getFullYear()+"-"+namedMonth1+"-"+ fe.getDate());
-                $("#contact-salida").val(fs.getFullYear()+"-"+namedMonth2+"-"+ fs.getDate());
-
-            }
-
-            function initialize() {
-            
-            var latlng = new google.maps.LatLng(10.997358,-63.7885197,17);
-           
-            var myOptions = {
-            zoom: 16,
-            center: latlng,
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            scrollwheel: false
-            };
-            var map = new google.maps.Map(document.getElementById('googlemap'), myOptions);
-            var marker = new google.maps.Marker({
-            position: latlng, 
-            map: map,
-            icon: "base-hotel/system/images/point.png"
-            //icon: none
-            });
-            }
-            function loadScript() {
-            var script = document.createElement('script');
-            script.type = 'text/javascript';
-            //script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&'+'callback=initialize';
-            script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDjmZLW0uvX7_G6SivOVcvg9wW9X3PJ9QU&callback=initialize';
-            document.body.appendChild(script);
-            }
-            window.onload = loadScript;
-        </script>
         <div id="map">
             <div id="googlemap"></div>
         </div>

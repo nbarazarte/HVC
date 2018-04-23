@@ -165,10 +165,7 @@
                         cell5.innerHTML= '<input class="button" type="button" onclick="deleteRow(this)" name="" value="Delete">';                        
                     }
 
-                    function deleteRow(r) {
-                        var i = r.parentNode.parentNode.rowIndex;
-                        document.getElementById("myTable").deleteRow(i);
-                    }                   
+                  
                 </script>                             
 
                         <button name="send" value="sendform">

@@ -104,7 +104,7 @@ Route::get('/Page-No-Exist', [
 
 
 Route::get('/Booking-Online', [
-	'uses' => 'HomeController@getReservacionesIngles',
+	'uses' => 'HomeController@getReservaciones',
 	'as' =>'reservarIngles'
 ]);
 

@@ -759,55 +759,36 @@ class HomeController extends Controller
         //dd($tipoPersona);die();
         //dd($datos[0][0]['datos']);die();
 
-        if(!empty($datos)) {
+        
+        if(Session::get('idioma') == "es"){            
 
-            return view('solicitarReservacion',compact('datos','paises','tipoPersona'));
+            if(!empty($datos)) {
+
+                return view('solicitarReservacion',compact('datos','paises','tipoPersona'));
+
+            }else{
+
+                return view('contact');
+
+            }
 
         }else{
 
-            return view('contact');
+            if(!empty($datos)) {
+
+                return view('en.solicitarReservacion',compact('datos','paises','tipoPersona'));
+
+            }else{
+
+                return view('en.contact');
+
+            }            
 
         }
         
     } 
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function getReservacionesIngles()
-    {
-        
-        //dd(Session::get('test'));
-
-        $datos = Session::get('datosReserva');
-
-        $paises = DB::table('cat_paises as p')
-            ->select('p.id','p.str_paises')
-            ->orderBy('p.str_paises','asc')
-            ->get();         
-
-        $tipoPersona = DB::table('cat_datos_maestros as dm')
-            ->where('dm.str_tipo', '=', 'tipo_persona')
-            ->select('dm.id','dm.str_descripcion')            
-            ->orderBy('dm.str_descripcion','asc')
-            ->get();  
-
-        //dd($datos[0][0]['datos']);die();
-
-        if(!empty($datos)) {
-
-            return view('en.solicitarReservacion',compact('datos','paises','tipoPersona'));
-
-        }else{
-
-            return view('en.contact');
-
-        }
-        
-    }        
-
+    
     /**
      * Handle a registration request for the application.
      *

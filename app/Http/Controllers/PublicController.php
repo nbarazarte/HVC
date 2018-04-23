@@ -613,11 +613,11 @@ class PublicController extends Controller
             
             for ($i=0; $i < count($filtro1); $i++) 
             { 
-
                 foreach ($filtro1[$i] as $key => $value) {
 
                     $datos[$key] = $value;
                 } 
+
 
                 if(($entrada <= $datos['minfe']) and ($salida <= $datos['minfe'])){
 
@@ -634,13 +634,20 @@ class PublicController extends Controller
                    $condicion = 'false';
                 }
 
+                if (count($filtro1) == 1) {
+                                        
+                    if (($entrada == $datos['dmt_fecha_salida']) or ($salida == $datos['dmt_fecha_entrada'])) {
+                        
+                        $entrar = 'Disponible';
+                    }
+                }
+
                 if (count($filtro1) == 2) {
                     
                     if(($entrada > $datos['dmt_fecha_entrada']) and ($entrada == $datos['dmt_fecha_salida']) ) {
 
                         $condicion = 'true';
                     }
-
                 }
 
                 if (count($filtro1) > 2) {
@@ -662,27 +669,40 @@ class PublicController extends Controller
                         $entrar = 'Disponible';//3 mando a reservar directo
                     }
                 }
-
-                if (count($filtro1) == 1) {
-                                        
-                    if (($entrada == $datos['dmt_fecha_salida']) or ($salida == $datos['dmt_fecha_entrada'])) {
-                        
-                        $entrar = 'Disponible';
-                    }
-                }
             }
         }
-                           
-        //echo $entrar."<br>"; echo $entrada. "--". $salida. "<br>"; dd($filtro1); die();
+           
+        echo $entrar."<br>"; echo $entrada. "--". $salida. "<br>"; //dd($filtro1); die();
 
         $fecha_entrada = date("d/m/Y", strtotime($entrada));
         $fecha_salida = date("d/m/Y", strtotime($salida));
 
         if($entrar != 'Disponible'){
 
+            echo "Buscar número de habitación <br>";
+
+            echo count($filtro1)."<br>";
+
+            $countHab = DB::table('cat_numHabitaciones')
+                     ->select(DB::raw('count(*) as total'))
+                     ->where('lng_idtipohab', '=', 1)
+                     ->groupBy('lng_idtipohab')
+                     ->get();
+
+            foreach ($countHab[0] as $key => $value) {
+            
+                $countHab[$key] = $value;
+            }   
+
+            echo $countHab['total']."<br>";
+
+            dd($filtro1);
+
+            die();
+
             if(Session::get('idioma') == "es"){
 
-                Session::flash('message','No hay disponibilidad de habitaciones entre el: '.$fecha_entrada." y ".$fecha_salida);
+                Session::flash('message','No hay disponibilidad de habitación '.$_POST["contact-habitacion"].' entre el: '.$fecha_entrada." y ".$fecha_salida);
 
             }else{
 
