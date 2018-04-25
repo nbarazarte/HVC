@@ -37,6 +37,8 @@
                     @if($persona['contact-habitacion'] != 'Duplex 2 Main Rooms')
                         Room
                     @endif
+                    
+                    {{ $persona[3] }}
                 </h2>
 
                         @include('mensajes')   
@@ -188,6 +190,8 @@
                             <input type="hidden" name="contact-departure"  value="{{ $persona['contact-departure'] }}">
                             <input type="hidden" name="contact-salida"  value="{{ $persona['contact-salida'] }}">
                             <input type="hidden" name="cant-dias" readonly value="{{ $persona['cant-dias'] }}">
+
+                            <input type="hidden" name="contact-idnumHab" readonly value="{{ $persona[4] }}">
                             <input type="hidden" name="contact-message" readonly value="{{ $persona['contact-message'] }}">
 
                             {!! csrf_field() !!} 

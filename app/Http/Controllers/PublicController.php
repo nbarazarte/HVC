@@ -547,7 +547,7 @@ class PublicController extends Controller
      */
     public function solicitarReservacion()
     {
-        //pido el precio de la habitación y el id:
+    /********** Pido el precio de la habitación y el id dependiendo del idioma: **************/
         if(Session::get('idioma') == "es"){
 
             $habitacion = DB::table('cat_habitaciones')->select('id','str_precio')->where('str_habitacion', $_POST['contact-habitacion'] )->get();
@@ -570,15 +570,19 @@ class PublicController extends Controller
 
             $precio_habitacion = $hab['str_dolares'];
         } 
+    /***************************************** FIN *********************************************/
 
+    /*Evaluo en que momento las fechas de entrada y salida del cliente se cruzan con las existentes en la BD*/
         $id_habitacion = $hab['id'];
         $entrada = $_POST['contact-llegada'];
         $salida = $_POST['contact-salida'];
-        $entrar = "Ocupada";
+        $entrar = "Buscar";
         $condicion = 'false';
 
-        $filtro1 = DB::select("SELECT dmt_fecha_entrada, dmt_fecha_salida, minfe, maxfs
+        $filtro1 = DB::select("SELECT dmt_fecha_entrada, dmt_fecha_salida, h.str_habitacion, n.str_num, minfe, maxfs
                                 FROM tbl_reservaciones r
+                                JOIN cat_habitaciones h ON h.id = r.lng_idtipohab
+                                JOIN cat_numHabitaciones n on n.id = r.lng_idnumhab
                                 left JOIN (SELECT * FROM reservaciones) as rs ON rs.maxfs >= dmt_fecha_salida and rs.lng_idtipohab = ".$id_habitacion."
                                 WHERE 
                                 (
@@ -607,17 +611,19 @@ class PublicController extends Controller
 
         if( count($filtro1) == 0){
 
-            $entrar = "Disponible";//mando a reservar directo
+            //Si NO encontró resultados mando a reservar directamente con las fechas elegidas por el cliente
+            $entrar = "Disponible";
  
         }else{
             
+            //Si encontro resultados evaluo tomando en cuenta lo siguiente:
+
             for ($i=0; $i < count($filtro1); $i++) 
             { 
                 foreach ($filtro1[$i] as $key => $value) {
 
                     $datos[$key] = $value;
                 } 
-
 
                 if(($entrada <= $datos['minfe']) and ($salida <= $datos['minfe'])){
 
@@ -671,68 +677,66 @@ class PublicController extends Controller
                 }
             }
         }
-           
-        echo $entrar."<br>"; echo $entrada. "--". $salida. "<br>"; //dd($filtro1); die();
+
+        //echo $entrar."<br>"; echo $entrada. "--". $salida. "<br>"; dd($filtro1); die();
+
+        echo $entrar."<br>"; 
 
         $fecha_entrada = date("d/m/Y", strtotime($entrada));
         $fecha_salida = date("d/m/Y", strtotime($salida));
 
         if($entrar != 'Disponible'){
 
-            echo "Buscar número de habitación <br>";
+            $idnumeroHabitacion = $this->numeroHabitacionDisponible($filtro1, $id_habitacion, $fecha_entrada, $fecha_salida,$_POST["contact-habitacion"], $entrada, $salida);
 
-            echo count($filtro1)."<br>";
+            if($idnumeroHabitacion == 0){
 
-            $countHab = DB::table('cat_numHabitaciones')
-                     ->select(DB::raw('count(*) as total'))
-                     ->where('lng_idtipohab', '=', 1)
-                     ->groupBy('lng_idtipohab')
-                     ->get();
+                if(Session::get('idioma') == "es"){
 
-            foreach ($countHab[0] as $key => $value) {
-            
-                $countHab[$key] = $value;
-            }   
+                    Session::flash('message','No hay disponibilidad de habitación '.$_POST["contact-habitacion"].' entre el: '.$fecha_entrada." y ".$fecha_salida);
+                    return Redirect::to('/Contáctanos'); 
 
-            echo $countHab['total']."<br>";
+                }else{
 
-            dd($filtro1);
-
-            die();
-
-            if(Session::get('idioma') == "es"){
-
-                Session::flash('message','No hay disponibilidad de habitación '.$_POST["contact-habitacion"].' entre el: '.$fecha_entrada." y ".$fecha_salida);
-
-            }else{
-
-                Session::flash('message','There are no rooms available between: '.$fecha_entrada." and ".$fecha_salida);
-            } 
-
-            //return redirect()->back();//realizar pago
-            
-            if(Session::get('idioma') == "es"){
-
-                return Redirect::to('/Contáctanos'); 
-
-            }else{
-
-                return Redirect::to('/en/Contact-us'); 
+                    Session::flash('message','There are no rooms available between: '.$fecha_entrada." and ".$fecha_salida);
+                    return Redirect::to('/en/Contact-us'); 
+                } 
             }
+
+            //Busco el siguiente número de habitación disponible:
+            $num_hab = DB::table('cat_numHabitaciones')
+            ->select('id','str_num')
+            ->where('id', '=', $idnumeroHabitacion)
+            ->first();
+
+             $numeroHabitacion = $num_hab->str_num;
+             $idnumHab = $num_hab->id;
         }
 
-        
+        if ($entrar == "Disponible") {
+
+            //Busco el siguiente número de habitación disponible:
+            $num_hab = DB::table('cat_numHabitaciones')
+            ->select('id','str_num')
+            ->where('lng_idtipohab', '=', $id_habitacion)
+            ->where('str_num', '>', 0)
+            ->first();
+
+             $numeroHabitacion = $num_hab->str_num;
+             $idnumHab = $num_hab->id;
+        }
+
         $total_pagar = $_POST['cant-dias'] * $precio_habitacion;
 
         //lo asigno a lo que viene por post del formulario:
-        array_push($_POST, $_POST['contact-idHabitacion']=$id_habitacion,$_POST['contact-precioHabitacion']=$precio_habitacion, $_POST['contact-totalPagar']=$total_pagar);        
+        array_push($_POST, $_POST['contact-idHabitacion']=$id_habitacion,$_POST['contact-precioHabitacion']=$precio_habitacion, $_POST['contact-totalPagar']=$total_pagar,$POST['contact-numHabitacion']=$numeroHabitacion,$POST['contact-idnumHab']=$idnumHab);        
 
         $datos = $_POST;
 
         Session::pull('datosReserva', array(compact('datos')));//borra
         Session::push('datosReserva', array(compact('datos')));//asigna
 
-        //dd(Session::get('datosReserva'));
+        //dd(Session::get('datosReserva'));die();
 
         if(Session::get('idioma') == "es"){
 
@@ -744,5 +748,86 @@ class PublicController extends Controller
         }         
         
     } 
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function numeroHabitacionDisponible(array $filtro1, $id_habitacion,$fecha_entrada, $fecha_salida,$contactHabitacion,$entrada,$salida){
+
+        echo $entrada. "--". $salida. "<br>";
+
+        echo "Buscar número de habitación".count($filtro1)." <br>";
+
+        for ($i=0; $i < count($filtro1) ; $i++) { 
+        
+            $fechaEntradaIguales = "false";
+            $fechaSalidaIguales = "false";
+            $hab_ocupadas[0] = 0;
+
+            foreach ($filtro1[$i] as $key => $value) {
+
+              
+
+                    if (($entrada == $value) or ($entrada > $value)) {
+                       
+                       $fechaEntradaIguales = "true";
+                    }
+               
+
+               
+
+                    if (($salida == $value) or ($salida < $value)) {
+
+                       $fechaSalidaIguales = "true";
+                    }
+              
+                if (($fechaEntradaIguales == "true") and ($fechaSalidaIguales == "true")) {
+                
+
+              
+                    if($key == 'str_num'){
+
+                        $hab_ocupadas[$i] = $value;
+                    }
+                }
+
+            }
+        } 
+
+        asort($hab_ocupadas);
+
+        foreach ($hab_ocupadas as $key => $val) {
+
+            $val;
+        }
+
+        $ocupada_hasta = $val;
+
+        echo "Ocupada hasta: ".$ocupada_hasta."<br>";
+
+        //Busco el siguiente número de habitación disponible:
+        $num_hab = DB::table('cat_numHabitaciones')
+        ->select('id','str_num')
+        ->where('lng_idtipohab', '=', $id_habitacion)
+        ->where('str_num', '>', $ocupada_hasta)
+        ->first();
+
+        //dd($num_hab);die();
+
+        if(count($num_hab) == 0){
+
+            //echo "No hay números de habitaciones disponibles";dd($filtro1);die();
+            return 0;
+
+        }else{
+
+            //echo "Asigno la habitacion # ".$numeroHabitacion = $num_hab->str_num;dd($filtro1);die();
+            
+            return $num_hab->id;
+        }
+
+    }
 
 }

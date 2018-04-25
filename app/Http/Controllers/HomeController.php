@@ -886,6 +886,7 @@ class HomeController extends Controller
             'str_mensaje' => $data['contact-message'],
             'dbl_total_pagar' => $data['contact-totalPagar'],
             'str_tipo_reserva' => 'Web',
+            'lng_idnumhab' => $data['contact-idnumHab'],
 
         ]);
 
