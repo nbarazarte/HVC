@@ -21,9 +21,8 @@
         	<!-- Slideshow -->
         	<div id="slideshow">
                 <div class="slider">
-                    <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/HH_Salón_01.jpg') }}" width="1200" height="600" /></div>
-                    <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/IMG-20180308-WA0021.jpg') }}" width="1200" height="600" /></div>         
-                    <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/DSC02477.jpg') }}" width="1200" height="600" /></div>
+                    <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/Reinauguracion Hippocampus (04).jpg') }}" width="1200" height="600" /></div>
+                    <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/HH_Salón_01.jpg') }}" width="1200" height="600" /></div>                    
                 </div>
                 <div class="nav">
                     <a class="prev"><i class="fa fa-chevron-left"></i></a>
