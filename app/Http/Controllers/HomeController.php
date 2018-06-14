@@ -131,22 +131,8 @@ class HomeController extends Controller
         $message .= "Total de Días: ".$_POST['cant-dias']."<br>";
         $message .= "Comentarios: ".$_POST['contact-message'];
          
-        /*
-        $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
-        $cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-        $cabeceras .= "Content-Type: image/png";    
-        $cabeceras .= 'To: Best Office <ventas@solucionesbestoffice.com>' . "\r\n";
-        $cabeceras .= 'From: '.$_POST['name'].' <'.$_POST['email'].'>' . "\r\n";     
-        
-        if (!mail('ventas@solucionesbestoffice.com', $_POST['asunto'].' - solucionesbestoffice.com', $message, $cabeceras)) {
-            //echo "Error: " . $mail->ErrorInfo;
-            Session::flash('message','Error!, el mensaje no se pudo enviar');
-        } else {
-            Session::flash('message','Su mensaje fue enviado exitosamente!');
-        }
 
-        return Redirect::to('/');*/
-
+/*
         $mail = new PHPMailer;
         $mail->isSMTP();
         $mail->SMTPDebug = 0;
@@ -171,6 +157,8 @@ class HomeController extends Controller
         //$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
         //$mail->msgHTML($message);
 
+
+*/
         $body= '<table style="background-color: #F0F0F0;font:14px/25px \'Open Sans\', sans-serif;" width="100%" border="0" align="center">
     
     <tr>
@@ -400,6 +388,7 @@ class HomeController extends Controller
 
 </table>';
 
+/*
         $mail->msgHTML($body);
 
         $mail->AltBody = $message;
@@ -413,6 +402,24 @@ class HomeController extends Controller
         }
 
         //return Redirect::to('/Pagar-Reservación');
+*/
+
+
+        
+        $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
+        $cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $cabeceras .= "Content-Type: image/png";    
+        $cabeceras .= 'From: Reservaciones Hippocampus <reservaciones1@hippocampus.com.ve>' . "\r\n";
+        $cabeceras .= 'To: '.$_POST['contact-name'].' <'.$_POST['contact-email'].'>' . "\r\n";
+        
+        if (!mail('reservaciones1@hippocampus.com.ve', 'Hotel Hippocampus Vacation Club: '.utf8_decode($_POST['contact-name']), $body, $cabeceras)) {
+            //echo "Error: " . $mail->ErrorInfo;
+            Session::flash('message','Error!, El mensaje no se pudo enviar');
+        } else {
+            Session::flash('message','¡Su reservación fue enviada exitosamente! Revisa el correo electrónico: '.$_POST['contact-email']);
+        }
+
+        //return Redirect::to('/');
 
     }
 
