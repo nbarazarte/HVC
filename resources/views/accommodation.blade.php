@@ -114,6 +114,16 @@
                     Toda una experiencia hotelera a su servicio, con un concepto diferente en alojamiento.
                     Cómodas habitaciones equipadas para toda su familia. Disfrute de nuestra terraza con la mejor vista de la bahía de Pampatar. Celebre con nosotros eventos especiales y corporativos.
                 </p>
+
+            <h2 style="margin:0;"><strong>+58 (295) 331.13.20</strong></h2>
+            <p style="margin:0;">
+                <a href="mailto:mmota@hippocampus.com.ve">mmota@hippocampus.com.ve</a>        
+            </p> 
+            <h2 style="margin:0;"><strong>+58 (295) 331.13.23</strong></h2>
+            <p style="margin:0;">
+                <a href="mailto:reservaciones1@hippocampus.com.ve">reservaciones1@hippocampus.com.ve</a><br />
+                <i class="fa fa-map-marker"></i>  Calle El Cristo, edifc. Complejo Hippocampus, sector La Caranta.<br />Isla de Margarita. Venezuela            
+            </p>                               
                 
                 <table>
                     <tr>

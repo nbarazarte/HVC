@@ -113,7 +113,17 @@
                 <p>
                     A hotel experience at your service, with a different concept in accommodation. Comfortable rooms equipped for all your family. Enjoy our terrace with the best view of the Bay of Pampatar. Celebrate special and corporate events with us.
                 </p>
-                
+
+            <h2 style="margin:0;"><strong>+58 (295) 331.13.20</strong></h2>
+            <p style="margin:0;">
+                <a href="mailto:mmota@hippocampus.com.ve">mmota@hippocampus.com.ve</a>        
+            </p> 
+            <h2 style="margin:0;"><strong>+58 (295) 331.13.23</strong></h2>
+            <p style="margin:0;">
+                <a href="mailto:reservaciones1@hippocampus.com.ve">reservaciones1@hippocampus.com.ve</a><br />
+                <i class="fa fa-map-marker"></i>  El Cristo Street, Hippocampus Complex building, La Caranta sector.<br>Margarita Island. Venezuela            
+            </p>  
+                            
                 <table>
                     <tr>
                         <th>Room Type</th>
