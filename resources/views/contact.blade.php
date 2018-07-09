@@ -147,7 +147,7 @@
 
             <p style="text-align: justify;">
               
-                Nuestra ubicación privilegiada nos situa a solo cinco minutos del casco histórico de Pampatar, donde se puede disfrutar de diversas atracciones turísticas como el Castillo San Carlos de Borromeo, la iglesia del Cristo del Buen Viaje y algunas playas. Además, la ciudad de pampatar cuenta con una amplia zona gastronómica para todos los gustos, así como bares, discotecas y restaurantes muy cercanos a nuestras instalaciones.
+                Nuestra ubicación privilegiada nos situa a solo cinco minutos del casco histórico de Pampatar, donde se puede disfrutar de diversas atracciones turísticas como el Castillo San Carlos de Borromeo, la iglesia del Cristo del Buen Viaje y algunas playas. Además, la ciudad de Pampatar cuenta con una amplia zona gastronómica para todos los gustos, así como bares, discotecas y restaurantes muy cercanos a nuestras instalaciones.
             <br>
                 Nos encontramos a 10 minutos de los principales centros comerciales de la isla y aproximadamente a 50 y 60 minutos del aeropuerto y terminal de ferry, respectivamente.
 

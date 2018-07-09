@@ -148,7 +148,7 @@
             </p>
 
             <p style="text-align: justify;">
-                Our privileged location puts us just five minutes from the historic center of Pampatar, where you can enjoy various tourist attractions such as the Castillo San Carlos de Borromeo, the church of Cristo del Buen Viaje and some beaches. In addition, the city of pampatar has a large gastronomic area for all tastes, as well as bars, clubs and restaurants very close to our facilities.
+                Our privileged location puts us just five minutes from the historic center of Pampatar, where you can enjoy various tourist attractions such as the Castillo San Carlos de Borromeo, the church of Cristo del Buen Viaje and some beaches. In addition, the city of Pampatar has a large gastronomic area for all tastes, as well as bars, clubs and restaurants very close to our facilities.
             <br>
                 We are 10 minutes from the main commercial centers of the island and approximately 50 and 60 minutes from the airport and ferry terminal, respectively.
             </p>
