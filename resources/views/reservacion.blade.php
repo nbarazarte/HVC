@@ -10,7 +10,7 @@
 
                     <select name="habitacion">
 
-                        @foreach ($habitaciones as $hab)
+                        @foreach ($cuartos as $hab)
 
                             <option value="{{ $hab->str_habitacion }}">{{ $hab->str_habitacion }}</option>
 
