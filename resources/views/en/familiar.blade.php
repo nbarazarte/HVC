@@ -1,13 +1,13 @@
-@extends('app')
+@extends('en.app')
 
 @section('content')
 
 @foreach ($habitaciones as $hab)
 
-    @if( $hab->str_habitacion == "Duplex 2 Ambientes")
+    @if( $hab->str_rooms == "Family")
 
         <?php
-            $precioDuplex = number_format($hab->str_precio, 2, ',', '.');
+            $precioFamiliar = number_format($hab->str_dolares, 2, ',', '.');
         ?>
 
     @endif
@@ -17,12 +17,12 @@
 	<header>
     	<div id="header">
         	<div class="h1">
-                <h1><span>Habitación Duplex 2 Ambientes</span>
-                <span class="tagline">Luxurious by Reputation</span></h1>
+                <h1><span>Family 1-3 Pax 2 Main Rooms</span>
+                <span class="tagline">WE INNOVATE FOR YOU</span></h1>
             </div>
         </div>
         
-        @include('reservacion')
+        @include('en.reservacion')
 
     </header>
     <!-- Header | END -->
@@ -45,14 +45,16 @@
                 </div>
                 <!-- Slideshow | END -->
                 <div id="content">
-                    <h2><strong>Habitación</strong> Duplex 2 Ambientes</h2>
-                    <p>Cómoda y confortable habitación para toda la familia, decorada con un estilo agradable de colores suaves donde el toque especial lo brinda una hermosa y relajante vista a la bahía de Pampatar y a la piscina.</p>
+                    <h2><strong>Family 1-3 Pax</strong> 2 Main Rooms</h2>
                     <p>
-                        La habitación cuenta con dos cuartos, uno con una cama matrimonial y el otro con dos camas individuales, una sala de estar con 2 sofá cama y una cocina equipada y lista para utilizar.<br>
-                        Para satisfacer a nuestros visitantes, todas las habitaciones cuentan con las siguientes comodidades:
+                        Comfortable room for the whole family, decorated with a pleasant style of soft colors where the special touch gives a beautiful and relaxing view of the Bay of Pampatar and the pool.                        
+                    </p>
+                    <p>                        
+                        The room has two rooms, one with a double bed and the other with two single beds, a living room with 2 sofa beds and a kitchen equipped and ready to use.<br>
+                        To satisfy our visitors, all rooms have the following amenities:                                        
                     </p>
 
-                    @include('caracteristicasHabitacion')
+                    @include('en.caracteristicasHabitacion')
 
                 </div>
             </div>
@@ -60,13 +62,13 @@
             <aside>
             	<div id="scroll">
                     <div id="block">
-                        <div class="blocktitle"><a href="contact.php">Desde <span>Bs. {{ $precioDuplex }}</span> por noche</a></div>
+                        <div class="blocktitle"><a href="contact.php">Stay from <span>${{ $precioFamiliar }}</span> per night</a></div>
                         
-                        @include('habitacionesLista')
+                        @include('en.habitacionesLista')
                         
                     </div>
                     <!-- List Items (Specials Slider) | START -->
-                    @include('mini-extras')
+                    @include('en.mini-extras')
                     <!-- List Items (Specials Slider) | END -->
                 </div>
             </aside>

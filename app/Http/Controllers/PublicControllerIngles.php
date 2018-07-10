@@ -24,7 +24,7 @@ class PublicControllerIngles extends Controller
     public function __construct()
     {
 
-        $habitaciones = DB::table('cat_habitaciones')->get();
+        $habitaciones = DB::table('cat_habitaciones')->where('str_tipo', 'habitacion' )->get();
 
         \View::share(compact('habitaciones'));   
 
@@ -132,9 +132,9 @@ class PublicControllerIngles extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function matrimonialSofa()
+    public function suite()
     {
-        return view('en.matrimonialSofa');
+        return view('en.suite');
     }
 
     /**
@@ -152,9 +152,9 @@ class PublicControllerIngles extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function duplex()
+    public function familiar()
     {
-        return view('en.duplex');
+        return view('en.familiar');
     }
 
     /**

@@ -55,9 +55,9 @@ Route::get('/Matrimonial-Room', [
 	'as' =>'matrimonialIngles'
 ]);
 
-Route::get('/Matrimonial-Room-Sofa', [
-	'uses' => 'PublicControllerIngles@matrimonialSofa',
-	'as' =>'matrimonialSofaIngles'
+Route::get('/Suite-Room', [
+	'uses' => 'PublicControllerIngles@suite',
+	'as' =>'suiteIngles'
 ]);
 
 Route::get('/Double-Room', [
@@ -65,9 +65,9 @@ Route::get('/Double-Room', [
 	'as' =>'dobleIngles'
 ]);
 
-Route::get('/Duplex-2-Main-Room', [
-	'uses' => 'PublicControllerIngles@duplex',
-	'as' =>'duplexIngles'
+Route::get('/Family-1-3-Pax-2-Main-Room', [
+	'uses' => 'PublicControllerIngles@familiar',
+	'as' =>'familiarIngles'
 ]);
 
 Route::get('/Gallery', [

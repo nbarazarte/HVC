@@ -18,7 +18,7 @@
     	<div id="header">
         	<div class="h1">
                 <h1><span>Habitación Matrimonial</span>
-                <span class="tagline">Luxurious by Reputation</span></h1>
+                <span class="tagline">Innovamos para ti</span></h1>
             </div>
         </div>
         
@@ -57,7 +57,7 @@
             <aside>
             	<div id="scroll">
                     <div id="block">
-                        <div class="blocktitle"><a href="contact.php">Desde <span>Bs. {{ $precioMatrimonial }}</span> por noche</a></div>
+                        <div class="blocktitle"><a href="contact.php"><span>Bs. S {{ $precioMatrimonial }}</span> por noche</a></div>
                         
                         @include('habitacionesLista')
 

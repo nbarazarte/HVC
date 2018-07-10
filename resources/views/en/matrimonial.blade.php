@@ -4,7 +4,7 @@
 
 @foreach ($habitaciones as $hab)
 
-    @if( $hab->str_habitacion == "Matrimonial")
+    @if( $hab->str_rooms == "Matrimonial")
 
         <?php
             $precioMatrimonial = number_format($hab->str_dolares, 2, ',', '.');
@@ -18,7 +18,7 @@
     	<div id="header">
         	<div class="h1">
                 <h1><span>Matrimonial Room</span>
-                <span class="tagline">The comfort you deserve</span></h1>
+                <span class="tagline">WE INNOVATE FOR YOU</span></h1>
             </div>
         </div>
         

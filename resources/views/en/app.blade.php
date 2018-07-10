@@ -22,9 +22,9 @@
             <body class="home2 fullwidth">
 
         @elseif (   (Route::current()->getName() == 'matrimonialIngles') || 
-                    (Route::current()->getName() == 'matrimonialSofaIngles') || 
+                    (Route::current()->getName() == 'suiteIngles') || 
                     (Route::current()->getName() == 'dobleIngles') || 
-                    (Route::current()->getName() == 'duplexIngles') || 
+                    (Route::current()->getName() == 'familiarIngles') || 
                     (Route::current()->getName() == 'galleryIngles') 
                 )
             

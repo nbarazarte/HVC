@@ -67,9 +67,9 @@ Route::get('/Habitación-Matrimonial', [
 	'as' =>'matrimonial'
 ]);
 
-Route::get('/Habitación-Matrimonial-Sofá', [
-	'uses' => 'PublicController@matrimonialSofa',
-	'as' =>'matrimonialSofa'
+Route::get('/Habitación-Suite', [
+	'uses' => 'PublicController@suite',
+	'as' =>'suite'
 ]);
 
 Route::get('/Habitación-Doble', [
@@ -77,9 +77,9 @@ Route::get('/Habitación-Doble', [
 	'as' =>'doble'
 ]);
 
-Route::get('/Habitación-Duplex-2-Ambientes', [
-	'uses' => 'PublicController@duplex',
-	'as' =>'duplex'
+Route::get('/Habitación-Familiar-1-3-Pax-2-Ambientes', [
+	'uses' => 'PublicController@familiar',
+	'as' =>'familiar'
 ]);
 
 Route::get('/Galería', [

@@ -17,8 +17,8 @@
 	<header>
     	<div id="header">
         	<div class="h1">
-                <h1><span>Habitación Doble</span>
-                <span class="tagline">Luxurious by Reputation</span></h1>
+                <h1><span>Habitación Doble (2 Camas Mat.)</span>
+                <span class="tagline">Innovamos para ti</span></h1>
             </div>
         </div>
         
@@ -43,7 +43,7 @@
                 </div>
                 <!-- Slideshow | END -->
                 <div id="content">
-                    <h2><strong>Habitación</strong> Doble</h2>
+                    <h2><strong>Habitación</strong> Doble (2 Camas Mat.)</h2>
                     <p>Cómoda y confortable habitación con dos camas matrimoniales, decorada con un estilo agradable de colores suaves donde el toque especial lo brinda una hermosa y relajante vista a la bahía de Pampatar y a la piscina.</p>
                     <p>
                         Para satisfacer a nuestros visitantes, todas las habitaciones cuentan con las siguientes comodidades:
@@ -57,7 +57,7 @@
             <aside>
             	<div id="scroll">
                     <div id="block">
-                        <div class="blocktitle"><a href="contact.php">Desde <span>Bs. {{ $precioDoble }}</span> por noche</a></div>
+                        <div class="blocktitle"><a href="contact.php"><span>Bs. S {{ $precioDoble }}</span> por noche</a></div>
                         
                         @include('habitacionesLista')
                         

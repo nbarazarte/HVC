@@ -8,25 +8,50 @@
 
         <?php
             $precioMatrimonial = number_format($hab->str_dolares, 2, ',', '.');
+            $precioMatrimonial_alojamiento = number_format($hab->str_dolares_alojamiento, 2, ',', '.');
         ?>
 
-    @elseif( $hab->str_rooms == "Matrimonial + Sofa")
+    @elseif( $hab->str_rooms == "Suite")
 
         <?php
-            $precioMatrimonialSofa = number_format($hab->str_dolares, 2, ',', '.');
+            $precioSuite = number_format($hab->str_dolares, 2, ',', '.');
+            $precioSuite_alojamiento = number_format($hab->str_dolares_alojamiento, 2, ',', '.');
         ?>
 
     @elseif( $hab->str_rooms == "Double")
 
         <?php
             $precioDoble = number_format($hab->str_dolares, 2, ',', '.');
+            $precioDoble_alojamiento = number_format($hab->str_dolares_alojamiento, 2, ',', '.');
         ?>    
 
-    @elseif( $hab->str_rooms == "Duplex 2 Main Rooms")
+    @elseif( $hab->str_rooms == "Family")
+
+        <?php
+            $precioFamiliar = number_format($hab->str_dolares, 2, ',', '.');
+            $precioFamiliar_alojamiento = number_format($hab->str_dolares_alojamiento, 2, ',', '.');
+        ?>
+
+    @elseif( $hab->str_rooms == "Duplex")
 
         <?php
             $precioDuplex = number_format($hab->str_dolares, 2, ',', '.');
+            $precioDuplex_alojamiento = number_format($hab->str_dolares_alojamiento, 2, ',', '.');
         ?>
+
+    @elseif( $hab->str_rooms == "Additional Pax")
+
+        <?php
+            $precioPax = number_format($hab->str_dolares, 2, ',', '.');
+            $precioPax_alojamiento = number_format($hab->str_dolares_alojamiento, 2, ',', '.');
+        ?>    
+
+    @elseif( $hab->str_rooms == "Children")
+
+        <?php
+            $precioNiños = number_format($hab->str_dolares, 2, ',', '.');
+            $precioNiños_alojamiento = number_format($hab->str_dolares_alojamiento, 2, ',', '.');
+        ?>        
 
     @endif
 
@@ -67,9 +92,9 @@
                 <div class="item">
                     <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/matrimonialSofa.jpg')}}" width="1200" height="400" /></div>
                     <div class="details">
-                        <a href="{{ route('matrimonialSofaIngles')}}">
-                            <h3 class="title">Matrimonial + Sofa<br />
-                            <span>Stay from ${{ $precioMatrimonialSofa }} per night</span></h3>
+                        <a href="{{ route('suiteIngles')}}">
+                            <h3 class="title">Suite<br />
+                            <span>Stay from ${{ $precioSuite }} per night</span></h3>
                             <p>
                                 Comfortable room which is offered in two presentations: a double bed, and a sofa or a double bed and two single sofa beds.
                             </p>
@@ -93,9 +118,9 @@
                 <div class="item">
                     <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/duplex.jpg')}}" width="1200" height="400" /></div>
                     <div class="details">
-                        <a href="{{ route('duplexIngles')}}">
+                        <a href="{{ route('familiarIngles')}}">
                             <h3 class="title">Duplex 2 Main Rooms<br />
-                            <span>Stay from ${{ $precioDuplex }} per night</span></h3>
+                            <span>Stay from ${{ $precioFamiliar }} per night</span></h3>
                             <p>                                
                                 Comfortable room for the whole family that has two rooms, one with a double bed and the other with two single beds, a living room with 2 sofa beds and a kitchen equipped and ready to use.                               
                             </p>
@@ -122,31 +147,51 @@
             <p style="margin:0;">
                 <a href="mailto:reservaciones1@hippocampus.com.ve">reservaciones1@hippocampus.com.ve</a><br />
                 <i class="fa fa-map-marker"></i>  El Cristo Street, Hippocampus Complex building, La Caranta sector.<br>Margarita Island. Venezuela            
-            </p>  
-                            
+            </p>                            
+
                 <table>
                     <tr>
                         <th>Room Type</th>
-                        <th>Price per night</th>
+                        <th>Breakfast included <hr> From {{ $hab->str_fecha_desde }} to {{ $hab->str_fecha_hasta }}</th>
+                        <th>Accommodation only <hr> From {{ $hab->str_fecha_desde }} to {{ $hab->str_fecha_hasta }}</th>
                     </tr>
                     <tr>
-                        <td><strong>Matrimonial Room</strong></td>
-                        <td>${{ $precioMatrimonial }}</td>
+                        <td><strong>Matrimonial</strong></td>
+                        <td>$ {{ $precioMatrimonial }}</td>
+                        <td>$ {{ $precioMatrimonial_alojamiento }}</td>
                     </tr>
                     <tr>
-                        <td><strong>Matrimonial Room + Sofa</strong></td>
-                        <td>${{ $precioMatrimonialSofa }}</td>
+                        <td><strong>Double (2 Beds)</strong></td>
+                        <td>$ {{ $precioSuite }}</td>
+                        <td>$ {{ $precioSuite_alojamiento }}</td>
                     </tr>
                     <tr>
-                        <td><strong>Double Room</strong></td>
-                        <td>${{ $precioDoble }}</td>
+                        <td><strong>Suite</strong></td>
+                        <td>$ {{ $precioDoble }}</td>
+                        <td>$ {{ $precioDoble_alojamiento }}</td>
                     </tr>
                     <tr>
-                        <td><strong>Duplex 2 Main Rooms</strong></td>
-                        <td>${{ $precioDuplex }}</td>
+                        <td><strong>Family 1-3 Pax 2 Main Rooms</strong></td>
+                        <td>$ {{ $precioFamiliar }}</td>
+                        <td>$ {{ $precioFamiliar_alojamiento }}</td>
                     </tr>
+                    <tr>
+                        <td><strong>Duplex 6 Pax</strong></td>
+                        <td>$ {{ $precioDuplex }}</td>
+                        <td>$ {{ $precioDuplex_alojamiento }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Additional Pax</strong></td>
+                        <td>$ {{ $precioPax }}</td>
+                        <td>$ {{ $precioPax_alojamiento }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Children (6 - 11)</strong></td>
+                        <td>$ {{ $precioNiños }}</td>
+                        <td>$ {{ $precioNiños_alojamiento }}</td>
+                    </tr>                    
 
-                </table>
+                </table>                
                 <a href="{{ route('contactIngles')}}" class="button"><span data-hover="Book a Room">Book a Room</span></a>
             </div>
 

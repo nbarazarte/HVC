@@ -8,25 +8,50 @@
 
         <?php
             $precioMatrimonial = number_format($hab->str_precio, 2, ',', '.');
+            $precioMatrimonial_alojamiento = number_format($hab->str_precio_alojamiento, 2, ',', '.');
         ?>
 
-    @elseif( $hab->str_habitacion == "Matrimonial + Sofá")
+    @elseif( $hab->str_habitacion == "Suite")
 
         <?php
-            $precioMatrimonialSofa = number_format($hab->str_precio, 2, ',', '.');
+            $precioSuite = number_format($hab->str_precio, 2, ',', '.');
+            $precioSuite_alojamiento = number_format($hab->str_precio_alojamiento, 2, ',', '.');
         ?>
 
     @elseif( $hab->str_habitacion == "Doble")
 
         <?php
             $precioDoble = number_format($hab->str_precio, 2, ',', '.');
+            $precioDoble_alojamiento = number_format($hab->str_precio_alojamiento, 2, ',', '.');
         ?>    
 
-    @elseif( $hab->str_habitacion == "Duplex 2 Ambientes")
+    @elseif( $hab->str_habitacion == "Familiar")
+
+        <?php
+            $precioFamiliar = number_format($hab->str_precio, 2, ',', '.');
+            $precioFamiliar_alojamiento = number_format($hab->str_precio_alojamiento, 2, ',', '.');
+        ?>
+
+    @elseif( $hab->str_habitacion == "Duplex")
 
         <?php
             $precioDuplex = number_format($hab->str_precio, 2, ',', '.');
+            $precioDuplex_alojamiento = number_format($hab->str_precio_alojamiento, 2, ',', '.');
         ?>
+
+    @elseif( $hab->str_habitacion == "Pax Adicional")
+
+        <?php
+            $precioPax = number_format($hab->str_precio, 2, ',', '.');
+            $precioPax_alojamiento = number_format($hab->str_precio_alojamiento, 2, ',', '.');
+        ?>    
+
+    @elseif( $hab->str_habitacion == "Niños")
+
+        <?php
+            $precioNiños = number_format($hab->str_precio, 2, ',', '.');
+            $precioNiños_alojamiento = number_format($hab->str_precio_alojamiento, 2, ',', '.');
+        ?>        
 
     @endif
 
@@ -56,7 +81,7 @@
                     <div class="details">
                         <a href="{{ route('matrimonial')}}">
                             <h3 class="title"> Matrimonial<br />
-                            <span>Desde Bs. {{ $precioMatrimonial }} por noche</span></h3>
+                            <span>Desde Bs. S {{ $precioMatrimonial }} por noche</span></h3>
                             <p>
                                 Cómoda y confortable habitación con una cama matrimonial, decorada con un estilo agradable de colores suaves donde el toque especial lo brinda una hermosa y relajante vista a la bahía de Pampatar y a la piscina.                                
                             </p>
@@ -67,9 +92,9 @@
                 <div class="item">
                     <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/matrimonialSofa.jpg')}}" width="1200" height="400" /></div>
                     <div class="details">
-                        <a href="{{ route('matrimonialSofa')}}">
-                            <h3 class="title"> Matrimonial + Sofá<br />
-                            <span>Desde Bs. {{ $precioMatrimonialSofa }} por noche</span></h3>
+                        <a href="{{ route('suite')}}">
+                            <h3 class="title"> Suite<br />
+                            <span>Desde Bs. S {{ $precioSuite }} por noche</span></h3>
                             <p>
                                 Cómoda y confortable habitación la cual se ofrece en dos presentaciones: una cama matrimonial, y un sofá o una cama matrimonial y dos sofás camas individuales.
                             </p>
@@ -81,8 +106,8 @@
                     <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/doble.jpg')}}" width="1200" height="400" /></div>
                     <div class="details">
                         <a href="{{ route('doble')}}">
-                            <h3 class="title"> Doble<br />
-                            <span>Desde Bs. {{ $precioDoble }} por noche</span></h3>
+                            <h3 class="title"> Doble (2 Camas Mat.)<br />
+                            <span>Desde Bs. S {{ $precioDoble }} por noche</span></h3>
                             <p>
                                 Cómoda y confortable habitación con dos camas matrimoniales, decorada con un estilo agradable de colores suaves donde el toque especial lo brinda una hermosa y relajante vista a la bahía de Pampatar y a la piscina.                                
                             </p>
@@ -93,9 +118,9 @@
                 <div class="item">
                     <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/duplex.jpg')}}" width="1200" height="400" /></div>
                     <div class="details">
-                        <a href="{{ route('duplex')}}">
-                            <h3 class="title"> Duplex 2 Ambientes<br />
-                            <span>Desde Bs. {{ $precioDuplex }} por noche</span></h3>
+                        <a href="{{ route('familiar')}}">
+                            <h3 class="title"> Familiar 1-3 Pax 2 Ambientes<br />
+                            <span>Desde Bs. S {{ $precioFamiliar }} por noche</span></h3>
                             <p>
                                 Cómoda y confortable habitación para toda la familia que cuenta con dos cuartos, uno con una cama matrimonial y el otro con dos camas individuales, una sala de estar con 2 sofá cama y una cocina equipada y lista para utilizar.
                             </p>
@@ -127,25 +152,45 @@
                 
                 <table>
                     <tr>
-                        <th>Tipo de Habitación</th>
-                        <th>Precio por Noche</th>
+                        <th>Habitación</th>
+                        <th>Desayuno Incluido <hr> Del {{ $hab->str_fecha_desde }} al {{ $hab->str_fecha_hasta }}</th>
+                        <th>Sólo Alojamiento <hr> Del {{ $hab->str_fecha_desde }} al {{ $hab->str_fecha_hasta }}</th>
                     </tr>
                     <tr>
                         <td><strong>Matrimonial</strong></td>
-                        <td>Bs. {{ $precioMatrimonial }}</td>
+                        <td>Bs. S {{ $precioMatrimonial }}</td>
+                        <td>Bs. S {{ $precioMatrimonial_alojamiento }}</td>
                     </tr>
                     <tr>
-                        <td><strong>Matrimonial + Sofá</strong></td>
-                        <td>Bs. {{ $precioMatrimonialSofa }}</td>
+                        <td><strong>Doble (2 Camas Mat.)</strong></td>
+                        <td>Bs. S {{ $precioSuite }}</td>
+                        <td>Bs. S {{ $precioSuite_alojamiento }}</td>
                     </tr>
                     <tr>
-                        <td><strong>Doble</strong></td>
-                        <td>Bs. {{ $precioDoble }}</td>
+                        <td><strong>Suite</strong></td>
+                        <td>Bs. S {{ $precioDoble }}</td>
+                        <td>Bs. S {{ $precioDoble_alojamiento }}</td>
                     </tr>
                     <tr>
-                        <td><strong>Duplex</strong></td>
-                        <td>Bs. {{ $precioDuplex }}</td>
+                        <td><strong>Familiar 1-3 Pax 2 Ambientes</strong></td>
+                        <td>Bs. S {{ $precioFamiliar }}</td>
+                        <td>Bs. S {{ $precioFamiliar_alojamiento }}</td>
                     </tr>
+                    <tr>
+                        <td><strong>Duplex 6 Pax</strong></td>
+                        <td>Bs. S {{ $precioDuplex }}</td>
+                        <td>Bs. S {{ $precioDuplex_alojamiento }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pax Adicional</strong></td>
+                        <td>Bs. S {{ $precioPax }}</td>
+                        <td>Bs. S {{ $precioPax_alojamiento }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Niños (6 - 11)</strong></td>
+                        <td>Bs. S {{ $precioNiños }}</td>
+                        <td>Bs. S {{ $precioNiños_alojamiento }}</td>
+                    </tr>                    
 
                 </table>
                 <a href="{{ route('contact')}}" class="button"><span data-hover="Reservar Ahora">Reservar Ahora</span></a>

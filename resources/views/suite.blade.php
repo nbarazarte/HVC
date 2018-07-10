@@ -4,10 +4,10 @@
 
 @foreach ($habitaciones as $hab)
 
-    @if( $hab->str_habitacion == "Matrimonial + Sofá")
+    @if( $hab->str_habitacion == "Suite")
 
         <?php
-            $precioMatrimonialSofa = number_format($hab->str_precio, 2, ',', '.');
+            $precioSuite = number_format($hab->str_precio, 2, ',', '.');
         ?>
 
     @endif
@@ -17,8 +17,8 @@
 	<header>
     	<div id="header">
         	<div class="h1">
-                <h1><span>Habitación Matrimonial + Sofá</span>
-                <span class="tagline">Luxurious by Reputation</span></h1>
+                <h1><span>Habitación Suite</span>
+                <span class="tagline">Innovamos para ti</span></h1>
             </div>
         </div>
         
@@ -44,7 +44,7 @@
                 </div>
                 <!-- Slideshow | END -->
                 <div id="content">
-                    <h2><strong>Habitación</strong> Matrimonial + Sofá</h2>
+                    <h2><strong>Habitación</strong> Suite</h2>
                     <p>Cómoda y confortable habitación, decorada con un estilo agradable de colores suaves donde el toque especial lo brinda una hermosa y relajante vista a la bahía de Pampatar y a la piscina.</p>
                     <p>
                         La habitación se ofrece en dos presentaciones: una cama matrimonial, y un sofá o una cama matrimonial y dos sofás camas individuales.<br>
@@ -59,7 +59,7 @@
             <aside>
             	<div id="scroll">
                     <div id="block">
-                        <div class="blocktitle"><a href="contact.php">Desde <span>Bs. {{ $precioMatrimonialSofa }}</span> por noche</a></div>
+                        <div class="blocktitle"><a href="contact.php"><span>Bs. S {{ $precioSuite }}</span> por noche</a></div>
                         
                         @include('habitacionesLista')
 
