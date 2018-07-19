@@ -5,7 +5,7 @@
 	<header>
     	<div id="header">
         	<div class="h1">
-                <h1><span>Restaurant</span>
+                <h1><span>Restaurante</span>
                 <span class="tagline">Una Experiencia Gastronómica</span></h1>
             </div>
         </div>
@@ -35,14 +35,17 @@
         	<div id="">
                 <div id="content">
 
-                    <h2><strong>JOE'S Gril</strong> Restaurant</h2>
+                    <h2><strong>Nuestro</strong> Restaurante</h2>
                     <p style="text-align: justify;">
                         Nuestra misión dentro del hotel <strong>Hippocampus Vacation Club</strong>, es brindar un servicio extraordinario, ofreciendo una oferta gastronómica variada como: desayunos, almuerzos, snacks, pizzas, cenas, sopas entre muchas más. Proveemos un menú ejecutivo y una gran variedad en la carta para que nuestros huéspedes se sientan a gusto en el restaurant o mientras disfrutan de un día soleado en la piscina.
                     </p>
 
+                <!--
                     <h2 style="margin:0;"><strong>+58 (295) 267.62.13 </strong></h2>
                     <br>
+                -->
                     <!-- Instagram | START -->
+                <!--
                     <div id="instagram">
                         <p>
                             @JoesGrilMargarita 
@@ -51,6 +54,7 @@
                         </p>
                       
                     </div>
+                -->
                     <!-- Instagram | END -->                  
 
                     <!-- Menu | START -->

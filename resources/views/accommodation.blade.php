@@ -150,7 +150,7 @@
                 <i class="fa fa-map-marker"></i>  Calle El Cristo, edifc. Complejo Hippocampus, sector La Caranta.<br />Isla de Margarita. Venezuela            
             </p>                               
                 
-                <table>
+                <!--<table>
                     <tr>
                         <th>Habitación</th>
                         <th>Desayuno Incluido <hr> Del {{ $hab->str_fecha_desde }} al {{ $hab->str_fecha_hasta }}</th>
@@ -192,7 +192,7 @@
                         <td>Bs. S {{ $precioNiños_alojamiento }}</td>
                     </tr>                    
 
-                </table>
+                </table>-->
                 <a href="{{ route('contact')}}" class="button"><span data-hover="Reservar Ahora">Reservar Ahora</span></a>
             </div>
 

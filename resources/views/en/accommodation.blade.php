@@ -149,7 +149,7 @@
                 <i class="fa fa-map-marker"></i>  El Cristo Street, Hippocampus Complex building, La Caranta sector.<br>Margarita Island. Venezuela            
             </p>                            
 
-                <table>
+                <!--<table>
                     <tr>
                         <th>Room Type</th>
                         <th>Breakfast included <hr> From {{ $hab->str_fecha_desde }} to {{ $hab->str_fecha_hasta }}</th>
@@ -191,7 +191,7 @@
                         <td>$ {{ $precioNiños_alojamiento }}</td>
                     </tr>                    
 
-                </table>                
+                </table>-->                
                 <a href="{{ route('contactIngles')}}" class="button"><span data-hover="Book a Room">Book a Room</span></a>
             </div>
 
