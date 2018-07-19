@@ -60,7 +60,10 @@
             <aside>
             	<div id="scroll">
                     <div id="block">
-                        <div class="blocktitle"><a href="contact.php"><span>Bs. S {{ $precioFamiliar }}</span> por noche</a></div>
+                        <div class="blocktitle">
+                            <span><i class="fa fa-bed" aria-hidden="true"></i> Habitaciones</span>
+                            <!--<a href="contact.php"><span>Bs. S {{ $precioFamiliar }}</span> por noche</a>-->
+                        </div>
                         
                         @include('habitacionesLista')
                         

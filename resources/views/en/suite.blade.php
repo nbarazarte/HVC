@@ -61,7 +61,10 @@
             <aside>
             	<div id="scroll">
                     <div id="block">
-                        <div class="blocktitle"><a href="contact.php">Stay from <span>${{ $precioSuite }}</span> per night</a></div>
+                        <div class="blocktitle">
+                            <span><i class="fa fa-bed" aria-hidden="true"></i> Rooms</span>
+                            <!--<a href="contact.php">Stay from <span>${{ $precioSuite }}</span> per night</a>-->
+                        </div>
                         
                         @include('en.habitacionesLista')
 

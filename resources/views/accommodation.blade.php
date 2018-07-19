@@ -81,7 +81,10 @@
                     <div class="details">
                         <a href="{{ route('matrimonial')}}">
                             <h3 class="title"> Matrimonial<br />
-                            <span>Desde Bs. S {{ $precioMatrimonial }} por noche</span></h3>
+                            <!-- 
+                                <span>Desde Bs. S {{ $precioMatrimonial }} por noche</span>
+                            -->
+                            </h3>
                             <p>
                                 Cómoda y confortable habitación con una cama matrimonial, decorada con un estilo agradable de colores suaves donde el toque especial lo brinda una hermosa y relajante vista a la bahía de Pampatar y a la piscina.                                
                             </p>
@@ -94,7 +97,10 @@
                     <div class="details">
                         <a href="{{ route('suite')}}">
                             <h3 class="title"> Suite<br />
-                            <span>Desde Bs. S {{ $precioSuite }} por noche</span></h3>
+                            <!--    
+                                <span>Desde Bs. S {{ $precioSuite }} por noche</span>
+                            -->
+                            </h3>
                             <p>
                                 Cómoda y confortable habitación la cual se ofrece en dos presentaciones: una cama matrimonial, y un sofá o una cama matrimonial y dos sofás camas individuales.
                             </p>
@@ -107,7 +113,10 @@
                     <div class="details">
                         <a href="{{ route('doble')}}">
                             <h3 class="title"> Doble (2 Camas Mat.)<br />
-                            <span>Desde Bs. S {{ $precioDoble }} por noche</span></h3>
+                            <!--
+                                <span>Desde Bs. S {{ $precioDoble }} por noche</span>
+                            -->
+                            </h3>
                             <p>
                                 Cómoda y confortable habitación con dos camas matrimoniales, decorada con un estilo agradable de colores suaves donde el toque especial lo brinda una hermosa y relajante vista a la bahía de Pampatar y a la piscina.                                
                             </p>
@@ -120,7 +129,10 @@
                     <div class="details">
                         <a href="{{ route('familiar')}}">
                             <h3 class="title"> Familiar 1-3 Pax 2 Ambientes<br />
-                            <span>Desde Bs. S {{ $precioFamiliar }} por noche</span></h3>
+                            <!--    
+                                <span>Desde Bs. S {{ $precioFamiliar }} por noche</span>
+                            -->
+                            </h3>
                             <p>
                                 Cómoda y confortable habitación para toda la familia que cuenta con dos cuartos, uno con una cama matrimonial y el otro con dos camas individuales, una sala de estar con 2 sofá cama y una cocina equipada y lista para utilizar.
                             </p>

@@ -24,12 +24,12 @@
                     <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/knela-770.jpg') }}" width="770" height="400" /></div>
                 </div>
                 <div class="details">
-                    <h2>Piel Knela<br />
-                    <span>Colection C.A.</span></h2>
+                    <h2>Tienda<br />
+                    <span></span></h2>
                         <p align="justify">
-                            En la calidez de la isla de Margarita, se encuentra Piel Knela, atendida por su propia dueña, ella te asesorará con el traje de baño perfecto para lucir durante tu estadía en el hotel Hippocampus Vacation Club. <br>
-                            Piel Knela contiente una variedad de accesorios para damas y próximamente para caballeros.<br>
-                            ¿Llegaste a Hippocampus Vacation Club y no tienes traje de baño? Despreocúpate, Piel Knela te proporcionará lo que necesites.
+                            En nuestra tienda te asesoramos con el traje de baño perfecto para lucir durante tu estadía en el hotel Hippocampus Vacation Club. <br>
+                            Tenemos una variedad de accesorios para damas y próximamente para caballeros.<br>
+                            ¿Llegaste a Hippocampus Vacation Club y no tienes traje de baño? Despreocúpate, aquí encontrarás lo que necesites.
                         </p>
 
                 </div>
@@ -39,14 +39,15 @@
                     <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/joe-770.jpg') }}" width="770" height="400" /></div>
                 </div>
                 <div class="details">
-                    <h2>JOE'S Gril<br />
-                    <span>Restaurant C.A.</span></h2>
+                    <h2>Restaurante<br />
+                    <span></span></h2>
                     <p align="justify">
                         Un Lugar lleno de magia y fusiones de sabores.<br>
                         ¡Visitanos! Aquí todo es ¡Siempre Delicioso!
                     </p>
 
                     <!-- Instagram | START -->
+                    <!--
                     <div id="instagram">
                         <p>
                             @JoesGrilMargarita 
@@ -55,6 +56,7 @@
                         </p>
                       
                     </div>
+                    -->
                     <!-- Instagram | END -->                    
                     
                     <a href="{{ route('restaurant') }}" class="button"><span data-hover="Ver más">Ver más</span></a>

@@ -81,7 +81,10 @@
                     <div class="details">
                         <a href="{{ route('matrimonialIngles')}}">
                             <h3 class="title">Matrimonial<br />
-                            <span>Stay from ${{ $precioMatrimonial }} per night</span></h3>
+                            <!--    
+                                <span>Stay from ${{ $precioMatrimonial }} per night</span>
+                            -->
+                            </h3>
                             <p>
                                 Comfortable room with a double bed, decorated with a pleasant style of soft colors where the special touch gives a beautiful and relaxing view of the Bay of Pampatar and the pool.
                             </p>
@@ -94,7 +97,10 @@
                     <div class="details">
                         <a href="{{ route('suiteIngles')}}">
                             <h3 class="title">Suite<br />
-                            <span>Stay from ${{ $precioSuite }} per night</span></h3>
+                            <!--    
+                                <span>Stay from ${{ $precioSuite }} per night</span>
+                            -->
+                            </h3>
                             <p>
                                 Comfortable room which is offered in two presentations: a double bed, and a sofa or a double bed and two single sofa beds.
                             </p>
@@ -107,7 +113,10 @@
                     <div class="details">
                         <a href="{{ route('dobleIngles')}}">
                             <h3 class="title">Double Room<br />
-                            <span>Stay from ${{ $precioDoble }} per night</span></h3>
+                            <!--    
+                                <span>Stay from ${{ $precioDoble }} per night</span>
+                            -->
+                            </h3>
                             <p>
                                 Comfortable room with two double beds, decorated with a pleasant style of soft colors where the special touch gives a beautiful and relaxing view of the Bay of Pampatar and the pool.
                             </p>
@@ -120,7 +129,10 @@
                     <div class="details">
                         <a href="{{ route('familiarIngles')}}">
                             <h3 class="title">Duplex 2 Main Rooms<br />
-                            <span>Stay from ${{ $precioFamiliar }} per night</span></h3>
+                            <!--    
+                                <span>Stay from ${{ $precioFamiliar }} per night</span>
+                            -->
+                            </h3>
                             <p>                                
                                 Comfortable room for the whole family that has two rooms, one with a double bed and the other with two single beds, a living room with 2 sofa beds and a kitchen equipped and ready to use.                               
                             </p>

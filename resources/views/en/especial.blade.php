@@ -24,12 +24,13 @@
                     <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/knela-770.jpg') }}" width="770" height="400" /></div>
                 </div>
                 <div class="details">
-                    <h2>Piel Knela<br />
-                    <span>Colection C.A.</span></h2>
+                    <h2>Shops<br />
+                    <span></span></h2>
                         <p align="justify">
-                            In the warmth of the island of Margarita, Piel Knela, attended by its owner, will advise you with the perfect swimsuit to wear during your stay at the Hippocampus Vacation Club hotel. <br>
-                            Piel Knela contains a variety of accessories for ladies and soon for men.<br>
-                            You arrived at Hippocampus Vacation Club and you don't have swimsuit? Don't worried, Piel Kanela provide to that it you need.
+                            
+                            In our store we advise you with the perfect swimsuit to wear during your stay at the Hippocampus Vacation Club hotel.<br>
+                            We have a variety of accessories for ladies and soon for men.<br>                           
+                            Did you arrive at Hippocampus Vacation Club and do not have a bathing suit? Do not worry, here you will find what you need.
                         </p>
 
                 </div>
@@ -39,14 +40,15 @@
                     <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/joe-770.jpg') }}" width="770" height="400" /></div>
                 </div>
                 <div class="details">
-                    <h2>JOE'S Gril<br />
-                    <span>Restaurant C.A.</span></h2>
+                    <h2>Restaurant<br />
+                    <span></span></h2>
                     <p align="justify">
                         A place full of magic and fusions of flavors<br>
                         Visit us! Here all is Always Delicious!
                     </p>
 
                     <!-- Instagram | START -->
+                    <!--
                     <div id="instagram">
                         <p>
                             @JoesGrilMargarita 
@@ -55,6 +57,7 @@
                         </p>
                       
                     </div>
+                    -->
                     <!-- Instagram | END -->                    
                     
                     <a href="{{ route('restaurantIngles') }}" class="button"><span data-hover="See more">See more</span></a>
