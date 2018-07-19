@@ -11,7 +11,7 @@
             </p>
 
             <p>
-                Disfrutaras de Alojamiento en confortables habitaciones con desayuno incluido, wi-fi, piscinas panorámicas, jacuzzi, servicio de toallas, entretenimiento diurno, agencia de viajes, acceso directo al restaurant y estacionamiento techado. Ademas de la cercanía a las playas más reconocidas de la zona gastronómica y la vida nocturna de la Isla de Margarita.
+                Disfrutaras de Alojamiento en confortables habitaciones con desayuno incluido, wi-fi, piscinas panorámicas, jacuzzi, servicio de toallas, entretenimiento diurno, agencia de viajes, acceso directo al restaurant y estacionamiento techado. Además de la cercanía a las playas más reconocidas de la zona gastronómica y la vida nocturna de la Isla de Margarita.
             </p>
 
             <!-- USP Boxes | START -->

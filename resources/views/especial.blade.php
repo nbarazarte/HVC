@@ -98,8 +98,8 @@
                     <h2>Sala de Internet<br />
                     <span>HVC</span></h2>
                     <p align="justify">
-                        Además de ofrecer a nuestros huéspedes el servicio de Wi-Fi, tambien contamos con un área exclusiva para acceder a internet las 24 horas del día durante su estancia en el hotel.<br>
-                        Mantengase conectado con el mundo cuando usted lo necesite.
+                        Además de ofrecer a nuestros huéspedes el servicio de Wi-Fi, también contamos con un área exclusiva para acceder a internet las 24 horas del día durante su estancia en el hotel.<br>
+                        Manténgase conectado con el mundo cuando usted lo necesite.
                     </p>                    
 
                 </div>
