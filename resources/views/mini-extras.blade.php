@@ -1,7 +1,7 @@
                     <div id="specials" class="list">
                         <div class="slider">
                         	<div class="item">
-                                <img alt="" src="{{ asset('base-hotel/preview/images/knela-380.jpg') }}" width="380" height="250" />
+                                <img alt="" src="{{ asset('base-hotel/preview/images/model-380.jpg') }}" width="380" height="250" />
                                 <div class="details">
                                     <a href="{{ route('especial')}}">
                                         <div class="title">Tiendas<br />
