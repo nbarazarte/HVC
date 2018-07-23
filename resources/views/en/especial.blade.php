@@ -21,7 +21,7 @@
     	<div class="centre">
             <div class="special">
                 <div class="img">
-                    <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/knela-770.jpg') }}" width="770" height="400" /></div>
+                    <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/model-770.jpg') }}" width="770" height="400" /></div>
                 </div>
                 <div class="details">
                     <h2>Shops<br />

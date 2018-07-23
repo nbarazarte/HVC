@@ -3,7 +3,7 @@
                     <div class="back">
                         <div class="slider">
                             <div class="item">
-                                <img alt="" src="{{ asset('base-hotel/preview/images/knela.jpg') }}" width="1200" height="400" />
+                                <img alt="" src="{{ asset('base-hotel/preview/images/model-1200.jpg') }}" width="1200" height="400" />
                                 <div class="details">
                                     <a href="{{ route('especialIngles')}}">
                                         <div class="title">Shops<br />
