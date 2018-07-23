@@ -40,7 +40,7 @@
             <!-- Contact Form | START -->
             <div id="contact">
                 @include('mensajes')
-                <img src="{{ asset('base-hotel/preview/images/contacto.jpg') }}" width="1200" height="400" alt="" />
+                <img src="{{ asset('base-hotel/preview/images/contacto2.jpg') }}" width="1200" height="400" alt="" />
 
                     <!--include('mensajes')-->      
 

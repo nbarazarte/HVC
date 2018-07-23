@@ -24,7 +24,8 @@
 
         @endif
 
-<!-- Recent Blog Posts | START -->
+            <!-- Recent Blog Posts | START -->
+            <!--
             <div class="recent">
                 <a href="#">
                     <div class="date">
@@ -43,6 +44,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque...</p>
                 </a>
             </div>
+            -->
             <!-- Recent Blog Posts | END -->
 
             <!-- Footer Testimonial | START -->

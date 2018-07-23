@@ -58,6 +58,7 @@
                     <!-- Instagram | END -->                  
 
                     <!-- Menu | START -->
+                    <!--                    
                     <section id="menu">
                     	<h3><i class="fa fa-cutlery"></i> Food Menu</h3>
                     	<div class="menu">
@@ -439,6 +440,7 @@
                         </div>
 
                     </section>
+                -->
                     <!-- Menu | END -->
 
                 </div>

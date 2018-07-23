@@ -22,7 +22,7 @@
         	<div id="slideshow">
                 <div class="slider">
                     <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/Reinauguracion Hippocampus (09).jpg') }}" width="1200" height="600" /></div>                    
-                    <div class="item"><img alt="" src="{{ asset('base-hotel/preview/images/Reinauguracion Hippocampus (22).jpg') }}" width="1200" height="600" /></div>
+
                 </div>
                 <div class="nav">
                     <a class="prev"><i class="fa fa-chevron-left"></i></a>
