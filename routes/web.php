@@ -114,6 +114,16 @@ Route::get('/Página-No-Existe', [
 	'as' =>'error'
 ]);
 
+Route::get('/Trabaja-con-Nosotros', [
+	'uses' => 'PublicController@trabaja',
+	'as' =>'trabaja'
+]);
+
+Route::put('Enviando-CV', [
+		'uses' => 'PublicController@enviarTrabaja',
+		'as' =>'enviarTrabaja'
+]);	
+
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index');

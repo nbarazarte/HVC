@@ -64,6 +64,16 @@ class PublicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function trabaja()
+    {
+        return view('trabaja');
+    }    
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function restaurant()
     {
         return view('restaurant');
@@ -225,7 +235,189 @@ class PublicController extends Controller
     public function suscripcionFallida()
     {
         return view('suscripcionFallida');
-    }          
+    } 
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function enviarTrabaja()
+    {       
+        
+        $message = "Nombre y Apellido: ".$_POST['contact-name']."<br>";
+        $message .= "Teléfono: ".$_POST['contact-phone']."<br>";
+        $message .= "Correo Electrónico: ".$_POST['contact-email']."<br>";
+        $message .= "Comentarios: ".$_POST['contact-message'];       
+                
+        /*
+        $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
+        $cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $cabeceras .= "Content-Type: image/png";    
+        $cabeceras .= 'To: Best Office <ventas@solucionesbestoffice.com>' . "\r\n";
+        $cabeceras .= 'From: '.$_POST['name'].' <'.$_POST['email'].'>' . "\r\n";     
+        
+        if (!mail('ventas@solucionesbestoffice.com', $_POST['asunto'].' - solucionesbestoffice.com', $message, $cabeceras)) {
+            //echo "Error: " . $mail->ErrorInfo;
+            Session::flash('message','Error!, el mensaje no se pudo enviar');
+        } else {
+            Session::flash('message','Su mensaje fue enviado exitosamente!');
+        }
+
+        return Redirect::to('/');*/
+
+        $mail = new PHPMailer;
+        $mail->isSMTP();
+        $mail->SMTPDebug = 0;
+        $mail->Debugoutput = 'html';
+        $mail->Host = env('MAIL_HOST','nada');
+        $mail->Port = env('MAIL_PORT','nada');
+        $mail->SMTPAuth = true;
+        $mail->SMTPSecure = env('MAIL_ENCRYPTION','nada');
+
+        $mail->Username = env('MAIL_USERNAME','nada');
+        $mail->Password = env('MAIL_PASSWORD','nada');
+        $mail->SetFrom('webmaster@hippocampus.com.ve');        
+
+        $mail->AddReplyTo($_POST['contact-email'], $_POST['contact-name']);
+        //$mail->addAddress("atencionalsocio@hippocampus.com.ve");
+        $mail->addAddress($_POST['contact-email']);//correo del socio
+        $mail->addAddress("gestiondetalento@hippocampus.com.ve");//buzón al cual va a llegar el email
+        
+        $mail->Subject = "Hoja de Vida: ".$_POST['contact-name'] ;
+        //$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
+        
+
+        $body= '<table style="background-color: #F0F0F0" width="100%" border="0" align="center">
+    
+                    <tr>
+
+                        <td>
+                            
+                            <table style="background-color: white" width="50%" border="0" align="center">
+                                
+                                <tr>
+                                    <td align="left" width="25%">
+                                        <div align="center">
+                                            <img src="http://hippocampusvacationclub.com/sites/default/files/Logo%20hvc%20new_0.png" width="80px">
+                                        </div>
+                                    </td>
+
+                                    <td align="center" width="50%">
+                                        <strong>
+                                            HIPPOCAMPUS VACATION CLUB
+                                        </strong>
+                                        <br>
+                                        <b>Innovamos para ti</b>
+                                    </td>
+
+                                    <td align="right" width="25%">
+                                        <div align="center">
+                                            <h3>
+                                                <b>+58 (295) 331.13.50</b>
+                                            </h3>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td align="center" colspan="3" style="background-image: url(\'http://hippocampusvacationclub.com/sites/default/files/styles/baner/public/vista.jpg?itok=FVdwGhRq\'); height: 400px">                      
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td align="center" colspan="3">
+
+                                        <h2>
+                                            Estimado(a): '.$_POST['contact-name'].'
+                                        </h2>
+
+                                        <p style="text-align: center">
+                                            Gracias por enviarnos sus datos. <br>En breves momentos nos estaremos comunicando con usted.
+                                        </p>
+
+
+                                    </td>
+                                </tr>
+
+                                <tr>
+
+                                    <td align="center" colspan="3">
+
+                                        <p style="text-align: center;">
+
+                                            <table align="center" border="0">
+                                                                      
+
+                                                <tr>
+
+                                                    <td>
+                                                        Teléfono:
+                                                    <td>
+                                                    <td>'.$_POST['contact-phone'].'</td>
+
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td>
+                                                        Correo Electrónico:
+                                                    <td>
+                                                    <td>'.$_POST['contact-email'].'</td>
+
+                                                </tr>                                              
+
+                                                <tr>
+
+                                                    <td>
+                                                        Comentarios:
+                                                    <td>
+                                                    <td>'.$_POST['contact-message'].'</td>
+
+                                                </tr>                                
+                                                                                
+                                            </table>
+                                          
+                                        </p>                    
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                        </td>
+
+                    </tr>
+
+                </table>';
+
+        $mail->msgHTML($body);
+
+
+        $mail->AltBody = $message;
+        //$mail->addAttachment('images/imagen_adjunta.png');
+
+        $name = $_FILES['contact-file']['name'];
+
+        $tmp_name = $_FILES['contact-file']['tmp_name'];
+
+        $mail->addAttachment ($tmp_name, $name);
+        
+         
+        if (!$mail->send()) {
+            //echo "Error: " . $mail->ErrorInfo;
+            Session::flash('message','Error!'.$mail->ErrorInfo);
+        } else {
+            Session::flash('message','Sus datos fueron enviados exitosamente! Revisa el correo electrónico: '.$_POST['contact-email']);
+        }
+
+        return Redirect::to('/Trabaja-con-Nosotros');
+
+        //return Redirect::to('http://'.$_SERVER['SERVER_NAME'].'/');
+
+    }
 
     /**
      * Show the application dashboard.

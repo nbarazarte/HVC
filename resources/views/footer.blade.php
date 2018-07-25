@@ -49,6 +49,10 @@
                     Sitemap
                 </a>
 
+                <a href="{{ route('trabaja')}}">
+                    Trabaja con Nosotros
+                </a>                
+
                 <a href="https://www.behance.net/ezebarazar16c8" target="_blank" title="Ver perfil www.behance.net"> <i class="fa fa-code"></i> Neil Barazarte</a> 
 
             </div>
