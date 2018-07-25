@@ -34,7 +34,7 @@
                 <h2><strong>Social and </strong>Corporate Events</h2>
                 <p style="text-align: justify;">
                     Celebrate together with the <strong>Hippocampus Vacation Club</strong> family, your social and corporate events with a touch of elegance, originality and good taste.<br>
-                    With the help of our great ally, <strong>JOE'S</strong>, we offer live music, entertainment shows and various activities in seasons such as end of the year parties. We want to be part of unforgettable moments, full of creativity, that make your guests feel in a pleasant and comfortable environment.                                       
+                    We offer live music, entertainment shows and various activities in seasons such as end of the year parties. We want to be part of unforgettable moments, full of creativity, that make your guests feel in a pleasant and comfortable environment.                                       
                 </p>
             
                 <h2 style="margin:0;"><strong>+58 (295) 331.13.00</strong></h2>

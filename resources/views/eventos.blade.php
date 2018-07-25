@@ -34,7 +34,7 @@
                 <h2><strong>Eventos Sociales </strong>y Corporativos</h2>
                 <p style="text-align: justify;">
                     Celebra junto a la familia de <strong>Hippocampus Vacation Club</strong>, tus eventos sociales y corporativos con un toque de elegancia, originalidad y buen gusto.<br>
-                    De la mano de nuestro gran aliado <strong>JOE'S</strong> ofrecemos música en vivo, shows de entretenimiento y diversas actividades en temporadas como fiestas de fin de año.
+                    Ofrecemos música en vivo, shows de entretenimiento y diversas actividades en temporadas como fiestas de fin de año.
                     Queremos ser parte de momentos inolvidables, llenos de creatividad, que hagan sentir a tus invitados en un ambiente ameno y confortable.                    
                 </p>
             
