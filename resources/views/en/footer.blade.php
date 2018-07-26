@@ -49,7 +49,7 @@
                     Sitemap
                 </a>
 
-                <a href="#">
+                <a href="{{ route('trabaja')}}">
                     Work with us
                 </a>                
 
