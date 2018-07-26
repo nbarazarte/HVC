@@ -52,13 +52,13 @@
 
                             <div class="field mandatory"><input name="contact-name" type="text" placeholder="Your Name" id="contact-name" value="{{ Auth::user()->name }}" required/></div>
                             <div class="field mandatory"><input name="contact-email" type="email" placeholder="Email Address" id="contact-email" value="{{ Auth::user()->email }}" required/></div>
-                            <div class="field mandatory"><input name="contact-phone" type="text" placeholder="Phone Number" id="contact-phone" value="{{ Auth::user()->str_telefono }}" required/></div>
+                            <div class="field mandatory"><input name="contact-phone" type="number" placeholder="Phone Number" id="contact-phone" value="{{ Auth::user()->str_telefono }}" required/></div>
 
                         @else
 
                             <div class="field mandatory"><input name="contact-name" type="text" placeholder="Your Name" id="contact-name" value="" required/></div>
                             <div class="field mandatory"><input name="contact-email" type="email" placeholder="Email Address" id="contact-email" value="" required/></div>
-                            <div class="field mandatory"><input name="contact-phone" type="text" placeholder="Phone Number" id="contact-phone" value="" required/></div>
+                            <div class="field mandatory"><input name="contact-phone" type="number" placeholder="Phone Number" id="contact-phone" value="" required/></div>
 
                         @endif
 

@@ -52,7 +52,7 @@
 
                             <div class="field mandatory"><input name="contact-email" type="email" placeholder="Correo Electrónico" id="contact-email" value="" required/></div>
                                                                               
-                            <div class="field mandatory"><input name="contact-phone" type="text" placeholder="N° de Teléfono" id="contact-phone" value="" required/></div> 
+                            <div class="field mandatory"><input name="contact-phone" type="number" placeholder="N° de Teléfono" id="contact-phone" value="" required/></div> 
                                 
                             <div class="field mandatory"><input name="contact-file" type="file" title="Adjuntar Hoja de Vida" id="contact-file" value="" required/></div>
           

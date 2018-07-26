@@ -44,7 +44,7 @@
                     <div class="col">
 
                         <div class="field mandatory">
-                            <input name="contact-phone" type="text" placeholder="Phone Number" id="contact-phone" value="" required/>
+                            <input name="contact-phone" type="number" placeholder="Phone Number" id="contact-phone" value="" required/>
                         </div>
                         
                          <div class="field mandatory">
