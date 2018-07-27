@@ -6,7 +6,7 @@
     <header>
         <div id="header">
             <div class="h1">
-                <h1><span>User Register</span>
+                <h1><span>Sign in</span>
                 <span class="tagline">Innovating for you</span></h1>
             </div>
         </div>
@@ -115,9 +115,9 @@
 
                     </div>
 
-                    <button style="" name="send" value="sendform"><span data-hover="Register">Register</span></button>
+                    <button style="" name="send" value="sendform"><span data-hover="Sign in">Sign in</span></button>
                         <br>
-                    <a href="{{route('home')}}"> <i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                    <a href="{{route('home')}}"> <i class="fa fa-home" aria-hidden="true"></i> Back Home</a>
                     
                    {!! csrf_field() !!} 
 

@@ -37,7 +37,7 @@
                     @if (Auth::user())
                         <li class="mobile"><a href="{{ route('logout')}}" class="navbook">Cerrar Sesión {{ Auth::user()->name }}</a></li>
                     @else
-                        <li class="mobile"><a href="{{ url('/login')}}" class="navbook">Entrar/Registro</a></li>
+                        <li class="mobile"><a href="{{ url('/login')}}" class="navbook">Entrar / Registrarse</a></li>
                     @endif
                     <li><a href="{{ route('home')}}" title="Inicio"><i class="fa fa-home" aria-hidden="true"></i></a></li>
                     <li><a href="{{ route('about')}}">HVC</a>

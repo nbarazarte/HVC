@@ -52,23 +52,28 @@
                         </div>                         
                         
                         <button style="width: 100%" name="send" value="sendform"><span data-hover="Iniciar Sesión">Iniciar Sesión</span></button>
+                        <hr>
 
-                        <div style="text-align: center">
-                            <a class="btn btn-link" href="{{ url('/password/reset') }}">                                
-                                <div class="button" style="width: 85%; background-color: #ff8000"><span data-hover="¿Olvidó su clave?">¿Olvidó su clave?</span></div>
-                            </a>
-                            <br>
-                            <a class="btn btn-link" href="{{ url('/register') }}">
-                                <div class="button" style="width: 85%; background-color: #ffbf00"><span data-hover="Registro de Usuarios">Registro de Usuarios</span></div>
-                            </a>                            
+                        <center>
+                           
+                            <div style="text-align: center; width: 100%;">
+                                <a class="btn btn-link" href="{{ url('/password/reset') }}">                                
+                                    <div class="button" style="width: all; background-color: #ff8000"><span data-hover="¿Olvidó su clave?">¿Olvidó su clave?</span></div>
+                                </a>
+                                
+                                <a class="btn btn-link" href="{{ url('/register') }}">
+                                    <div class="button" style="width: all; background-color: #ffbf00"><span data-hover="Registrarse">Registrarse</span></div>
+                                </a>                            
 
-                            <br>
-                            <a href="{{route('home')}}"> <i class="fa fa-home" aria-hidden="true"></i> Volver al Inicio</a>
+                                <br>
+                                <a href="{{route('home')}}"> <i class="fa fa-home" aria-hidden="true"></i> Volver al Inicio</a>
 
-                            <!--<a class="btn btn-link" href="{{ url('/redirect') }}">
-                                facebook
-                            </a>-->
-                        </div> 
+                                <!--<a class="btn btn-link" href="{{ url('/redirect') }}">
+                                    facebook
+                                </a>-->
+                            </div>
+
+                        </center>
 
                     </div>
 
