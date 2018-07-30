@@ -215,11 +215,31 @@
 
                     }
                  
-                </script>                               
+                </script>      
+
+
+                @if (!Auth::user())
+
+                    <div class="alert error">
+                        <i class="fa fa-exclamation-circle"></i> 
+                        <strong>
+                            Estimado(a) huésped, antes de procesar su reserva usted debe estar registrado o iniciar sesión. 
+                        </strong> 
+                    </div>
+
+                    <hr>
+
+                    <button name="send" value="sendform">
+                        <a class="button"><span data-hover="Hacer la Reservación">Hacer la Reservación</span></a> 
+                    </button>                    
+
+                @else
 
                         <button name="send" value="sendform">
                             <a class="button"><span data-hover="Hacer la Reservación">Hacer la Reservación</span></a> 
-                        </button>    
+                        </button>                 
+
+                @endif                         
                         
                             <input type="hidden" name="contact-totalPagar" readonly value="{{ $persona['contact-totalPagar'] }}">  
 

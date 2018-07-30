@@ -221,13 +221,33 @@
                     }
 
                   
-                </script>                             
+                </script>      
+
+
+                @if (!Auth::user())
+
+                    <div class="alert error">
+                        <i class="fa fa-exclamation-circle"></i> 
+                        <strong>
+                            Dear guest, before processing your reservation you must be registered or log in.
+                        </strong> 
+                    </div>
+
+                    <hr>
 
                         <button name="send" value="sendform">
                             <a class="button"><span data-hover="Send Booking Request">Send Booking Request</span></a> 
-                        </button>    
+                        </button>                    
 
-                         
+                @else
+
+                        <button name="send" value="sendform">
+                            <a class="button"><span data-hover="Send Booking Request">Send Booking Request</span></a> 
+                        </button>                
+
+                @endif                                       
+
+                           
                             <input type="hidden" name="contact-totalPagar" readonly value="{{ $persona['contact-totalPagar'] }}">                     
 
                             @if (Auth::user())
