@@ -34,7 +34,7 @@
                         </div>
 
                         <div class="field mandatory">
-                            <input id="str_ci_pasaporte" type="text" class="form-control" name="str_ci_pasaporte" placeholder="ID/Passport" value="{{ old('str_ci_pasaporte') }}" required autofocus>
+                            <input id="str_ci_pasaporte" type="number" class="form-control" name="str_ci_pasaporte" placeholder="ID/Passport" value="{{ old('str_ci_pasaporte') }}" required autofocus>
 
                             @if ($errors->has('str_ci_pasaporte'))
                                 <span class="help-block">
@@ -71,7 +71,7 @@
                         </div>
 
                         <div class="field mandatory">
-                            <input name="str_telefono" type="text" placeholder="Phone Number" id="str_telefono" value="" required/>
+                            <input name="str_telefono" type="number" placeholder="Phone Number" id="str_telefono" value="" required/>
                         </div>
 
                         <div class="field ">

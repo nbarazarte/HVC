@@ -58,20 +58,73 @@
                                 </tr>
 
                                 <tr>
-                                    <td>
-                                        <b>Nombre y Apellido:</b><br>
-                                        {{ $persona['contact-name'] }}
-                                    </td>
-                                    <td>
-                                        <b>Correo Electrónico:</b><br>
-                                        {{ $persona['contact-email'] }}
-                                    </td>
 
-                                    <td>
-                                        <b>Teléfono:</b><br>
-                                        {{ $persona['contact-phone'] }}
 
-                                    </td>
+                                    @if (Auth::user())
+
+                                        <td>
+                                            <b>Nombre y Apellido:</b><br>
+
+                                            @if (empty($persona['contact-name']))
+
+                                                {{ Auth::user()->name }}
+
+                                            @else
+                                                 
+                                                 {{ $persona['contact-name'] }}
+
+                                            @endif
+
+                                        </td>
+                                        <td>
+                                            <b>Correo Electrónico:</b><br>
+
+                                            @if (empty($persona['contact-email']))
+
+                                                {{ Auth::user()->email }}
+
+                                            @else
+                                                 
+                                                 {{ $persona['contact-email'] }}
+
+                                            @endif                                            
+                                        </td>
+
+                                        <td>
+                                            <b>Teléfono:</b><br>
+
+                                            @if (empty($persona['contact-phone']))
+
+                                                {{ Auth::user()->str_telefono }}
+
+                                            @else
+                                                 
+                                                 {{ $persona['contact-phone'] }}
+
+                                            @endif                                              
+
+                                        </td>
+
+                                    @else
+
+                                        <td>
+                                            <b>Nombre y Apellido:</b><br>
+                                            {{ $persona['contact-name'] }}
+                                        </td>
+                                        <td>
+                                            <b>Correo Electrónico:</b><br>
+                                            {{ $persona['contact-email'] }}
+                                        </td>
+
+                                        <td>
+                                            <b>Teléfono:</b><br>
+                                            {{ $persona['contact-phone'] }}
+
+                                        </td>
+
+                                    @endif
+
+
                                     <td>
                                         <b>Precio:</b><br>
                                         Bs. {{ number_format($persona['contact-precioHabitacion'], 2, ',', '.')   }}
@@ -167,13 +220,23 @@
                         <button name="send" value="sendform">
                             <a class="button"><span data-hover="Hacer la Reservación">Hacer la Reservación</span></a> 
                         </button>    
+                        
+                            <input type="hidden" name="contact-totalPagar" readonly value="{{ $persona['contact-totalPagar'] }}">  
 
-                         
-                            <input type="hidden" name="contact-totalPagar" readonly value="{{ $persona['contact-totalPagar'] }}">                     
+                            @if (Auth::user())
+                                          
+                                <input type="hidden" name="contact-name" readonly value="{{ Auth::user()->name }}">                                   
+                                <input type="hidden" name="contact-email" readonly value="{{ Auth::user()->email }}">
+                                <input type="hidden" name="contact-phone" readonly value="{{ Auth::user()->str_telefono }}">   
+                            
+                            @else
+                                     
+                                <input type="hidden" name="contact-name" readonly value="{{ $persona['contact-name'] }}">                                   
+                                <input type="hidden" name="contact-email" readonly value="{{ $persona['contact-email'] }}">
+                                <input type="hidden" name="contact-phone" readonly value="{{ $persona['contact-phone'] }}">   
 
-                            <input type="hidden" name="contact-name" readonly value="{{ $persona['contact-name'] }}">                                        
-                            <input type="hidden" name="contact-email" readonly value="{{ $persona['contact-email'] }}">
-                            <input type="hidden" name="contact-phone" readonly value="{{ $persona['contact-phone'] }}">                                        
+                            @endif                                        
+
                             <input type="hidden" name="contact-habitacion" readonly value="{{ $persona['contact-habitacion'] }}">
                             <input type="hidden" name="contact-idHabitacion"  value="{{ $persona['contact-idHabitacion'] }}">                                    
                             <input type="hidden" name="contact-precioHabitacion" readonly value="{{ $persona['contact-precioHabitacion'] }}">

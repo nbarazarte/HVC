@@ -129,7 +129,8 @@ Auth::routes();
 //Route::get('/home', 'HomeController@index');
 
 Route::get('/Solicitar-Reservación', [
-	'uses' => 'HomeController@getReservaciones',
+	//'uses' => 'HomeController@getReservaciones',
+	'uses' => 'PublicController@getReservaciones',
 	'as' =>'reservar'
 ]);
 

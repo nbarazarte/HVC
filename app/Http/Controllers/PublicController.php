@@ -1027,4 +1027,70 @@ class PublicController extends Controller
 
     }
 
+
+
+
+
+
+
+
+
+
+
+
+ /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getReservaciones()
+    {
+        
+        //dd(Session::get('test'));
+
+        $datos = Session::get('datosReserva');
+
+        $paises = DB::table('cat_paises as p')
+            ->select('p.id','p.str_paises')
+            ->orderBy('p.str_paises','asc')
+            ->get();    
+
+        $tipoPersona = DB::table('cat_datos_maestros as dm')
+            ->where('dm.str_tipo', '=', 'tipo_persona')
+            ->select('dm.id','dm.str_descripcion')            
+            ->orderBy('dm.str_descripcion','asc')
+            ->get();                    
+
+        //dd($tipoPersona);die();
+        //dd($datos[0][0]['datos']);die();
+
+        
+        if(Session::get('idioma') == "es"){            
+
+            if(!empty($datos)) {
+
+                return view('solicitarReservacion',compact('datos','paises','tipoPersona'));
+
+            }else{
+
+                return view('contact');
+
+            }
+
+        }else{
+
+            if(!empty($datos)) {
+
+                return view('en.solicitarReservacion',compact('datos','paises','tipoPersona'));
+
+            }else{
+
+                return view('en.contact');
+
+            }            
+
+        }
+        
+    }     
+
 }
