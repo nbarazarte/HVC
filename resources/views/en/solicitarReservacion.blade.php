@@ -288,5 +288,40 @@
     </main>
     <!-- Content | END -->
 
+   <!-- Content | START -->
+    <main>
+        <div class="centre">
+            <!-- Contact Form | START -->
+            <div id="contact">
+
+            </div>
+            <!-- Contact Form | END -->
+
+            <h2 style="margin:0;"><strong>+58 (295) 331.13.23</strong></h2>
+            <p style="margin:0;">
+                <a href="mailto:reservaciones1@hippocampus.com.ve">reservaciones1@hippocampus.com.ve</a><br />
+                <i class="fa fa-map-marker"></i>  El Cristo Street, Hippocampus Complex building, La Caranta sector.<br />Margarita Island. Venezuela   
+
+            </p>        
+
+            <p>
+
+                <h2 style="margin:0;"><strong>Facing the beautiful Bay of Pampatar</strong></h2>
+
+            </p>
+
+            <p style="text-align: justify;">
+                              
+                Our privileged location puts us just five minutes from the historic center of Pampatar, where you can enjoy various tourist attractions such as the Castillo San Carlos de Borromeo, the church of Cristo del Buen Viaje and some beaches. In addition, the city of Pampatar has a large gastronomic area for all tastes, as well as bars, clubs and restaurants very close to our facilities.
+            <br>
+                We are 10 minutes from the main commercial centers of the island and approximately 50 and 60 minutes from the airport and ferry terminal, respectively.
+
+            </p>
+        </div>
+
+
+    </main>
+    <!-- Content | END -->    
+
 @endsection
 
