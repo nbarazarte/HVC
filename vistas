@@ -1,0 +1,11 @@
+select `hippo_hvc_db`.`cat_paises`.`str_paises` AS `str_paises` from `hippo_hvc_db`.`cat_paises` order by `hippo_hvc_db`.`cat_paises`.`str_paises`
+
+select `hippo_hvc_db`.`tbl_reservaciones`.`id` AS `id`,`hippo_hvc_db`.`tbl_reservaciones`.`str_estatus_pago` AS `str_estatus_pago`,`hippo_hvc_db`.`tbl_reservaciones`.`str_codigo` AS `str_codigo`,`hippo_hvc_db`.`tbl_reservaciones`.`lng_idtipohab` AS `lng_idtipohab`,`hippo_hvc_db`.`tbl_reservaciones`.`lng_idpersona` AS `lng_idpersona`,`hippo_hvc_db`.`tbl_reservaciones`.`str_email` AS `str_email`,`hippo_hvc_db`.`tbl_reservaciones`.`str_nombre` AS `str_nombre`,`hippo_hvc_db`.`tbl_reservaciones`.`str_telefono` AS `str_telefono`,`hippo_hvc_db`.`tbl_reservaciones`.`dbl_precio` AS `dbl_precio`,`hippo_hvc_db`.`tbl_reservaciones`.`dbl_total_pagar` AS `dbl_total_pagar`,`hippo_hvc_db`.`tbl_reservaciones`.`int_ninos` AS `int_ninos`,`hippo_hvc_db`.`tbl_reservaciones`.`int_adultos` AS `int_adultos`,`hippo_hvc_db`.`tbl_reservaciones`.`int_dias` AS `int_dias`,`hippo_hvc_db`.`tbl_reservaciones`.`str_mensaje` AS `str_mensaje`,`hippo_hvc_db`.`tbl_reservaciones`.`dmt_fecha_entrada` AS `dmt_fecha_entrada`,`hippo_hvc_db`.`tbl_reservaciones`.`dmt_fecha_salida` AS `dmt_fecha_salida`,`hippo_hvc_db`.`tbl_reservaciones`.`bol_eliminado` AS `bol_eliminado`,`hippo_hvc_db`.`tbl_reservaciones`.`created_at` AS `created_at`,`hippo_hvc_db`.`tbl_reservaciones`.`updated_at` AS `updated_at` from `hippo_hvc_db`.`tbl_reservaciones`
+
+
+select min(`hippo_hvc_db`.`tbl_reservaciones`.`dmt_fecha_entrada`) AS `minfe`,max(`hippo_hvc_db`.`tbl_reservaciones`.`dmt_fecha_salida`) AS `maxfs`,`hippo_hvc_db`.`tbl_reservaciones`.`lng_idtipohab` AS `lng_idtipohab` from `hippo_hvc_db`.`tbl_reservaciones` group by `hippo_hvc_db`.`tbl_reservaciones`.`lng_idtipohab`
+
+
+ALTER TABLE `users` CHANGE `id` `id` INT(11)AUTO_INCREMENT PRIMARY KEY;
+ALTER TABLE `tbl_acompanante` CHANGE `id` `id` INT(11)AUTO_INCREMENT PRIMARY KEY;
+ALTER TABLE `tbl_reservaciones` CHANGE `id` `id` INT(11)AUTO_INCREMENT PRIMARY KEY;

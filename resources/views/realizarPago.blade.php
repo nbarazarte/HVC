@@ -182,42 +182,42 @@
 
             </div>
 
-            <br>
-            <h2 style="margin:0; cursor: pointer;">
-                <strong>Pago</strong> en línea<br>
-                <i class="fa fa-cc-visa" aria-hidden="true" title="Visa"></i>
-                <i class="fa fa-cc-mastercard" aria-hidden="true" title="Mastercard"></i>
-                <i class="fa fa-cc-amex" aria-hidden="true" title="American Express"></i>
-                <i class="fa fa-cc-diners-club" aria-hidden="true" title="Diners Club"></i>
-                <i class="fa fa-cc-jcb" aria-hidden="true" title="JCB"></i>
-                <i class="fa fa-cc-discover" aria-hidden="true" title="Discover"></i>
-            </h2>
-
-
-            
-
+            <!--
+                <br>
+                <h2 style="margin:0; cursor: pointer;">
+                    <strong>Pago</strong> en línea<br>
+                    <i class="fa fa-cc-visa" aria-hidden="true" title="Visa"></i>
+                    <i class="fa fa-cc-mastercard" aria-hidden="true" title="Mastercard"></i>
+                    <i class="fa fa-cc-amex" aria-hidden="true" title="American Express"></i>
+                    <i class="fa fa-cc-diners-club" aria-hidden="true" title="Diners Club"></i>
+                    <i class="fa fa-cc-jcb" aria-hidden="true" title="JCB"></i>
+                    <i class="fa fa-cc-discover" aria-hidden="true" title="Discover"></i>
+                </h2>
+            -->
         </div>
 
     </main>
 
+    <!--
     <main>
         <div class="centre">
-            <!-- Contact Form | START -->
-
+             Contact Form | START 
+            
             <div id="contact">
 
                 <form action="{{ route('realizarPagoStripe')}}" method="POST">
-                  <script
-                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                    data-key="{{ config('services.stripe.key') }}"
-                    data-amount="{{ $dato->dbl_total_pagar * 100}}"
-                    data-name="HIPPOCAMPUS VACATION CLUB C.A"
-                    data-description="Habitación {{ $dato->str_habitacion }}"
-                    data-image="{{ asset('base-hotel/system/images/logo-hvc-stripe.png') }}"
-                    data-email="{{ Auth::user()->email }}"
-                    data-label="Realizar Pago"
-                    data-locale="auto">
-                  </script>
+
+                    <script
+                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="{{ config('services.stripe.key') }}"
+                        data-amount="{{ $dato->dbl_total_pagar * 100}}"
+                        data-name="HIPPOCAMPUS VACATION CLUB C.A"
+                        data-description="Habitación {{ $dato->str_habitacion }}"
+                        data-image="{{ asset('base-hotel/system/images/logo-hvc-stripe.png') }}"
+                        data-email="{{ Auth::user()->email }}"
+                        data-label="Realizar Pago"
+                        data-locale="auto">
+                    </script>
 
                     <script>
                         // Hide default stripe button, be careful there if you
@@ -236,74 +236,9 @@
 
                 </form>                  
 
-            <!--
-                <form action='https://sandbox.2checkout.com/checkout/purchase' method='post'>
-
-                    <div class="col">
-
-                        <div class="field mandatory">
-                            <input type='text' name='card_holder_name' value='' placeholder="Nombre Impreso en la Tarjeta" required />
-                        </div>
-
-                        <div class="field mandatory">
-                            <input type='text' name='street_address' value='' placeholder='Direccion 1' required />
-                        </div>
-
-                        <div class="field mandatory">
-                            <input type='text' name='street_address2' value='' placeholder='Direccion 2' required />
-                        </div>  
-
-                    </div>
-
-                    <div class="col">   
-
-                        <div class="field mandatory">
-                            <input type='text' name='city' value='' placeholder='Ciudad' required />
-                        </div>
-
-                        <div class="field mandatory">
-                            <input type='text' name='state' value='' placeholder='Estado/Provincia' required />
-                        </div>
-
-                        <div class="field mandatory">
-                            <input type='text' name='zip' value='' placeholder='Código Postal' required />
-                        </div>
-
-                    </div>
-
-                    <div class="col">
-
-                        <div class="field mandatory">
-                            <input type='text' name='country' value='USA' />
-                        </div>
-
-                        <div class="field mandatory">
-                            <input type='text' name='email' value='' placeholder='Correo Electrónico' required />
-                        </div>
-
-                        <div class="field mandatory">
-                            <input type='text' name='phone' value='' placeholder='N° de Teléfono' required />
-                        </div>
-                        
-                        <input type='hidden' name='li_0_name' readonly value='Habitación: {{ $dato->str_habitacion }} - Fecha Llegada: {{ $dato->dmt_fecha_entrada }} - Fecha Salida: {{ $dato->dmt_fecha_salida }}' required />
-                        <input type='hidden' readonly name='li_0_price' value='{{ $dato->dbl_total_pagar }}' required />                        
-                        <input type='hidden' name='sid' value='{{env("HASHID","nada")}}' readonly />
-                        <input type='hidden' name='mode' value='2CO' readonly />
-                        <input type='hidden' name='li_0_type' value='product' readonly />     
-
-                    </div>
-
-                    <button  name="send" value="{{ $dato->str_codigo }}"><span data-hover="Realizar Pago">Realizar Pago</span></button>
-                    
-                   {!! csrf_field() !!} 
-
-                </form>
-            -->
-
             </div>
-            <!-- Contact Form | END -->
-
-      
+            
+            Contact Form | END 
 
         </div>
 
