@@ -52,17 +52,36 @@
                         </div>                         
                         
                         <button style="width: 100%" name="send" value="sendform"><span data-hover="Iniciar Sesión">Iniciar Sesión</span></button>
-                        <hr>
+
 
                         <center>
                            
                             <div style="text-align: center; width: 100%;">
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">                                
+
+                               <a class="btn btn-link" href="{{ url('/password/reset') }}">                                
                                     <div class="button" style="width: all; background-color: #ff8000"><span data-hover="¿Olvidó su clave?">¿Olvidó su clave?</span></div>
                                 </a>
                                 
                                 <a class="btn btn-link" href="{{ url('/register') }}">
                                     <div class="button" style="width: all; background-color: #ffbf00"><span data-hover="Registrarse">Registrarse</span></div>
+                                </a>  
+                            </div>
+                        </center>                         
+
+                        <hr>
+
+                        <center>
+                            Iniciar sesión con:
+                            <div style="text-align: center; width: 100%;">
+
+
+
+                                <a class="btn btn-link" href="{{ url('/login/facebook') }}">                                
+                                    <div class="button" style="width: all; background-color: #3B5998"><i class="fa fa-facebook" aria-hidden="true"></i> <span data-hover="Facebook">Facebook</span></div>
+                                </a>
+                                
+                                <a class="btn btn-link" href="{{ url('/login/google') }}">
+                                    <div class="button" style="width: all; background-color: #EA4335"><i class="fa fa-google" aria-hidden="true"></i> <span data-hover="Google">Google</span></div>
                                 </a>                            
 
                                 <br>

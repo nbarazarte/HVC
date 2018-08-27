@@ -18,7 +18,16 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('str_ci_pasaporte');
+            $table->string('str_ci_pasaporte')->nullable();;
+            $table->string('str_telefono')->nullable();;
+            $table->string('str_genero')->nullable();;
+            $table->string('customer_id')->nullable();
+            $table->integer('lng_idpais')->nullable();;
+            $table->binary('blb_img')->nullable();//Cambiarlo a longblob en mysql si lo quiero usar
+            $table->string('gender')->nullable();
+            $table->string('provider')->nullable();
+            $table->string('provider_id')->nullable();
+            $table->string('avatar')->nullable();            
             $table->rememberToken();
             $table->timestamps();
 
@@ -29,6 +38,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('trial_ends_at')->nullable();
 
         });
+
     }
 
     /**

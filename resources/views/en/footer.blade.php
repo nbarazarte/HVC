@@ -24,8 +24,12 @@
             	<div class="contact">
                 	<p>
                 		<strong class="phone"> <i class="fa fa-phone-square"></i> +58 (295) 331.13.00</strong><br />              	
-                    	<i class="fa fa-map-marker"></i> El Cristo Street, Hippocampus Complex building, La Caranta sector.<br>Margarita Island. Venezuela
+                    	<i class="fa fa-map-marker"></i> Street The Christ, Hippocampus Complex building, Caranta sector. Margarita Island. Venezuela
                 	</p>
+                    <p>
+                        <strong class="phone"> <i class="fa fa-phone-square"></i> +57 (571) 624.04.95 / +57 (314) 480 87 15</strong><br />                
+                        <i class="fa fa-map-marker"></i> Carrera 53 No. 104B- 35 Office 201 - Group 7 Tower 1. Bogotá D.C. Colombia.
+                    </p>                    
                 </div>
                 <!-- Contact Details | END -->
 

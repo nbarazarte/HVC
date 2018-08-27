@@ -76,8 +76,11 @@
 
                         <div class="field ">
 
-                            <input style="cursor: pointer;" id="blb_img" type="file" class="form-control" title="Select your profile picture" name="blb_img" value="{{ old('blb_img') }}" required>
+                            <!--
 
+                            <input style="cursor: pointer;" id="blb_img" type="file" class="form-control" title="Select your profile picture" name="blb_img" value="{{ old('blb_img') }}" required>
+                            
+                            -->
                         </div>
 
                     </div>

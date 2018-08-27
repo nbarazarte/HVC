@@ -209,7 +209,7 @@
                 <form action="{{ route('realizarPagoStripe')}}" method="POST">
                   <script
                     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                    data-key="pk_test_3sMD3SJvsJJkSKHzqwFTTaCi"
+                    data-key="{{ config('services.stripe.key') }}"
                     data-amount="{{ $dato->dbl_total_pagar * 100}}"
                     data-name="HIPPOCAMPUS VACATION CLUB C.A"
                     data-description="Habitación {{ $dato->str_habitacion }}"

@@ -131,12 +131,22 @@
                 {!! Form::close() !!}
 
             </div>
-            <!-- Contact Form | END -->          
+            <!-- Contact Form | END -->
 
+            <h2 style="margin:0;"><strong>Venezuela</strong></h2>
             <h2 style="margin:0;"><strong>+58 (295) 331.13.23</strong></h2>
             <p style="margin:0;">
                 <a href="mailto:reservaciones1@hippocampus.com.ve">reservaciones1@hippocampus.com.ve</a><br />
-                <i class="fa fa-map-marker"></i>  Calle El Cristo, edifc. Complejo Hippocampus, sector La Caranta.<br />Isla de Margarita. Venezuela            
+                <i class="fa fa-map-marker"></i> Calle El Cristo, edifc. Complejo Hippocampus, sector La Caranta.<br />Isla de Margarita. Venezuela.          
+            </p>
+
+            <hr>                 
+
+            <h2 style="margin:0;"><strong>H.V.C. COLOMBIA E.U.</strong></h2>
+            <h2 style="margin:0;"><strong>+57 (571) 624.04.95 / +57 (314) 480 87 15</strong></h2>
+            <p style="margin:0;">
+                <a href="mailto:hippocampuscol@outlook.com">hippocampuscol@outlook.com</a><br />
+                <i class="fa fa-map-marker"></i> Carrera 53 No. 104B- 35 Oficina 201 - Grupo 7 Torre 1.<br />Bogotá D.C. Colombia.
             </p>        
 
             <p>

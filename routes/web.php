@@ -185,6 +185,6 @@ Route::get('Salir', [
 				'as' =>'logout'
 ]);
 
-//Rutas de Socialite (aún en desarrollo)
-Route::get('/redirect','SocialController@redirect');
-Route::get('/callback','SocialController@callback');
+//Login con twitter, facebook y google:
+Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider');
+Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');

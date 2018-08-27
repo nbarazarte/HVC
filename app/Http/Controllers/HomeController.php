@@ -855,7 +855,7 @@ class HomeController extends Controller
             'contact-salida' => 'required|max:255',  
             'contact-email' => 'required|max:255',
             'contact-name' => 'required|max:255',
-            'contact-phone' => 'required|max:255',
+            //'contact-phone' => 'required|max:255',
             'contact-precioHabitacion' => 'required|max:255',     
             'contact-ninos' => 'required|max:255',
             'contact-adultos' => 'required|max:255',
@@ -1125,31 +1125,44 @@ class HomeController extends Controller
 
         try {
 
-            //$customer = \Stripe\Customer::all(array("email" => \Auth::user()->email));
-            //$id = $customer['data'][0]['id'];
+            $user_id = \Auth::user()->id;
+            $name = \Auth::user()->name;
+            $email = \Auth::user()->email;
 
-            /*
-            \Stripe\Customer::create(array(
-              "email" => \Auth::user()->email,
-            ));
-            */
+            //Busco si tiene un customer_id en mi base de datos:
+            $customer = DB::table('users')->where('email', $email)->first();
+            $customer_id = $customer->customer_id;
+
+            if(empty($customer_id)){
+
+                // Creo un Customer en mi cuenta de Stripe:
+                $customer = \Stripe\Customer::create([
+                    'source' => $token,
+                    'email' => $email,
+                    "description" => $name,
+                ]);
+
+                //Guardo el $custromer->id en mi base de datos:
+                DB::update('update users set customer_id = "'.$customer->id.'" where id = '.$user_id.' ');
+                $customer_id = $customer->id;
+            }
             
             $charge = \Stripe\Charge::create([
                 'amount' => $price,
                 'currency' => 'usd',
                 'description' => $room,
-                'source' => $token,
-                'receipt_email' => \Auth::user()->email,
-                //'customer' => 'cus_CgFzInIYY1O5gQ',
-                //'customer' => $id,
+                'receipt_email' => $email,
+                'customer' => $customer_id,
                 
             ]);         
 
             //dd($charge);die();
 
+        DB::update('update users set card_brand = "'.$charge->source->brand.'", card_last_four = "'.$charge->source->last4.'" where id = '.$user_id.' ');
+
             if ($charge['status'] == "succeeded") {
                 
-                $estatusPagado = DB::update('update tbl_reservaciones set str_estatus_pago = "'.$charge['id'].'" where lng_idpersona = '.\Auth::user()->id.' and str_codigo = "'.$_POST['codigo'].'" ');
+                $estatusPagado = DB::update('update tbl_reservaciones set str_estatus_pago = "'.$charge['id'].'" where lng_idpersona = '.$user_id.' and str_codigo = "'.$_POST['codigo'].'" ');
                 
                 if(Session::get('idioma') == "es"){
 

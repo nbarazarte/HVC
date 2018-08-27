@@ -76,9 +76,17 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'str_telefono' => $data['str_telefono'],
+            'str_ci_pasaporte' => $data['str_ci_pasaporte'],
+            'password' => bcrypt($data['password']),
+            'str_genero' => $data['str_genero'],
+            'lng_idpais' => $data['lng_idpais'],
+        ]); 
 
-
-        if(!empty($data['blb_img'])){
+        /*if(!empty($data['blb_img'])){
 
             return User::create([
 
@@ -104,7 +112,7 @@ class RegisterController extends Controller
                 'str_genero' => $data['str_genero'],
                 'lng_idpais' => $data['lng_idpais'],
             ]);          
-        }
+        }*/
 
     }
 }
