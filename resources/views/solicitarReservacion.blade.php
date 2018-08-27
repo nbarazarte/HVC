@@ -52,17 +52,16 @@
                             <table id="myTable" style="text-align: justify;">
 
                                 <tr style="text-align: center;">
-                                    <th colspan="5">
+                                    <th colspan="5"> 
                                         Datos de la reservación
                                     </th>
                                 </tr>
 
                                 <tr>
 
-
                                     @if (Auth::user())
 
-                                        <td>
+                                        <td colspan="2">
                                             <b>Nombre y Apellido:</b><br>
 
                                             @if (empty($persona['contact-name']))
@@ -77,17 +76,8 @@
 
                                         </td>
                                         <td>
-                                            <b>Correo Electrónico:</b><br>
-
-                                            @if (empty($persona['contact-email']))
-
-                                                {{ Auth::user()->email }}
-
-                                            @else
-                                                 
-                                                 {{ $persona['contact-email'] }}
-
-                                            @endif                                            
+                                            <b>Llegada:</b><br>
+                                            {{ $persona['contact-arrival'] }}                                          
                                         </td>
 
                                         <td>
@@ -107,13 +97,13 @@
 
                                     @else
 
-                                        <td>
+                                        <td colspan="2">
                                             <b>Nombre y Apellido:</b><br>
                                             {{ $persona['contact-name'] }}
                                         </td>
                                         <td>
-                                            <b>Correo Electrónico:</b><br>
-                                            {{ $persona['contact-email'] }}
+                                            <b>Llegada:</b><br>
+                                            {{ $persona['contact-arrival'] }}                                            
                                         </td>
 
                                         <td>
@@ -124,11 +114,12 @@
 
                                     @endif
 
-
+                                <!--
                                     <td>
                                         <b>Precio:</b><br>
                                         Bs. {{ number_format($persona['contact-precioHabitacion'], 2, ',', '.')   }}
                                     </td>
+                                -->
 
                                     <td>
                                         <b>Días:</b><br>
@@ -136,14 +127,35 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <!--
                                     <td>
                                         <b>Total:</b><br>
                                         Bs. {{ number_format($persona['contact-totalPagar'], 2, ',', '.')   }}
                                     </td>
-     
-                                    <td>
-                                        <b>Llegada:</b><br>
-                                        {{ $persona['contact-arrival'] }}
+                                    -->
+                                    <td colspan="2">
+
+                                         @if (Auth::user())
+
+                                            <b>Correo Electrónico:</b><br>
+
+                                            @if (empty($persona['contact-email']))
+
+                                                {{ Auth::user()->email }}
+
+                                            @else
+                                                 
+                                                 {{ $persona['contact-email'] }}
+
+                                            @endif                                           
+
+                                         @else
+
+                                            <b>Correo Electrónico:</b><br>
+                                            {{ $persona['contact-email'] }}
+
+                                         @endif
+
                                     </td>
 
                                     <td>

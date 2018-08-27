@@ -64,10 +64,13 @@
                                         {{ $dato->str_telefono }}
 
                                     </td>
+
+                                    <!--
                                     <td>
                                         <b>Price:</b><br>
                                         ${{ number_format($dato->dbl_precio, 2, ',', '.')   }}
                                     </td>
+                                    -->
 
                                     <td>
                                         <b>Total Days:</b><br>
@@ -75,11 +78,13 @@
                                     </td>
                                 </tr>
                                 <tr>
+
+                                    <!--
                                     <td>
                                         <b>Total to Pay:</b><br>
                                         ${{ number_format($dato->dbl_total_pagar, 2, ',', '.')   }}
                                     </td>
-     
+                                    -->
 
                                     <td>
                                         <b>Arrival Date:</b><br>

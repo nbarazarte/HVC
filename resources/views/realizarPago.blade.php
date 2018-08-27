@@ -61,10 +61,12 @@
                                         {{ $dato->str_telefono }}
 
                                     </td>
+                                    <!--
                                     <td>
                                         <b>Precio:</b><br>
                                         Bs. {{ number_format($dato->dbl_precio, 2, ',', '.')   }}
                                     </td>
+                                    -->
 
                                     <td>
                                         <b>Días:</b><br>
@@ -72,11 +74,12 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <!--
                                     <td>
                                         <b>Total:</b><br>
                                         Bs. {{ number_format($dato->dbl_total_pagar, 2, ',', '.')   }}
                                     </td>
-     
+                                    -->
 
                                     <td>
                                         <b>Llegada:</b><br>

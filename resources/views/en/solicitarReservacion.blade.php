@@ -69,7 +69,7 @@
 
                                     @if (Auth::user())
 
-                                        <td>
+                                        <td colspan="2">
                                             <b>Name:</b><br>
 
                                             @if (empty($persona['contact-name']))
@@ -84,17 +84,8 @@
 
                                         </td>
                                         <td>
-                                            <b>Email Address:</b><br>
-
-                                            @if (empty($persona['contact-email']))
-
-                                                {{ Auth::user()->email }}
-
-                                            @else
-                                                 
-                                                 {{ $persona['contact-email'] }}
-
-                                            @endif                                            
+                                            <b>Arrival Date:</b><br>
+                                            {{ $persona['contact-arrival'] }}                                          
                                         </td>
 
                                         <td>
@@ -114,13 +105,13 @@
 
                                     @else
 
-                                        <td>
+                                        <td colspan="2">
                                             <b>Nombre y Apellido:</b><br>
                                             {{ $persona['contact-name'] }}
                                         </td>
                                         <td>
-                                            <b>Correo Electrónico:</b><br>
-                                            {{ $persona['contact-email'] }}
+                                            <b>Arrival Date:</b><br>
+                                            {{ $persona['contact-arrival'] }}
                                         </td>
 
                                         <td>
@@ -131,11 +122,12 @@
 
                                     @endif
 
-
+                                    <!--
                                     <td>
                                         <b>Price per Night:</b><br>
                                          ${{ number_format($persona['contact-precioHabitacion'], 2, ',', '.')   }}
                                     </td>
+                                    -->
 
                                     <td>
                                         <b>Total Days:</b><br>
@@ -143,14 +135,34 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <!--
                                     <td>
                                         <b>Total to Pay:</b><br>
                                         ${{ number_format($persona['contact-totalPagar'], 2, ',', '.')   }}
                                     </td>
+                                    -->
 
-                                    <td>
-                                        <b>Arrival Date:</b><br>
-                                        {{ $persona['contact-arrival'] }}
+                                    <td colspan="2">
+                                         @if (Auth::user())
+
+                                            <b>Email Address:</b><br>
+
+                                            @if (empty($persona['contact-email']))
+
+                                                {{ Auth::user()->email }}
+
+                                            @else
+                                                 
+                                                 {{ $persona['contact-email'] }}
+
+                                            @endif                                           
+
+                                         @else
+
+                                            <b>Email Address:</b><br>
+                                            {{ $persona['contact-email'] }}
+
+                                         @endif
                                     </td>
 
                                     <td>
