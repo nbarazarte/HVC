@@ -88,7 +88,7 @@
     {!! Html::script('js/custom.js') !!}
 
     <!-- Pasarela de pagos -->
-        <script src="https://www.2checkout.com/static/checkout/javascript/direct.min.js"></script>
+        
     <!-- fin -->
 
     </body>
