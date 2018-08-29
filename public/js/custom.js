@@ -29,7 +29,7 @@ function loadScript() {
     var script = document.createElement('script');
     script.type = 'text/javascript';
     //script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&'+'callback=initialize';
-    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDjmZLW0uvX7_G6SivOVcvg9wW9X3PJ9QU&callback=initialize';
+    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDZCSAgZFF_WxgDCDUy5cDtbr3dFGob4Sw&callback=initialize';
     document.body.appendChild(script);
 }
 window.onload = loadScript;
