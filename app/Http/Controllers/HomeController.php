@@ -216,7 +216,7 @@ class HomeController extends Controller
                             </tr>
 
                             <tr>
-                                <td align="center" colspan="3" style="background-image: url(\'http://'.env('DIRECCION','nada').'/base-hotel/preview/images/HotelHippocampus-5-correo.jpg\'); height: 400px; width: 600px;">                                                         
+                                <td align="center" colspan="3" style="background-image: url(\'http://'.env('DIRECCION','nada').'/base-hotel/preview/images/correo.jpg\'); height: 400px; width: 600px;">                                                         
                                 </td>                                
                             </tr>
 
@@ -535,7 +535,7 @@ class HomeController extends Controller
                                 </tr>
 
                                 <tr>
-                                    <td align="center" colspan="3" style="background-image: url(\'http://'.env('DIRECCION','nada').'/base-hotel/preview/images/HotelHippocampus-5-correo.jpg\'); height: 400px; width: 600px;">                                                         
+                                    <td align="center" colspan="3" style="background-image: url(\'http://'.env('DIRECCION','nada').'/base-hotel/preview/images/correo.jpg\'); height: 400px; width: 600px;">                                                         
                                     </td>
                                 </tr>
 
