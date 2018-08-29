@@ -216,7 +216,7 @@ class HomeController extends Controller
                             </tr>
 
                             <tr>
-                                <td align="center" colspan="3" style="background-image: url(\'http://'.env('DIRECCION','nada').'/base-hotel/preview/images/HotelHippocampus-5.jpg\'); height: 400px">                                                         
+                                <td align="center" colspan="3" style="background-image: url(\'http://'.env('DIRECCION','nada').'/base-hotel/preview/images/HotelHippocampus-5-correo.jpg\'); height: 400px; width: 600px;">                                                         
                                 </td>                                
                             </tr>
 
@@ -379,7 +379,7 @@ class HomeController extends Controller
                                     En caso de no recibir la garantía en la fecha límite, su solicitud quedara automáticamente ANULADA, y se podrá procesar nuevamente de acuerdo a nuestra disponibilidad.             
                                     </p>  
 
-                                    <p>
+                                    <!--<p>
                                         <a href="http://'.env('DIRECCION','nada').'/Pagar-Reservación/'.$str_ruta['str_codigo'].'">
                                            http://'.env('DIRECCION','nada').'/Pagar-Reservación-'.$str_ruta['str_codigo'].'
                                         </a>
@@ -389,7 +389,7 @@ class HomeController extends Controller
                                             <input type="submit" style="font-family: Arial, \'Helvetica Neue\', Helvetica, sans-serif; display: block; display: inline-block; width: 200px; min-height: 20px; padding: 10px;background-color: #F04D22; border-radius: 3px; color: #ffffff; font-size: 15px; line-height: 25px;text-align: center; text-decoration: none; -webkit-text-size-adjust: none; background-color: #F04D22;" value="Pagar Reservación" />                                                    
                                         </form>                                            
 
-                                    </p>                       
+                                    </p> -->                      
 
                                 </td>
 
@@ -535,7 +535,7 @@ class HomeController extends Controller
                                 </tr>
 
                                 <tr>
-                                    <td align="center" colspan="3" style="background-image: url(\'http://'.env('DIRECCION','nada').'/base-hotel/preview/images/HotelHippocampus-5.jpg\'); height: 400px">                                                         
+                                    <td align="center" colspan="3" style="background-image: url(\'http://'.env('DIRECCION','nada').'/base-hotel/preview/images/HotelHippocampus-5-correo.jpg\'); height: 400px; width: 600px;">                                                         
                                     </td>
                                 </tr>
 
@@ -696,7 +696,7 @@ class HomeController extends Controller
                     In case of not receiving the guarantee on the deadline, your request will be automatically CANCELED, and may be processed again according to our availability.             
                 </p>  
 
-                                        <p>
+                                        <!--<p>
                                             <a href="http://'.env('DIRECCION','nada').'/en/Make-Payment/'.$str_ruta['str_codigo'].'">
                                                http://'.env('DIRECCION','nada').'/en/Make-Payment/'.$str_ruta['str_codigo'].'
                                             </a>
@@ -709,7 +709,7 @@ class HomeController extends Controller
                                                         
                                         </form>                                            
 
-                                    </p>                       
+                                    </p> -->                      
 
                                 </td>
 
