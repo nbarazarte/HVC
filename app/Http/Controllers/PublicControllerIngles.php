@@ -296,7 +296,7 @@ class PublicControllerIngles extends Controller
                                 <tr>
                                     <td align="left" width="25%">
                                         <div align="center">
-                                            <img src="http://hippocampusvacationclub.com/sites/default/files/Logo%20hvc%20new_0.png" width="80px">
+                                            <img src="http://'.env('DIRECCION','nada').'/base-hotel/system/images/logohvc2.png" width="80px">
                                         </div>
                                     </td>
 
@@ -319,8 +319,8 @@ class PublicControllerIngles extends Controller
                                 </tr>
 
                                 <tr>
-                                    <td align="center" colspan="3" style="background-image: url(\'http://hippocampusvacationclub.com/sites/default/files/styles/baner/public/vista.jpg?itok=FVdwGhRq\'); height: 400px">                      
-                                    </td>
+                                    <td align="center" colspan="3" style="background-image: url(\'http://'.env('DIRECCION','nada').'/base-hotel/preview/images/HotelHippocampus-5.jpg\'); height: 400px">                                                         
+                                    </td>                                     
                                 </tr>
 
                                 <tr>

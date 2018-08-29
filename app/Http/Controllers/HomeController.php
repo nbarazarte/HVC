@@ -193,7 +193,7 @@ class HomeController extends Controller
                             <tr>
                                 <td align="left" width="25%">
                                     <div align="center">
-                                        <img src="http://hippocampusvacationclub.com/sites/default/files/Logo%20hvc%20new_0.png" width="80px">
+                                        <img src="http://'.env('DIRECCION','nada').'/base-hotel/system/images/logohvc2.png" width="80px">
                                     </div>
                                 </td>
 
@@ -216,8 +216,8 @@ class HomeController extends Controller
                             </tr>
 
                             <tr>
-                                <td align="center" colspan="3" style="background-image: url(\'http://hippocampusvacationclub.com/sites/default/files/styles/baner/public/vista.jpg?itok=FVdwGhRq\'); height: 400px">                      
-                                </td>
+                                <td align="center" colspan="3" style="background-image: url(\'http://'.env('DIRECCION','nada').'/base-hotel/preview/images/HotelHippocampus-5.jpg\'); height: 400px">                                                         
+                                </td>                                
                             </tr>
 
                             <tr>
@@ -269,10 +269,12 @@ class HomeController extends Controller
                                                     '.$_POST['contact-phone'].'
                                                 </td>
 
+                                                <!--
                                                 <td style="text-align: left; padding: 8px;">
                                                     <b>Precio:</b><br>
                                                     '.number_format($_POST['contact-precioHabitacion'], 2, ',', '.').'
                                                 </td>
+                                                -->
 
                                                 <td style="text-align: left; padding: 8px;">
                                                     <b>Días:</b><br>
@@ -281,10 +283,12 @@ class HomeController extends Controller
                                             </tr>
 
                                             <tr>
+                                                <!--
                                                 <td style="text-align: left; padding: 8px;">
                                                     <b>Total a Pagar:</b><br>
                                                     '.number_format($_POST['contact-totalPagar'], 2, ',', '.').'
                                                 </td>
+                                                -->
 
                                                 <td style="text-align: left; padding: 8px;">
                                                     <b>Fecha de Llegada:</b><br>
@@ -508,7 +512,7 @@ class HomeController extends Controller
                                 <tr>
                                     <td align="left" width="25%">
                                         <div align="center">
-                                            <img src="http://hippocampusvacationclub.com/sites/default/files/Logo%20hvc%20new_0.png" width="80px">
+                                            <img src="http://'.env('DIRECCION','nada').'/base-hotel/system/images/logohvc2.png" width="80px">
                                         </div>
                                     </td>
 
@@ -531,7 +535,7 @@ class HomeController extends Controller
                                 </tr>
 
                                 <tr>
-                                    <td align="center" colspan="3" style="background-image: url(\'http://hippocampusvacationclub.com/sites/default/files/styles/baner/public/vista.jpg?itok=FVdwGhRq\'); height: 400px">                      
+                                    <td align="center" colspan="3" style="background-image: url(\'http://'.env('DIRECCION','nada').'/base-hotel/preview/images/HotelHippocampus-5.jpg\'); height: 400px">                                                         
                                     </td>
                                 </tr>
 
@@ -581,11 +585,12 @@ class HomeController extends Controller
                                                         <b>Phone Number:</b><br>
                             '.$_POST['contact-phone'].'
                                                     </td>
-
+                                                    <!--
                                                     <td style="text-align: left; padding: 8px;">
                                                         <b>Price:</b><br>
                             '.number_format($_POST['contact-precioHabitacion'], 2, ',', '.').'
                                                     </td>
+                                                    -->
 
                                                     <td style="text-align: left; padding: 8px;">
                                                         <b>Total Days:</b><br>
@@ -594,10 +599,12 @@ class HomeController extends Controller
                                                 </tr>
 
                                                 <tr>
+                                                <!--
                                                     <td style="text-align: left; padding: 8px;">
                                                         <b>Total to Pay:</b><br>
                             '.number_format($_POST['contact-totalPagar'], 2, ',', '.').'
                                                     </td>
+                                                    -->
 
                                                     <td style="text-align: left; padding: 8px;">
                                                         <b>Arrival Date:</b><br>
