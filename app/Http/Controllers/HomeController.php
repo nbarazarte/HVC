@@ -169,7 +169,7 @@ class HomeController extends Controller
         //$mail->addAddress("atencionalsocio@hippocampus.com.ve");
 
         $mail->addAddress($_POST['contact-email']);//correo del huesped
-        $mail->addAddress("ezebarazarte@gmail.com");//buzón al cual va a llegar el email
+        $mail->addAddress("reservaciones1@hippocampus.com.ve");//buzón al cual va a llegar el email
         
         
         $mail->Subject = "Hotel Hippocampus Vacation Club: ".utf8_decode($_POST['contact-name']);
@@ -488,7 +488,7 @@ class HomeController extends Controller
         //$mail->addAddress("atencionalsocio@hippocampus.com.ve");
 
         $mail->addAddress($_POST['contact-email']);//correo del huesped
-        $mail->addAddress("ezebarazarte@gmail.com");//buzón al cual va a llegar el email
+        $mail->addAddress("reservaciones1@hippocampus.com.ve");//buzón al cual va a llegar el email
         
         
         $mail->Subject = "Hotel Hippocampus Vacation Club: ".utf8_decode($_POST['contact-name']);
