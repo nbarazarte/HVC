@@ -5,6 +5,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-114915179-1', 'auto');
 ga('send', 'pageview');
 
+/*
 function initialize() {
     
     var latlng = new google.maps.LatLng(10.997358,-63.7885197,17);
@@ -33,6 +34,7 @@ function loadScript() {
     document.body.appendChild(script);
 }
 window.onload = loadScript;
+*/
 
 function diferencia(){
 
