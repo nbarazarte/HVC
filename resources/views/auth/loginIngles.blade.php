@@ -73,9 +73,11 @@
                         <center>
                            Login with:
                             <div style="text-align: center; width: 100%;">
+                                <!--
                                 <a class="btn btn-link" href="{{ url('/login/facebook') }}">                                
                                     <div class="button" style="width: all; background-color: #3B5998"><i class="fa fa-facebook" aria-hidden="true"></i> <span data-hover="Facebook">Facebook</span></div>
                                 </a>
+                            -->
                                 
                                 <a class="btn btn-link" href="{{ url('/login/google') }}">
                                     <div class="button" style="width: all; background-color: #EA4335"><i class="fa fa-google" aria-hidden="true"></i> <span data-hover="Google">Google</span></div>
