@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddBolEliminadoUsersTable' => $baseDir . '/database/migrations/2018_08_30_013633_add_bol_eliminado_users_table.php',
     'Cpdf' => $vendorDir . '/dompdf/dompdf/lib/Cpdf.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
@@ -550,5 +551,4 @@ return array(
     'Suscripciones' => $baseDir . '/database/migrations/2018_04_12_040606_suscripciones.php',
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
-    'UpdateUsersTable' => $baseDir . '/database/migrations/2018_08_27_031147_update_users_table.php',
 );
