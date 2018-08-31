@@ -71,7 +71,7 @@
                         <hr>
 
                         <center>
-                            Iniciar sesión con:
+                            Tambien puede iniciar sesión con:
                             <div style="text-align: center; width: 100%;">
 
 

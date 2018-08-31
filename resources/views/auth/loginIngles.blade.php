@@ -71,7 +71,7 @@
                         <hr>
 
                         <center>
-                           Login with:
+                           You can also log in with:
                             <div style="text-align: center; width: 100%;">
                                 <!--
                                 <a class="btn btn-link" href="{{ url('/login/facebook') }}">                                
