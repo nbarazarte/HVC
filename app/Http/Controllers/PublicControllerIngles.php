@@ -279,7 +279,7 @@ class PublicControllerIngles extends Controller
         $mail->AddReplyTo($_POST['contact-email'], $_POST['contact-name']);
         //$mail->addAddress("atencionalsocio@hippocampus.com.ve");
         $mail->addAddress($_POST['contact-email']);//correo del socio
-        $mail->addAddress("ezebarazarte@gmail.com");//buzón al cual va a llegar el email
+        $mail->addAddress("atencionalsocio@hippocampus.com.ve");//buzón al cual va a llegar el email
         
         $mail->Subject = "hippocampusvacationclub.com - Socio RCI: ".$_POST['contact-contrato'] ;
         //$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
@@ -319,7 +319,7 @@ class PublicControllerIngles extends Controller
                                 </tr>
 
                                 <tr>
-                                    <td align="center" colspan="3" style="background-image: url(\'http://'.env('DIRECCION','nada').'/base-hotel/preview/images/HotelHippocampus-5.jpg\'); height: 400px">                                                         
+                                    <td align="center" colspan="3" style="background-image: url(\'http://'.env('DIRECCION','nada').'/base-hotel/preview/images/correo.jpg\'); height: 400px; width: 600px; background-repeat: no-repeat;">                                                        
                                     </td>                                     
                                 </tr>
 
@@ -327,11 +327,12 @@ class PublicControllerIngles extends Controller
                                     <td align="center" colspan="3">
 
                                         <h2>
-                                            Estimado(a): '.$_POST['contact-name'].'
+                                            Dear: '.$_POST['contact-name'].'
                                         </h2>
 
                                         <p style="text-align: center">
-                                            Gracias por hacer la reservación de su semana con nosotros. <br>En breves momentos nos estaremos comunicando con usted.
+                                            
+                                            Thank you for booking your week with us. <br>In a few moments we are communicating with you.
                                         </p>
 
 
@@ -349,7 +350,7 @@ class PublicControllerIngles extends Controller
                                                 <tr>
 
                                                     <td>
-                                                        N° Contrato:
+                                                        N° Contract:
                                                     <td>
                                                     <td>'.$_POST['contact-contrato'].'</td>
 

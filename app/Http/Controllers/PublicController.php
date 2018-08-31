@@ -322,8 +322,8 @@ class PublicController extends Controller
                                 </tr>
 
                                 <tr>
-                                    <td align="center" colspan="3" style="background-image: url(\'http://'.env('DIRECCION','nada').'/base-hotel/preview/images/HotelHippocampus-5.jpg\'); height: 400px">                                                         
-                                    </td>                                    
+                                    <td align="center" colspan="3" style="background-image: url(\'http://'.env('DIRECCION','nada').'/base-hotel/preview/images/trabaja-correo.jpg\'); height: 400px; width: 600px; background-repeat: no-repeat;">                                                        
+                                    </td>                                   
                                 </tr>
 
                                 <tr>
@@ -471,7 +471,7 @@ class PublicController extends Controller
         $mail->AddReplyTo($_POST['contact-email'], $_POST['contact-name']);
         //$mail->addAddress("atencionalsocio@hippocampus.com.ve");
         $mail->addAddress($_POST['contact-email']);//correo del socio
-        $mail->addAddress("ezebarazarte@gmail.com");//buzón al cual va a llegar el email
+        $mail->addAddress("atencionalsocio@hippocampus.com.ve");//buzón al cual va a llegar el email
         
         $mail->Subject = "hippocampusvacationclub.com - Socio RCI: ".$_POST['contact-contrato'] ;
         //$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
@@ -488,7 +488,7 @@ class PublicController extends Controller
                                 <tr>
                                     <td align="left" width="25%">
                                         <div align="center">
-                                            <img src="http://hippocampusvacationclub.com/sites/default/files/Logo%20hvc%20new_0.png" width="80px">
+                                            <img src="http://'.env('DIRECCION','nada').'/base-hotel/system/images/logohvc2.png" width="80px">
                                         </div>
                                     </td>
 
@@ -511,8 +511,8 @@ class PublicController extends Controller
                                 </tr>
 
                                 <tr>
-                                    <td align="center" colspan="3" style="background-image: url(\'http://hippocampusvacationclub.com/sites/default/files/styles/baner/public/vista.jpg?itok=FVdwGhRq\'); height: 400px">                      
-                                    </td>
+                                    <td align="center" colspan="3" style="background-image: url(\'http://'.env('DIRECCION','nada').'/base-hotel/preview/images/correo.jpg\'); height: 400px; width: 600px; background-repeat: no-repeat;">                                                        
+                                    </td> 
                                 </tr>
 
                                 <tr>
