@@ -820,7 +820,16 @@ class HomeController extends Controller
         
         //$this->create($request->all());
 
-        $idreservacion = $this->create($request->all())->id;
+        try { 
+
+            $idreservacion = $this->create($request->all())->id;
+
+        } catch(\Illuminate\Database\QueryException $ex){ 
+          //dd($ex->getMessage()); 
+
+            return Redirect::to('/'); 
+          
+        }
 
         $ruta = DB::table('tbl_reservaciones')->select('str_codigo')->where('id', $idreservacion)->get();
 
