@@ -24,7 +24,7 @@ class PublicControllerIngles extends Controller
     public function __construct()
     {
 
-        //$habitaciones = DB::table('cat_habitaciones')->get();
+        $habitaciones = DB::table('cat_habitaciones')->get();
 
         $cuartos = DB::table('cat_habitaciones')
         ->select('id', 'str_tipo', 'str_habitacion', 'str_rooms', 'str_precio', 'str_precio_alojamiento', 'str_tasa_dolar', 'str_dolares', 'str_dolares_alojamiento', 'str_fecha_desde', 'str_fecha_hasta', 'bol_eliminado')
@@ -32,8 +32,7 @@ class PublicControllerIngles extends Controller
         ->where('bol_eliminado', '=', 0)
         ->get();        
 
-        \View::share(compact('cuartos'));
-        //\View::share(compact('habitaciones','cuartos')); 
+        \View::share(compact('habitaciones','cuartos')); 
 
     }
 
