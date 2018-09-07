@@ -65,122 +65,131 @@
                                 </tr>                                
 
                                 <tr>
+                                @if (Auth::user())
 
-
-                                    @if (Auth::user())
-
+                                    <tr>
                                         <td colspan="2">
                                             <b>Name:</b><br>
-
-                                            @if (empty($persona['contact-name']))
-
-                                                {{ Auth::user()->name }}
-
-                                            @else
-                                                 
-                                                 {{ $persona['contact-name'] }}
-
-                                            @endif
-
+                                            {{ Auth::user()->name }}
                                         </td>
                                         <td>
                                             <b>Arrival Date:</b><br>
-                                            {{ $persona['contact-arrival'] }}                                          
+                                            {{ $persona['contact-arrival'] }}     
                                         </td>
-
                                         <td>
-                                            <b>Phone Number:</b><br>
-
-                                            @if (empty($persona['contact-phone']))
-
-                                                {{ Auth::user()->str_telefono }}
-
-                                            @else
-                                                 
-                                                 {{ $persona['contact-phone'] }}
-
-                                            @endif                                              
-
+                                            <b>Phone:</b><br>
+                                            {{ Auth::user()->str_telefono }}
                                         </td>
+                                        <td>
+                                            <b>Days:</b><br>
+                                            {{ $persona['cant-dias'] }}     
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="2">
+                                            <b>Email Address:</b><br>
+                                            {{ Auth::user()->email }}
+                                        </td>                
+                                        <td>
+                                            <b>Departure Date:</b><br>
+                                            {{ $persona['contact-departure'] }}
+                                        </td>
+                                        <td>
+                                            <b>Adults:</b><br>
+                                            {{ $persona['contact-adultos'] }}
+                                        </td>
+                                        <td>
+                                            <b>Children:</b><br>
+                                            {{ $persona['contact-ninos'] }}
+                                        </td>
+                                    </tr>                                    
+
+                                @else
+
+                                    @if( !empty($persona['contact-name']) && !empty($persona['contact-email']) && !empty($persona['contact-phone']) )
+
+                                        <tr>
+                                            <td colspan="2">
+                                                <b>Name:</b><br>
+                                                {{ $persona['contact-name'] }}
+                                            </td>
+                                            <td>
+                                                <b>Arrival Date:</b><br>
+                                                {{ $persona['contact-arrival'] }}     
+                                            </td>
+                                            <td>
+                                                <b>Phone:</b><br>
+                                                {{ $persona['contact-phone'] }}
+                                            </td>
+                                            <td>
+                                                <b>Days:</b><br>
+                                                {{ $persona['cant-dias'] }}     
+                                            </td>
+
+                                        </tr>
+
+                                        <tr>
+                                            <td colspan="2">
+                                                <b>Email Address:</b><br>
+                                                {{ $persona['contact-email'] }}
+                                            </td>                
+                                            <td>
+                                                <b>Departure Date:</b><br>
+                                                {{ $persona['contact-departure'] }}
+                                            </td>
+                                            <td>
+                                                <b>Adults:</b><br>
+                                                {{ $persona['contact-adultos'] }}
+                                            </td>
+                                            <td>
+                                                <b>Children:</b><br>
+                                                {{ $persona['contact-ninos'] }}
+                                            </td>
+                                        </tr>  
 
                                     @else
 
-                                        <td colspan="2">
-                                            <b>Nombre y Apellido:</b><br>
-                                            {{ $persona['contact-name'] }}
-                                        </td>
-                                        <td>
-                                            <b>Arrival Date:</b><br>
-                                            {{ $persona['contact-arrival'] }}
-                                        </td>
-
-                                        <td>
-                                            <b>Teléfono:</b><br>
-                                            {{ $persona['contact-phone'] }}
-
-                                        </td>
+                                        <tr>
+                                            <td>
+                                                <b>Arrival Date:</b><br>
+                                                {{ $persona['contact-arrival'] }}     
+                                            </td>
+                                            <td>
+                                                 <b>Departure Date:</b><br>
+                                                 {{ $persona['contact-departure'] }}
+                                            </td>
+                                            <td>
+                                                <b>Days:</b><br>
+                                                {{ $persona['cant-dias'] }}     
+                                            </td>
+                                            <td>
+                                                <b>Adults:</b><br>
+                                                {{ $persona['contact-adultos'] }}
+                                            </td>
+                                            <td>
+                                                <b>Children:</b><br>
+                                                {{ $persona['contact-ninos'] }}
+                                            </td>
+                                        </tr>
 
                                     @endif
 
+                                @endif                                    
+
                                     <!--
-                                    <td>
-                                        <b>Price per Night:</b><br>
-                                         ${{ number_format($persona['contact-precioHabitacion'], 2, ',', '.')   }}
-                                    </td>
+                                        <td>
+                                            <b>Price per Night:</b><br>
+                                             ${{ number_format($persona['contact-precioHabitacion'], 2, ',', '.')   }}
+                                        </td>
+      
+                                        <td>
+                                            <b>Total to Pay:</b><br>
+                                            ${{ number_format($persona['contact-totalPagar'], 2, ',', '.')   }}
+                                        </td>
                                     -->
 
-                                    <td>
-                                        <b>Total Days:</b><br>
-                                        {{ $persona['cant-dias'] }}                                        
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <!--
-                                    <td>
-                                        <b>Total to Pay:</b><br>
-                                        ${{ number_format($persona['contact-totalPagar'], 2, ',', '.')   }}
-                                    </td>
-                                    -->
-
-                                    <td colspan="2">
-                                         @if (Auth::user())
-
-                                            <b>Email Address:</b><br>
-
-                                            @if (empty($persona['contact-email']))
-
-                                                {{ Auth::user()->email }}
-
-                                            @else
-                                                 
-                                                 {{ $persona['contact-email'] }}
-
-                                            @endif                                           
-
-                                         @else
-
-                                            <b>Email Address:</b><br>
-                                            {{ $persona['contact-email'] }}
-
-                                         @endif
-                                    </td>
-
-                                    <td>
-                                        <b>Departure Date:</b><br>
-                                        {{ $persona['contact-departure'] }}
-                                    </td>                                    
-
-                                    <td>
-                                        <b>Adults:</b><br>
-                                        {{ $persona['contact-adultos'] }}
-                                    </td>
-
-                                    <td>
-                                        <b>Children:</b><br>
-                                        {{ $persona['contact-ninos'] }}
-                                    </td>
-   
-                                </tr>
 
                                 <tr style="text-align: center;">
                                     <th colspan="5">                                        
@@ -190,7 +199,7 @@
 
                                 <tr>
                                     <td>
-                                        <b>Name and Surname:</b><br>
+                                        <b>Names:</b><br>
                                     </td>
                                     <td>
                                         <b>ID/Passport:</b><br>

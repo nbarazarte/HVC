@@ -52,12 +52,12 @@
 
                             <div class="field mandatory"><input name="contact-name" type="text" placeholder="Nombre y Apellido" id="contact-name" value="{{ Auth::user()->name }}" /></div>
                             <div class="field mandatory"><input name="contact-email" type="email" placeholder="Correo Electrónico" id="contact-email" value="{{ Auth::user()->email }}" /></div>
-                            <div class="field mandatory"><input name="contact-phone" type="number" placeholder="N° de Teléfono" id="contact-phone" value="{{ Auth::user()->str_telefono }}" /></div>
+                            <div class="field "><input name="contact-phone" type="number" placeholder="N° de Teléfono" id="contact-phone" value="{{ Auth::user()->str_telefono }}" /></div>
 
                         @else
 
-                            <div class="field mandatory"><input name="contact-name" type="text" placeholder="Nombre y Apellido" id="contact-name" value="" /></div>
-                            <div class="field mandatory"><input name="contact-email" type="email" placeholder="Correo Electrónico" id="contact-email" value="" /></div>
+                            <div class="field mandatory"><input name="contact-name" type="text" placeholder="Nombre y Apellido" id="contact-name" value="" required/></div>
+                            <div class="field mandatory"><input name="contact-email" type="email" placeholder="Correo Electrónico" id="contact-email" value="" required/></div>
                             <div class="field mandatory"><input name="contact-phone" type="number" placeholder="N° de Teléfono" id="contact-phone" value="" /></div>                        
 
                         @endif
@@ -72,7 +72,7 @@
 
                                 <option value="">Tipo Hab.</option>
 
-                                @foreach ($habitaciones as $hab)
+                                @foreach ($cuartos as $hab)
 
                                     <option value="{{ $hab->str_habitacion }}" @if($hab->str_habitacion == $habitacion) selected="selected" @endif >{{ $hab->str_habitacion }}</option>
 

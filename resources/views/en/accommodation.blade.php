@@ -124,22 +124,22 @@
                         </a>
                     </div>
                 </div>
-                <div class="item">
+                <!--<div class="item">
                     <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/duplex.jpg')}}" width="1200" height="400" /></div>
                     <div class="details">
                         <a href="{{ route('familiarIngles')}}">
-                            <h3 class="title">Duplex 2 Main Rooms<br />
+                            <h3 class="title">Family 1-3 Pax 2 Main Rooms<br />
                             <!--    
                                 <span>Stay from ${{ $precioFamiliar }} per night</span>
                             -->
-                            </h3>
+                            <!--</h3>
                             <p>                                
                                 Comfortable room for the whole family that has two rooms, one with a double bed and the other with two single beds, a living room with 2 sofa beds and a kitchen equipped and ready to use.                               
                             </p>
                             <div class="button"><span data-hover="See more">See more</span></div>
                         </a>
                     </div>
-                </div>
+                </div>-->
 
             </section>
 

@@ -124,7 +124,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="item">
+                <!--<div class="item">
                     <div class="imgcontainer"><img alt="" src="{{ asset('base-hotel/preview/images/duplex.jpg')}}" width="1200" height="400" /></div>
                     <div class="details">
                         <a href="{{ route('familiar')}}">
@@ -132,14 +132,14 @@
                             <!--    
                                 <span>Desde Bs. S {{ $precioFamiliar }} por noche</span>
                             -->
-                            </h3>
+                            <!--</h3>
                             <p>
                                 Cómoda y confortable habitación para toda la familia que cuenta con dos cuartos, uno con una cama matrimonial y el otro con dos camas individuales, una sala de estar con 2 sofá cama y una cocina equipada y lista para utilizar.
                             </p>
                             <div class="button"><span data-hover="Ver más">Ver más</span></div>
                         </a>
                     </div>
-                </div>
+                </div>-->
 
             </section>
 

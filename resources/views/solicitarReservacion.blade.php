@@ -46,7 +46,6 @@
                     La reserva incluye alojamiento y desayuno, para el número de personas indicadas en la cotización.
                 </p>
 
-
                         {!! Form::open(['route' => 'reservar', 'method'=>'POST', 'id' => 'demo-form', 'name' => 'demo-form', 'enctype'=>'multipart/form-data', 'class' => '', 'onKeypress' => 'if(event.keyCode == 13) event.returnValue = false']) !!} 
 
                             <table id="myTable" style="text-align: justify;">
@@ -57,124 +56,131 @@
                                     </th>
                                 </tr>
 
-                                <tr>
+                                @if (Auth::user())
 
-                                    @if (Auth::user())
-
+                                    <tr>
                                         <td colspan="2">
                                             <b>Nombre y Apellido:</b><br>
-
-                                            @if (empty($persona['contact-name']))
-
-                                                {{ Auth::user()->name }}
-
-                                            @else
-                                                 
-                                                 {{ $persona['contact-name'] }}
-
-                                            @endif
-
+                                            {{ Auth::user()->name }}
                                         </td>
                                         <td>
                                             <b>Llegada:</b><br>
-                                            {{ $persona['contact-arrival'] }}                                          
+                                            {{ $persona['contact-arrival'] }}     
                                         </td>
-
                                         <td>
                                             <b>Teléfono:</b><br>
-
-                                            @if (empty($persona['contact-phone']))
-
-                                                {{ Auth::user()->str_telefono }}
-
-                                            @else
-                                                 
-                                                 {{ $persona['contact-phone'] }}
-
-                                            @endif                                              
-
+                                            {{ Auth::user()->str_telefono }}
                                         </td>
+                                        <td>
+                                            <b>Días:</b><br>
+                                            {{ $persona['cant-dias'] }}     
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="2">
+                                            <b>Correo Electrónico:</b><br>
+                                            {{ Auth::user()->email }}
+                                        </td>                
+                                        <td>
+                                            <b>Salida:</b><br>
+                                            {{ $persona['contact-departure'] }}
+                                        </td>
+                                        <td>
+                                            <b>Adultos:</b><br>
+                                            {{ $persona['contact-adultos'] }}
+                                        </td>
+                                        <td>
+                                            <b>Niños:</b><br>
+                                            {{ $persona['contact-ninos'] }}
+                                        </td>
+                                    </tr>                                    
+
+                                @else
+
+                                    @if( !empty($persona['contact-name']) && !empty($persona['contact-email']) && !empty($persona['contact-phone']) )
+
+                                        <tr>
+                                            <td colspan="2">
+                                                <b>Nombre y Apellido:</b><br>
+                                                {{ $persona['contact-name'] }}
+                                            </td>
+                                            <td>
+                                                <b>Llegada:</b><br>
+                                                {{ $persona['contact-arrival'] }}     
+                                            </td>
+                                            <td>
+                                                <b>Teléfono:</b><br>
+                                                {{ $persona['contact-phone'] }}
+                                            </td>
+                                            <td>
+                                                <b>Días:</b><br>
+                                                {{ $persona['cant-dias'] }}     
+                                            </td>
+
+                                        </tr>
+
+                                        <tr>
+                                            <td colspan="2">
+                                                <b>Correo Electrónico:</b><br>
+                                                {{ $persona['contact-email'] }}
+                                            </td>                
+                                            <td>
+                                                <b>Salida:</b><br>
+                                                {{ $persona['contact-departure'] }}
+                                            </td>
+                                            <td>
+                                                <b>Adultos:</b><br>
+                                                {{ $persona['contact-adultos'] }}
+                                            </td>
+                                            <td>
+                                                <b>Niños:</b><br>
+                                                {{ $persona['contact-ninos'] }}
+                                            </td>
+                                        </tr>  
 
                                     @else
 
-                                        <td colspan="2">
-                                            <b>Nombre y Apellido:</b><br>
-                                            {{ $persona['contact-name'] }}
-                                        </td>
-                                        <td>
-                                            <b>Llegada:</b><br>
-                                            {{ $persona['contact-arrival'] }}                                            
-                                        </td>
-
-                                        <td>
-                                            <b>Teléfono:</b><br>
-                                            {{ $persona['contact-phone'] }}
-
-                                        </td>
+                                        <tr>
+                                            <td>
+                                                <b>Llegada:</b><br>
+                                                {{ $persona['contact-arrival'] }}     
+                                            </td>
+                                            <td>
+                                                 <b>Salida:</b><br>
+                                                 {{ $persona['contact-departure'] }}
+                                            </td>
+                                            <td>
+                                                <b>Días:</b><br>
+                                                {{ $persona['cant-dias'] }}     
+                                            </td>
+                                            <td>
+                                                <b>Adultos:</b><br>
+                                                {{ $persona['contact-adultos'] }}
+                                            </td>
+                                            <td>
+                                                <b>Niños:</b><br>
+                                                {{ $persona['contact-ninos'] }}
+                                            </td>
+                                        </tr>
 
                                     @endif
 
-                                <!--
-                                    <td>
-                                        <b>Precio:</b><br>
-                                        Bs. {{ number_format($persona['contact-precioHabitacion'], 2, ',', '.')   }}
-                                    </td>
-                                -->
+                                @endif
 
-                                    <td>
-                                        <b>Días:</b><br>
-                                        {{ $persona['cant-dias'] }}                                        
-                                    </td>
-                                </tr>
-                                <tr>
                                     <!--
-                                    <td>
-                                        <b>Total:</b><br>
-                                        Bs. {{ number_format($persona['contact-totalPagar'], 2, ',', '.')   }}
-                                    </td>
+                                        <td>
+                                            <b>Precio:</b><br>
+                                            Bs. {{ number_format($persona['contact-precioHabitacion'], 2, ',', '.')   }}
+                                        </td>
+           
+                                        <td>
+                                            <b>Total:</b><br>
+                                            Bs. {{ number_format($persona['contact-totalPagar'], 2, ',', '.')   }}
+                                        </td>
                                     -->
-                                    <td colspan="2">
-
-                                         @if (Auth::user())
-
-                                            <b>Correo Electrónico:</b><br>
-
-                                            @if (empty($persona['contact-email']))
-
-                                                {{ Auth::user()->email }}
-
-                                            @else
-                                                 
-                                                 {{ $persona['contact-email'] }}
-
-                                            @endif                                           
-
-                                         @else
-
-                                            <b>Correo Electrónico:</b><br>
-                                            {{ $persona['contact-email'] }}
-
-                                         @endif
-
-                                    </td>
-
-                                    <td>
-                                        <b>Salida:</b><br>
-                                        {{ $persona['contact-departure'] }}
-                                    </td>                                    
-
-                                    <td>
-                                        <b>Adulto(s):</b><br>
-                                        {{ $persona['contact-adultos'] }}
-                                    </td>
-
-                                    <td>
-                                        <b>Niño(s):</b><br>
-                                        {{ $persona['contact-ninos'] }}
-                                    </td>
-   
-                                </tr>
-
+                        
                                 <tr style="text-align: center;">
                                     <th colspan="5">
                                         Datos de los Acompañantes

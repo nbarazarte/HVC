@@ -56,9 +56,9 @@
 
                         @else
 
-                            <div class="field mandatory"><input name="contact-name" type="text" placeholder="Your Name" id="contact-name" value="" /></div>
-                            <div class="field mandatory"><input name="contact-email" type="email" placeholder="Email Address" id="contact-email" value="" /></div>
-                            <div class="field mandatory"><input name="contact-phone" type="number" placeholder="Phone Number" id="contact-phone" value="" /></div>
+                            <div class="field mandatory"><input name="contact-name" type="text" placeholder="Your Name" id="contact-name" value="" required/></div>
+                            <div class="field mandatory"><input name="contact-email" type="email" placeholder="Email Address" id="contact-email" value="" required/></div>
+                            <div class="field "><input name="contact-phone" type="number" placeholder="Phone Number" id="contact-phone" value="" /></div>
 
                         @endif
 
@@ -72,7 +72,7 @@
 
                                 <option value="">Rooms</option>
 
-                                @foreach ($habitaciones as $hab)
+                                @foreach ($cuartos as $hab)
 
                                     <option value="{{ $hab->str_rooms }}" @if($hab->str_rooms == $habitacion) selected="selected" @endif >{{ $hab->str_rooms }}</option>
 
